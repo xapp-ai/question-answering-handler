@@ -1,0 +1,4 @@
+packages/**/src/**/__test__/assets/*.html -linguist-detectable
+
+prettier.config.js -linguist-documentation
+.eslintrc.js -linguist-documentation
