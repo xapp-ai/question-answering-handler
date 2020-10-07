@@ -1,8 +1,8 @@
 ## Question Answering Handler
 
-A custom question answering handler for :megaphone: stentor, a framework for building conversational applications. It requires a knowledge base to be setup as part of your conversational application
+A custom question answering handler for 📣 stentor, a framework for building conversational applications. It requires a knowledge base to be setup as part of your conversational application
 
-### What is :megaphone: stentor?
+### What is 📣 stentor?
 
 An Apache 2.0 licensed open source framework for building conversational applications. It supports a variety of channels, NLU, and is extensible by creating custom handlers.
 
