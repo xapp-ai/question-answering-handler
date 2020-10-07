@@ -23,5 +23,3 @@ jobs:
       - uses: mikeal/merge-release@master
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          DEPLOY_DIR: /lib
-          SRC_PACKAGE_DIR: /src
