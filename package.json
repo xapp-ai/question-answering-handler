@@ -5,7 +5,7 @@
     "access": "public"
   },
   "version": "1.0.0",
-  "description": "A question answering handler for :megaphone: stentor",
+  "description": "A question answering handler for 📣 stentor",
   "types": "lib/index",
   "typings": "lib/index",
   "main": "lib/index",
