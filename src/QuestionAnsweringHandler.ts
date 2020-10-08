@@ -2,6 +2,9 @@
 import { AbstractHandler, Context, isIntentRequest, keyFromRequest, Request } from "stentor";
 import { log } from "stentor-logger";
 
+/**
+ * Custom handler for Question Answering
+ */
 export class QuestionAnsweringHandler extends AbstractHandler {
 
     public async start(request: Request, context: Context): Promise<void> {
