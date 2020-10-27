@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "config:base",
+    "schedule:daily"
+  ],
+  "statusCheckVerify": true,
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies"],
+      "updateTypes": ["minor"],
+      "automerge": true
+    },
+    {
+      "packagePatterns": [ "stentor" ],
+      "groupName": "stentor",
+      "schedule": null,
+      "automerge": true
+    }
+  ]
+}
