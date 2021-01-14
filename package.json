@@ -28,7 +28,7 @@
     "aws-sdk": "2.812.0",
     "chai": "4.2.0",
     "eslint-plugin-notice": "0.9.10",
-    "eslint": "7.15.0",
+    "eslint": "7.17.0",
     "mocha": "8.2.0",
     "sinon-chai": "3.5.0",
     "sinon": "9.2.3",
