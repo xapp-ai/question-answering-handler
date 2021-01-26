@@ -4,6 +4,13 @@ const Fuse = require('fuse.js');
 
 import { KnowledgeBaseFAQ, KnowledgeBaseResult, KnowledgeBaseSuggested, KnowledgeBaseDocument } from "stentor-models";
 
+/**
+ * Determines the best answer for the query.
+ * 
+ * @param query 
+ * @param result 
+ * @param threshold 
+ */
 export function determineAnswer(query: string, result: KnowledgeBaseResult, threshold = 0.2): KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument {
 
     if (!query || !result) {
