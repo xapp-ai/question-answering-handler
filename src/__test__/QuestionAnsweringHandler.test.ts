@@ -18,5 +18,12 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
         it('returns an instance of itself', () => {
             expect(new QuestionAnsweringHandler(handler)).to.be.instanceOf(QuestionAnsweringHandler);
         });
+    });
+    describe(`when passed knowledgebase results`, () => {
+        describe(`documents only (no suggested or faqs)`, () => {
+            describe('voice channel', () => {
+                // I'm not sure.  
+            });
+        });
     })
 })
