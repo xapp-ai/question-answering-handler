@@ -6,21 +6,24 @@ name: CI
 on:
   push:
     branches-ignore:
-      - 'main'
+      - "main"
 
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        # node-version: [10.x, 12.x, 14.x] We want this when we figure out package.json engines field
+        node-version: [10.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: yarn --frozen-lockfile
+      - run: yarn lint
+      - run: yarn test
+      - run: yarn build
