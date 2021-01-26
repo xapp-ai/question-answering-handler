@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A question answering handler for 📣 stentor",
   "types": "lib/index",
   "typings": "lib/index",
@@ -20,19 +20,19 @@
     "@types/chai": "4.2.14",
     "@types/mocha": "8.0.3",
     "@types/node": "14.14.22",
-    "@types/sinon-chai": "3.2.5",
     "@types/sinon": "9.0.10",
+    "@types/sinon-chai": "3.2.5",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "@xapp/config": "0.2.3",
     "aws-sdk": "2.812.0",
     "chai": "4.2.0",
-    "eslint-plugin-notice": "0.9.10",
     "eslint": "7.18.0",
+    "eslint-plugin-notice": "0.9.10",
     "mocha": "8.2.0",
     "prettier": "2.2.1",
-    "sinon-chai": "3.5.0",
     "sinon": "9.2.3",
+    "sinon-chai": "3.5.0",
     "stentor": "1.37.7",
     "ts-node": "9.0.0",
     "typescript": "4.1.3"
@@ -44,7 +44,7 @@
     "test": "mocha --recursive -r ts-node/register \"./src/**/*.test.ts\""
   },
   "dependencies": {
-    "fuse.js":"6.4.6"
+    "fuse.js": "6.4.6"
   },
   "peerDependencies": {
     "stentor": "1.X"
