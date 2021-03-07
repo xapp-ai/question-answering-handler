@@ -17,7 +17,7 @@
     "node": "10.x"
   },
   "devDependencies": {
-    "@types/chai": "4.2.14",
+    "@types/chai": "4.2.15",
     "@types/mocha": "8.2.1",
     "@types/node": "14.14.22",
     "@types/sinon": "9.0.10",
@@ -26,7 +26,7 @@
     "@typescript-eslint/parser": "2.34.0",
     "@xapp/config": "0.2.3",
     "aws-sdk": "2.852.0",
-    "chai": "4.2.0",
+    "chai": "4.3.3",
     "eslint": "7.20.0",
     "eslint-plugin-notice": "0.9.10",
     "mocha": "8.3.0",
