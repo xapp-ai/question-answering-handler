@@ -30,20 +30,20 @@ export class QuestionAnsweringHandler extends AbstractHandler {
                 if (context.device.canSpeak) {
                     // We only return high confidence or FAQs here on voice based channels.
                     if (isSuggested(answer)) {
-                        context.response.say(`${answer.topAnswer}\nAny other questions?`).reprompt(`Any other questions?`);
+                        context.response.say(`${cleanAnswer(answer.topAnswer)}\nAny other questions?`).reprompt(`Any other questions?`);
                         return;
                     } else if (isFaq(answer)) {
                         // The document here is the answer in the faq
-                        context.response.say(`${answer.document}\nAny other questions?`).reprompt(`Any other questions?`);
+                        context.response.say(`${cleanAnswer(answer.document)}\nAny other questions?`).reprompt(`Any other questions?`);
                         return;
                     }
                 } else {
                     // This is text based channel, we can provide more answer
                     if (isSuggested(answer)) {
-                        context.response.say(`${answer.topAnswer}\nAny other questions?`).reprompt(`Any other questions?`);
+                        context.response.say(`${cleanAnswer(answer.topAnswer)}\nAny other questions?`).reprompt(`Any other questions?`);
                     } else if (isFaq(answer)) {
                         // The document here is the answer IN THE faq
-                        context.response.say(`${answer.document}\nAny other questions?`).reprompt(`Any other questions?`);
+                        context.response.say(`${cleanAnswer(answer.document)}\nAny other questions?`).reprompt(`Any other questions?`);
                     } else {
                         if (answer) {
                             // here is what i found...
@@ -51,7 +51,7 @@ export class QuestionAnsweringHandler extends AbstractHandler {
                         }
                     }
 
-                    if (answer.uri && answer.uri.startsWith("https://") || answer.uri.startsWith("http://")) {
+                    if (answer?.uri && answer.uri.startsWith("https://") || answer.uri.startsWith("http://")) {
                         context.response.withSuggestions({ title: "Read More", url: answer.uri });
                     }
 
