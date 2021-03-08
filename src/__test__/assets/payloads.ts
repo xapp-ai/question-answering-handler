@@ -168,7 +168,7 @@ export const RESULT_WITH_NEWLINES_SPACES: KnowledgeBaseResult = {
 }
 
 
-const STRONG_FAQ: KnowledgeBaseResult = {
+export const STRONG_FAQ: KnowledgeBaseResult = {
     suggested:
         [{
             title:

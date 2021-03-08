@@ -28,6 +28,7 @@ export class QuestionAnsweringHandler extends AbstractHandler {
 
                 const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
 
+                // Voice output based channels
                 if (context.device.canSpeak) {
                     // We only return high confidence or FAQs here on voice based channels.
                     if (isSuggested(answer)) {
@@ -53,6 +54,10 @@ export class QuestionAnsweringHandler extends AbstractHandler {
                             context.response.say(`Here is what I found...\n"${answer.document}"\nAny other questions?`).reprompt(`Any other questions?`);
                             return;
                         }
+                    }
+
+                    if (answer.uri && answer.uri.startsWith("https://") || answer.uri.startsWith("http://")) {
+                        context.response.withSuggestions({ title: "Read More", url: answer.uri });
                     }
                 }
             }
