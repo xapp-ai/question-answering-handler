@@ -2,8 +2,8 @@
 import { AbstractHandler, Context, isIntentRequest, keyFromRequest, Request } from "stentor";
 import { KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseSuggested } from "stentor-models";
 import { log } from "stentor-logger";
+import { cleanAnswer } from "./cleanAnswer";
 import { determineAnswer } from "./determineAnswer";
-
 
 function isSuggested(answer: KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument): answer is KnowledgeBaseSuggested {
     return !!answer && typeof (answer as KnowledgeBaseSuggested).topAnswer === "string" && (answer as KnowledgeBaseSuggested).topAnswer.length > 0
@@ -47,7 +47,7 @@ export class QuestionAnsweringHandler extends AbstractHandler {
                     } else {
                         if (answer) {
                             // here is what i found...
-                            context.response.say(`Here is what I found...\n"${answer.document}"\nAny other questions?`).reprompt(`Any other questions?`);
+                            context.response.say(`Here is what I found...\n"${cleanAnswer(answer.document)}"\nAny other questions?`).reprompt(`Any other questions?`);
                         }
                     }
 
