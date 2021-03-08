@@ -5,6 +5,8 @@ import { Context, Handler, IntentRequest } from "stentor";
 import { IntentRequestBuilder } from "stentor-request";
 import { ContextBuilder } from "stentor-context";
 
+import { RESULT_WITH_NEWLINES } from "./assets/payloads";
+
 import { QuestionAnsweringHandler } from "../QuestionAnsweringHandler";
 
 const handler: Handler = {
@@ -38,6 +40,29 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                 const response = context.response.response;
                 expect(response).to.exist;
                 expect(response.outputSpeech.ssml).to.contain("I'm sorry");
+            });
+        });
+        describe('when passed request with knowledgebase results', () => {
+            it('returns the correct response', () => {
+                qa.handleRequest({
+                    ...request,
+                    rawQuery: "what is an overdraft",
+                    knowledgeBaseResult: RESULT_WITH_NEWLINES
+                }, {
+                    ...context,
+                    device: {
+                        ...context.device,
+                        canSpeak: false
+                    }
+                });
+                const response = context.response.response;
+                expect(response).to.exist;
+                expect(response.outputSpeech.ssml).to.contain("An overdraft occurs");
+                expect(response.outputSpeech.suggestions[0]).to.deep.equal({
+                    title: 'Read More',
+                    url:
+                        'https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary'
+                });
             });
         });
     });

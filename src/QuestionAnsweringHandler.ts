@@ -25,9 +25,7 @@ export class QuestionAnsweringHandler extends AbstractHandler {
         if (isIntentRequest(request)) {
 
             if (request.knowledgeBaseResult) {
-
                 const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
-
                 // Voice output based channels
                 if (context.device.canSpeak) {
                     // We only return high confidence or FAQs here on voice based channels.
@@ -43,21 +41,22 @@ export class QuestionAnsweringHandler extends AbstractHandler {
                     // This is text based channel, we can provide more answer
                     if (isSuggested(answer)) {
                         context.response.say(`${answer.topAnswer}\nAny other questions?`).reprompt(`Any other questions?`);
-                        return;
                     } else if (isFaq(answer)) {
                         // The document here is the answer IN THE faq
                         context.response.say(`${answer.document}\nAny other questions?`).reprompt(`Any other questions?`);
-                        return;
                     } else {
                         if (answer) {
                             // here is what i found...
                             context.response.say(`Here is what I found...\n"${answer.document}"\nAny other questions?`).reprompt(`Any other questions?`);
-                            return;
                         }
                     }
 
                     if (answer.uri && answer.uri.startsWith("https://") || answer.uri.startsWith("http://")) {
                         context.response.withSuggestions({ title: "Read More", url: answer.uri });
+                    }
+
+                    if (context.response.response.outputSpeech) {
+                        return;
                     }
                 }
             }

@@ -167,7 +167,6 @@ export const RESULT_WITH_NEWLINES_SPACES: KnowledgeBaseResult = {
         }]
 }
 
-
 export const STRONG_FAQ: KnowledgeBaseResult = {
     suggested:
         [{
@@ -252,7 +251,6 @@ export const STRONG_FAQ: KnowledgeBaseResult = {
                 '...Key terms\n\n\n        \n\n        \n\n        \n            \t\n                    Automated Clearing House (ACH)\n                \n\t\n                    Automatic debit payment\n                \n\t\n                    Deposit hold...'
         }]
 }
-
 
 export const NO_SUGGEST_OR_FAQ: KnowledgeBaseResult = {
     suggested: [],
