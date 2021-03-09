@@ -2,8 +2,8 @@
 import { AbstractHandler, Context, isIntentRequest, keyFromRequest, Request } from "stentor";
 import { KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseSuggested } from "stentor-models";
 import { log } from "stentor-logger";
+import { cleanAnswer } from "./cleanAnswer";
 import { determineAnswer } from "./determineAnswer";
-
 
 function isSuggested(answer: KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument): answer is KnowledgeBaseSuggested {
     return !!answer && typeof (answer as KnowledgeBaseSuggested).topAnswer === "string" && (answer as KnowledgeBaseSuggested).topAnswer.length > 0
@@ -25,34 +25,38 @@ export class QuestionAnsweringHandler extends AbstractHandler {
         if (isIntentRequest(request)) {
 
             if (request.knowledgeBaseResult) {
-
                 const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
-
+                // Voice output based channels
                 if (context.device.canSpeak) {
                     // We only return high confidence or FAQs here on voice based channels.
                     if (isSuggested(answer)) {
-                        context.response.say(`${answer.topAnswer}\nAny other questions?`).reprompt(`Any other questions?`);
+                        context.response.say(`${cleanAnswer(answer.topAnswer)}\nAny other questions?`).reprompt(`Any other questions?`);
                         return;
                     } else if (isFaq(answer)) {
                         // The document here is the answer in the faq
-                        context.response.say(`${answer.document}\nAny other questions?`).reprompt(`Any other questions?`);
+                        context.response.say(`${cleanAnswer(answer.document)}\nAny other questions?`).reprompt(`Any other questions?`);
                         return;
                     }
                 } else {
                     // This is text based channel, we can provide more answer
                     if (isSuggested(answer)) {
-                        context.response.say(`${answer.topAnswer}\nAny other questions?`).reprompt(`Any other questions?`);
-                        return;
+                        context.response.say(`${cleanAnswer(answer.topAnswer)}\nAny other questions?`).reprompt(`Any other questions?`);
                     } else if (isFaq(answer)) {
                         // The document here is the answer IN THE faq
-                        context.response.say(`${answer.document}\nAny other questions?`).reprompt(`Any other questions?`);
-                        return;
+                        context.response.say(`${cleanAnswer(answer.document)}\nAny other questions?`).reprompt(`Any other questions?`);
                     } else {
                         if (answer) {
                             // here is what i found...
-                            context.response.say(`Here is what I found...\n"${answer.document}"\nAny other questions?`).reprompt(`Any other questions?`);
-                            return;
+                            context.response.say(`Here is what I found...\n"${cleanAnswer(answer.document)}"\nAny other questions?`).reprompt(`Any other questions?`);
                         }
+                    }
+
+                    if (answer?.uri && answer.uri.startsWith("https://") || answer.uri.startsWith("http://")) {
+                        context.response.withSuggestions({ title: "Read More", url: answer.uri });
+                    }
+
+                    if (context.response.response.outputSpeech) {
+                        return;
                     }
                 }
             }
