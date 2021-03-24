@@ -21,6 +21,8 @@ export function cleanAnswer(answer: string): string {
     answer = cleanTags(answer);
     // Remove spaces when more then 2
     answer = answer.replace(/( ){3,}/g, '');
+    // Remove tabs when more than one
+    answer = answer.replace(/\t{2,}/g, '');
     // Remove the random \t\n
     answer = answer.replace(/\t\n/g, '\n');
     // Remove the mutliple newlines
