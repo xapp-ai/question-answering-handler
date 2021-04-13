@@ -4,6 +4,7 @@ import { KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseSuggested } from 
 import { log } from "stentor-logger";
 import { cleanAnswer } from "./cleanAnswer";
 import { determineAnswer } from "./determineAnswer";
+import { generateTextFragmentURL } from "./generateTextFragmentURL";
 
 function isSuggested(answer: KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument): answer is KnowledgeBaseSuggested {
     return !!answer && typeof (answer as KnowledgeBaseSuggested).topAnswer === "string" && (answer as KnowledgeBaseSuggested).topAnswer.length > 0
@@ -51,8 +52,8 @@ export class QuestionAnsweringHandler extends AbstractHandler {
                         }
                     }
 
-                    if (answer?.uri && answer.uri.startsWith("https://") || answer.uri.startsWith("http://")) {
-                        context.response.withSuggestions({ title: "Read More", url: answer.uri });
+                    if (answer && answer.uri && (answer.uri.startsWith("https://") || answer.uri.startsWith("http://"))) {
+                        context.response.withSuggestions({ title: "Read More", url: generateTextFragmentURL(answer.uri, answer.document) });
                     }
 
                     if (context.response.response.outputSpeech) {
