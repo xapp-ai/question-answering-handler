@@ -3,7 +3,7 @@ import { expect } from "chai";
 
 import { cleanAnswer } from "../cleanAnswer";
 
-import { ANSWER_WITH_TABS, ANSWER_WITH_SPORADIC_NEWLINES, RESULT_WITH_NEWLINES_SPACES } from "./assets/payloads";
+import { ANSWER_WITH_TABS, ANSWER_WITH_SPORADIC_NEWLINES, RESULT_WITH_NEWLINES_SPACES, ANSWER_WITH_MENU_ITEMS } from "./assets/payloads";
 
 describe(`#${cleanAnswer.name}()`, () => {
     describe(`when passed undefined`, () => {
@@ -38,6 +38,13 @@ describe(`#${cleanAnswer.name}()`, () => {
             const cleaned = cleanAnswer(ANSWER_WITH_SPORADIC_NEWLINES);
             expect(cleaned).to.exist;
             expect(cleaned).to.equal("An HMO is a type of health plan that requires you to select a family doctor, often called a primary care physician or PCP. You need a referral from your PCP to see a specialist in the HMO network, such as a cardiologist (heart doctor). Typically, only emergency services are covered if you go outside the HMO’s network of participating providers. You do not have the option to see out-of-network providers when you have an HMO.\n\nHow do Independence Blue Cross Keystone HMO plans work?\n\nWith a Keystone Health Plan East HMO from Independence Blue Cross, you can see any doctor or visit any hospital in the Keystone Health Plan East network.");
+        });
+    });
+    describe("with menu itmes", () => {
+        it("cleans the output", () => {
+            const cleaned = cleanAnswer(ANSWER_WITH_MENU_ITEMS);
+            expect(cleaned).to.exist;
+            expect(cleaned).to.include("...Careers\n\n\tSustainability\n\n\tCommunity\n\n\tBusiness partners\n\n\tServices you\'ll love\n\n\tGift cards\n\n\tSpecial item requests\n\n\tPresto! ATM\n\n\tAprons Recipes\n\n\tPublix Catering\n\n\tAprons Cooking School\n\n\tHealth & wellness\n\n\tShelf tags & icons...");
         });
     });
 });

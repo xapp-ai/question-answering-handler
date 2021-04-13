@@ -1,5 +1,189 @@
 /*! Copyright (c) 2021, XAPP AI */
-import { KnowledgeBaseResult } from "stentor-models";
+import { KnowledgeBaseResult, Request } from "stentor-models";
+
+export const REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ: Request & { requestAttributes: object; sessionAttributes: object } = {
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "platform": "lex-connect",
+    "channel": "widget",
+    "intentId": "OCSearch_deb",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "hot dogs",
+    "requestAttributes": {
+        "channel": "widget",
+        "type": "INTENT_REQUEST",
+        "userId": "stentor-widget-user-5ae302cf-58ad-656b-a0f3-7c53320a71bb",
+        "platform": "stentor-platform",
+        "x-amz-lex:kendra-search-response-document-link-2": "https://www.travelers.com/tools-resources/home/moving/moving-from-an-apartment-to-a-house-checklist",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.travelers.com/resources/home/moving/moving-from-an-apartment-to-a-house-checklist",
+        "x-amz-lex:kendra-search-response-document-5": "...an extinguisher nearby is important, but you also need to have the correct type of extinguisher and know how to properly use it.\n\tNever throw hot grease in the garbage as it can ignite combustible materials. Be sure to let grease cool and consider disposing it in an old can, such as a metal...",
+        "x-amz-lex:kendra-search-response-document-4": "...Because a wood stove generates very hot combustion gases, its chimney must be either masonry (with flue tiles intact and in good condition) or manufactured specifically for burning wood...",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.travelers.com/resources/home/fire-safety/cooking-fire-safety",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.travelers.com/resources/home/fire-safety/wood-stove-safety-tips",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.travelers.com/resources/home/safety/grilling-safety-tips",
+        "x-amz-lex:kendra-search-response-document-3": "...was leaving or placing an object that could burn too close to the grill, according to the NFPA study.\n\n\n\tCharcoal grills can continue to remain hot for many hours after the flames extinguish. Avoid placing any burnable objects near the grill or moving the grill while the coals are hot. Keep...",
+        "x-amz-lex:kendra-search-response-document-2": "...7 Tips for Moving With a Pet\n\n\n\n\n\n\n\n\n\n\n            Get tips on how to ease moving stress and anxiety for dogs and cats.\n\n\n\n                \t\n                    Learn more\n\n    \n\n\n\n\n        \n\n\n    \n\n\n\n\n                \n\n\n    \n\n\n        \n\n            Related...",
+        "x-amz-lex:kendra-search-response-document-1": "...7 Tips for Moving With a Pet\n\n\n\n\n\n\n\n\n\n\n            Get tips on how to ease moving stress and anxiety for dogs and cats.\n\n\n\n                \t\n                    Learn more\n\n    \n\n\n\n\n        \n\n\n    \n\n\n\n\n                \n\n\n    \n\n\n        \n\n            Related...",
+        "rawQuery": "hot dogs"
+    },
+    "sessionAttributes": {
+        "channel": "widget",
+        "sessionId": "stentor-widget-session-5dc4da17-e499-65c5-9810-6743ec525c6c",
+        "userId": "stentor-widget-user-5ae302cf-58ad-656b-a0f3-7c53320a71bb",
+        "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-5dc4da17-e499-65c5-9810-6743ec525c6c",
+    "slots": {},
+    "userId": "stentor-widget-user-5ae302cf-58ad-656b-a0f3-7c53320a71bb",
+    "knowledgeBaseResult": {
+        "suggested": [],
+        "faqs": [],
+        "documents": [
+            {
+                "title": "Moving from an Apartment to a House Checklist | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/moving/moving-from-an-apartment-to-a-house-checklist",
+                "document": "...7 Tips for Moving With a Pet\n\n\n\n\n\n\n\n\n\n\n            Get tips on how to ease moving stress and anxiety for dogs and cats.\n\n\n\n                \t\n                    Learn more\n\n    \n\n\n\n\n        \n\n\n    \n\n\n\n\n                \n\n\n    \n\n\n        \n\n            Related..."
+            },
+            {
+                "title": "Moving from an Apartment to a House Checklist | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/home/moving/moving-from-an-apartment-to-a-house-checklist",
+                "document": "...7 Tips for Moving With a Pet\n\n\n\n\n\n\n\n\n\n\n            Get tips on how to ease moving stress and anxiety for dogs and cats.\n\n\n\n                \t\n                    Learn more\n\n    \n\n\n\n\n        \n\n\n    \n\n\n\n\n                \n\n\n    \n\n\n        \n\n            Related..."
+            },
+            {
+                "title": "Grilling Safety Tips | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/safety/grilling-safety-tips",
+                "document": "...was leaving or placing an object that could burn too close to the grill, according to the NFPA study.\n\n\n\tCharcoal grills can continue to remain hot for many hours after the flames extinguish. Avoid placing any burnable objects near the grill or moving the grill while the coals are hot. Keep..."
+            },
+            {
+                "title": "Wood Stove Safety Tips | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/fire-safety/wood-stove-safety-tips",
+                "document": "...Because a wood stove generates very hot combustion gases, its chimney must be either masonry (with flue tiles intact and in good condition) or manufactured specifically for burning wood..."
+            },
+            {
+                "title": "Cooking Fire Safety | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/fire-safety/cooking-fire-safety",
+                "document": "...an extinguisher nearby is important, but you also need to have the correct type of extinguisher and know how to properly use it.\n\tNever throw hot grease in the garbage as it can ignite combustible materials. Be sure to let grease cool and consider disposing it in an old can, such as a metal..."
+            },
+            {
+                "title": "Electrical Safety in the Home | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/fire-safety/electrical-safety-in-the-home",
+                "document": "...built before 1965 typically have ungrounded two-pronged outlets, while newer construction will usually have three-pronged outlets, which include a hot, neutral and ground wire. Homeowners may want to consider upgrading their wiring to accept three-pronged outlets, particularly if you are replacing..."
+            },
+            {
+                "title": "5 Tips for Childproofing Your Home | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/renovation/5-tips-for-childproofing-your-home",
+                "document": "...covers on outlets.\n\tChildproof window guards and safety nettings on windows to help prevent falls from windows.\n\tProtective material on radiator, hot pipes and other burn hazards.\n\tShields on light fixtures. \n\n\n\n2. Gear up..."
+            },
+            {
+                "title": "Generator Safety | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/safety/generator-safety",
+                "document": "...extension cords with the proper amperage rating for the intended use.\n\tBe aware that portable generators become hot while running and remain hot for a significant amount of time after they are shut down, creating a potential fire hazard..."
+            },
+            {
+                "title": "How to Make Your Home More Energy Efficient | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/renovation/how-to-make-your-home-more-energy-efficient",
+                "document": "...a detailed work proposal following the evaluation. The contractor may have other recommendations, such as installing solar panels or a solar hot water system. Homeowners can expect to save 20 percent or more on the annual utility bill, depending on the type of improvements. For more details..."
+            },
+            {
+                "title": "7 Tips for Moving With a Pet | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/home/moving/7-tips-for-moving-with-a-pet",
+                "document": "...the idea of new trees to sniff and fire hydrants to investigate. Just as moving can be stressful for you, it can also create stress and anxiety for dogs and cats.\n\n\nFor Spencer, a six-year-old Lhasa Apso, the clues had been there for weeks. The boxes, the packing, the unfamiliar visitors coming to..."
+            }
+        ]
+    },
+    "locale": "en-US"
+}
+
+export const REQUEST_KB_NO_SUGGEST_OR_FAQ_2: Request & { requestAttributes: object; sessionAttributes: object } = {
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "console",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "hot dog",
+    "requestAttributes": {
+        "x-amz-lex:kendra-search-response-document-link-2": "https://www.travelers.com/resources/home/moving/7-tips-for-moving-with-a-pet",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.travelers.com/tools-resources/home/moving/7-tips-for-moving-with-a-pet",
+        "x-amz-lex:kendra-search-response-document-5": "...Will Owning a Dog Affect my Renters Coverage?\n\n\nSome policies provide coverage if your dog injures someone, and some insurers exclude or limit coverage for customers who own a dog. It’s best to discuss this with your insurance representative when...",
+        "x-amz-lex:kendra-search-response-document-4": "...was leaving or placing an object that could burn too close to the grill, according to the NFPA study.\n\n\n\tCharcoal grills can continue to remain hot for many hours after the flames extinguish. Avoid placing any burnable objects near the grill or moving the grill while the coals are hot. Keep...",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.travelers.com/resources/renters/5-questions-to-ask-your-insurance-rep-about-renters-insurance",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.travelers.com/resources/home/safety/grilling-safety-tips",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.travelers.com/resources/home/working-remotely/7-family-activities-you-can-do-while-working-from-home",
+        "x-amz-lex:kendra-search-response-document-3": "...hamster cage or fishbowl, or even brush their pets. These can be especially great lessons if you’re one of the many families bringing home a new dog or animal to foster during this time.\n\tMaintain their bikes. If your children have a garage full of bikes, scooters and other ride-on toys, give...",
+        "x-amz-lex:kendra-search-response-document-2": "...could trip up your dog or cat. Install fencing if you plan to let your dog roam outside.\n\n\n7. Settling In\n\n\nMake the adjustment easier for your dog or cat by having their water and food bowls and a favorite toy or two waiting for them before you let them inside. A few familiar items can help...",
+        "x-amz-lex:kendra-search-response-document-1": "...could trip up your dog or cat. Install fencing if you plan to let your dog roam outside.\n\n\n7. Settling In\n\n\nMake the adjustment easier for your dog or cat by having their water and food bowls and a favorite toy or two waiting for them before you let them inside. A few familiar items can help..."
+    },
+    "sessionAttributes": {
+        "channel": "console",
+        "sessionId": "87ba1d9c-9d57-64c9-8###-#######19847",
+        "userId": "0lj0zh85ke307d7qxz5wya6ouzze9kbi"
+    },
+    "sessionId": "87ba1d9c-9d57-64c9-8###-#######19847",
+    "slots": {},
+    "userId": "0lj0zh85ke307d7qxz5wya6ouzze9kbi",
+    "knowledgeBaseResult": {
+        "suggested": [],
+        "faqs": [],
+        "documents": [
+            {
+                "title": "7 Tips for Moving With a Pet | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/home/moving/7-tips-for-moving-with-a-pet",
+                "document": "...could trip up your dog or cat. Install fencing if you plan to let your dog roam outside.\n\n\n7. Settling In\n\n\nMake the adjustment easier for your dog or cat by having their water and food bowls and a favorite toy or two waiting for them before you let them inside. A few familiar items can help..."
+            },
+            {
+                "title": "7 Tips for Moving With a Pet | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/moving/7-tips-for-moving-with-a-pet",
+                "document": "...could trip up your dog or cat. Install fencing if you plan to let your dog roam outside.\n\n\n7. Settling In\n\n\nMake the adjustment easier for your dog or cat by having their water and food bowls and a favorite toy or two waiting for them before you let them inside. A few familiar items can help..."
+            },
+            {
+                "title": "7 Family Activities You Can Do While Working from Home During COVID-19 | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/working-remotely/7-family-activities-you-can-do-while-working-from-home",
+                "document": "...hamster cage or fishbowl, or even brush their pets. These can be especially great lessons if you’re one of the many families bringing home a new dog or animal to foster during this time.\n\tMaintain their bikes. If your children have a garage full of bikes, scooters and other ride-on toys, give..."
+            },
+            {
+                "title": "Grilling Safety Tips | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/safety/grilling-safety-tips",
+                "document": "...was leaving or placing an object that could burn too close to the grill, according to the NFPA study.\n\n\n\tCharcoal grills can continue to remain hot for many hours after the flames extinguish. Avoid placing any burnable objects near the grill or moving the grill while the coals are hot. Keep..."
+            },
+            {
+                "title": "5 Questions to Ask Your Insurance Rep About Your Renters Insurance | Travelers",
+                "uri": "https://www.travelers.com/resources/renters/5-questions-to-ask-your-insurance-rep-about-renters-insurance",
+                "document": "...Will Owning a Dog Affect my Renters Coverage?\n\n\nSome policies provide coverage if your dog injures someone, and some insurers exclude or limit coverage for customers who own a dog. It’s best to discuss this with your insurance representative when..."
+            },
+            {
+                "title": "10 Tips for Staying Productive When Working From Home | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/working-remotely/10-tips-for-staying-productive-when-working-from-home",
+                "document": "...While You Can\n\n\nYou’re going to have other tasks to tend to throughout the day when working from home. You might have to feed and walk the dog, do dishes, run laundry and more. To keep on top of these, find opportunities to multitask where you can.\n\n\nNeed to get up and refill your coffee..."
+            },
+            {
+                "title": "5 Questions to Ask Your Insurance Rep About Your Renters Insurance | Travelers",
+                "uri": "https://www.travelers.com/tools-resources/insurance-101/5-questions-to-ask-your-insurance-rep-about-renters-insurance",
+                "document": "...Will Owning a Dog Affect my Renters Coverage?\n\n\nSome policies provide coverage if your dog injures someone, and some insurers exclude or limit coverage for customers who own a dog. It’s best to discuss this with your insurance representative when..."
+            },
+            {
+                "title": "Wood Stove Safety Tips | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/fire-safety/wood-stove-safety-tips",
+                "document": "...Because a wood stove generates very hot combustion gases, its chimney must be either masonry (with flue tiles intact and in good condition) or manufactured specifically for burning wood..."
+            },
+            {
+                "title": "How Smart Thermostats Can Help Protect Your Home | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/smart-home/how-smart-thermostats-help-protect-your-home",
+                "document": "...Or head out for a day trip in the middle of summer without dialing down the air conditioning for your dog? A smart thermostat can help you heat and cool your home more efficiently, monitor your energy consumption and let you control your home’s heating..."
+            },
+            {
+                "title": "Cooking Fire Safety | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/fire-safety/cooking-fire-safety",
+                "document": "...an extinguisher nearby is important, but you also need to have the correct type of extinguisher and know how to properly use it.\n\tNever throw hot grease in the garbage as it can ignite combustible materials. Be sure to let grease cool and consider disposing it in an old can, such as a metal..."
+            }
+        ]
+    },
+    "locale": "en-US"
+}
 
 export const RESULT_WITH_NEWLINES: KnowledgeBaseResult = {
     suggested:
@@ -334,6 +518,8 @@ export const NO_SUGGEST_OR_FAQ: KnowledgeBaseResult = {
                 '...In some cases, the increased loan amount can mean you pay a higher interest rate as well.\n\nThe costs are rolled into the interest rate\n\nThe lender is providing a rebate, known as a lender credit, to cover the closing costs. You pay a...'
         }]
 }
+
+export const ANSWER_WITH_MENU_ITEMS = "...Careers\n\n\n\tSustainability\n\n\n\tCommunity\n\n\n\tBusiness partners\n\n\n\n\n\n\n\n\n\n\n   \n\n\n\n\n\tServices you'll love\n\n \tGift cards\n\n\n\tSpecial item requests\n\n\n\tPresto! ATM\n\n\n\tAprons Recipes\n\n\n\tPublix Catering\n\n\n\tAprons Cooking School\n\n\n\tHealth & wellness\n\n\n\tShelf tags & icons...";
 
 export const MOSTLY_CLEAN_SUGGESTED: KnowledgeBaseResult = {
     suggested:
