@@ -47,4 +47,11 @@ describe(`#${cleanAnswer.name}()`, () => {
             expect(cleaned).to.include("...Careers\n\n\tSustainability\n\n\tCommunity\n\n\tBusiness partners\n\n\tServices you\'ll love\n\n\tGift cards\n\n\tSpecial item requests\n\n\tPresto! ATM\n\n\tAprons Recipes\n\n\tPublix Catering\n\n\tAprons Cooking School\n\n\tHealth & wellness\n\n\tShelf tags & icons...");
         });
     });
+    describe("with new lines at the beginning", () => {
+        it("cleans the output", () => {
+            const cleaned = cleanAnswer("\n\n\n\tHello!");
+            expect(cleaned).to.exist;
+            expect(cleaned).to.equal("\tHello!");
+        });
+    });
 });

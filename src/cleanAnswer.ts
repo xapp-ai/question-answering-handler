@@ -25,7 +25,9 @@ export function cleanAnswer(answer: string): string {
     answer = answer.replace(/\t{2,}/g, '');
     // Remove the random \t\n
     answer = answer.replace(/\t\n/g, '\n');
-    // Remove the mutliple newlines when more than 1
+    // Remove starting newlines
+    answer = answer.replace(/^(\r\n|\r|\n){2,}/g, '');
+    // Remove the multiple newlines when more than 1
     answer = answer.replace(/(\r\n|\r|\n){2,}/g, '\n\n');
     // This is one more check where the above step could have helped clean up but we end up with a combination of \n & spaces.
     answer = answer.replace(/(\n| ){3,}/g, '\n\n');
