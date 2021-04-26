@@ -33,5 +33,4 @@ jobs:
       - run: yarn build
       - run: yarn logout
       - run: npm whoami
-      - run: git update-index --skip-worktree -- .npmrc
       - run: yarn release
