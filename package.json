@@ -13,9 +13,9 @@
     "dist",
     "lib"
   ],
-  "engines": {
-    "node": "10.x"
-  },
+	"engines": {
+		"node": "^10 || ^12"
+	},
   "devDependencies": {
     "@types/chai": "4.2.15",
     "@types/mocha": "8.2.2",
