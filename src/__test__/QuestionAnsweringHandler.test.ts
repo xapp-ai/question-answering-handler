@@ -1,6 +1,6 @@
 /*! Copyright (c) 2020, XAPP AI */
 import { expect } from "chai";
-import { Context, Handler, IntentRequest } from "stentor";
+import { Context, List, Handler, IntentRequest } from "stentor";
 
 import { IntentRequestBuilder } from "stentor-request";
 import { ContextBuilder } from "stentor-context";
@@ -26,14 +26,17 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
         });
     });
     describe(`${QuestionAnsweringHandler.prototype.handleRequest.name}()`, () => {
+
+        let qa: QuestionAnsweringHandler;
         let request: IntentRequest
         let context: Context;
         beforeEach(() => {
             request = new IntentRequestBuilder().build();
-            context = new ContextBuilder().build();
-        })
-        let qa: QuestionAnsweringHandler;
-        beforeEach(() => {
+            request.device = {
+                ...request.device,
+                canSpeak: false
+            };
+            context = new ContextBuilder().withDevice(request.device).build();
             qa = new QuestionAnsweringHandler(handler);
         });
         describe(`when passed request without knowledgebase results`, () => {
@@ -72,14 +75,39 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                 qa.handleRequest(REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ, context);
                 const response = context.response.response;
                 expect(response).to.exist;
-                expect(response.outputSpeech.ssml).to.contain("I'm sorry, I don");
+                expect(response.outputSpeech.displayText).to.contain("Here is what I found...");
+                expect(response.displays).to.have.length(1);
+                const list = response.displays[0] as List;
+                expect(list.type).to.equal("LIST");
+                expect(list.items).to.have.length(5);
+                const item = list.items[0];
+                expect(item.title).to.exist;
+                expect(item.description).to.exist;
+                expect(item.url).to.exist;
+            });
+            describe("for voice devices", () => {
+                beforeEach(() => {
+                    request = new IntentRequestBuilder().build();
+                    request.device = {
+                        ...request.device,
+                        canSpeak: true
+                    };
+                    context = new ContextBuilder().withDevice(request.device).build();
+                    qa = new QuestionAnsweringHandler(handler);
+                });
+                it("returns the correct response", () => {
+                    qa.handleRequest(REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ, context);
+                    const response = context.response.response;
+                    expect(response).to.exist;
+                    expect(response.outputSpeech.ssml).to.contain("I'm sorry, I don");
+                });
             });
             describe("when passed crashing payload", () => {
                 it("returns the correct response", () => {
                     qa.handleRequest(REQUEST_KB_NO_SUGGEST_OR_FAQ_2, context);
                     const response = context.response.response;
                     expect(response).to.exist;
-                    expect(response.outputSpeech.ssml).to.contain("I'm sorry, I don");
+                    expect(response.outputSpeech.displayText).to.contain("Here is what I found...");
                 });
             });
         });
