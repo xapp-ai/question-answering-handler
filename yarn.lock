@@ -896,10 +896,10 @@ at-least-node@^1.0.0:
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
-aws-sdk@2.926.0:
-  version "2.926.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.926.0.tgz#96f40b3e8400957becc5b8446e2322c0ff0e8a85"
-  integrity sha512-GFdAznnwxBxRPUTLP8gyFG8GhbUQ0sWwNCocYHkS/FB18hr8gmB3xv2m7VVWA/YkPDXvviPnoB680Z47VSEkqA==
+aws-sdk@2.951.0:
+  version "2.951.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.951.0.tgz#3cd8c0a4610407623ae8f1724f431fd328441033"
+  integrity sha512-YPqhdESUzd4+pSuGJcfMnG1qNVbmZjnmsa85Z9jofR1ilIpuV31onIiFHv8iubM59ETok/+zy3QOmxRSLYzFmQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
