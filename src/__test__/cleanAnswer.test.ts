@@ -40,7 +40,7 @@ describe(`#${cleanAnswer.name}()`, () => {
             expect(cleaned).to.equal("An HMO is a type of health plan that requires you to select a family doctor, often called a primary care physician or PCP. You need a referral from your PCP to see a specialist in the HMO network, such as a cardiologist (heart doctor). Typically, only emergency services are covered if you go outside the HMO’s network of participating providers. You do not have the option to see out-of-network providers when you have an HMO.\n\nHow do Independence Blue Cross Keystone HMO plans work?\n\nWith a Keystone Health Plan East HMO from Independence Blue Cross, you can see any doctor or visit any hospital in the Keystone Health Plan East network.");
         });
     });
-    describe("with menu itmes", () => {
+    describe("with menu items", () => {
         it("cleans the output", () => {
             const cleaned = cleanAnswer(ANSWER_WITH_MENU_ITEMS);
             expect(cleaned).to.exist;
