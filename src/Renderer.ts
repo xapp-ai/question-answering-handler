@@ -27,6 +27,14 @@ export class Renderer {
 
         const builder: ResponseBuilder = new ResponseBuilder({ device });
 
+        let cleanedAnswer: string;
+
+        if (isSuggested(answer)) {
+            cleanedAnswer = cleanAnswer(answer.topAnswer);
+        } else if (isFaq(answer)) {
+            cleanedAnswer = cleanAnswer(answer.document);
+        }
+
         // Voice output based channels
         if (device?.canSpeak) {
             // We only return high confidence or FAQs here on voice based channels.

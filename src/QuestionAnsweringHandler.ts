@@ -1,9 +1,11 @@
 /*! Copyright (c) 2020, XAPP AI */
-import { AbstractHandler, Content, Context, Data, ExecutablePath, isIntentRequest, keyFromRequest, Request } from "stentor";
+import { AbstractHandler, Content, Context, Data, getResponse, isIntentRequest, keyFromRequest, Request } from "stentor";
+import { ExecutablePath } from "stentor-models";
 import { log } from "stentor-logger";
 
+import { cleanAnswer } from "./cleanAnswer";
 import { determineAnswer } from "./determineAnswer";
-import { Renderer } from "./Renderer";
+import { isFaq, isSuggested } from "./guards";
 
 export interface QuestionAnsweringData extends Data {
     /**
@@ -32,10 +34,22 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
                 // Determine answer
                 const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
 
-                // Compile templated response for the platform/channel etc.
-                const response = new Renderer({ device: request.device }).render(answer);
+                let cleanedAnswer: string;
+
+                if (isSuggested(answer)) {
+                    cleanedAnswer = cleanAnswer(answer.topAnswer);
+                } else if (isFaq(answer)) {
+                    cleanedAnswer = cleanAnswer(answer.document);
+                }
+
+                const response = getResponse(this, request, context, { answer: cleanedAnswer });
+                // We need a default response in case they don't have Q&A content
+                if (!response) {
+
+                }
 
                 context.response.respond(response);
+                return;
             }
         }
         // We don't have an answer
@@ -65,6 +79,13 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
 
     public redirectingPathForRequest(request: Request, context: Context): ExecutablePath {
         // We need to find the best answer here
+
+        if (isIntentRequest(request) && request.knowledgeBaseResult) {
+            const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
+            if (isFaq(answer)) {
+                const redirectTo = answer.handlerId
+            }
+        }
 
         return super.redirectingPathForRequest(request, context);
     }

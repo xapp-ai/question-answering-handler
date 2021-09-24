@@ -609,6 +609,693 @@ export const MOSTLY_CLEAN_SUGGESTED: KnowledgeBaseResult = {
         }]
 }
 
+export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "what is a HEL",
+    "requestAttributes": {
+        "channel": "widget",
+        "type": "INTENT_REQUEST",
+        "userId": "stentor-widget-user-1d50f8e6-d019-65fa-a8c6-3bbef7adf5b4",
+        "platform": "stentor-platform",
+        "x-amz-lex:kendra-search-response-document-link-2": "https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-loan-en-106",
+        "x-amz-lex:kendra-search-response-document-5": "...Get Answers to Your Banking Questions\n\n\n\nSearch \n\t\t\t×\n\n\n\n\n\n\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t \n\n\n\n\n\n\n\nCustom Search\n\n \n\n\n\n\n\n\n\n\t\n\n\tSort by:\n\nRelevance\n\n\n\n\n\nRelevance\n\n\n\nDate...",
+        "x-amz-lex:kendra-search-response-document-4": "...mortgage loan work? \n\tHow is a reverse mortgage loan different from a traditional mortgage?\n\tWhat are the upfront costs and fees in taking out a reverse mortgage loan...",
+        "x-amz-lex:kendra-search-response-answer-2": "If you cannot pay back the HELOC, the lender could foreclose on your home. \n\n\n\n\n                    \n                \n\n\n\n\n\n        \n            \n                \t\n                    Home equity loan\n                    \n\n\n                \n\t\n                    A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. Equity is the amount your property is currently worth, minus the amount of any existing mortgage on your property.  You receive the money from a home equity loan as a lump sum. A home equity loan usually has a fixed interest rate – one that will not change. If you cannot pay back the HEL, the lender could foreclose on your home.",
+        "x-amz-lex:kendra-search-response-answer-1": "한국어\n                        \n                    \n\t\n                        \n                            Tagalog\n                        \n                    \n\t\n                        \n                            Pусский\n                        \n                    \n\t\n                        \n                            العربية\n                        \n                    \n\t\n                        \n                            Kreyòl Ayisyen\n                        \n                    \n\n\n\n                \n                    (855) 411-2372\n                \n            \n\n\n        \n\n\n    \n\n\n\n    \n\n\n\n\nCollapse\n\n            \n        \n\n\n\n    \n\n\n    \n      \n      \n\n    \n\n\n\n    \n\n    \n        \n        \n    \n\n    \n        \n    \n\n    \n    \n    \n        \n        \n    \n        \n        \n            \n    \n        \n        \n            \n                \n                    Mortgages\n                \n            \n        \n        \n    \n\n            \n\n\n        \n    \n        \n\n    \n            \n    \n        \n            \n                last reviewed: SEP 25, 2017\n            \n        \n        \n            What is a home equity loan?\n        \n\n\n    \n\n\n    \n\n        \n            \n                A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. \n\n\n            \n\n\n        \n\n        \n\n        \n\n        \n\n            \n                \n                    \n\n\n    \n    \n    \n    \n    \n        Equity is the amount your property is currently worth, minus the amount of any existing mortgage on your property. You receive the money from a home equity loan as a lump sum.",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.helpwithmybank.gov/help-topics/mortgages-home-equity/reverse-mortgages/reverse-mortgage.html",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-think-about-before-applying-for-reverse-mortgage-en-228",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.consumerfinance.gov/consumer-tools/mortgages/key-terms",
+        "x-amz-lex:kendra-search-response-document-3": "...Home equity loan\n                    \n\n\n                \n\t\n                    A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. Equity is the amount your property is currently worth, minus the amount of...",
+        "x-amz-lex:kendra-search-response-document-2": "...Home equity loan\n                    \n\n\n                \n\t\n                    A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. Equity is the amount your property is currently worth, minus the amount of...",
+        "x-amz-lex:kendra-search-response-document-1": "...from a home equity loan as a lump sum. A home equity loan usually has a fixed interest rate–one that will not change. If you cannot pay back the HEL, the lender could foreclose on your home. If you are considering taking out a HEL to pay off your debts, you should explore alternatives with a...",
+        "rawQuery": "what is a HEL"
+    },
+    "sessionAttributes": {
+        "channel": "widget",
+        "sessionId": "stentor-widget-session-60479441-f8b8-65de-bd35-cba8361bffaf",
+        "userId": "stentor-widget-user-1d50f8e6-d019-65fa-a8c6-3bbef7adf5b4",
+        "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-60479441-f8b8-65de-bd35-cba8361bffaf",
+    "slots": {},
+    "userId": "stentor-widget-user-1d50f8e6-d019-65fa-a8c6-3bbef7adf5b4",
+    "knowledgeBaseResult": {
+        "suggested": [
+            {
+                "title": "What is a home equity loan? | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-loan-en-106",
+                "document": "한국어\n                        \n                    \n\t\n                        \n                            Tagalog\n                        \n                    \n\t\n                        \n                            Pусский\n                        \n                    \n\t\n                        \n                            العربية\n                        \n                    \n\t\n                        \n                            Kreyòl Ayisyen\n                        \n                    \n\n\n\n                \n                    (855) 411-2372\n                \n            \n\n\n        \n\n\n    \n\n\n\n    \n\n\n\n\nCollapse\n\n            \n        \n\n\n\n    \n\n\n    \n      \n      \n\n    \n\n\n\n    \n\n    \n        \n        \n    \n\n    \n        \n    \n\n    \n    \n    \n        \n        \n    \n        \n        \n            \n    \n        \n        \n            \n                \n                    Mortgages\n                \n            \n        \n        \n    \n\n            \n\n\n        \n    \n        \n\n    \n            \n    \n        \n            \n                last reviewed: SEP 25, 2017\n            \n        \n        \n            What is a home equity loan?\n        \n\n\n    \n\n\n    \n\n        \n            \n                A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. \n\n\n            \n\n\n        \n\n        \n\n        \n\n        \n\n            \n                \n                    \n\n\n    \n    \n    \n    \n    \n        Equity is the amount your property is currently worth, minus the amount of any existing mortgage on your property. You receive the money from a home equity loan as a lump sum.",
+                "highlights": [
+                    {
+                        "beginOffset": 1120,
+                        "endOffset": 1136,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 1239,
+                        "endOffset": 1242,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Mortgages key terms | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms",
+                "document": "If you cannot pay back the HELOC, the lender could foreclose on your home. \n\n\n\n\n                    \n                \n\n\n\n\n\n        \n            \n                \t\n                    Home equity loan\n                    \n\n\n                \n\t\n                    A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. Equity is the amount your property is currently worth, minus the amount of any existing mortgage on your property.  You receive the money from a home equity loan as a lump sum. A home equity loan usually has a fixed interest rate – one that will not change. If you cannot pay back the HEL, the lender could foreclose on your home.",
+                "highlights": [
+                    {
+                        "beginOffset": 301,
+                        "endOffset": 304,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 663,
+                        "endOffset": 666,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            }
+        ],
+        "faqs": [],
+        "documents": [
+            {
+                "title": "What is a home equity loan? | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-loan-en-106",
+                "document": "...from a home equity loan as a lump sum. A home equity loan usually has a fixed interest rate–one that will not change. If you cannot pay back the HEL, the lender could foreclose on your home. If you are considering taking out a HEL to pay off your debts, you should explore alternatives with a...",
+                "highlights": [
+                    {
+                        "beginOffset": 148,
+                        "endOffset": 151,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 230,
+                        "endOffset": 233,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Mortgages key terms | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms",
+                "document": "...Home equity loan\n                    \n\n\n                \n\t\n                    A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. Equity is the amount your property is currently worth, minus the amount of...",
+                "highlights": [
+                    {
+                        "beginOffset": 121,
+                        "endOffset": 124,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Mortgages key terms | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/consumer-tools/mortgages/key-terms",
+                "document": "...Home equity loan\n                    \n\n\n                \n\t\n                    A home equity loan (sometimes called a HEL) allows you to borrow money using the equity in your home as collateral. Equity is the amount your property is currently worth, minus the amount of...",
+                "highlights": [
+                    {
+                        "beginOffset": 121,
+                        "endOffset": 124,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "What should I think about before applying for a reverse mortgage loan and what should I ask a reverse mortgage counselor? | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-think-about-before-applying-for-reverse-mortgage-en-228",
+                "document": "...mortgage loan work? \n\tHow is a reverse mortgage loan different from a traditional mortgage?\n\tWhat are the upfront costs and fees in taking out a reverse mortgage loan...",
+                "highlights": []
+            },
+            {
+                "title": "What are the risks of a reverse mortgage and what should I consider?",
+                "uri": "https://www.helpwithmybank.gov/help-topics/mortgages-home-equity/reverse-mortgages/reverse-mortgage.html",
+                "document": "...Get Answers to Your Banking Questions\n\n\n\nSearch \n\t\t\t×\n\n\n\n\n\n\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t \n\n\n\n\n\n\n\nCustom Search\n\n \n\n\n\n\n\n\n\n\t\n\n\tSort by:\n\nRelevance\n\n\n\n\n\nRelevance\n\n\n\nDate...",
+                "highlights": []
+            },
+            {
+                "title": "Can the bank charge a higher rate than what I was quoted?",
+                "uri": "https://www.helpwithmybank.gov/help-topics/credit-cards/pre-approvals-solicitations/solicitation-rate.html",
+                "document": "...Banks may offer you a card before they have determined whether you meet the criteria for the offered interest rate. If this is the case, the representative must tell you that the rate you actually qualify for will depend on your credit standing or other factors.\n\n\n\nThe only exceptions to this...",
+                "highlights": []
+            },
+            {
+                "title": "On an account with a POA, what happens after the account holder dies?",
+                "uri": "https://www.helpwithmybank.gov/help-topics/bank-accounts/opening-closing-inactive-bank-accounts/closing-a-bank-account/closing-poa.html",
+                "document": "...Get Answers to Your Banking Questions\n\n\n\nSearch \n\t\t\t×\n\n\n\n\n\n\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t \n\n\n\n\n\n\n\nCustom Search\n\n \n\n\n\n\n\n\n\n\t\n\n\tSort by:\n\nRelevance\n\n\n\n\n\nRelevance\n\n\n\nDate...",
+                "highlights": []
+            },
+            {
+                "title": "Mortgage forbearance during COVID-19: What to know and what to do | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/coronavirus/mortgage-and-housing-assistance/mortgage-forbearance-during-covid-19-what-know-what-do",
+                "document": "...Reverse Mortgages\n\n        \n\n        \n    \n\n    \n\n\t\n\n    \n        \n\n        \n\n        Savings\n\n        \n\n        \n    \n\n    \n\n\t\n\n    \n        \n\n        \n\n        Student Loans...",
+                "highlights": []
+            }
+        ]
+    },
+    "locale": "en-US"
+}
+
+// This was generating <pre> tags
+//     "html": "<p>Here is what I found...<br />\"Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:</p>\n<pre><code>In a cash account, you must pay the full amount for securities purchased. You may not borrow funds from your brokerage firm in order to pay for transactions in the account.\nIn a margin account, you can borrow funds from your brokerage firm to purchase securities (this is called buying securities \"on margin\"). The brokerage firm uses the securities in your margin account as collateral for the money it lends to you to purchase these securities and you pay interest on the money you borrow.\"\n</code></pre>\n<p>Any other questions?</p>\n"
+//
+export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "which brokerage account should i use",
+    "requestAttributes": {
+        "x-amz-lex:kendra-search-response-question_answer-question-1": "Through which channel can I get my credit score?",
+        "x-amz-lex:kendra-search-response-question_answer-answer-1": "There are four main ways to get your credit score, including from a credit card or other loan statement, through a non-profit counselor or credit score service, or for a fee from a credit reporting agency. You actually have more than one credit score. Credit scores are calculated based on the information in your credit reports. If the information about you in the credit reports of the three large consumer reporting companies is different, your credit score from each of the companies will be different. Lenders also use slightly different credit scores for different types of loans.",
+        "channel": "widget",
+        "type": "INTENT_REQUEST",
+        "userId": "stentor-widget-user-66652d16-7651-65e2-9af0-3bb336db8b6f",
+        "platform": "stentor-platform",
+        "x-amz-lex:kendra-search-response-document-link-2": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-43",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-how-open-brokerage-account",
+        "x-amz-lex:kendra-search-response-document-5": "...What should I do if I am informed of a high volume of trade activity in my account?\n\n\n\nIf your brokerage account has a high volume of trade activity, your brokerage firm may contact you and ask you to acknowledge the trading or to confirm that...",
+        "x-amz-lex:kendra-search-response-document-4": "...using the account as collateral, to purchase securities (known as “margin securities”).  Brokerage firms may allow you to have both a margin account and a cash account at the same time.\n\n\n\nIMPORTANT: WHEN OPENING A BROKERAGE ACCOUNT, SOME BROKERAGE ACCOUNT APPLICATIONS MAKE MARGIN ACCOUNTS THE...",
+        "x-amz-lex:kendra-search-response-answer-2": "In a margin account, you can borrow funds from your brokerage firm to purchase securities (this is called buying securities \"on margin\"). The brokerage firm uses the securities in your margin account as collateral for the money it lends to you to purchase these securities and you pay interest on the money you borrow. Margin accounts can offer you greater purchasing power, but also expose you to the potential for larger losses.\n\n\nFor additional information on margin accounts and cash accounts, please review the SEC Investor Bulletins \"Understanding Margin Accounts\" and \"Trading in Cash Accounts.\"\n\n\n\n\tWho will make decisions for your account?",
+        "x-amz-lex:kendra-search-response-answer-1": "Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:\n\n\n\n\tIn a cash account, you must pay the full amount for securities purchased. You may not borrow funds from your brokerage firm in order to pay for transactions in the account.\n\tIn a margin account, you can borrow funds from your brokerage firm to purchase securities (this is called buying securities \"on margin\"). The brokerage firm uses the securities in your margin account as collateral for the money it lends to you to purchase these securities and you pay interest on the money you borrow.",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-alert-excessive-trading-investors",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-understanding-margin-accounts",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-brokerage-accounts",
+        "x-amz-lex:kendra-search-response-document-3": "...Glossary\n              \n\n\n\n  \n\n\n  \n\n      \n\n\n    \n          \n        \n  \n    \n      Types of Brokerage Accounts\n\n  \n\n\n\n  \n    \n      \n            A cash account is a type of brokerage account in which the investor must pay the full amount for securities purchased. In a cash account, you are...",
+        "x-amz-lex:kendra-search-response-document-2": "...Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:\n\n\n\n\tIn a cash account, you must pay the full amount for securities purchased. You may not...",
+        "x-amz-lex:kendra-search-response-document-1": "...Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:\n\n\n\n\tIn a cash account, you must pay the full amount for securities purchased. You may not...",
+        "rawQuery": "which brokerage account should i use"
+    },
+    "sessionAttributes": {
+        "channel": "widget",
+        "sessionId": "stentor-widget-session-498b5e7c-0bc0-65cd-a1f6-3ab47840a5fe",
+        "userId": "stentor-widget-user-66652d16-7651-65e2-9af0-3bb336db8b6f",
+        "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-498b5e7c-0bc0-65cd-a1f6-3ab47840a5fe",
+    "slots": {},
+    "userId": "stentor-widget-user-66652d16-7651-65e2-9af0-3bb336db8b6f",
+    "knowledgeBaseResult": {
+        "suggested": [
+            {
+                "title": "Investor Bulletin: How to Open a Brokerage Account | Investor.gov",
+                "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-how-open-brokerage-account",
+                "document": "Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:\n\n\n\n\tIn a cash account, you must pay the full amount for securities purchased. You may not borrow funds from your brokerage firm in order to pay for transactions in the account.\n\tIn a margin account, you can borrow funds from your brokerage firm to purchase securities (this is called buying securities \"on margin\"). The brokerage firm uses the securities in your margin account as collateral for the money it lends to you to purchase these securities and you pay interest on the money you borrow.",
+                "highlights": [
+                    {
+                        "beginOffset": 0,
+                        "endOffset": 9,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 54,
+                        "endOffset": 63,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 64,
+                        "endOffset": 72,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 82,
+                        "endOffset": 89,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 103,
+                        "endOffset": 110,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 126,
+                        "endOffset": 133,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 225,
+                        "endOffset": 234,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 280,
+                        "endOffset": 287,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 302,
+                        "endOffset": 309,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 342,
+                        "endOffset": 351,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 432,
+                        "endOffset": 441,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 447,
+                        "endOffset": 451,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 482,
+                        "endOffset": 489,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Investor Bulletin: How to Open a Brokerage Account | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-43",
+                "document": "In a margin account, you can borrow funds from your brokerage firm to purchase securities (this is called buying securities \"on margin\"). The brokerage firm uses the securities in your margin account as collateral for the money it lends to you to purchase these securities and you pay interest on the money you borrow. Margin accounts can offer you greater purchasing power, but also expose you to the potential for larger losses.\n\n\nFor additional information on margin accounts and cash accounts, please review the SEC Investor Bulletins \"Understanding Margin Accounts\" and \"Trading in Cash Accounts.\"\n\n\n\n\tWho will make decisions for your account?",
+                "highlights": [
+                    {
+                        "beginOffset": 12,
+                        "endOffset": 19,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 52,
+                        "endOffset": 61,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 142,
+                        "endOffset": 151,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 157,
+                        "endOffset": 161,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 192,
+                        "endOffset": 199,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 326,
+                        "endOffset": 334,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 470,
+                        "endOffset": 478,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 488,
+                        "endOffset": 496,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 561,
+                        "endOffset": 569,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 592,
+                        "endOffset": 600,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 640,
+                        "endOffset": 647,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Through which channel can I get my credit score?",
+                "document": "There are four main ways to get your credit score, including from a credit card or other loan statement, through a non-profit counselor or credit score service, or for a fee from a credit reporting agency. You actually have more than one credit score. Credit scores are calculated based on the information in your credit reports. If the information about you in the credit reports of the three large consumer reporting companies is different, your credit score from each of the companies will be different. Lenders also use slightly different credit scores for different types of loans.",
+                "uri": "https://www.consumerfinance.gov/ask-cfpb/where-can-i-get-my-credit-score-en-316/",
+                "highlights": [
+                    {
+                        "beginOffset": 0,
+                        "endOffset": 300,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            }
+        ],
+        "documents": [
+            {
+                "title": "Investor Bulletin: How to Open a Brokerage Account | Investor.gov",
+                "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-how-open-brokerage-account",
+                "document": "...Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:\n\n\n\n\tIn a cash account, you must pay the full amount for securities purchased. You may not...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 12,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 57,
+                        "endOffset": 66,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 67,
+                        "endOffset": 75,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 85,
+                        "endOffset": 92,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 106,
+                        "endOffset": 113,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 129,
+                        "endOffset": 136,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Investor Bulletin: How to Open a Brokerage Account | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-43",
+                "document": "...Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:\n\n\n\n\tIn a cash account, you must pay the full amount for securities purchased. You may not...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 12,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 57,
+                        "endOffset": 66,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 67,
+                        "endOffset": 75,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 85,
+                        "endOffset": 92,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 106,
+                        "endOffset": 113,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 129,
+                        "endOffset": 136,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Types of Brokerage Accounts | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-brokerage-accounts",
+                "document": "...Glossary\n              \n\n\n\n  \n\n\n  \n\n      \n\n\n    \n          \n        \n  \n    \n      Types of Brokerage Accounts\n\n  \n\n\n\n  \n    \n      \n            A cash account is a type of brokerage account in which the investor must pay the full amount for securities purchased. In a cash account, you are...",
+                "highlights": [
+                    {
+                        "beginOffset": 96,
+                        "endOffset": 105,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 106,
+                        "endOffset": 114,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 156,
+                        "endOffset": 163,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 177,
+                        "endOffset": 186,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 187,
+                        "endOffset": 194,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 278,
+                        "endOffset": 285,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Investor Bulletin: Understanding Margin Accounts | Investor.gov",
+                "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-understanding-margin-accounts",
+                "document": "...using the account as collateral, to purchase securities (known as “margin securities”).  Brokerage firms may allow you to have both a margin account and a cash account at the same time.\n\n\n\nIMPORTANT: WHEN OPENING A BROKERAGE ACCOUNT, SOME BROKERAGE ACCOUNT APPLICATIONS MAKE MARGIN ACCOUNTS THE...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 8,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 13,
+                        "endOffset": 20,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 92,
+                        "endOffset": 101,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 144,
+                        "endOffset": 151,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 163,
+                        "endOffset": 170,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 218,
+                        "endOffset": 227,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 228,
+                        "endOffset": 235,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 242,
+                        "endOffset": 251,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 252,
+                        "endOffset": 259,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 285,
+                        "endOffset": 293,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Investor Alert: Excessive Trading at Investors’ Expense | Investor.gov",
+                "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-alert-excessive-trading-investors",
+                "document": "...What should I do if I am informed of a high volume of trade activity in my account?\n\n\n\nIf your brokerage account has a high volume of trade activity, your brokerage firm may contact you and ask you to acknowledge the trading or to confirm that...",
+                "highlights": [
+                    {
+                        "beginOffset": 78,
+                        "endOffset": 85,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 98,
+                        "endOffset": 107,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 108,
+                        "endOffset": 115,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 158,
+                        "endOffset": 167,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Investor Alert: Excessive Trading at Investors’ Expense | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-42",
+                "document": "...What should I do if I am informed of a high volume of trade activity in my account?\n\n\n\nIf your brokerage account has a high volume of trade activity, your brokerage firm may contact you and ask you to acknowledge the trading or to confirm that...",
+                "highlights": [
+                    {
+                        "beginOffset": 78,
+                        "endOffset": 85,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 98,
+                        "endOffset": 107,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 108,
+                        "endOffset": 115,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 158,
+                        "endOffset": 167,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            },
+            {
+                "title": "Investor Bulletin: Please Consider Adding a Trusted Contact to Your Account | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-trusted-contact",
+                "document": "...a “trusted contact person” to your brokerage account?\n\n\n\n\tIf your brokerage firm cannot reach you, adding a trusted contact person to your brokerage account may help your firm ensure that your current address and contact information are correct.\n\tAdding a trusted contact person to your brokerage...",
+                "highlights": [
+                    {
+                        "beginOffset": 38,
+                        "endOffset": 47,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 48,
+                        "endOffset": 55,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 69,
+                        "endOffset": 78,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 142,
+                        "endOffset": 151,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 152,
+                        "endOffset": 159,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    },
+                    {
+                        "beginOffset": 290,
+                        "endOffset": 299,
+                        "topAnswer": false,
+                        "type": "STANDARD"
+                    }
+                ]
+            }
+        ]
+    },
+    "locale": "en-US"
+}
+
 export const ANSWER_WITH_TABS = "Overdraft protection is an agreement with the bank or financial institution to cover overdrafts on a checking account. This service typically involves a fee and is generally limited to a preset maximum amount. Banks are not required to offer any overdraft protection programs, and even when they do, they may retain discretion to pay or not pay a particular overdraft transaction. You should review your deposit account agreement and check with your bank to find out the terms and conditions of any overdraft protection programs that it may offer.\n\n\n\t\t\t\t\tLast Reviewed: October 2020\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n\t\t\n\nPlease note: The terms \"bank\" and \"banks\" used in these answers generally refer to national banks, federal savings associations, and federal branches or";
 
 export const ANSWER_WITH_SPORADIC_NEWLINES = "An HMO is a type of health plan that requires you to select a family doctor, often called a primary care physician or PCP. You need a referral from your PCP to see a specialist in the HMO network, such as a cardiologist (heart doctor). Typically, only emergency services are covered if you go outside the HMO’s network of participating providers. You do not have the option to see out-of-network providers when you have an HMO.\n\n\n      \n\n\n    \n\n\n  \n\n\n  \n  \n    \n      \n        How do Independence Blue Cross Keystone HMO plans work?\n      \n\n\n    \n\n\n\n    \n      With a Keystone Health Plan East HMO from Independence Blue Cross, you can see any doctor or visit any hospital in the Keystone Health Plan East network.";
