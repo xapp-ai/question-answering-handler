@@ -1,7 +1,7 @@
 /*! Copyright (c) 2021, XAPP AI */
-import { KnowledgeBaseResult, Request } from "stentor-models";
+import { KnowledgeBaseResult, Request, IntentRequest } from "stentor-models";
 
-export const REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ: Request & { requestAttributes: object; sessionAttributes: object } = {
+export const REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ: IntentRequest & { requestAttributes: object; sessionAttributes: object } = {
     "type": "INTENT_REQUEST",
     "anonymous": false,
     "platform": "lex-connect",
@@ -351,6 +351,743 @@ export const RESULT_WITH_NEWLINES_SPACES: KnowledgeBaseResult = {
         }]
 }
 
+// This has a really nice answer that isn't the top but good and long highlight
+export const REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER: IntentRequest & { requestAttributes: object; sessionAttributes: object } = {
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "what is inflation",
+    "requestAttributes": {
+        "channel": "widget",
+        "type": "INTENT_REQUEST",
+        "userId": "stentor-widget-user-41b48e67-5d44-65c8-971e-0d552aa1a627",
+        "platform": "stentor-platform",
+        "x-amz-lex:kendra-search-response-document-link-2": "https://investor.gov/introduction-investing/basics/investment-products/bonds",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds",
+        "x-amz-lex:kendra-search-response-document-5": "...Inflation is a general upward movement of prices.  Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.  The principal concern for individuals investing in cash equivalents is that inflation will erode returns.\n\n\n\nInterest Rate Risk\n\n\n\nInterest...",
+        "x-amz-lex:kendra-search-response-document-4": "...Municipal Market Access (EMMA®) website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.\n\tInflation risk. Inflation is a general upward movement in prices.  Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.  It also can lead to higher interest rates and lower...",
+        "x-amz-lex:kendra-search-response-answer-1": "Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.\n\n\n\nLiquidity risk. This refers to the risk that investors won’t find a market for the bond, potentially preventing them from buying or selling when they want.\n\n\n\nCall risk. The possibility that a bond issuer retires a bond before its maturity date, something an issuer might do if interest rates decline, much like a homeowner might refinance a mortgage to benefit from lower interest rates.\n\n\n\nAvoiding fraud\n\n\n\nCorporate bonds are securities and, if publicly offered, must be registered with the SEC.",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.investor.gov/introduction-investing/basics/what-risk",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-municipal-bonds-asset",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/municipal",
+        "x-amz-lex:kendra-search-response-document-3": "...rate municipal bond and try to sell it before it matures could lose money because of the lower market value of the bond. \n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest...",
+        "x-amz-lex:kendra-search-response-document-2": "...rate of interest than older ones. To sell an older bond with a lower interest rate, you might have to sell it at a discount.\n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest...",
+        "x-amz-lex:kendra-search-response-document-1": "...rate of interest than older ones. To sell an older bond with a lower interest rate, you might have to sell it at a discount.\n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest...",
+        "rawQuery": "what is inflation"
+    },
+    "sessionAttributes": {
+        "channel": "widget",
+        "sessionId": "stentor-widget-session-03d183c3-951b-654a-90dc-683b70a8ab52",
+        "userId": "stentor-widget-user-41b48e67-5d44-65c8-971e-0d552aa1a627",
+        "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-03d183c3-951b-654a-90dc-683b70a8ab52",
+    "slots": {},
+    "userId": "stentor-widget-user-41b48e67-5d44-65c8-971e-0d552aa1a627",
+    "knowledgeBaseResult": {
+        "suggested": [
+            {
+                "title": "Bonds | Investor.gov",
+                "uri": "https://investor.gov/introduction-investing/basics/investment-products/bonds",
+                "document": "Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.\n\n\n\nLiquidity risk. This refers to the risk that investors won’t find a market for the bond, potentially preventing them from buying or selling when they want.\n\n\n\nCall risk. The possibility that a bond issuer retires a bond before its maturity date, something an issuer might do if interest rates decline, much like a homeowner might refinance a mortgage to benefit from lower interest rates.\n\n\n\nAvoiding fraud\n\n\n\nCorporate bonds are securities and, if publicly offered, must be registered with the SEC.",
+                "highlights": [
+                    {
+                        "beginOffset": 0,
+                        "endOffset": 48,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 0,
+                        "endOffset": 9,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 50,
+                        "endOffset": 59,
+                        "topAnswer": false
+                    }
+                ]
+            }
+        ],
+        "faqs": [],
+        "documents": [
+            {
+                "title": "Bonds | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds",
+                "document": "...rate of interest than older ones. To sell an older bond with a lower interest rate, you might have to sell it at a discount.\n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest...",
+                "highlights": [
+                    {
+                        "beginOffset": 131,
+                        "endOffset": 140,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 147,
+                        "endOffset": 156,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 197,
+                        "endOffset": 206,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "Bonds | Investor.gov",
+                "uri": "https://investor.gov/introduction-investing/basics/investment-products/bonds",
+                "document": "...rate of interest than older ones. To sell an older bond with a lower interest rate, you might have to sell it at a discount.\n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest...",
+                "highlights": [
+                    {
+                        "beginOffset": 131,
+                        "endOffset": 140,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 147,
+                        "endOffset": 156,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 197,
+                        "endOffset": 206,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "Municipal Bonds | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/municipal",
+                "document": "...rate municipal bond and try to sell it before it matures could lose money because of the lower market value of the bond. \n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest...",
+                "highlights": [
+                    {
+                        "beginOffset": 128,
+                        "endOffset": 137,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 144,
+                        "endOffset": 153,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 194,
+                        "endOffset": 203,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "Investor Bulletin: Municipal Bonds – Asset Allocation, Diversification, and Risk | Investor.gov",
+                "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-municipal-bonds-asset",
+                "document": "...Municipal Market Access (EMMA®) website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.\n\tInflation risk. Inflation is a general upward movement in prices.  Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.  It also can lead to higher interest rates and lower...",
+                "highlights": [
+                    {
+                        "beginOffset": 78,
+                        "endOffset": 87,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 94,
+                        "endOffset": 103,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 145,
+                        "endOffset": 154,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "What is Risk? | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/basics/what-risk",
+                "document": "...Inflation is a general upward movement of prices.  Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.  The principal concern for individuals investing in cash equivalents is that inflation will erode returns.\n\n\n\nInterest Rate Risk\n\n\n\nInterest...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 12,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 54,
+                        "endOffset": 63,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 233,
+                        "endOffset": 242,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "What is Risk? | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+                "document": "...Inflation is a general upward movement of prices.  Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.  The principal concern for individuals investing in cash equivalents is that inflation will erode returns.\n\n\n\nInterest Rate Risk\n\n\n\nInterest...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 12,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 54,
+                        "endOffset": 63,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 233,
+                        "endOffset": 242,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "Investor Bulletin: Municipal Bonds – Asset Allocation, Diversification, and Risk | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-35",
+                "document": "...Municipal Market Access (EMMA®) website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.\n\tInflation risk. Inflation is a general upward movement in prices.  Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest.  It also can lead to higher interest rates and lower...",
+                "highlights": [
+                    {
+                        "beginOffset": 78,
+                        "endOffset": 87,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 94,
+                        "endOffset": 103,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 145,
+                        "endOffset": 154,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "Financial Terms Glossary | Consumer Financial Protection Bureau",
+                "uri": "https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary",
+                "document": "...dividends). Includes both personal and business or corporate income taxes. Not all states and localities have income taxes.\n\nInflation\n\nInflation occurs when the prices of goods and services increase over time.\n\nInsurance\n\nThe practice or arrangement in which a company or government agency...",
+                "highlights": [
+                    {
+                        "beginOffset": 128,
+                        "endOffset": 137,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 139,
+                        "endOffset": 148,
+                        "topAnswer": false,
+
+                    }
+                ]
+            },
+            {
+                "title": "Municipal Bonds | Investor.gov",
+                "uri": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products-0",
+                "document": "...it matures could lose money because of the lower market value of the bond. \n\n\n\nInflation risk. Inflation is a general upward movement in prices. Inflation reduces purchasing power, which is a risk for investors receiving a fixed rate of interest. It also can lead to higher interest rates and, in...",
+                "highlights": [
+                    {
+                        "beginOffset": 82,
+                        "endOffset": 91,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 98,
+                        "endOffset": 107,
+                        "topAnswer": false,
+
+                    },
+                    {
+                        "beginOffset": 148,
+                        "endOffset": 157,
+                        "topAnswer": false,
+
+                    }
+                ]
+            }
+        ]
+    },
+    "locale": "en-US"
+}
+
+export const REQUEST_KBR_WITH_GOOD_HIGHLIGHTED_ANSWER: Request & { requestAttributes: object; sessionAttributes: object } = {
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "do you provide commercial roofing services",
+    "requestAttributes": {
+        "channel": "widget",
+        "type": "INTENT_REQUEST",
+        "userId": "stentor-widget-user-4f22818e-dd57-6501-8a78-e4d975f19df7",
+        "platform": "stentor-platform",
+        "x-amz-lex:kendra-search-response-document-link-2": "https://www.hinkleroofing.com/roofing/commercial-roof-maintenance-how-to-get-started",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.hinkleroofing.com/commercial-roofing",
+        "x-amz-lex:kendra-search-response-document-5": "...Roofing, we provide top-notch roofing services for property owners and facilities managers. Call (205) 352-1940 to learn more. You can also fill out our contact form to request a free estimate. We serve Hoover and Calera, AL, businesses.\n\n\n\nFiled Under: Roofing Tagged With: commercial roofing...",
+        "x-amz-lex:kendra-search-response-document-4": "...Commercial roofing\n\n\nWe focus on giving fast services without compromising quality. We are a roofing contractor in Tuscaloosa, AL that specializes on all kinds of commercial and flat roofing.\n\nWhat Sets Us Apart\n\nHinkle Roofing has built a reputation for roofing and other home...",
+        "x-amz-lex:kendra-search-response-answer-2": "If you want fast, high-quality work, then Hinkle Roofing is your go-to contractor for both commercial and flat roofing jobs.\n\nOur Commercial Services\n\nHinkle Roofing provides free on-site evaluations and estimates. We use only the highest quality products for our commercial services, and everything is installed to the specifications of the manufacturer. You can trust us to repair your commercial roof quickly and correctly. We always inspect our completed work to ensure that it is up to our standards and that you are satisfied with the job.\n\nWe work hard to keep our prices fair and affordable, and we are transparent in every transaction.",
+        "x-amz-lex:kendra-search-response-answer-1": "We can resolve the issue if you decide you need a new roof. We will add roof drains or use tapered roof insulation to address poor drainage. We’ll also ensure proper flashing as they can be a source of leaks.\n\nHinkle Roofing provides residential and commercial roofing services. We are also experts in vinyl siding installation. You can count on us to put a good roof over your head. We serve homeowners and businesses in Tuscaloosa, AL and nearby areas.",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.hinkleroofing.com/roofing/important-questions-to-ask-commercial-roof-inspection-pros",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.hinkleroofing.com/roofing/quality-home-improvement-services-by-hinkle-roofing",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.hinkleroofing.com/roofing/the-advantages-of-working-with-a-local-roofer",
+        "x-amz-lex:kendra-search-response-document-3": "...Personalized Service\n\n\n\n\nLocal roofers serve a relatively smaller customer base. Chances are, local roofing companies are owned by someone you know, or have installed or repaired the roofs of people that you know. These companies can provide warm, personalized service and a better customer...",
+        "x-amz-lex:kendra-search-response-document-2": "...AL\n\tHoover, AL\n\tJasper, AL\n\tMountain Brook, AL\n\tTuscaloosa, AL\n\tVestavia Hills, AL\n\tBirmingham, AL\n\tCullman, AL\n\n\n\n\n\n\t\tServices\n\n\tResidential Roofing\n\tCommercial Roofing\n\tWindows\n\tSiding\n\tGutters\n\n\n\n\n\n \t\t\n\n\nCopyright © 2021 Hinkle Roofing. All Rights Reserved.\nFollow Us...",
+        "x-amz-lex:kendra-search-response-document-1": "...Roofing is your go-to contractor for both commercial and flat roofing jobs.\n\nOur Commercial Services\n\nHinkle Roofing provides free on-site evaluations and estimates. We use only the highest quality products for our commercial services, and everything is installed to the specifications of the...",
+        "rawQuery": "do you provide commercial roofing services"
+    },
+    "sessionAttributes": {
+        "channel": "widget",
+        "sessionId": "stentor-widget-session-7160af8b-9b26-65a2-a5aa-de132ccb2db2",
+        "userId": "stentor-widget-user-4f22818e-dd57-6501-8a78-e4d975f19df7",
+        "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-7160af8b-9b26-65a2-a5aa-de132ccb2db2",
+    "slots": {},
+    "userId": "stentor-widget-user-4f22818e-dd57-6501-8a78-e4d975f19df7",
+    "knowledgeBaseResult": {
+        "suggested": [
+            {
+                "title": "Dealing With Common Commercial Roofing Problems - Hinkle Roofing",
+                "uri": "https://www.hinkleroofing.com/roofing/dealing-with-common-commercial-roofing-problems",
+                "document": "We can resolve the issue if you decide you need a new roof. We will add roof drains or use tapered roof insulation to address poor drainage. We’ll also ensure proper flashing as they can be a source of leaks.\n\nHinkle Roofing provides residential and commercial roofing services. We are also experts in vinyl siding installation. You can count on us to put a good roof over your head. We serve homeowners and businesses in Tuscaloosa, AL and nearby areas.",
+                "highlights": [
+                    {
+                        "beginOffset": 54,
+                        "endOffset": 58,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 72,
+                        "endOffset": 76,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 99,
+                        "endOffset": 103,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 217,
+                        "endOffset": 224,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 225,
+                        "endOffset": 233,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 250,
+                        "endOffset": 260,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 261,
+                        "endOffset": 268,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 269,
+                        "endOffset": 277,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 363,
+                        "endOffset": 367,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Commercial Roofing | Hinkle Roofing | Birmingham, AL",
+                "uri": "https://www.hinkleroofing.com/commercial-roofing",
+                "document": "If you want fast, high-quality work, then Hinkle Roofing is your go-to contractor for both commercial and flat roofing jobs.\n\nOur Commercial Services\n\nHinkle Roofing provides free on-site evaluations and estimates. We use only the highest quality products for our commercial services, and everything is installed to the specifications of the manufacturer. You can trust us to repair your commercial roof quickly and correctly. We always inspect our completed work to ensure that it is up to our standards and that you are satisfied with the job.\n\nWe work hard to keep our prices fair and affordable, and we are transparent in every transaction.",
+                "highlights": [
+                    {
+                        "beginOffset": 49,
+                        "endOffset": 56,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 91,
+                        "endOffset": 101,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 111,
+                        "endOffset": 118,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 130,
+                        "endOffset": 140,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 141,
+                        "endOffset": 149,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 158,
+                        "endOffset": 165,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 166,
+                        "endOffset": 174,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 264,
+                        "endOffset": 274,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 275,
+                        "endOffset": 283,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 388,
+                        "endOffset": 398,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 399,
+                        "endOffset": 403,
+                        "topAnswer": false
+                    }
+                ]
+            }
+        ],
+        "faqs": [],
+        "documents": [
+            {
+                "title": "Commercial Roofing | Hinkle Roofing | Birmingham, AL",
+                "uri": "https://www.hinkleroofing.com/commercial-roofing",
+                "document": "...Roofing is your go-to contractor for both commercial and flat roofing jobs.\n\nOur Commercial Services\n\nHinkle Roofing provides free on-site evaluations and estimates. We use only the highest quality products for our commercial services, and everything is installed to the specifications of the...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 10,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 45,
+                        "endOffset": 55,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 65,
+                        "endOffset": 72,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 84,
+                        "endOffset": 94,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 95,
+                        "endOffset": 103,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 112,
+                        "endOffset": 119,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 120,
+                        "endOffset": 128,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 218,
+                        "endOffset": 228,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 229,
+                        "endOffset": 237,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Commercial Roof Maintenance: How to Get Started",
+                "uri": "https://www.hinkleroofing.com/roofing/commercial-roof-maintenance-how-to-get-started",
+                "document": "...AL\n\tHoover, AL\n\tJasper, AL\n\tMountain Brook, AL\n\tTuscaloosa, AL\n\tVestavia Hills, AL\n\tBirmingham, AL\n\tCullman, AL\n\n\n\n\n\n\t\tServices\n\n\tResidential Roofing\n\tCommercial Roofing\n\tWindows\n\tSiding\n\tGutters\n\n\n\n\n\n \t\t\n\n\nCopyright © 2021 Hinkle Roofing. All Rights Reserved.\nFollow Us...",
+                "highlights": [
+                    {
+                        "beginOffset": 122,
+                        "endOffset": 130,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 145,
+                        "endOffset": 152,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 154,
+                        "endOffset": 164,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 165,
+                        "endOffset": 172,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 234,
+                        "endOffset": 241,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "The Advantages of Working With a Local Roofer",
+                "uri": "https://www.hinkleroofing.com/roofing/the-advantages-of-working-with-a-local-roofer",
+                "document": "...Personalized Service\n\n\n\n\nLocal roofers serve a relatively smaller customer base. Chances are, local roofing companies are owned by someone you know, or have installed or repaired the roofs of people that you know. These companies can provide warm, personalized service and a better customer...",
+                "highlights": [
+                    {
+                        "beginOffset": 16,
+                        "endOffset": 23,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 103,
+                        "endOffset": 110,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 186,
+                        "endOffset": 191,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 237,
+                        "endOffset": 244,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 264,
+                        "endOffset": 271,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Quality Home Improvement Services by Hinkle Roofing",
+                "uri": "https://www.hinkleroofing.com/roofing/quality-home-improvement-services-by-hinkle-roofing",
+                "document": "...Commercial roofing\n\n\nWe focus on giving fast services without compromising quality. We are a roofing contractor in Tuscaloosa, AL that specializes on all kinds of commercial and flat roofing.\n\nWhat Sets Us Apart\n\nHinkle Roofing has built a reputation for roofing and other home...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 13,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 14,
+                        "endOffset": 21,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 48,
+                        "endOffset": 56,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 96,
+                        "endOffset": 103,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 166,
+                        "endOffset": 176,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 186,
+                        "endOffset": 193,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 223,
+                        "endOffset": 230,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 258,
+                        "endOffset": 265,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Important Questions to Ask Commercial Roof Inspection Pros - Hinkle Roofing",
+                "uri": "https://www.hinkleroofing.com/roofing/important-questions-to-ask-commercial-roof-inspection-pros",
+                "document": "...Roofing, we provide top-notch roofing services for property owners and facilities managers. Call (205) 352-1940 to learn more. You can also fill out our contact form to request a free estimate. We serve Hoover and Calera, AL, businesses.\n\n\n\nFiled Under: Roofing Tagged With: commercial roofing...",
+                "highlights": [
+                    {
+                        "beginOffset": 3,
+                        "endOffset": 10,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 15,
+                        "endOffset": 22,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 33,
+                        "endOffset": 40,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 41,
+                        "endOffset": 49,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 257,
+                        "endOffset": 264,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 278,
+                        "endOffset": 288,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 289,
+                        "endOffset": 296,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "3 Useful Tips on Choosing Your Commercial Roofing Company",
+                "uri": "https://www.hinkleroofing.com/roofing/3-useful-tips-on-choosing-your-commercial-roofing-company",
+                "document": "...AL\n\tHoover, AL\n\tJasper, AL\n\tMountain Brook, AL\n\tTuscaloosa, AL\n\tVestavia Hills, AL\n\tBirmingham, AL\n\tCullman, AL\n\n\n\n\n\n\t\tServices\n\n\tResidential Roofing\n\tCommercial Roofing\n\tWindows\n\tSiding\n\tGutters\n\n\n\n\n\n \t\t\n\n\nCopyright © 2021 Hinkle Roofing. All Rights Reserved.\nFollow Us...",
+                "highlights": [
+                    {
+                        "beginOffset": 122,
+                        "endOffset": 130,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 145,
+                        "endOffset": 152,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 154,
+                        "endOffset": 164,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 165,
+                        "endOffset": 172,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 234,
+                        "endOffset": 241,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "The 3 Main Differences Between Residential and Commercial Roofing",
+                "uri": "https://www.hinkleroofing.com/roofing/the-3-main-differences-between-residential-and-commercial-roofing",
+                "document": "...Both roofing systems require regular maintenance and repairs performed by professionals.\n\nHinkle Roofing is one of the few roofers who offer both residential and commercial roofing services. Call us today at (205) 352-1940 or fill out our contact form to schedule a free consultation. We serve...",
+                "highlights": [
+                    {
+                        "beginOffset": 8,
+                        "endOffset": 15,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 100,
+                        "endOffset": 107,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 165,
+                        "endOffset": 175,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 176,
+                        "endOffset": 183,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 184,
+                        "endOffset": 192,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Part 3: Your Commercial Roofing Contractor",
+                "uri": "https://www.hinkleroofing.com/3-part-blog/top-3-considerations-for-a-hassle-free-commercial-roof-upgrade-part-3-your-commercial-roofing-contractor",
+                "document": "...roofers that pass their stringent requirements. These certifications give contractors the exclusive permission to offer, install and service the manufacturer’s roofing systems...",
+                "highlights": [
+                    {
+                        "beginOffset": 136,
+                        "endOffset": 143,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 163,
+                        "endOffset": 170,
+                        "topAnswer": false
+                    }
+                ]
+            }
+        ]
+    },
+    "locale": "en-US"
+}
+
 export const STRONG_FAQ: KnowledgeBaseResult = {
     suggested:
         [{
@@ -521,6 +1258,7 @@ export const NO_SUGGEST_OR_FAQ: KnowledgeBaseResult = {
 
 export const ANSWER_WITH_MENU_ITEMS = "...Careers\n\n\n\tSustainability\n\n\n\tCommunity\n\n\n\tBusiness partners\n\n\n\n\n\n\n\n\n\n\n   \n\n\n\n\n\tServices you'll love\n\n \tGift cards\n\n\n\tSpecial item requests\n\n\n\tPresto! ATM\n\n\n\tAprons Recipes\n\n\n\tPublix Catering\n\n\n\tAprons Cooking School\n\n\n\tHealth & wellness\n\n\n\tShelf tags & icons...";
 
+// No highlights!  Old
 export const MOSTLY_CLEAN_SUGGESTED: KnowledgeBaseResult = {
     suggested:
         [{
@@ -609,6 +1347,8 @@ export const MOSTLY_CLEAN_SUGGESTED: KnowledgeBaseResult = {
         }]
 }
 
+// This is an example where we don't have a top answer and the highlighted sections aren't very good
+// ends up being just HEL
 export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
     "platform": "lex-connect",
     "type": "INTENT_REQUEST",
@@ -617,7 +1357,6 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
     "intentId": "OCSearch",
     "isHealthCheck": false,
     "isNewSession": false,
-    "matchConfidence": null,
     "rawQuery": "what is a HEL",
     "requestAttributes": {
         "channel": "widget",
@@ -657,14 +1396,12 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
                     {
                         "beginOffset": 1120,
                         "endOffset": 1136,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 1239,
                         "endOffset": 1242,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -676,19 +1413,16 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
                     {
                         "beginOffset": 301,
                         "endOffset": 304,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 663,
                         "endOffset": 666,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             }
         ],
-        "faqs": [],
         "documents": [
             {
                 "title": "What is a home equity loan? | Consumer Financial Protection Bureau",
@@ -698,14 +1432,12 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
                     {
                         "beginOffset": 148,
                         "endOffset": 151,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 230,
                         "endOffset": 233,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -717,8 +1449,7 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
                     {
                         "beginOffset": 121,
                         "endOffset": 124,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -730,8 +1461,7 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
                     {
                         "beginOffset": 121,
                         "endOffset": 124,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -770,6 +1500,271 @@ export const SUGGESTED_WITH_HIGHLIGHTS_NOT_TOP = {
     "locale": "en-US"
 }
 
+export const SUGGESTED_WITH_TOP_ANSWER = {
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "platform": "lex-connect",
+    "channel": "console",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "rawQuery": "what is dwelling coverage",
+    "requestAttributes": {
+        "x-amz-lex:kendra-search-response-document-link-2": "https://www.travelers.com/tools-resources/insurance-101/4-things-every-renter-needs-to-know-about-renters-insurance",
+        "x-amz-lex:kendra-search-response-document-link-1": "https://www.travelers.com/tools-resources/insurance-101/understanding-your-insurance",
+        "x-amz-lex:kendra-search-response-document-5": "...a complete description of coverage. Coverage options, limits, discounts, deductibles and other features are subject to individuals meeting our underwriting criteria and state availability. Not all features available in all states. Discounts may not apply to all coverages and/or vehicles...",
+        "x-amz-lex:kendra-search-response-document-4": "...need additional coverage.\n\n\n            \n\n\n\n\n    \n\n                  \n                      \n\n\nTravelers Insurance allows you to customize your coverage to fit your unique needs. We'll help you understand the risks you face and get the coverage to help prepare you for the unexpected...",
+        "x-amz-lex:kendra-search-response-answer-1": "Home Insurance\n\n\n                    \n                    \n    \n                    \n                    \n\n            \n\n        \n            \n                        What Is Dwelling Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss.\n\n\n        \n\n    \n\n\n\n\n\n                    \n\n                    \n    \n                    \n                    \n\n            \n\n        \n            \n                        What Is Liability Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            If others are hurt or have damaged property for which you or covered residents of your household are legally responsible, then this can help protect you.\n\n\n        \n\n    \n\n\n\n\n\n                    \n\n                    \n    \n                    \n                    \n\n            \n\n        \n            \n                        What Is Loss of Use Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            If your home is damaged by a covered loss, loss of use coverage can help pay for your additional housing and living expenses while your home is being repaired or rebuilt.",
+        "x-amz-lex:kendra-search-response-document-link-5": "https://www.travelers.com/tools-resources/home/insuring/8-steps-to-buying-and-insuring-your-new-home",
+        "x-amz-lex:kendra-search-response-document-link-4": "https://www.travelers.com/resources/home/insuring/5-tips-to-protect-your-possessions-with-a-valuable-items-insurance-rider",
+        "x-amz-lex:kendra-search-response-document-link-3": "https://www.travelers.com/tools-resources/home/insuring/5-tips-to-protect-your-possessions-with-a-valuable-items-insurance-rider",
+        "x-amz-lex:kendra-search-response-document-3": "...need additional coverage.\n\n\n            \n\n\n\n\n    \n\n                  \n                      \n\n\nTravelers Insurance allows you to customize your coverage to fit your unique needs. We'll help you understand the risks you face and get the coverage to help prepare you for the unexpected...",
+        "x-amz-lex:kendra-search-response-document-2": "...Renters Insurance Provides Off-Premises Coverage\n\n\nRenters insurance does more than cover the cost of lost or damaged possessions in your home. There is coverage if your bicycle is stolen from a bike rack at the park, or if your laptop is taken from...",
+        "x-amz-lex:kendra-search-response-document-1": "...What Is Dwelling Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of..."
+    },
+    "sessionAttributes": {
+        "channel": "console",
+        "sessionId": "dfad52d8-3fff-64e0-b288-aaa9e87b51f3",
+        "userId": "i00tgwqpd477g9mvp00uwylvlp016jx5"
+    },
+    "sessionId": "dfad52d8-3fff-64e0-b288-aaa9e87b51f3",
+    "slots": {},
+    "userId": "i00tgwqpd477g9mvp00uwylvlp016jx5",
+    "knowledgeBaseResult": {
+        "suggested": [
+            {
+                "title": "Understanding Your Insurance [Videos] | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/insurance-101/understanding-your-insurance",
+                "document": "Home Insurance\n\n\n                    \n                    \n    \n                    \n                    \n\n            \n\n        \n            \n                        What Is Dwelling Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss.\n\n\n        \n\n    \n\n\n\n\n\n                    \n\n                    \n    \n                    \n                    \n\n            \n\n        \n            \n                        What Is Liability Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            If others are hurt or have damaged property for which you or covered residents of your household are legally responsible, then this can help protect you.\n\n\n        \n\n    \n\n\n\n\n\n                    \n\n                    \n    \n                    \n                    \n\n            \n\n        \n            \n                        What Is Loss of Use Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            If your home is damaged by a covered loss, loss of use coverage can help pay for your additional housing and living expenses while your home is being repaired or rebuilt.",
+                "topAnswer": "This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss",
+                "highlights": [
+                    {
+                        "beginOffset": 224,
+                        "endOffset": 361,
+                        "topAnswer": true
+                    },
+                    {
+                        "beginOffset": 175,
+                        "endOffset": 183,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 184,
+                        "endOffset": 192,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 229,
+                        "endOffset": 237,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 554,
+                        "endOffset": 562,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 941,
+                        "endOffset": 949,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 1036,
+                        "endOffset": 1044,
+                        "topAnswer": false
+                    }
+                ]
+            }
+        ],
+        "documents": [
+            {
+                "title": "Understanding Your Insurance [Videos] | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/insurance-101/understanding-your-insurance",
+                "document": "...What Is Dwelling Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of...",
+                "highlights": [
+                    {
+                        "beginOffset": 11,
+                        "endOffset": 19,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 20,
+                        "endOffset": 28,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 65,
+                        "endOffset": 73,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "4 Things Every Renter Needs to Know About Renters Insurance | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/insurance-101/4-things-every-renter-needs-to-know-about-renters-insurance",
+                "document": "...Renters Insurance Provides Off-Premises Coverage\n\n\nRenters insurance does more than cover the cost of lost or damaged possessions in your home. There is coverage if your bicycle is stolen from a bike rack at the park, or if your laptop is taken from...",
+                "highlights": [
+                    {
+                        "beginOffset": 43,
+                        "endOffset": 51,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 156,
+                        "endOffset": 164,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "5 Tips to Protect Your Possessions with Valuable Items Coverage | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/home/insuring/5-tips-to-protect-your-possessions-with-a-valuable-items-insurance-rider",
+                "document": "...need additional coverage.\n\n\n            \n\n\n\n\n    \n\n                  \n                      \n\n\nTravelers Insurance allows you to customize your coverage to fit your unique needs. We'll help you understand the risks you face and get the coverage to help prepare you for the unexpected...",
+                "highlights": [
+                    {
+                        "beginOffset": 19,
+                        "endOffset": 27,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 149,
+                        "endOffset": 157,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 241,
+                        "endOffset": 249,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "5 Tips to Protect Your Possessions with Valuable Items Coverage | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/insuring/5-tips-to-protect-your-possessions-with-a-valuable-items-insurance-rider",
+                "document": "...need additional coverage.\n\n\n            \n\n\n\n\n    \n\n                  \n                      \n\n\nTravelers Insurance allows you to customize your coverage to fit your unique needs. We'll help you understand the risks you face and get the coverage to help prepare you for the unexpected...",
+                "highlights": [
+                    {
+                        "beginOffset": 19,
+                        "endOffset": 27,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 149,
+                        "endOffset": 157,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 241,
+                        "endOffset": 249,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "8 Steps to Buying and Insuring Your New Home | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/home/insuring/8-steps-to-buying-and-insuring-your-new-home",
+                "document": "...a complete description of coverage. Coverage options, limits, discounts, deductibles and other features are subject to individuals meeting our underwriting criteria and state availability. Not all features available in all states. Discounts may not apply to all coverages and/or vehicles...",
+                "highlights": [
+                    {
+                        "beginOffset": 29,
+                        "endOffset": 37,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 39,
+                        "endOffset": 47,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 265,
+                        "endOffset": 274,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "8 Steps to Buying and Insuring Your New Home | Travelers Insurance",
+                "uri": "https://www.travelers.com/resources/home/insuring/8-steps-to-buying-and-insuring-your-new-home",
+                "document": "...a complete description of coverage. Coverage options, limits, discounts, deductibles and other features are subject to individuals meeting our underwriting criteria and state availability. Not all features available in all states. Discounts may not apply to all coverages and/or vehicles...",
+                "highlights": [
+                    {
+                        "beginOffset": 29,
+                        "endOffset": 37,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 39,
+                        "endOffset": 47,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 265,
+                        "endOffset": 274,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Insurance 101 - Insurance Education | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/insurance-101",
+                "document": "...What Is Medical Payments Coverage? [Video]\n\n\n\n\n\n\n\n\n\n\n            Medical payments coverage protects passengers in your vehicle who may be injured in an accident, no matter who is at fault...",
+                "highlights": [
+                    {
+                        "beginOffset": 28,
+                        "endOffset": 36,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 85,
+                        "endOffset": 93,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Should I File a Property Damage Claim? Three Questions to Help You Decide | Travelers Insurance",
+                "uri": "https://www.travelers.com/tools-resources/home/insuring/should-i-file-a-property-damage-claim",
+                "document": "...5 Tips to Protect Your Possessions with Valuable Items Insurance Coverage\n\n\n\n\n\n\n\n\n\n\n            Help protect personal items that may have limited coverage amounts or no coverage under the homeowners, condo or renters insurance policy...",
+                "highlights": [
+                    {
+                        "beginOffset": 68,
+                        "endOffset": 76,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 149,
+                        "endOffset": 157,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 172,
+                        "endOffset": 180,
+                        "topAnswer": false
+                    }
+                ]
+            },
+            {
+                "title": "Car Insurance Questions | Travelers Insurance",
+                "uri": "https://www.travelers.com/car-insurance/faqs",
+                "document": "...Be sure to discuss the following popular coverage options with your agent. Our Car Coverage Guide can help, too.\n\n\n            \n\n            \n            \n                \n\n\n\n\n\nTo Cover:\n\n\nRepair or replacement of...",
+                "highlights": [
+                    {
+                        "beginOffset": 44,
+                        "endOffset": 52,
+                        "topAnswer": false
+                    },
+                    {
+                        "beginOffset": 86,
+                        "endOffset": 94,
+                        "topAnswer": false
+                    }
+                ]
+            }
+        ]
+    },
+    "locale": "en-US"
+}
+
 // This was generating <pre> tags
 //     "html": "<p>Here is what I found...<br />\"Brokerage firms generally offer at least two types of brokerage accounts - a cash account and a margin account:</p>\n<pre><code>In a cash account, you must pay the full amount for securities purchased. You may not borrow funds from your brokerage firm in order to pay for transactions in the account.\nIn a margin account, you can borrow funds from your brokerage firm to purchase securities (this is called buying securities \"on margin\"). The brokerage firm uses the securities in your margin account as collateral for the money it lends to you to purchase these securities and you pay interest on the money you borrow.\"\n</code></pre>\n<p>Any other questions?</p>\n"
 //
@@ -781,7 +1776,6 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
     "intentId": "OCSearch",
     "isHealthCheck": false,
     "isNewSession": false,
-    "matchConfidence": null,
     "rawQuery": "which brokerage account should i use",
     "requestAttributes": {
         "x-amz-lex:kendra-search-response-question_answer-question-1": "Through which channel can I get my credit score?",
@@ -823,80 +1817,67 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 0,
                         "endOffset": 9,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 54,
                         "endOffset": 63,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 64,
                         "endOffset": 72,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 82,
                         "endOffset": 89,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 103,
                         "endOffset": 110,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 126,
                         "endOffset": 133,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 225,
                         "endOffset": 234,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 280,
                         "endOffset": 287,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 302,
                         "endOffset": 309,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 342,
                         "endOffset": 351,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 432,
                         "endOffset": 441,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 447,
                         "endOffset": 451,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 482,
                         "endOffset": 489,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -908,68 +1889,57 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 12,
                         "endOffset": 19,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 52,
                         "endOffset": 61,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 142,
                         "endOffset": 151,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 157,
                         "endOffset": 161,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 192,
                         "endOffset": 199,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 326,
                         "endOffset": 334,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 470,
                         "endOffset": 478,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 488,
                         "endOffset": 496,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 561,
                         "endOffset": 569,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 592,
                         "endOffset": 600,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 640,
                         "endOffset": 647,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             }
@@ -983,8 +1953,7 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 0,
                         "endOffset": 300,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             }
@@ -998,38 +1967,32 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 3,
                         "endOffset": 12,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 57,
                         "endOffset": 66,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 67,
                         "endOffset": 75,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 85,
                         "endOffset": 92,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 106,
                         "endOffset": 113,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 129,
                         "endOffset": 136,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -1041,38 +2004,32 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 3,
                         "endOffset": 12,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 57,
                         "endOffset": 66,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 67,
                         "endOffset": 75,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 85,
                         "endOffset": 92,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 106,
                         "endOffset": 113,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 129,
                         "endOffset": 136,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -1084,38 +2041,32 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 96,
                         "endOffset": 105,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 106,
                         "endOffset": 114,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 156,
                         "endOffset": 163,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 177,
                         "endOffset": 186,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 187,
                         "endOffset": 194,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 278,
                         "endOffset": 285,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -1127,62 +2078,52 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 3,
                         "endOffset": 8,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 13,
                         "endOffset": 20,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 92,
                         "endOffset": 101,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 144,
                         "endOffset": 151,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 163,
                         "endOffset": 170,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 218,
                         "endOffset": 227,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 228,
                         "endOffset": 235,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 242,
                         "endOffset": 251,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 252,
                         "endOffset": 259,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 285,
                         "endOffset": 293,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -1194,26 +2135,22 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 78,
                         "endOffset": 85,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 98,
                         "endOffset": 107,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 108,
                         "endOffset": 115,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 158,
                         "endOffset": 167,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -1225,26 +2162,22 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 78,
                         "endOffset": 85,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 98,
                         "endOffset": 107,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 108,
                         "endOffset": 115,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 158,
                         "endOffset": 167,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             },
@@ -1256,38 +2189,32 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
                     {
                         "beginOffset": 38,
                         "endOffset": 47,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 48,
                         "endOffset": 55,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 69,
                         "endOffset": 78,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 142,
                         "endOffset": 151,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 152,
                         "endOffset": 159,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     },
                     {
                         "beginOffset": 290,
                         "endOffset": 299,
-                        "topAnswer": false,
-                        "type": "STANDARD"
+                        "topAnswer": false
                     }
                 ]
             }

@@ -1,22 +1,24 @@
 /*! Copyright (c) 2020, XAPP AI */
-import { AbstractHandler, Content, Context, Data, getResponse, isIntentRequest, keyFromRequest, Request } from "stentor";
-import { ExecutablePath } from "stentor-models";
+import {
+    AbstractHandler,
+    Content,
+    Context,
+    Data,
+    getResponse,
+    isIntentRequest,
+    keyFromRequest,
+    Request
+} from "stentor";
+// import { SESSION_STORAGE } from "stentor-constants";
+import { ExecutablePath, KnowledgeBaseResult } from "stentor-models";
 import { log } from "stentor-logger";
 
 import { cleanAnswer } from "./cleanAnswer";
-import { determineAnswer } from "./determineAnswer";
+import { DEFAULT_UNKNOWN_RESPONSE } from "./constants";
+import { determineAnswer, generateResultVariables, ResultVariables, ResultVariablesConfig } from "./determineAnswer";
 import { isFaq, isSuggested } from "./guards";
 
-export interface QuestionAnsweringData extends Data {
-    /**
-     * If true, it will attempt to use fuzzy string matching to return the top FAQ
-     */
-    ["FUZZY_MATCH_FAQS"]: boolean;
-    /**
-     * If true, it will use the longest
-     */
-    ["QNA_BOT_LONGEST_HIGHLIGHT"]: boolean;
-}
+export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
 
 /**
  * Custom handler for Question Answering
@@ -26,6 +28,8 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
     public async start(request: Request, context: Context): Promise<void> {
 
         log().debug(`${this.name} start()`);
+
+        // First check the super, we may have an override.
 
         if (isIntentRequest(request)) {
 
@@ -55,8 +59,7 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
         // We don't have an answer
 
         // Response when we don't have any documents
-
-        context.response.say(`I'm sorry, I don't know that one. What else can I help you with? `).reprompt('What else can I help you with?');
+        context.response.respond(DEFAULT_UNKNOWN_RESPONSE);
     }
 
     public async handleRequest(request: Request, context: Context): Promise<void> {
@@ -67,9 +70,35 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
         const key = keyFromRequest(request);
 
         switch (key) {
+
+            case this.intentId:
+
+                // We want to communicate the result.
+                // There should already be one set on the session storage by the dialog manager
+                const result: KnowledgeBaseResult = context.session.get("knowledge_base_result");
+
+                const variables = generateResultVariables(request.rawQuery, result, this.data);
+
+                // For each variable, we drop them on the session variable
+                Object.keys(variables).forEach((key: keyof ResultVariables) => {
+                    const value = variables[key];
+                    context.session.set(key, value);
+                });
+
+                console.log(context.session.get('TOP_ANSWER'));
+
+                console.log('variables');
+                console.log(variables.TOP_ANSWER);
+
+                const response = getResponse(this, request, context, variables);
+                console.log('response');
+                console.log(response);
+
+                context.response.respond(response);
+                return;
             default:
                 // Let it fall through to the super
-                return this.start(request, context);
+                return this.handleRequest(request, context);
         }
     }
 
@@ -77,13 +106,26 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
         return super.canHandleRequest(request, context);
     }
 
+    /**
+     * We may
+     * @param request 
+     * @param context 
+     * @returns 
+     */
     public redirectingPathForRequest(request: Request, context: Context): ExecutablePath {
         // We need to find the best answer here
 
         if (isIntentRequest(request) && request.knowledgeBaseResult) {
             const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
             if (isFaq(answer)) {
-                const redirectTo = answer.handlerId
+                const redirectTo = answer.handlerId;
+
+                console.log(`redirecting to: ` + redirectTo);
+
+                return {
+                    type: "START",
+                    intentId: redirectTo
+                }
             }
         }
 
