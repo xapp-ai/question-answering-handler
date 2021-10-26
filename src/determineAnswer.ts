@@ -2,10 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Fuse = require('fuse.js');
 
-import { KnowledgeBaseFAQ, KnowledgeBaseResult, KnowledgeBaseSuggested, KnowledgeBaseDocument, ResponseOutput } from "stentor-models";
+import { KnowledgeBaseFAQ, KnowledgeBaseResult, KnowledgeBaseSuggested, KnowledgeBaseDocument } from "stentor-models";
 import { existsAndNotEmpty } from "stentor-utils";
 import { cleanAnswer } from "./cleanAnswer";
-import { mergeIntervals, longestInterval } from "./utils";
+import { mergeIntervals, longestInterval, addMarkdownHighlights } from "./utils";
 
 export interface ResultVariablesConfig {
     /**
@@ -25,10 +25,16 @@ export interface ResultVariablesConfig {
 }
 
 
+export interface ResultVariableInformation {
+    text?: string;
+    markdownText?: string;
+    source?: string;
+}
+
 export interface ResultVariables {
-    TOP_ANSWER?: string;
-    SUGGESTED_ANSWER?: ResponseOutput;
-    TOP_FAQ?: string;
+    TOP_ANSWER?: ResultVariableInformation;
+    SUGGESTED_ANSWER?: ResultVariableInformation;
+    TOP_FAQ?: ResultVariableInformation;
 }
 
 export function generateResultVariables(query: string, result: KnowledgeBaseResult, config: ResultVariablesConfig): ResultVariables {
@@ -58,33 +64,49 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
     const variables: ResultVariables = {};
 
     if (topFAQ) {
-        variables.TOP_FAQ = cleanAnswer(topFAQ.document);
+        variables.TOP_FAQ = {
+            text: cleanAnswer(topFAQ.document),
+            markdownText: cleanAnswer(addMarkdownHighlights(topFAQ.document, topFAQ.highlights)),
+            source: topFAQ.uri
+        }
     }
 
     if (existsAndNotEmpty(result.suggested)) {
         // Note: We only take the top one
         const suggested = result.suggested[0];
+        // Merge intervals to help with the highlighting
+        const highlights = mergeIntervals(suggested.highlights);
 
         if (suggested.topAnswer) {
-            variables.TOP_ANSWER = cleanAnswer(suggested.topAnswer);
+
+            variables.TOP_ANSWER = {
+                text: cleanAnswer(suggested.topAnswer),
+                markdownText: cleanAnswer(suggested.topAnswer),
+                source: suggested.uri
+            }
+
         } else if (QNA_BOT_LONGEST_HIGHLIGHT) {
             // We do another try by pulling merging the intervals
             // and we find the longest interval after merging them
             // I don't love this, it doesn't always return good results.
-            const highlights = mergeIntervals(suggested.highlights);
-
             const longest = longestInterval(highlights);
 
             const topAnswer = suggested.document.substring(longest.beginOffset, longest.endOffset);
 
-            variables.TOP_ANSWER = cleanAnswer(topAnswer);
+            variables.TOP_ANSWER = {
+                text: cleanAnswer(topAnswer),
+                // this one might be different
+                markdownText: cleanAnswer(topAnswer),
+                source: suggested.uri
+            }
         }
 
         // Add suggested with markdown on the displayText with the highlights
 
         variables.SUGGESTED_ANSWER = {
-            displayText: cleanAnswer(suggested.document),
-            ssml: cleanAnswer(suggested.document)
+            text: cleanAnswer(suggested.document),
+            markdownText: cleanAnswer(addMarkdownHighlights(suggested.document, suggested.highlights)),
+            source: suggested.uri
         };
     }
 

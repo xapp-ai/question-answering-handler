@@ -36,19 +36,19 @@ const handlerWithContent: Handler<Content, QuestionAnsweringData> = {
         ["OCSearch"]: [
             {
                 outputSpeech: {
-                    ssml: "${TOP_ANSWER}",
-                    displayText: "${TOP_ANSWER}",
-                    suggestions: [{ title: "Read More", url: "${TOP_ANSWER}" }]
+                    ssml: "${TOP_ANSWER.text}",
+                    displayText: "${TOP_ANSWER.text}",
+                    suggestions: [{ title: "Read More", url: "${TOP_ANSWER.source}" }]
                 },
                 conditions: "!!session('TOP_ANSWER')",
 
             },
             {
                 outputSpeech: {
-                    ssml: "${SUGGESTED_ANSWER}",
-                    displayText: "${SUGGESTED_ANSWER}"
+                    ssml: "${SUGGESTED_ANSWER.text}",
+                    displayText: "${SUGGESTED_ANSWER.text}"
                 },
-                conditions: "!!session('SUGGESTED_ANSWER')"
+                conditions: "!!session('SUGGESTED_ANSWER') && !session('TOP_ANSWER')"
             }
         ]
     }
@@ -150,7 +150,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                 });
             });
         });
-        describe.only("with content", () => {
+        describe("with content", () => {
             describe('when passed request with knowledgebase results', () => {
                 beforeEach(() => {
                     request = REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER;
@@ -162,7 +162,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     }).withDevice(request.device).build();
                     qa = new QuestionAnsweringHandler(handlerWithContent);
                 });
-                it('returns the correct response', async () => {
+                it.only('returns the correct response', async () => {
                     await qa.handleRequest(request, {
                         ...context,
                         device: {
@@ -172,7 +172,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     });
                     const response = context.response.response;
                     expect(response).to.exist;
-                    console.log(response);
                     expect(response.outputSpeech.ssml).to.contain("Inflation is a general upward");
                     expect(response.outputSpeech.suggestions[0]).to.deep.equal({
                         title: 'Read More',

@@ -84,13 +84,14 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
                     const value = variables[key];
                     context.session.set(key, value);
                 });
+                console.log(JSON.stringify(context.storage, undefined, 2));
 
                 console.log(context.session.get('TOP_ANSWER'));
 
                 console.log('variables');
                 console.log(variables.TOP_ANSWER);
 
-                const response = getResponse(this, request, context, variables);
+                const response = getResponse(this, request, context, { ...variables });
                 console.log('response');
                 console.log(response);
 

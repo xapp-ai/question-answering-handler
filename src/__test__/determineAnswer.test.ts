@@ -70,7 +70,7 @@ describe(`#${generateResultVariables.name}()`, () => {
                 }]
             }, {});
 
-            expect(variables.TOP_FAQ).to.equal("expected");
+            expect(variables.TOP_FAQ.text).to.equal("expected");
             expect(variables.SUGGESTED_ANSWER).to.be.undefined;
         });
     });
@@ -88,7 +88,7 @@ describe(`#${generateResultVariables.name}()`, () => {
                 }]
             }, {});
 
-            expect(variables.SUGGESTED_ANSWER).to.equal("expected");
+            expect(variables.SUGGESTED_ANSWER.text).to.equal("expected");
             expect(variables.TOP_FAQ).to.be.undefined;
         });
     });
@@ -98,7 +98,7 @@ describe(`#${generateResultVariables.name}()`, () => {
             const variables = generateResultVariables("what is dwelling coverage", result, {});
 
             expect(variables.TOP_ANSWER).to.exist;
-            expect(variables.TOP_ANSWER).to.equal("This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss");
+            expect(variables.TOP_ANSWER.text).to.equal("This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss");
             // expect(variables.SUGGESTED_ANSWER).to.equal("expected");
             // expect(variables.TOP_FAQ).to.be.undefined;
         });

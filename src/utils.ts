@@ -85,7 +85,7 @@ export function isHighlightInLink(textIn: string, hlBeginOffset: number): boolea
 }
 
 /**
- * Function to bold highlights in Kendra answer by adding markdown
+ * Function to bold a single highlight with markdown (**foo**) by adding markdown
  * 
  * From https://github.com/aws-solutions/aws-qnabot/blob/aaef24ac610bb5f0324326c92914bda21bccef57/lambda/es-proxy-layer/lib/kendra.js#L67 
  * 
@@ -95,7 +95,7 @@ export function isHighlightInLink(textIn: string, hlBeginOffset: number): boolea
  * @param {boolean} highlightOnly
  * @returns {string}
  */
-export function addMarkdownHighlights(textIn: string, hlBeginOffset: number, hlEndOffset: number, highlightOnly = false): string {
+export function addMarkdownHighlight(textIn: string, hlBeginOffset: number, hlEndOffset: number, highlightOnly = false): string {
     const beginning = textIn.substring(0, hlBeginOffset);
     const highlight = textIn.substring(hlBeginOffset, hlEndOffset);
     const rest = textIn.substr(hlEndOffset);
@@ -109,5 +109,32 @@ export function addMarkdownHighlights(textIn: string, hlBeginOffset: number, hlE
         }
     }
     return textOut;
+}
+
+/**
+ * Takes an array of highlights and inserts markdown highlights into the entire provided text
+ *
+ * Help from https://github.com/aws-solutions/aws-qnabot/blob/aaef24ac610bb5f0324326c92914bda21bccef57/lambda/es-proxy-layer/lib/kendra.js#L366
+ * 
+ * @export
+ * @param {string} textIn
+ * @param {{ beginOffset: number, endOffset: number }[]} highlights
+ * @returns {string}
+ */
+export function addMarkdownHighlights(textIn: string, highlights: { beginOffset: number, endOffset: number }[]): string {
+
+    let markedDown: string = textIn;
+
+    let elem: { beginOffset: number; endOffset: number };
+
+    for (let j = 0; j < highlights.length; j++) {
+        elem = highlights[j];
+        // each highlight adds 4 new chars to the length, opening and closing **
+        const offset = 4 * j;
+
+        markedDown = addMarkdownHighlight(markedDown, elem.beginOffset + offset, elem.endOffset + offset, false);
+    }
+
+    return markedDown;
 }
 
