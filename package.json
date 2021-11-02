@@ -34,7 +34,7 @@
     "semantic-release": "17.4.7",
     "sinon": "10.0.0",
     "sinon-chai": "3.7.0",
-    "stentor": "1.43.0",
+    "stentor": "1.48.8",
     "ts-node": "9.0.0",
     "typescript": "4.4.4"
   },
@@ -45,7 +45,8 @@
     "test": "mocha --recursive -r ts-node/register \"./src/**/*.test.ts\""
   },
   "dependencies": {
-    "fuse.js": "6.4.6"
+    "fuse.js": "6.4.6",
+    "linkifyjs":"3.0.3"
   },
   "peerDependencies": {
     "stentor": "1.X"

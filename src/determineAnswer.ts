@@ -10,6 +10,7 @@ import { KnowledgeBaseFAQ, KnowledgeBaseResult, KnowledgeBaseSuggested, Knowledg
  * @param query 
  * @param result 
  * @param threshold 
+ * @deprecated
  */
 export function determineAnswer(query: string, result: KnowledgeBaseResult, threshold = 0.2): KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument {
 
@@ -23,16 +24,15 @@ export function determineAnswer(query: string, result: KnowledgeBaseResult, thre
     const results: { item: KnowledgeBaseFAQ }[] = fuse.search(query);
     const possibleFaqs: KnowledgeBaseFAQ[] = results.map((result => result.item));
 
-    const possibleSuggested: KnowledgeBaseSuggested[] = result.suggested;
-
     if (possibleFaqs.length > 0) {
         return possibleFaqs[0];
     }
+
+    const possibleSuggested: KnowledgeBaseSuggested[] = result.suggested;
 
     if (possibleSuggested.length > 0) {
         return possibleSuggested[0];
     }
     // Don't know
     return undefined;
-
 }

@@ -1,5 +1,4 @@
 /*! Copyright (c) 2021, XAPP AI */
-
 import { cleanTags } from "stentor-utils";
 
 /**

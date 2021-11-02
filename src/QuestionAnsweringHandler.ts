@@ -1,103 +1,87 @@
 /*! Copyright (c) 2020, XAPP AI */
-import { AbstractHandler, Context, existsAndNotEmpty, isIntentRequest, keyFromRequest, Request } from "stentor";
-import { ListItem, KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseSuggested } from "stentor-models";
+import {
+    AbstractHandler,
+    Content,
+    Context,
+    Data,
+    getResponse,
+    isIntentRequest,
+    keyFromRequest,
+    Request
+} from "stentor";
+import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
+import { ExecutablePath, KnowledgeBaseResult } from "stentor-models";
 import { log } from "stentor-logger";
-import { cleanAnswer } from "./cleanAnswer";
+
+import { DEFAULT_RESPONSES } from "./constants";
 import { determineAnswer } from "./determineAnswer";
-import { generateTextFragmentURL } from "./generateTextFragmentURL";
+import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
 
-function isSuggested(answer: KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument): answer is KnowledgeBaseSuggested {
-    return !!answer && typeof (answer as KnowledgeBaseSuggested).topAnswer === "string" && (answer as KnowledgeBaseSuggested).topAnswer.length > 0
-}
+import { isFaq } from "./guards";
 
-function isFaq(answer: KnowledgeBaseFAQ | KnowledgeBaseSuggested | KnowledgeBaseDocument): answer is KnowledgeBaseFAQ {
-    return !!answer && typeof (answer as KnowledgeBaseFAQ).question === "string" && (answer as KnowledgeBaseFAQ).question.length > 0
-}
+export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
 
 /**
  * Custom handler for Question Answering
  */
-export class QuestionAnsweringHandler extends AbstractHandler {
+export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionAnsweringData> {
 
-    public async start(request: Request, context: Context): Promise<void> {
+    public name = "QuestionAnsweringHandler";
 
-        log().debug(`${this.name} start()`);
-
-        if (isIntentRequest(request)) {
-
-            if (request.knowledgeBaseResult) {
-                const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
-                // Voice output based channels
-                if (request.device?.canSpeak || context.device?.canSpeak) {
-                    // We only return high confidence or FAQs here on voice based channels.
-                    if (isSuggested(answer)) {
-                        context.response.say(`${cleanAnswer(answer.topAnswer)}\nAny other questions?`).reprompt(`Any other questions?`);
-                        return;
-                    } else if (isFaq(answer)) {
-                        // The document here is the answer in the faq
-                        context.response.say(`${cleanAnswer(answer.document)}\nAny other questions?`).reprompt(`Any other questions?`);
-                        return;
-                    }
-                } else {
-
-                    if (answer) {
-                        // This is text based channel, we can provide more answer
-                        if (isSuggested(answer)) {
-                            context.response.say(`${cleanAnswer(answer.topAnswer)}\nAny other questions?`).reprompt(`Any other questions?`);
-                        } else if (isFaq(answer)) {
-                            // The document here is the answer IN THE faq
-                            context.response.say(`${cleanAnswer(answer.document)}\nAny other questions?`).reprompt(`Any other questions?`);
-                        } else {
-                            // here is what i found...
-                            context.response.say(`Here is what I found...\n"${cleanAnswer(answer.document)}"\nAny other questions?`).reprompt(`Any other questions?`);
-                        }
-                        // Add the suggestion chip if they have a URI
-                        if (answer.uri && (answer.uri.startsWith("https://") || answer.uri.startsWith("http://"))) {
-                            context.response.withSuggestions({ title: "Read More", url: generateTextFragmentURL(answer.uri, answer.document) });
-                        }
-                    } else if (existsAndNotEmpty(request.knowledgeBaseResult.documents)) {
-                        // Display a list of documents
-                        const items: ListItem[] = request.knowledgeBaseResult.documents.map((doc, index) => {
-
-                            const description: string = cleanAnswer(doc.document);
-
-                            return {
-                                title: doc.title,
-                                description,
-                                url: doc.uri,
-                                token: `${index}`
-                            }
-                        });
-
-                        context.response.say(`Here is what I found...`).withList(items.slice(0, 5));
-                    }
-
-                    // If there is an output speech then return otherwise fall through
-                    if (context.response.response.outputSpeech) {
-                        return;
-                    }
-                }
-            }
-        }
-        // We don't have an answer
-        context.response.say(`I'm sorry, I don't know that one. What else can I help you with? `).reprompt('What else can I help you with?');
-    }
-    // The handleRequest is called 
     public async handleRequest(request: Request, context: Context): Promise<void> {
 
         log().debug(`${this.name} handleRequest()`);
         log().debug(JSON.stringify(request, undefined, 2));
-        // 2. Write your custom logic
+
         const key = keyFromRequest(request);
 
         switch (key) {
+            case this.intentId:
+                // We want to communicate the result.
+                // There should already be one set on the session storage by the dialog manager
+                const result: KnowledgeBaseResult = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
+                // Generate the variables that will be injected!
+                const variables = generateResultVariables(request.rawQuery, result, this.data);
+                // For each variable, we drop them on the session variable
+                Object.keys(variables).forEach((key: keyof ResultVariables) => {
+                    const value = variables[key];
+                    context.session.set(key, value);
+                });
+
+                let response = getResponse(this, request, context);
+
+                if (!response) {
+                    response = getResponse(DEFAULT_RESPONSES, request, context)
+                }
+
+                context.response.respond(response);
+                break;
             default:
                 // Let it fall through to the super
-                return this.start(request, context);
+                return super.handleRequest(request, context);
         }
     }
 
     public canHandleRequest(request: Request, context: Context): boolean {
         return super.canHandleRequest(request, context);
+    }
+
+    /**
+     * We may
+     */
+    public redirectingPathForRequest(request: Request, context: Context): ExecutablePath {
+        // We need to find the best answer here
+        if (isIntentRequest(request) && request.knowledgeBaseResult) {
+            const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
+            if (isFaq(answer)) {
+                const redirectTo = answer.handlerId;
+                return {
+                    type: "START",
+                    intentId: redirectTo
+                }
+            }
+        }
+
+        return super.redirectingPathForRequest(request, context);
     }
 }
