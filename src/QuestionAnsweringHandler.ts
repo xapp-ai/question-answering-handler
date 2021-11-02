@@ -67,7 +67,7 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
     }
 
     /**
-     * We may
+     * 
      */
     public redirectingPathForRequest(request: Request, context: Context): ExecutablePath {
         // We need to find the best answer here
