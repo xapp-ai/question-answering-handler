@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 10.22.0
+          node-version: 12.22.7
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
