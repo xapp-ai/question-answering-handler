@@ -11,9 +11,14 @@ export interface FocusConfig {
     REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS?: boolean;
 }
 
+export interface Highlight {
+    beginOffset: number;
+    endOffset: number;
+}
+
 export interface FocusableAnswer {
     answer: string;
-    highlights: ({ beginOffset: number; endOffset: number; })[];
+    highlights: Highlight[];
 }
 
 /**
@@ -39,7 +44,7 @@ export function focusAnswer(focusable: FocusableAnswer, config?: FocusConfig): F
 
     let { answer } = focusable;
     const highlights = [...focusable.highlights];
-    const adjustedHighlights: ({ beginOffset: number; endOffset: number; })[] = [];
+    const adjustedHighlights: Highlight[] = [];
 
     if (config.REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS) {
         // Find the first highlight and figure out how many \n are before it
