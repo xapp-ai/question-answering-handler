@@ -3,7 +3,12 @@ import { expect } from "chai";
 
 import { cleanAnswer } from "../cleanAnswer";
 
-import { ANSWER_WITH_TABS, ANSWER_WITH_SPORADIC_NEWLINES, RESULT_WITH_NEWLINES_SPACES, ANSWER_WITH_MENU_ITEMS } from "./assets/payloads";
+import {
+    ANSWER_WITH_TABS,
+    ANSWER_WITH_SPORADIC_NEWLINES,
+    RESULT_WITH_NEWLINES_SPACES,
+    ANSWER_WITH_MENU_ITEMS
+} from "./assets/payloads";
 
 describe(`#${cleanAnswer.name}()`, () => {
     describe(`when passed undefined`, () => {

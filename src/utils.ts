@@ -1,43 +1,55 @@
 /*! Copyright (c) 2021, XAPP AI */
 import * as linkify from "linkifyjs";
 import { KnowledgeBaseHighlight } from "stentor-models";
+import { existsAndNotEmpty } from "stentor-utils";
 
 
 /**
- * Function to sort and merge overlapping intervals
+ * Function to sort and merge overlapping intervals.
+ * 
+ * If passed in undefined, undefined is return to preserve the fact the intervals never existed.
+ * 
  * @param intervals
  * @returns [*]
  * Source: https://gist.github.com/vrachieru/5649bce26004d8a4682b
  */
 export function mergeIntervals(intervals: KnowledgeBaseHighlight[]): KnowledgeBaseHighlight[] {
+
+    if (!intervals) {
+        // Or should we return undefined here
+        return undefined;
+    }
+
     // test if there are at least 2 intervals
     if (intervals.length <= 1) {
         return intervals;
     }
 
+    const copied = [...intervals];
+
     const stack: KnowledgeBaseHighlight[] = [];
     let top = null;
 
     // sort the intervals based on their start values
-    intervals.sort(function (a, b) { return a.beginOffset - b.beginOffset });
+    copied.sort(function (a, b) { return a.beginOffset - b.beginOffset });
 
     // push the 1st interval into the stack
-    stack.push(intervals[0]);
+    stack.push(copied[0]);
 
     // start from the next interval and merge if needed
-    for (let i = 1; i < intervals.length; i++) {
+    for (let i = 1; i < copied.length; i++) {
         // get the top element
         top = stack[stack.length - 1];
 
         // if the current interval doesn't overlap with the 
         // stack top element, push it to the stack
-        if (top.endOffset < intervals[i].beginOffset) {
-            stack.push(intervals[i]);
+        if (top.endOffset < copied[i].beginOffset) {
+            stack.push(copied[i]);
         }
         // otherwise update the end value of the top element
         // if end of current interval is higher
-        else if (top.endOffset < intervals[i].endOffset) {
-            top.endOffset = intervals[i].endOffset;
+        else if (top.endOffset < copied[i].endOffset) {
+            top.endOffset = copied[i].endOffset;
             stack.pop();
             stack.push(top);
         }
@@ -59,9 +71,11 @@ export function longestInterval(intervals: KnowledgeBaseHighlight[]): KnowledgeB
         return intervals[0];
     }
 
+    const copy = [...intervals];
+
     // sort the intervals based on their length
-    intervals.sort((b, a) => { return (a.endOffset - a.beginOffset) - (b.endOffset - b.beginOffset) });
-    return intervals[0];
+    copy.sort((b, a) => { return (a.endOffset - a.beginOffset) - (b.endOffset - b.beginOffset) });
+    return copy[0];
 }
 
 /**
@@ -121,7 +135,11 @@ export function addMarkdownHighlight(textIn: string, hlBeginOffset: number, hlEn
  * @param {{ beginOffset: number, endOffset: number }[]} highlights
  * @returns {string}
  */
-export function addMarkdownHighlights(textIn: string, highlights: { beginOffset: number, endOffset: number }[]): string {
+export function addMarkdownHighlights(textIn: string, highlights: { beginOffset: number; endOffset: number }[]): string {
+
+    if (!existsAndNotEmpty(highlights)) {
+        return textIn;
+    }
 
     let markedDown: string = textIn;
 
@@ -136,5 +154,18 @@ export function addMarkdownHighlights(textIn: string, highlights: { beginOffset:
     }
 
     return markedDown;
+}
+
+export function indexesOf(input: string, pattern: RegExp): number[] {
+    let match: RegExpExecArray;
+    const indexes: number[] = [];
+
+    const regex = new RegExp(pattern);
+
+    while (match = regex.exec(input)) {
+        indexes.push(match.index);
+    }
+
+    return indexes;
 }
 

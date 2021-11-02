@@ -6,7 +6,7 @@ export const REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ: IntentRequest & { requestA
     "anonymous": false,
     "platform": "lex-connect",
     "channel": "widget",
-    "intentId": "OCSearch_deb",
+    "intentId": "OCSearch",
     "isHealthCheck": false,
     "isNewSession": false,
     "matchConfidence": null,
@@ -96,7 +96,7 @@ export const REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ: IntentRequest & { requestA
     "locale": "en-US"
 }
 
-export const REQUEST_KB_NO_SUGGEST_OR_FAQ_2: Request & { requestAttributes: object; sessionAttributes: object } = {
+export const REQUEST_KB_NO_SUGGEST_OR_FAQ_2: IntentRequest & { requestAttributes: object; sessionAttributes: object } = {
     "platform": "lex-connect",
     "type": "INTENT_REQUEST",
     "anonymous": false,
@@ -2226,3 +2226,203 @@ export const SUGGESTED_WITH_INTERESTING_GENERATED_HTML = {
 export const ANSWER_WITH_TABS = "Overdraft protection is an agreement with the bank or financial institution to cover overdrafts on a checking account. This service typically involves a fee and is generally limited to a preset maximum amount. Banks are not required to offer any overdraft protection programs, and even when they do, they may retain discretion to pay or not pay a particular overdraft transaction. You should review your deposit account agreement and check with your bank to find out the terms and conditions of any overdraft protection programs that it may offer.\n\n\n\t\t\t\t\tLast Reviewed: October 2020\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n\t\t\n\nPlease note: The terms \"bank\" and \"banks\" used in these answers generally refer to national banks, federal savings associations, and federal branches or";
 
 export const ANSWER_WITH_SPORADIC_NEWLINES = "An HMO is a type of health plan that requires you to select a family doctor, often called a primary care physician or PCP. You need a referral from your PCP to see a specialist in the HMO network, such as a cardiologist (heart doctor). Typically, only emergency services are covered if you go outside the HMO’s network of participating providers. You do not have the option to see out-of-network providers when you have an HMO.\n\n\n      \n\n\n    \n\n\n  \n\n\n  \n  \n    \n      \n        How do Independence Blue Cross Keystone HMO plans work?\n      \n\n\n    \n\n\n\n    \n      With a Keystone Health Plan East HMO from Independence Blue Cross, you can see any doctor or visit any hospital in the Keystone Health Plan East network.";
+
+//  This answer results in an odd html with scrolling.
+export const KB_RESULT_WITH_ODD_SCROLLING: KnowledgeBaseResult = {
+    "suggested": [
+        {
+            "title": "What should I do if the house or apartment I’m renting goes into foreclosure? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-do-if-the-house-or-apartment-im-renting-goes-into-foreclosure-en-1545",
+            "document": "You may be able to avoid the shut-off by contacting the utility and directly paying them, even if the utilities are in the landlord’s name.\n\n\n\n\tMove. Once a foreclosure sale occurs, you may be required to move, often in as little as thirty days or less. You should remove all of your belongings when you move so the new property owner does not take or destroy them.\n\n\n\n\tProtect yourself. If someone contacts you claiming to be the new property owner, ask to see documents that show ownership.",
+            "highlights": [
+                {
+                    "beginOffset": 211,
+                    "endOffset": 252,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 220,
+                    "endOffset": 252,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 150,
+                    "endOffset": 252,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 144,
+                    "endOffset": 148,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 157,
+                    "endOffset": 168,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 205,
+                    "endOffset": 209,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 304,
+                    "endOffset": 308,
+                    "topAnswer": false
+                }
+            ]
+        }
+    ],
+    "faqs": [
+        {
+            "question": "How do I avoid foreclosure?",
+            "document": "If you can’t pay your mortgage or are worried about missing a mortgage payment, call your mortgage servicer right away. You should also contact a HUD-approved housing counselor to get free, expert assistance on avoiding foreclosure.",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/if-i-cant-pay-my-mortgage-loan-what-are-my-options-en-268/",
+            "highlights": [
+                {
+                    "beginOffset": 0,
+                    "endOffset": 232,
+                    "topAnswer": false
+                }
+            ]
+        }
+    ],
+    "documents": [
+        {
+            "title": "What should I do if the house or apartment I’m renting goes into foreclosure? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-do-if-the-house-or-apartment-im-renting-goes-into-foreclosure-en-1545",
+            "document": "...shut-off by contacting the utility and directly paying them, even if the utilities are in the landlord’s name.\n\n\n\n\tMove. Once a foreclosure sale occurs, you may be required to move, often in as little as thirty days or less. You should remove all of your belongings when you move so the new...",
+            "highlights": [
+                {
+                    "beginOffset": 118,
+                    "endOffset": 122,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 131,
+                    "endOffset": 142,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 179,
+                    "endOffset": 183,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 278,
+                    "endOffset": 282,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "How long after foreclosure starts will I have to leave my home? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/how-long-after-foreclosure-starts-will-i-have-to-leave-my-home-en-1853",
+            "document": "...some states you may be required to leave your home a few days after your foreclosure sale. In others, you may not be required to move for months after the foreclosure.\n\n\nTip: You may want to check with your county clerk’s office or legal services provider to find out more details on how...",
+            "highlights": [
+                {
+                    "beginOffset": 76,
+                    "endOffset": 87,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 132,
+                    "endOffset": 136,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 158,
+                    "endOffset": 169,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "I can’t make my mortgage payments. How long will it take before I’ll face foreclosure? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/i-cant-make-my-mortgage-payments-how-long-will-it-take-before-ill-face-foreclosure-en-1849",
+            "document": "...days after you’re behind on your mortgage. After that, once your servicer begins the legal process, the amount of time you have until an actual foreclosure sale varies by state...",
+            "highlights": [
+                {
+                    "beginOffset": 147,
+                    "endOffset": 158,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "What happens after I complete an application to determine my options to avoid foreclosure? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/what-happens-after-i-complete-an-application-to-determine-my-options-to-avoid-foreclosure-en-1851",
+            "document": "...servicer what it asks for as soon as possible to make sure you have all possible foreclosure protections.\n\n\n\nForeclosure\n\nExcept in rare cases, your servicer can’t start the foreclosure process until at least 120 days after you become delinquent on your loan.  After that, if you aren’t eligible...",
+            "highlights": [
+                {
+                    "beginOffset": 84,
+                    "endOffset": 95,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 112,
+                    "endOffset": 123,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 177,
+                    "endOffset": 188,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "What should I do if I have a reverse mortgage loan and I received a notice of default or foreclosure? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-do-if-i-have-a-reverse-mortgage-and-i-received-a-notice-that-i-am-delinquent-in-default-or-behind-on-my-property-taxes-and-insurance-en-1511",
+            "document": "...Act\nquickly. If you delay or ignore the notice, you could lose your home to\nforeclosure...",
+            "highlights": [
+                {
+                    "beginOffset": 79,
+                    "endOffset": 90,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "If I lose my home to foreclosure, can I ever buy a home again? What impact will a foreclosure have on my credit report? | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/if-i-lose-my-home-to-foreclosure-can-i-ever-buy-a-home-again-what-impact-will-a-foreclosure-have-on-my-credit-report-en-326",
+            "document": "...Foreclosure information generally remains in your credit report for seven years from the date of the foreclosure. Even if you have a bad credit history or a low credit score, you may qualify for an Federal...",
+            "highlights": [
+                {
+                    "beginOffset": 3,
+                    "endOffset": 14,
+                    "topAnswer": false
+                },
+                {
+                    "beginOffset": 104,
+                    "endOffset": 115,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "Worried about mortgage payments? Get the help you’re entitled to. | Consumer Financial Protection Bureau",
+            "uri": "https://www.consumerfinance.gov/coronavirus/worried-about-mortgage-payments-get-the-help-entitled-to",
+            "document": "...is calling you—pick up the phone. Tell your servicer you can’t make your monthly payment because of COVID-19 and ask them for help avoiding foreclosure...",
+            "highlights": [
+                {
+                    "beginOffset": 143,
+                    "endOffset": 154,
+                    "topAnswer": false
+                }
+            ]
+        },
+        {
+            "title": "I applied for a loan modification or other options to avoid foreclosure, but was denied help. My lender said I didn’t meet the qualifications for help. Can I appeal? | Consumer Financial Protection Bu",
+            "uri": "https://www.consumerfinance.gov/ask-cfpb/i-applied-for-a-loan-modification-or-other-options-to-avoid-foreclosure-but-was-denied-help-my-lender-said-i-didnt-meet-the-qualifications-for-help-can-i-appeal-en-1841",
+            "document": "...I got a letter from my mortgage servicer about my application for help to prevent foreclosure of my mortgage. Can you help me understand some of the terms...",
+            "highlights": [
+                {
+                    "beginOffset": 85,
+                    "endOffset": 96,
+                    "topAnswer": false
+                }
+            ]
+        }
+    ]
+}
