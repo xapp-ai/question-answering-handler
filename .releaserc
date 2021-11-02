@@ -1,4 +1,7 @@
 {
+  "releases": [  
+    "main"
+  ],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "conventionalcommits"
