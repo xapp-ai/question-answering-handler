@@ -45,6 +45,9 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
                     context.session.set(key, value);
                 });
 
+                log().debug('Variables');
+                log().debug(JSON.stringify(variables, undefined, 2));
+
                 let response = getResponse(this, request, context);
 
                 if (!response) {
