@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "A question answering handler for 📣 stentor",
   "types": "lib/index",
   "typings": "lib/index",
@@ -17,10 +17,10 @@
     "node": "^12 || ^14"
   },
   "devDependencies": {
-    "@semantic-release/changelog":"6.0.1",
-    "@semantic-release/git":"10.0.1",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "8.0.2",
-    "@semantic-release/release-notes-generator":"10.0.2",
+    "@semantic-release/release-notes-generator": "10.0.2",
     "@types/chai": "4.2.21",
     "@types/mocha": "8.2.3",
     "@types/node": "14.14.22",
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "fuse.js": "6.4.6",
-    "linkifyjs":"3.0.3"
+    "linkifyjs": "3.0.3"
   },
   "peerDependencies": {
     "stentor": "1.X"
