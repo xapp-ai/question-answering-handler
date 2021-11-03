@@ -29,6 +29,14 @@ export interface ResultVariableInformation {
     source?: string;
 }
 
+
+export interface ResultVariableFAQInformation extends ResultVariableInformation {
+    /**
+     * If provided, redirect the user to this new handlerId which will handle the response.
+     */
+    handlerId?: string;
+}
+
 export interface ResultVariableListItem {
     title: string;
     document: string;
@@ -48,7 +56,7 @@ export interface ResultVariables {
     /**
      * FAQ that most matches 
      */
-    TOP_FAQ?: ResultVariableInformation;
+    TOP_FAQ?: ResultVariableFAQInformation;
     /**
      * List of search results.  These are typically the fallback when a suggestions, top answer or top FAQ
      * are not found.
@@ -97,7 +105,8 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
         variables.TOP_FAQ = {
             text: cleanAnswer(topFAQ.document),
             markdownText: cleanAnswer(addMarkdownHighlights(topFAQ.document, topFAQ.highlights)),
-            source: topFAQ.uri
+            source: topFAQ.uri,
+            handlerId: topFAQ.handlerId
         }
     }
 

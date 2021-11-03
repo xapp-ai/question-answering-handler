@@ -5,7 +5,6 @@ import {
     Context,
     Data,
     getResponse,
-    isIntentRequest,
     keyFromRequest,
     Request
 } from "stentor";
@@ -14,10 +13,8 @@ import { ExecutablePath, KnowledgeBaseResult } from "stentor-models";
 import { log } from "stentor-logger";
 
 import { DEFAULT_RESPONSES } from "./constants";
-import { determineAnswer } from "./determineAnswer";
 import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
 
-import { isFaq } from "./guards";
 
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
 
@@ -48,6 +45,9 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
                     context.session.set(key, value);
                 });
 
+                log().debug('Variables');
+                log().debug(JSON.stringify(variables, undefined, 2));
+
                 let response = getResponse(this, request, context);
 
                 if (!response) {
@@ -66,19 +66,21 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
         return super.canHandleRequest(request, context);
     }
 
-    /**
-     * 
-     */
     public redirectingPathForRequest(request: Request, context: Context): ExecutablePath {
-        // We need to find the best answer here
-        if (isIntentRequest(request) && request.knowledgeBaseResult) {
-            const answer = determineAnswer(request.rawQuery, request.knowledgeBaseResult);
-            if (isFaq(answer)) {
-                const redirectTo = answer.handlerId;
-                return {
-                    type: "START",
-                    intentId: redirectTo
-                }
+        // There should already be one set on the session storage by the dialog manager
+        const result: KnowledgeBaseResult = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
+        // Generate the variables that will be injected!
+        const variables = generateResultVariables(request.rawQuery, result, this.data);
+        // For each variable, we drop them on the session variable
+        Object.keys(variables).forEach((key: keyof ResultVariables) => {
+            const value = variables[key];
+            context.session.set(key, value);
+        });
+
+        if (variables.TOP_FAQ && variables.TOP_FAQ.handlerId) {
+            return {
+                type: "START",
+                intentId: variables.TOP_FAQ.handlerId
             }
         }
 

@@ -6,7 +6,17 @@ import * as sinonChai from "sinon-chai";
 chai.use(sinonChai);
 const expect = chai.expect;
 
-import { Content, Context, List, Handler, IntentRequest, ResponseBuilder, Response, ResponseOutput } from "stentor";
+import {
+    Content,
+    Context,
+    Handler,
+    IntentRequest,
+    KnowledgeBaseResult,
+    List,
+    Response,
+    ResponseBuilder,
+    ResponseOutput
+} from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
 import { IntentRequestBuilder } from "stentor-request";
 import { ContextBuilder } from "stentor-context";
@@ -70,17 +80,16 @@ const handlerWithContent: Handler<Content, QuestionAnsweringData> = {
 }
 
 describe(`${QuestionAnsweringHandler.name}`, () => {
+    let qa: QuestionAnsweringHandler;
+    let response: ResponseBuilder;
+    let request: IntentRequest
+    let context: Context;
     describe(`#constructor()`, () => {
         it('returns an instance of itself', () => {
             expect(new QuestionAnsweringHandler(handler)).to.be.instanceOf(QuestionAnsweringHandler);
         });
     });
     describe(`${QuestionAnsweringHandler.prototype.handleRequest.name}()`, () => {
-
-        let qa: QuestionAnsweringHandler;
-        let response: ResponseBuilder;
-        let request: IntentRequest
-        let context: Context;
         // This tests the scenario where there is no content defined
         // which was common on earlier versions
         describe("without defined content", () => {
@@ -125,7 +134,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                             })
                             .build()
                     );
-
                     expect(response.respond).to.have.been.calledOnce;
                     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
                     // @ts-ignore Need the call, types aren't great here with sinon
@@ -351,6 +359,71 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                         outputSpeech: { ssml: 'Yes', displayText: 'Yes' },
                         reprompt: { ssml: 'Yes?', displayText: 'Yes?' }
                     })
+                });
+            });
+        });
+    });
+    describe(`${QuestionAnsweringHandler.prototype.redirectingPathForRequest.name}()`, () => {
+        beforeEach(() => {
+            qa = new QuestionAnsweringHandler(handler);
+        });
+        describe("for a normal request", () => {
+            it("returns undefined", () => {
+                request = new IntentRequestBuilder()
+                    .withRawQuery('yes')
+                    .withIntentId("YesIntent")
+                    .updateDevice({
+                        canSpeak: false
+                    })
+                    .build();
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult
+                        }
+                    })
+                    .build()
+
+                const redirect = qa.redirectingPathForRequest(request, context);
+
+                expect(redirect).to.be.undefined;
+            });
+        });
+        describe("for an FAQ with handlerId", () => {
+            it("returns the handlerId", () => {
+                request = new IntentRequestBuilder()
+                    .withRawQuery('what is a hot dog')
+                    .withIntentId("OCSearch")
+                    .updateDevice({
+                        canSpeak: false
+                    })
+                    .build();
+
+                const result: KnowledgeBaseResult = {
+                    faqs: [{
+                        question: "what is a hot dog",
+                        handlerId: "RedirectTo",
+                        document: "you don't want to know",
+                        highlights: []
+                    }]
+                }
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: result
+                        }
+                    })
+                    .build()
+
+                const redirect = qa.redirectingPathForRequest(request, context);
+
+                expect(redirect).to.deep.equal({
+                    type: "START",
+                    intentId: "RedirectTo"
                 });
             });
         });
