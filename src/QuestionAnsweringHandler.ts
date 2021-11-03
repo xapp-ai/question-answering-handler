@@ -16,6 +16,8 @@ import { DEFAULT_RESPONSES } from "./constants";
 import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
 
 
+const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS"];
+
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
 
 /**
@@ -40,7 +42,7 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
                 // Generate the variables that will be injected!
                 const variables = generateResultVariables(request.rawQuery, result, this.data);
                 // For each variable, we drop them on the session variable
-                Object.keys(variables).forEach((key: keyof ResultVariables) => {
+                RESULT_VARIABLE_KEYS.forEach((key) => {
                     const value = variables[key];
                     context.session.set(key, value);
                 });
@@ -72,7 +74,7 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
         // Generate the variables that will be injected!
         const variables = generateResultVariables(request.rawQuery, result, this.data);
         // For each variable, we drop them on the session variable
-        Object.keys(variables).forEach((key: keyof ResultVariables) => {
+        RESULT_VARIABLE_KEYS.forEach((key) => {
             const value = variables[key];
             context.session.set(key, value);
         });
