@@ -12,10 +12,14 @@ jobs:
     environment: publish
     env:
       NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      GH_TOKEN: ${{secrets.GH_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
