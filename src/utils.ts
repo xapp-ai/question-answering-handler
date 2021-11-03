@@ -3,7 +3,6 @@ import * as linkify from "linkifyjs";
 import { KnowledgeBaseHighlight } from "stentor-models";
 import { existsAndNotEmpty } from "stentor-utils";
 
-
 /**
  * Function to sort and merge overlapping intervals.
  * 

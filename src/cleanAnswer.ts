@@ -32,5 +32,4 @@ export function cleanAnswer(answer: string): string {
     answer = answer.replace(/(\n| ){3,}/g, '\n\n');
 
     return answer;
-
 }
