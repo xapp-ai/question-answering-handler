@@ -9,6 +9,10 @@ export interface FocusConfig {
      * If set to true, it will leave 1 line above where the first highlight is found.
      */
     REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS?: boolean;
+    /**
+     * Removes the trailing lines of a response that do not have highlights.
+     */
+    REMOVE_TRAILING_LINES_WITHOUT_HIGHLIGHTS?: boolean;
 }
 
 export interface Highlight {
@@ -44,7 +48,7 @@ export function focusAnswer(focusable: FocusableAnswer, config?: FocusConfig): F
 
     let { answer } = focusable;
     const highlights = [...focusable.highlights];
-    const adjustedHighlights: Highlight[] = [];
+    let adjustedHighlights: Highlight[] = [...highlights];
 
     if (config.REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS) {
         // Find the first highlight and figure out how many \n are before it
@@ -53,21 +57,35 @@ export function focusAnswer(focusable: FocusableAnswer, config?: FocusConfig): F
             const firstHighlight = { ...highlights[0] };
 
             const answerToHighlight = answer.substring(0, firstHighlight.beginOffset);
+
             // Find all the \n
             const indexes = indexesOf(answerToHighlight, /\n/g);
-
-            // Go back a few and then take a substring, then clean that.
-            const cutHere = indexes[indexes.length - 1];
-
-            answer = answer.substring(cutHere, answer.length);
-
-            // Adjust the highlights for where we cut
-            highlights.forEach((highlight) => {
-                adjustedHighlights.push({
-                    beginOffset: highlight.beginOffset - cutHere,
-                    endOffset: highlight.endOffset - cutHere
+            if (existsAndNotEmpty(indexes)) {
+                // we have instances of \n before the first highlight, get ready to trim
+                adjustedHighlights = [];
+                // Go back a few and then take a substring, then clean that.
+                const cutHere = indexes[indexes.length - 1];
+                answer = answer.substring(cutHere, answer.length);
+                // Adjust the highlights for where we cut
+                highlights.forEach((highlight) => {
+                    adjustedHighlights.push({
+                        beginOffset: highlight.beginOffset - cutHere,
+                        endOffset: highlight.endOffset - cutHere
+                    });
                 });
-            });
+            }
+        }
+    }
+
+    if (config.REMOVE_TRAILING_LINES_WITHOUT_HIGHLIGHTS) {
+        // Find the last index
+        if (existsAndNotEmpty(adjustedHighlights)) {
+            const lastHighlight = { ...adjustedHighlights[highlights.length - 1] };
+            // trailing content
+            const trailingAnswerFromHighlight = answer.substring(lastHighlight.endOffset);
+            const indexes = indexesOf(trailingAnswerFromHighlight, /\n/g);
+            const trimHere: number = existsAndNotEmpty(indexes) ? indexes[0] + lastHighlight.endOffset : answer.length;
+            answer = answer.substring(0, trimHere);
         }
     }
 

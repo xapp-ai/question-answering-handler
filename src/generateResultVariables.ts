@@ -29,7 +29,6 @@ export interface ResultVariableInformation {
     source?: string;
 }
 
-
 export interface ResultVariableFAQInformation extends ResultVariableInformation {
     /**
      * If provided, redirect the user to this new handlerId which will handle the response.

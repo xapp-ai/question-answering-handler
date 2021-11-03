@@ -2,7 +2,8 @@
   "extends": "./node_modules/@xapp/config/tsconfig.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+    "resolveJsonModule":true
   },
   "include": ["src"],
   "exclude": ["node_modules", "src/**/__test__/*"]
