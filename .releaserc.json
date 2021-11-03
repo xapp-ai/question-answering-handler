@@ -8,8 +8,9 @@
         "@semantic-release/release-notes-generator",
         "@semantic-release/changelog",
         "@semantic-release/npm",
+        "@semantic-release/git",
         ["@semantic-release/github", {
-            "assets": ["package.json", "CHANGELOG.md"],
+            "assets": ["package.json", "CHANGELOG.md", "lib/**"],
             "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
           }
         ]
