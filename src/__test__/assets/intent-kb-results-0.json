@@ -1,0 +1,377 @@
+{
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "financial institution",
+    "requestAttributes": {
+      "x-amz-lex:kendra-search-response-question_answer-question-1": "What types of institutions offer mortgages?",
+      "x-amz-lex:kendra-search-response-question_answer-answer-1": "Home loans, or mortgages, are available from several types of lenders--thrift institutions, commercial banks, mortgage  companies, and credit unions. Different lenders may quote you different prices,  so you should contact several lenders to make sure you are getting the best price. \nYou can also get a home loan through a mortgage broker. Brokers arrange transactions rather than lend  money directly; in other words, they find a lender for you.",
+      "channel": "widget",
+      "type": "INTENT_REQUEST",
+      "userId": "stentor-widget-user-5f29cf48-074c-6501-4444-cb8f2e65f7a4",
+      "platform": "stentor-platform",
+      "x-amz-lex:kendra-search-response-document-link-2": "https://www.consumerfinance.gov/compliance/supervision-examinations/privacy-consumer-financial-information-gramm-leach-bliley-act-glba-examination-procedures",
+      "x-amz-lex:kendra-search-response-document-link-1": "https://www.consumerfinance.gov/consumer-tools/educator-tools/resources-for-older-adults/elder-protection-networks/resources/financial-institutions",
+      "x-amz-lex:kendra-search-response-document-5": "...deductible.\n\nDemand\n\nA measure of how popular or necessary an item is and how many consumers want to buy it.\n\nDepository institution\n\nA financial institution such as a bank or credit union that is authorized to accept checking or savings deposits.\n\nDirect deposit\n\nMoney electronically sent to...",
+      "x-amz-lex:kendra-search-response-document-4": "...Financial Protection Bureau, the United States Department of the Treasury, and the Financial Crimes Enforcement Network (FinCEN) are issuing this joint memorandum to encourage coordination among financial institutions, law enforcement, and adult protective service agencies (APS) in order to protect...",
+      "x-amz-lex:kendra-search-response-answer-1": "customers and operations of banks, savings associations and credit unions (collectively, “financial institutions”).\n\nOn March 9, 2020, the federal financial institution regulatory agencies and state bank regulators issued a statement to encourage financial institutions to meet the financial services needs of their customers and members in areas affected by COVID-19. Additionally, on March 19, 2020, the Federal Reserve, FDIC, and OCC issued a joint statement on Community Reinvestment Act (CRA) consideration for activities in response to COVID-19,",
+      "x-amz-lex:kendra-search-response-document-link-5": "https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary",
+      "x-amz-lex:kendra-search-response-document-link-4": "https://www.consumerfinance.gov/compliance/supervisory-guidance/memorandum-financial-institution-and-law-enforcement-efforts-combat-elder-financial-exploitation",
+      "x-amz-lex:kendra-search-response-document-link-3": "https://www.consumerfinance.gov/compliance/compliance-resources/mortgage-resources/hmda-reporting-requirements/home-mortgage-disclosure-act-faqs",
+      "x-amz-lex:kendra-search-response-document-3": "...financial institution may report either that the information was not collected on the basis of visual observation or surname (code 2) or that the requirement to report this data field is not applicable (code 3).\n\nFor consistency of data across all HMDA reporting financial institutions, the Bureau...",
+      "x-amz-lex:kendra-search-response-document-2": "...on behalf of, the financial institution, including marketing of the financial institution’s own products or services, or products or services offered pursuant to a joint agreement between two or more financial institutions; and/or\n\n\n\tConsistent with the exceptions in GLBA [15 USC 6802(e)] and...",
+      "x-amz-lex:kendra-search-response-document-1": "...Local or regional protocols and response\n\n\n        \n\n\n        Financial institutions, financial service providers, law enforcement, emergency medical first responders, and senior service providers can work together to:\n\n\tDevelop...",
+      "rawQuery": "financial institution"
+    },
+    "sessionAttributes": {
+      "channel": "widget",
+      "sessionId": "stentor-widget-session-0211f8b4-b16c-65b5-8c0e-319dd68e89b9",
+      "userId": "stentor-widget-user-5f29cf48-074c-6501-4444-cb8f2e65f7a4",
+      "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-0211f8b4-b16c-65b5-8c0e-319dd68e89b9",
+    "slots": {},
+    "userId": "stentor-widget-user-5f29cf48-074c-6501-4444-cb8f2e65f7a4",
+    "device": {
+      "channel": "widget",
+      "audioSupported": false,
+      "canPlayVideo": false,
+      "videoSupported": false,
+      "canPlayAudio": false,
+      "canSpeak": false,
+      "canThrowCard": true,
+      "hasScreen": true,
+      "canTransferCall": false,
+      "hasWebBrowser": true
+    },
+    "knowledgeBaseResult": {
+      "suggested": [
+        {
+          "title": "Joint Statement Encouraging Responsible Small-Dollar Lending in Response to COVID-19 | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/compliance/supervisory-guidance/joint-statement-encouraging-responsible-small-dollar-lending-response-covid-19",
+          "document": "customers and operations of banks, savings associations and credit unions (collectively, “financial institutions”).\n\nOn March 9, 2020, the federal financial institution regulatory agencies and state bank regulators issued a statement to encourage financial institutions to meet the financial services needs of their customers and members in areas affected by COVID-19. Additionally, on March 19, 2020, the Federal Reserve, FDIC, and OCC issued a joint statement on Community Reinvestment Act (CRA) consideration for activities in response to COVID-19,",
+          "highlights": [
+            {
+              "beginOffset": 90,
+              "endOffset": 99,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 100,
+              "endOffset": 112,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 147,
+              "endOffset": 156,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 157,
+              "endOffset": 168,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 247,
+              "endOffset": 256,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 257,
+              "endOffset": 269,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 282,
+              "endOffset": 291,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What types of institutions offer mortgages?",
+          "document": "Home loans, or mortgages, are available from several types of lenders--thrift institutions, commercial banks, mortgage  companies, and credit unions. Different lenders may quote you different prices,  so you should contact several lenders to make sure you are getting the best price. \nYou can also get a home loan through a mortgage broker. Brokers arrange transactions rather than lend  money directly; in other words, they find a lender for you.",
+          "uri": "https://www.consumerfinance.gov/owning-a-home/",
+          "highlights": [
+            {
+              "beginOffset": 0,
+              "endOffset": 300,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "title": "Financial institutions and service providers | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/consumer-tools/educator-tools/resources-for-older-adults/elder-protection-networks/resources/financial-institutions",
+          "document": "...Local or regional protocols and response\n\n\n        \n\n\n        Financial institutions, financial service providers, law enforcement, emergency medical first responders, and senior service providers can work together to:\n\n\tDevelop...",
+          "highlights": [
+            {
+              "beginOffset": 65,
+              "endOffset": 74,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 75,
+              "endOffset": 87,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 89,
+              "endOffset": 98,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Privacy of Consumer Financial Information - Gramm-Leach-Bliley Act (GLBA) examination procedures | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/compliance/supervision-examinations/privacy-consumer-financial-information-gramm-leach-bliley-act-glba-examination-procedures",
+          "document": "...on behalf of, the financial institution, including marketing of the financial institution’s own products or services, or products or services offered pursuant to a joint agreement between two or more financial institutions; and/or\n\n\n\tConsistent with the exceptions in GLBA [15 USC 6802(e)] and...",
+          "highlights": [
+            {
+              "beginOffset": 21,
+              "endOffset": 30,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 31,
+              "endOffset": 42,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 71,
+              "endOffset": 80,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 81,
+              "endOffset": 92,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 203,
+              "endOffset": 212,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 213,
+              "endOffset": 225,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Home Mortgage Disclosure Act FAQs | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/compliance/compliance-resources/mortgage-resources/hmda-reporting-requirements/home-mortgage-disclosure-act-faqs",
+          "document": "...financial institution may report either that the information was not collected on the basis of visual observation or surname (code 2) or that the requirement to report this data field is not applicable (code 3).\n\nFor consistency of data across all HMDA reporting financial institutions, the Bureau...",
+          "highlights": [
+            {
+              "beginOffset": 3,
+              "endOffset": 12,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 13,
+              "endOffset": 24,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 266,
+              "endOffset": 275,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 276,
+              "endOffset": 288,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Memorandum on financial institution and law enforcement efforts to combat elder financial exploitation | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/compliance/supervisory-guidance/memorandum-financial-institution-and-law-enforcement-efforts-combat-elder-financial-exploitation",
+          "document": "...Financial Protection Bureau, the United States Department of the Treasury, and the Financial Crimes Enforcement Network (FinCEN) are issuing this joint memorandum to encourage coordination among financial institutions, law enforcement, and adult protective service agencies (APS) in order to protect...",
+          "highlights": [
+            {
+              "beginOffset": 3,
+              "endOffset": 12,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 86,
+              "endOffset": 95,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 198,
+              "endOffset": 207,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 208,
+              "endOffset": 220,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Financial Terms Glossary | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary",
+          "document": "...deductible.\n\nDemand\n\nA measure of how popular or necessary an item is and how many consumers want to buy it.\n\nDepository institution\n\nA financial institution such as a bank or credit union that is authorized to accept checking or savings deposits.\n\nDirect deposit\n\nMoney electronically sent to...",
+          "highlights": [
+            {
+              "beginOffset": 124,
+              "endOffset": 135,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 139,
+              "endOffset": 148,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 149,
+              "endOffset": 160,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Joint Statement Encouraging Responsible Small-Dollar Lending in Response to COVID-19 | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/compliance/supervisory-guidance/joint-statement-encouraging-responsible-small-dollar-lending-response-covid-19",
+          "document": "...collectively, “financial institutions”).\n\nOn March 9, 2020, the federal financial institution regulatory agencies and state bank regulators issued a statement to encourage financial institutions to meet the financial services needs of their customers and members in areas affected by COVID-19...",
+          "highlights": [
+            {
+              "beginOffset": 18,
+              "endOffset": 27,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 28,
+              "endOffset": 40,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 75,
+              "endOffset": 84,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 85,
+              "endOffset": 96,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 175,
+              "endOffset": 184,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 185,
+              "endOffset": 197,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 210,
+              "endOffset": 219,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "FDIC: Consumer Assistance Topics - Deposit Accounts",
+          "uri": "https://www.fdic.gov/resources/consumers/consumer-assistance-topics/deposit-accounts.html",
+          "document": "...Cashier’s checks – These are checks that are guaranteed by a financial institution.  When you purchase a cashier’s check, the bank takes the money from your checking or savings account and puts it in its own account. The...",
+          "highlights": [
+            {
+              "beginOffset": 64,
+              "endOffset": 73,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 74,
+              "endOffset": 85,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Can a bank in one state serve customers living in a different state?",
+          "uri": "https://www.helpwithmybank.gov/help-topics/complaints-inquiries/inquiries/inquiry-different-states.html",
+          "document": "...Financial institutions supervised by the Office of the Comptroller of the Currency (OCC) hold a national charter and might offer banking products and services in one state, in several states, or nationally. Contact the financial institution in question to determine what...",
+          "highlights": [
+            {
+              "beginOffset": 3,
+              "endOffset": 12,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 13,
+              "endOffset": 25,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 222,
+              "endOffset": 231,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 232,
+              "endOffset": 243,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ]
+    },
+    "locale": "en-US"
+  }

@@ -8,6 +8,8 @@ import {
     SUGGESTED_WITH_TOP_ANSWER
 } from "./assets/payloads";
 
+import * as intent0 from "./assets/intent-kb-results-0.json";
+
 describe(`#${generateResultVariables.name}()`, () => {
     describe(`for undefined`, () => {
         it(`returns undefined`, () => {
@@ -48,6 +50,24 @@ describe(`#${generateResultVariables.name}()`, () => {
             expect(variables.TOP_ANSWER).to.be.undefined;
             expect(variables.SUGGESTED_ANSWER.text).to.equal("Dwelling coverage helps protect the total cost of the home.");
             expect(variables.TOP_FAQ).to.be.undefined;
+        });
+        describe("with highlights on the suggested", () => {
+            it("returns the proper highlights", () => {
+                const variables = generateResultVariables(intent0.rawQuery, intent0.knowledgeBaseResult, { FUZZY_MATCH_FAQS: true, });
+                expect(variables.TOP_FAQ).to.undefined;
+                expect(variables.TOP_ANSWER).to.be.undefined;
+                expect(variables.SUGGESTED_ANSWER.text).to.include("customers and operations of banks, savings associations and credit unions (collectively, “financial institutions”).");
+                expect(variables.SUGGESTED_ANSWER.markdownText).to.include("customers and operations of banks, savings associations and credit unions (collectively, “**financial** **institutions**”).");
+            });
+            describe("with REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS config", () => {
+                it("returns the proper highlights", () => {
+                    const variables = generateResultVariables(intent0.rawQuery, intent0.knowledgeBaseResult, { FUZZY_MATCH_FAQS: true, REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS: true });
+                    expect(variables.TOP_FAQ).to.undefined;
+                    expect(variables.TOP_ANSWER).to.be.undefined;
+                    expect(variables.SUGGESTED_ANSWER.text).to.include("customers and operations of banks, savings associations and credit unions (collectively, “financial institutions”).");
+                    expect(variables.SUGGESTED_ANSWER.markdownText).to.include("customers and operations of banks, savings associations and credit unions (collectively, “**financial** **institutions**”).");
+                });
+            });
         });
     });
     describe("with a top answer in the suggestion", () => {
