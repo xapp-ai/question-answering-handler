@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.3...v2.0.4) (2021-11-03)
+
+
+### Bug Fixes
+
+* Bad highlighting on suggested answers without leading new lines ([#290](https://github.com/xapp-ai/question-answering-handler/issues/290)) ([273cdd9](https://github.com/xapp-ai/question-answering-handler/commit/273cdd9754906520699bcf58e3fa13c86405e0ea))
+
 ## [2.0.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.2...v2.0.3) (2021-11-03)
 
 
