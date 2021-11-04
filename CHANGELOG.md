@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.4...v2.0.5) (2021-11-04)
+
+
+### Bug Fixes
+
+* Wrong Links being used in responses ([#293](https://github.com/xapp-ai/question-answering-handler/issues/293)) ([5d932f5](https://github.com/xapp-ai/question-answering-handler/commit/5d932f5f63aeef30c7b2afbbcb8f94c98dc8d214))
+
 ## [2.0.4](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.3...v2.0.4) (2021-11-03)
 
 
