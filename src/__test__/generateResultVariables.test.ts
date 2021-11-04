@@ -9,6 +9,7 @@ import {
 } from "./assets/payloads";
 
 import * as intent0 from "./assets/intent-kb-results-0.json";
+import * as intent1 from "./assets/intent-kb-results-1.json";
 
 describe(`#${generateResultVariables.name}()`, () => {
     describe(`for undefined`, () => {
@@ -25,13 +26,50 @@ describe(`#${generateResultVariables.name}()`, () => {
                 }],
                 faqs: [{
                     question: "what is dwelling coverage",
-                    document: "expected"
+                    document: "FAQ: Dwelling coverage helps protect the total cost of the home.",
+                    highlights: [{
+                        beginOffset: 5,
+                        endOffset: 64
+                    }]
                 }]
             }, { FUZZY_MATCH_FAQS: true });
 
-            expect(variables.TOP_FAQ.text).to.equal("expected");
+            expect(variables.TOP_FAQ.text).to.equal("FAQ: Dwelling coverage helps protect the total cost of the home.");
+            expect(variables.TOP_FAQ.markdownText).to.equal("FAQ: Dwelling coverage helps protect the total cost of the home.");
             expect(variables.TOP_ANSWER).to.be.undefined;
-            expect(variables.SUGGESTED_ANSWER.text).to.equal("Dwelling coverage helps protect the total cost of the home.")
+            expect(variables.SUGGESTED_ANSWER.text).to.equal("Dwelling coverage helps protect the total cost of the home.");
+        });
+        describe("with HIGHLIGHT_TOP_FAQ set to true", () => {
+            it(`returns the FAQ`, () => {
+                const variables = generateResultVariables("what is dwelling coverage", {
+                    suggested: [{
+                        title: "Dwelling Coverage",
+                        document: "Dwelling coverage helps protect the total cost of the home.",
+                    }],
+                    faqs: [{
+                        question: "what is dwelling coverage",
+                        document: "FAQ: Dwelling coverage helps protect the total cost of the home.",
+                        highlights: [{
+                            beginOffset: 5,
+                            endOffset: 64
+                        }],
+                        handlerId: "Foo"
+                    }]
+                }, { FUZZY_MATCH_FAQS: true, HIGHLIGHT_TOP_FAQ: true });
+
+                expect(variables.TOP_FAQ.text).to.equal("FAQ: Dwelling coverage helps protect the total cost of the home.");
+                expect(variables.TOP_FAQ.markdownText).to.equal("FAQ: **Dwelling coverage helps protect the total cost of the home.**");
+                expect(variables.TOP_FAQ.handlerId).to.equal("Foo");
+                expect(variables.TOP_ANSWER).to.be.undefined;
+                expect(variables.SUGGESTED_ANSWER.text).to.equal("Dwelling coverage helps protect the total cost of the home.");
+            });
+        });
+        it("returns the correct URL", () => {
+            const variables = generateResultVariables(intent1.rawQuery, intent1.knowledgeBaseResult, { FUZZY_MATCH_FAQS: true });
+            expect(variables.TOP_FAQ.text).to.equal("There are people who understand how to save and those who don't. If you don't understand how to save, it is better to pay off your home mortgage.");
+            expect(variables.TOP_FAQ.source).to.equal("https://www.forbes.com/sites/davidmarotta/2021/04/28/should-i-pay-off-my-mortgage/?sh=1c6aa4b74532");
+            expect(variables.TOP_ANSWER).to.be.undefined;
+            expect(variables.SUGGESTED_ANSWER.source).to.equal("https://www.consumerfinance.gov/consumer-tools/mortgages/key-terms");
         });
     });
     describe("when faq is not better fuzzy than suggested", () => {
@@ -40,15 +78,19 @@ describe(`#${generateResultVariables.name}()`, () => {
                 suggested: [{
                     title: "Dwelling Coverage",
                     document: "Dwelling coverage helps protect the total cost of the home.",
+                    uri: "https://right.com"
                 }],
                 faqs: [{
                     question: "what is auto coverage",
-                    document: "wrong"
+                    document: "wrong",
+                    uri: "https://wrong.com",
+                    highlights: []
                 }]
             }, { FUZZY_MATCH_FAQS: true });
 
             expect(variables.TOP_ANSWER).to.be.undefined;
             expect(variables.SUGGESTED_ANSWER.text).to.equal("Dwelling coverage helps protect the total cost of the home.");
+            expect(variables.SUGGESTED_ANSWER.source).to.equal("https://right.com");
             expect(variables.TOP_FAQ).to.be.undefined;
         });
         describe("with highlights on the suggested", () => {
@@ -77,8 +119,9 @@ describe(`#${generateResultVariables.name}()`, () => {
 
             expect(variables.TOP_ANSWER).to.exist;
             expect(variables.TOP_ANSWER.text).to.equal("This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss");
-            // expect(variables.SUGGESTED_ANSWER).to.equal("expected");
+
             expect(variables.TOP_FAQ).to.be.undefined;
+
         });
     });
     describe("without a top answer in the suggestions", () => {

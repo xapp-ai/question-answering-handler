@@ -3,10 +3,10 @@ import { Response } from "stentor";
 
 export const DEFAULT_TOP_FAQ_RESPONSE: Response = {
     outputSpeech: {
-        displayText: "${TOP_FAQ.markdownText}\nAny other questions?",
+        displayText: "${TOP_FAQ.markdownText}\n\nAny other questions?",
         ssml: "<speak>${TOP_FAQ.text} Any other questions?</speak>",
         suggestions: [
-            { title: "Read More", url: "${SUGGESTED_ANSWER.source}" }
+            { title: "Read More", url: "${TOP_FAQ.source}" }
         ]
     },
     reprompt: {
@@ -18,10 +18,10 @@ export const DEFAULT_TOP_FAQ_RESPONSE: Response = {
 
 export const DEFAULT_TOP_ANSWER_RESPONSE: Response = {
     outputSpeech: {
-        displayText: "${TOP_ANSWER.markdownText}\nAny other questions?",
+        displayText: "${TOP_ANSWER.markdownText}\n\nAny other questions?",
         ssml: "<speak>${TOP_ANSWER.text} Any other questions?</speak>",
         suggestions: [
-            { title: "Read More", url: "${SUGGESTED_ANSWER.source}" }
+            { title: "Read More", url: "${TOP_ANSWER.source}" }
         ]
     },
     reprompt: {
@@ -34,8 +34,8 @@ export const DEFAULT_TOP_ANSWER_RESPONSE: Response = {
 // This is used for SUGGESTED_ANSWER
 export const DEFAULT_SUGGESTED_ANSWER_RESPONSE: Response = {
     outputSpeech: {
-        displayText: "Here is what I found...\n${SUGGESTED_ANSWER.markdownText}\nAny other questions?",
-        ssml: "<speak>Here is what I found...\n${SUGGESTED_ANSWER.markdownText}\nAny other questions?</speak>",
+        displayText: "Here is what I found...\n\"${SUGGESTED_ANSWER.markdownText}\"\nAny other questions?",
+        ssml: "<speak>Here is what I found...${SUGGESTED_ANSWER.markdownText}  Any other questions?</speak>",
         suggestions: [
             { title: "Read More", url: "${SUGGESTED_ANSWER.source}" }
         ]
