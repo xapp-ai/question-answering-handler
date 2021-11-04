@@ -1,0 +1,263 @@
+{
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "what is bitcoin",
+    "requestAttributes": {
+      "x-amz-lex:kendra-search-response-question_answer-question-1": "what is bitcoin",
+      "x-amz-lex:kendra-search-response-question_answer-answer-1": "Bitcoin has been described as a decentralized, peer-to-peer virtual currency that is used like money – it can be exchanged for traditional currencies such as the U.S. dollar, or used to purchase goods or services, usually online. Unlike traditional currencies, Bitcoin operates without central authority or banks and is not backed by any government.\n\nIRS treats Bitcoin as property. The IRS recently issued guidance stating that it will treat virtual currencies, such as Bitcoin, as property for federal tax purposes. As a result, general tax principles that apply to property transactions apply to transactions using virtual currency.",
+      "channel": "widget",
+      "type": "INTENT_REQUEST",
+      "userId": "stentor-widget-user-6ea931ff-41c3-65a8-9db0-32ec94de26c9",
+      "platform": "stentor-platform",
+      "x-amz-lex:kendra-search-response-document-link-2": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-alert-bitcoin-other-virtual-currency",
+      "x-amz-lex:kendra-search-response-document-link-1": "https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary",
+      "x-amz-lex:kendra-search-response-document-5": "...Some examples of blockchain are the Bitcoin and Ethereum blockchains, which are used to create and track transactions in bitcoin and ether, respectively.\n\n\n\nWhat is a virtual currency or virtual token or coin? \n\n\n\nA virtual currency...",
+      "x-amz-lex:kendra-search-response-document-4": "...Virtual currencies, such as Bitcoin, are a way for people to track, store, and send value over the Internet. If you’re thinking about using a virtual currency, there are a few...",
+      "x-amz-lex:kendra-search-response-answer-1": "What is Bitcoin? \n\n\n\nBitcoin has been described as a decentralized, peer-to-peer virtual currency that is used like money – it can be exchanged for traditional currencies such as the U.S. dollar, or used to purchase goods or services, usually online. Unlike traditional currencies, Bitcoin operates without central authority or banks and is not backed by any government.\n\n\n\n\tIRS treats Bitcoin as property. The IRS recently issued guidance\n\n\n stating that it will treat virtual currencies, such as Bitcoin, as property for federal tax purposes. As a result, general tax principles that apply to property transactions apply to transactions using virtual currency\n\t\tIf you are thinking about investing in a Bitcoin-related opportunity, here are some things you should consider.",
+      "x-amz-lex:kendra-search-response-document-link-5": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-16",
+      "x-amz-lex:kendra-search-response-document-link-4": "https://www.consumerfinance.gov/ask-cfpb/what-are-virtual-currencies-and-what-should-i-know-if-im-interested-in-using-one-en-1893",
+      "x-amz-lex:kendra-search-response-document-link-3": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-39",
+      "x-amz-lex:kendra-search-response-document-3": "...decline. For example, the exchange rate of Bitcoin has dropped more than 50% in a single day. Bitcoin-related investments may be affected by such volatility. \n\tGovernment regulation. Bitcoins are not legal tender. Federal, state or foreign governments may restrict the use and exchange of...",
+      "x-amz-lex:kendra-search-response-document-2": "...decline. For example, the exchange rate of Bitcoin has dropped more than 50% in a single day. Bitcoin-related investments may be affected by such volatility. \n\tGovernment regulation. Bitcoins are not legal tender. Federal, state or foreign governments may restrict the use and exchange of...",
+      "x-amz-lex:kendra-search-response-document-1": "...Bitcoin is one of the earliest and most well-known cryptocurrencies.\n\nBack to top\n\n\n\nD\n\nData breach\n\nThe unauthorized movement or disclosure of sensitive...",
+      "rawQuery": "what is bitcoin"
+    },
+    "sessionAttributes": {
+      "channel": "widget",
+      "sessionId": "stentor-widget-session-7200dcce-84b6-656d-bbb4-46a5ab11f497",
+      "userId": "stentor-widget-user-6ea931ff-41c3-65a8-9db0-32ec94de26c9",
+      "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-7200dcce-84b6-656d-bbb4-46a5ab11f497",
+    "slots": {},
+    "userId": "stentor-widget-user-6ea931ff-41c3-65a8-9db0-32ec94de26c9",
+    "device": {
+      "channel": "widget",
+      "audioSupported": false,
+      "canPlayVideo": false,
+      "videoSupported": false,
+      "canPlayAudio": false,
+      "canSpeak": false,
+      "canThrowCard": true,
+      "hasScreen": true,
+      "canTransferCall": false,
+      "hasWebBrowser": true
+    },
+    "knowledgeBaseResult": {
+      "suggested": [
+        {
+          "title": "Investor Alert: Bitcoin and Other Virtual Currency-Related Investments | Investor.gov",
+          "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-alert-bitcoin-other-virtual-currency",
+          "document": "What is Bitcoin? \n\n\n\nBitcoin has been described as a decentralized, peer-to-peer virtual currency that is used like money – it can be exchanged for traditional currencies such as the U.S. dollar, or used to purchase goods or services, usually online. Unlike traditional currencies, Bitcoin operates without central authority or banks and is not backed by any government.\n\n\n\n\tIRS treats Bitcoin as property. The IRS recently issued guidance\n\n\n stating that it will treat virtual currencies, such as Bitcoin, as property for federal tax purposes. As a result, general tax principles that apply to property transactions apply to transactions using virtual currency\n\t\tIf you are thinking about investing in a Bitcoin-related opportunity, here are some things you should consider.",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "endOffset": 15,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 21,
+              "endOffset": 28,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 282,
+              "endOffset": 289,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 386,
+              "endOffset": 393,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 498,
+              "endOffset": 505,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 705,
+              "endOffset": 712,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "what is bitcoin",
+          "document": "Bitcoin has been described as a decentralized, peer-to-peer virtual currency that is used like money – it can be exchanged for traditional currencies such as the U.S. dollar, or used to purchase goods or services, usually online. Unlike traditional currencies, Bitcoin operates without central authority or banks and is not backed by any government.\n\nIRS treats Bitcoin as property. The IRS recently issued guidance stating that it will treat virtual currencies, such as Bitcoin, as property for federal tax purposes. As a result, general tax principles that apply to property transactions apply to transactions using virtual currency.",
+          "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-39#:~:text=bitcoin%20has%20been%20described%20as%20a%20decentralized%2C%20peer-to-peer%20virtual%20currency%20that%20is%20used%20like%20money%20%E2%80%93%20it%20can%20be%20exchanged%20for%20traditional%20currencies%20such%20as%20the%20u.s.%20dollar%2C%20or%20used%20to%20purchase%20goods%20or%20services%2C%20usually%20online.",
+          "highlights": [
+            {
+              "beginOffset": 0,
+              "endOffset": 300,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "title": "Financial Terms Glossary | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary",
+          "document": "...Bitcoin is one of the earliest and most well-known cryptocurrencies.\n\nBack to top\n\n\n\nD\n\nData breach\n\nThe unauthorized movement or disclosure of sensitive...",
+          "highlights": [
+            {
+              "beginOffset": 3,
+              "endOffset": 10,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Investor Alert: Bitcoin and Other Virtual Currency-Related Investments | Investor.gov",
+          "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-alert-bitcoin-other-virtual-currency",
+          "document": "...decline. For example, the exchange rate of Bitcoin has dropped more than 50% in a single day. Bitcoin-related investments may be affected by such volatility. \n\tGovernment regulation. Bitcoins are not legal tender. Federal, state or foreign governments may restrict the use and exchange of...",
+          "highlights": [
+            {
+              "beginOffset": 46,
+              "endOffset": 53,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 97,
+              "endOffset": 104,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 186,
+              "endOffset": 194,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Investor Alert: Bitcoin and Other Virtual Currency-Related Investments | Investor.gov",
+          "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-39",
+          "document": "...decline. For example, the exchange rate of Bitcoin has dropped more than 50% in a single day. Bitcoin-related investments may be affected by such volatility. \n\tGovernment regulation. Bitcoins are not legal tender. Federal, state or foreign governments may restrict the use and exchange of...",
+          "highlights": [
+            {
+              "beginOffset": 46,
+              "endOffset": 53,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 97,
+              "endOffset": 104,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 186,
+              "endOffset": 194,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "What are virtual currencies and what should I know if I’m interested in using one? | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/ask-cfpb/what-are-virtual-currencies-and-what-should-i-know-if-im-interested-in-using-one-en-1893",
+          "document": "...Virtual currencies, such as Bitcoin, are a way for people to track, store, and send value over the Internet. If you’re thinking about using a virtual currency, there are a few...",
+          "highlights": [
+            {
+              "beginOffset": 31,
+              "endOffset": 38,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Investor Bulletin: Initial Coin Offerings | Investor.gov",
+          "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-16",
+          "document": "...Some examples of blockchain are the Bitcoin and Ethereum blockchains, which are used to create and track transactions in bitcoin and ether, respectively.\n\n\n\nWhat is a virtual currency or virtual token or coin? \n\n\n\nA virtual currency...",
+          "highlights": [
+            {
+              "beginOffset": 39,
+              "endOffset": 46,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 124,
+              "endOffset": 131,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Investor Bulletin: Initial Coin Offerings | Investor.gov",
+          "uri": "https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-initial-coin-offerings",
+          "document": "...Some examples of blockchain are the Bitcoin and Ethereum blockchains, which are used to create and track transactions in bitcoin and ether, respectively.\n\n\n\nWhat is a virtual currency or virtual token or coin? \n\n\n\nA virtual currency...",
+          "highlights": [
+            {
+              "beginOffset": 39,
+              "endOffset": 46,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 124,
+              "endOffset": 131,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Money transfers key terms | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/consumer-tools/money-transfers/answers/key-terms",
+          "document": "...Virtual currencies\n                    \n\n\n                \n\t\n                    Virtual currencies, such as Bitcoin, are a way for people to track, store, and send value over the Internet. Some people and businesses accept them as a form of payment, treating...",
+          "highlights": [
+            {
+              "beginOffset": 112,
+              "endOffset": 119,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Investor Alert: Ponzi Schemes Using Virtual Currencies | Investor.gov",
+          "uri": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-7",
+          "document": "...were allegedly promised up to 7% interest per week and that the invested funds would be used for Bitcoin arbitrage activities in order to generate the returns. Instead, invested Bitcoins were allegedly used to pay existing investors and exchanged into U.S. dollars to pay the organizer’s...",
+          "highlights": [
+            {
+              "beginOffset": 100,
+              "endOffset": 107,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 181,
+              "endOffset": 189,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ]
+    },
+    "locale": "en-US"
+  }

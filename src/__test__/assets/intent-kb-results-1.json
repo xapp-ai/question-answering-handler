@@ -1,0 +1,298 @@
+{
+    "platform": "lex-connect",
+    "type": "INTENT_REQUEST",
+    "anonymous": false,
+    "channel": "widget",
+    "intentId": "OCSearch",
+    "isHealthCheck": false,
+    "isNewSession": false,
+    "matchConfidence": null,
+    "rawQuery": "should i pay down my mortgage early",
+    "requestAttributes": {
+      "x-amz-lex:kendra-search-response-question_answer-question-2": "should I invest more or pay down my mortgage?",
+      "x-amz-lex:kendra-search-response-question_answer-question-1": "should i pay off my mortgage?",
+      "x-amz-lex:kendra-search-response-question_answer-answer-2": "As a general rule, the younger you are, the more you should prioritize your retirement savings over your mortgage.  It's also better to start saving for retirement early, so you can reap the benefits of compound interest over a longer period of time.",
+      "x-amz-lex:kendra-search-response-question_answer-answer-1": "There are people who understand how to save and those who don't. If you don't understand how to save, it is better to pay off your home mortgage.",
+      "channel": "widget",
+      "x-amz-lex:kendra-search-response-question_answer-question-3": "What if I can't pay my mortgage?",
+      "type": "INTENT_REQUEST",
+      "userId": "stentor-widget-user-6ea931ff-41c3-65a8-9db0-32ec94de26c9",
+      "platform": "stentor-platform",
+      "x-amz-lex:kendra-search-response-document-link-2": "https://www.helpwithmybank.gov/help-topics/mortgages-home-equity/payments-late-payments/mortgage-payment-behind.html",
+      "x-amz-lex:kendra-search-response-document-link-1": "https://www.fdic.gov/resources/consumers/consumer-assistance-topics/loans.html",
+      "x-amz-lex:kendra-search-response-document-5": "...penalty?\n\n\n\n Check to see if there is a fee for paying your loan back early. Most loans do not have prepayment penalties, but it’s a good idea to double-check. Learn more about prepayment penalties.\n\n\n\n\nIf you have a problem with your mortgage, you can submit a complaint to the CFPB online or...",
+      "x-amz-lex:kendra-search-response-document-4": "...If you are financially able to do so, it may make sense for you to pay off your student loans early. Lenders typically call this “prepayment in full.” Generally there are no penalties involved in paying off your student loans early. However, you should make sure you know how much you currently owe...",
+      "x-amz-lex:kendra-search-response-answer-2": "A prepayment penalty means that the lender can charge you a fee if you pay off your mortgage early.\n\nLearn more\n\n\n        \n    \n\n\n\n\n\n\n\n    \n\n    \n        \n            \n            Balloon Payment\n        \n        \n            \n                \n            \n            \n                \n            \n        \n    \n    \n        A feature on some mortgages. A balloon payment means that the final mortgage payment is a lump sum much larger than the regular monthly payments, often tens of thousands of dollars.\n\nLearn more\n\n\n        \n    \n\n\n\n\n\n\n\n    \n\n    \n        \n            \n            Does your loan have a prepayment penalty?\n        \n        \n            \n                \n            \n            \n                \n            \n        \n    \n    \n        This feature is risky. If your loan includes a prepayment penalty, learn more and ask your lender about your other options.\n\nLearn more about prepayment penalties\n\n\n        \n    \n\n\n\n\n\n\n\n    \n\n    \n        \n            \n            Does your loan have a balloon payment?",
+      "x-amz-lex:kendra-search-response-answer-1": "A demand feature permits the lender to require early repayment of the loan.\n\n\n                    Read more\n                \n\n\n\n\n\n        \n            \n                \t\n                    Down payment\n                    \n\n\n                \n\t\n                    A down payment is the amount you pay toward the home upfront. You put a percentage of the home’s value down and borrow the rest through your mortgage loan. Generally, the larger the down payment you make, the lower the interest rate you will receive and the more likely you are to be approved for a loan. \n\nLearn more about determining your down payment.\n\n\n                    \n                \n\n\n\n\n\n        \n            \n                \t\n                    Down payment programs or grants\n                    \n\n\n                \n\t\n                    A down payment grant or program typically refers to assistance provided by an organization such as a government or non-profit agency, to a homebuyer to assist them with the down payment for a home purchase.",
+      "x-amz-lex:kendra-search-response-document-link-5": "https://www.consumerfinance.gov/ask-cfpb/if-i-am-considering-an-adjustable-rate-mortgage-arm-what-should-i-look-out-for-in-the-fine-print-en-1947",
+      "x-amz-lex:kendra-search-response-document-link-4": "https://www.consumerfinance.gov/ask-cfpb/can-i-pay-my-student-loan-in-full-at-any-time-en-609",
+      "x-amz-lex:kendra-search-response-document-link-3": "https://www.consumerfinance.gov/ask-cfpb/whats-the-difference-between-a-simple-interest-rate-and-precomputed-interest-in-an-auto-loan-contract-en-841",
+      "x-amz-lex:kendra-search-response-question_answer-answer-3": "If you can’t pay your mortgage or are worried about missing a mortgage payment, call your mortgage servicer right away. You should also contact a HUD-approved housing counselor to get free, expert assistance on avoiding foreclosure.",
+      "x-amz-lex:kendra-search-response-document-3": "...payment schedule to figure interest, even if you make payments early.\n\nIf you have a contract with precomputed interest and plan to pre-pay your loan early in full or make larger payments in advance of your regularly scheduled amount, you will not get the same reduction in the interest charges...",
+      "x-amz-lex:kendra-search-response-document-2": "...I am struggling to pay my mortgage and would like to get assistance. What should I do...",
+      "x-amz-lex:kendra-search-response-document-1": "...Prepayment is the early repayment of all or part of a loan. When you prepay, you pay the lender more than the amount of your regular monthly payment. You have them apply the “extra” amount to your outstanding balance. \n\n\n\tIf you prepay your loan  in full, you will stop paying interest because you...",
+      "rawQuery": "should i pay down my mortgage early"
+    },
+    "sessionAttributes": {
+      "channel": "widget",
+      "sessionId": "stentor-widget-session-7200dcce-84b6-656d-bbb4-46a5ab11f497",
+      "userId": "stentor-widget-user-6ea931ff-41c3-65a8-9db0-32ec94de26c9",
+      "platform": "stentor-platform"
+    },
+    "sessionId": "stentor-widget-session-7200dcce-84b6-656d-bbb4-46a5ab11f497",
+    "slots": {},
+    "userId": "stentor-widget-user-6ea931ff-41c3-65a8-9db0-32ec94de26c9",
+    "device": {
+      "channel": "widget",
+      "audioSupported": false,
+      "canPlayVideo": false,
+      "videoSupported": false,
+      "canPlayAudio": false,
+      "canSpeak": false,
+      "canThrowCard": true,
+      "hasScreen": true,
+      "canTransferCall": false,
+      "hasWebBrowser": true
+    },
+    "knowledgeBaseResult": {
+      "suggested": [
+        {
+          "title": "Mortgages key terms | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/consumer-tools/mortgages/key-terms",
+          "document": "A demand feature permits the lender to require early repayment of the loan.\n\n\n                    Read more\n                \n\n\n\n\n\n        \n            \n                \t\n                    Down payment\n                    \n\n\n                \n\t\n                    A down payment is the amount you pay toward the home upfront. You put a percentage of the home’s value down and borrow the rest through your mortgage loan. Generally, the larger the down payment you make, the lower the interest rate you will receive and the more likely you are to be approved for a loan. \n\nLearn more about determining your down payment.\n\n\n                    \n                \n\n\n\n\n\n        \n            \n                \t\n                    Down payment programs or grants\n                    \n\n\n                \n\t\n                    A down payment grant or program typically refers to assistance provided by an organization such as a government or non-profit agency, to a homebuyer to assist them with the down payment for a home purchase.",
+          "highlights": [
+            {
+              "beginOffset": 0,
+              "endOffset": 74,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 47,
+              "endOffset": 52,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 298,
+              "endOffset": 301,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 406,
+              "endOffset": 414,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Loan Estimate Explainer | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/owning-a-home/loan-estimate",
+          "document": "A prepayment penalty means that the lender can charge you a fee if you pay off your mortgage early.\n\nLearn more\n\n\n        \n    \n\n\n\n\n\n\n\n    \n\n    \n        \n            \n            Balloon Payment\n        \n        \n            \n                \n            \n            \n                \n            \n        \n    \n    \n        A feature on some mortgages. A balloon payment means that the final mortgage payment is a lump sum much larger than the regular monthly payments, often tens of thousands of dollars.\n\nLearn more\n\n\n        \n    \n\n\n\n\n\n\n\n    \n\n    \n        \n            \n            Does your loan have a prepayment penalty?\n        \n        \n            \n                \n            \n            \n                \n            \n        \n    \n    \n        This feature is risky. If your loan includes a prepayment penalty, learn more and ask your lender about your other options.\n\nLearn more about prepayment penalties\n\n\n        \n    \n\n\n\n\n\n\n\n    \n\n    \n        \n            \n            Does your loan have a balloon payment?",
+          "highlights": [
+            {
+              "beginOffset": 71,
+              "endOffset": 74,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 84,
+              "endOffset": 92,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 93,
+              "endOffset": 98,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 345,
+              "endOffset": 354,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 395,
+              "endOffset": 403,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "should i pay off my mortgage?",
+          "document": "There are people who understand how to save and those who don't. If you don't understand how to save, it is better to pay off your home mortgage.",
+          "uri": "https://www.forbes.com/sites/davidmarotta/2021/04/28/should-i-pay-off-my-mortgage/?sh=1c6aa4b74532",
+          "highlights": [
+            {
+              "beginOffset": 0,
+              "endOffset": 145,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "question": "should I invest more or pay down my mortgage?",
+          "document": "As a general rule, the younger you are, the more you should prioritize your retirement savings over your mortgage.  It's also better to start saving for retirement early, so you can reap the benefits of compound interest over a longer period of time.",
+          "uri": "https://www.investopedia.com/mortgage-or-retirement-4770977",
+          "highlights": [
+            {
+              "beginOffset": 0,
+              "endOffset": 250,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "question": "What if I can't pay my mortgage?",
+          "document": "If you can’t pay your mortgage or are worried about missing a mortgage payment, call your mortgage servicer right away. You should also contact a HUD-approved housing counselor to get free, expert assistance on avoiding foreclosure.",
+          "uri": "https://www.consumerfinance.gov/ask-cfpb/if-i-cant-pay-my-mortgage-loan-what-are-my-options-en-268/",
+          "highlights": [
+            {
+              "beginOffset": 0,
+              "endOffset": 232,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "title": "FDIC: Consumer Assistance Topics -Loans",
+          "uri": "https://www.fdic.gov/resources/consumers/consumer-assistance-topics/loans.html",
+          "document": "...Prepayment is the early repayment of all or part of a loan. When you prepay, you pay the lender more than the amount of your regular monthly payment. You have them apply the “extra” amount to your outstanding balance. \n\n\n\tIf you prepay your loan  in full, you will stop paying interest because you...",
+          "highlights": [
+            {
+              "beginOffset": 21,
+              "endOffset": 26,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 84,
+              "endOffset": 87,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 273,
+              "endOffset": 279,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Can the bank demand three payments to bring my mortgage current?",
+          "uri": "https://www.helpwithmybank.gov/help-topics/mortgages-home-equity/payments-late-payments/mortgage-payment-behind.html",
+          "document": "...I am struggling to pay my mortgage and would like to get assistance. What should I do...",
+          "highlights": [
+            {
+              "beginOffset": 22,
+              "endOffset": 25,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 29,
+              "endOffset": 37,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "What's the difference between a simple interest rate and precomputed interest in an auto loan contract? | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/ask-cfpb/whats-the-difference-between-a-simple-interest-rate-and-precomputed-interest-in-an-auto-loan-contract-en-841",
+          "document": "...payment schedule to figure interest, even if you make payments early.\n\nIf you have a contract with precomputed interest and plan to pre-pay your loan early in full or make larger payments in advance of your regularly scheduled amount, you will not get the same reduction in the interest charges...",
+          "highlights": [
+            {
+              "beginOffset": 66,
+              "endOffset": 71,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 139,
+              "endOffset": 142,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 153,
+              "endOffset": 158,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "Can I pay my student loan in full at any time? | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/ask-cfpb/can-i-pay-my-student-loan-in-full-at-any-time-en-609",
+          "document": "...If you are financially able to do so, it may make sense for you to pay off your student loans early. Lenders typically call this “prepayment in full.” Generally there are no penalties involved in paying off your student loans early. However, you should make sure you know how much you currently owe...",
+          "highlights": [
+            {
+              "beginOffset": 70,
+              "endOffset": 73,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 97,
+              "endOffset": 102,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 199,
+              "endOffset": 205,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 229,
+              "endOffset": 234,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        },
+        {
+          "title": "If I am considering an adjustable-rate mortgage (ARM), what should I look out for in the fine print? | Consumer Financial Protection Bureau",
+          "uri": "https://www.consumerfinance.gov/ask-cfpb/if-i-am-considering-an-adjustable-rate-mortgage-arm-what-should-i-look-out-for-in-the-fine-print-en-1947",
+          "document": "...penalty?\n\n\n\n Check to see if there is a fee for paying your loan back early. Most loans do not have prepayment penalties, but it’s a good idea to double-check. Learn more about prepayment penalties.\n\n\n\n\nIf you have a problem with your mortgage, you can submit a complaint to the CFPB online or...",
+          "highlights": [
+            {
+              "beginOffset": 51,
+              "endOffset": 57,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 73,
+              "endOffset": 78,
+              "topAnswer": false,
+              "type": "STANDARD"
+            },
+            {
+              "beginOffset": 238,
+              "endOffset": 246,
+              "topAnswer": false,
+              "type": "STANDARD"
+            }
+          ]
+        }
+      ]
+    },
+    "locale": "en-US"
+  }
