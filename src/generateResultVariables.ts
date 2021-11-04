@@ -21,6 +21,10 @@ export interface ResultVariablesConfig extends FocusConfig {
      * This is a strategy QnABot uses: https://github.com/aws-solutions/aws-qnabot/blob/aaef24ac610bb5f0324326c92914bda21bccef57/lambda/es-proxy-layer/lib/kendra.js#L383
      */
     ["QNA_BOT_LONGEST_HIGHLIGHT"]?: boolean;
+    /**
+     * Sometimes the highlights in the FAQ are not great so they are off by default.
+     */
+    ["HIGHLIGHT_TOP_FAQ"]?: boolean;
 }
 
 export interface ResultVariableInformation {
@@ -77,7 +81,7 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
     // make a copy for good riddance
     result = { ...result };
 
-    const { FUZZY_MATCH_FAQS, QNA_BOT_LONGEST_HIGHLIGHT } = config || {};
+    const { FUZZY_MATCH_FAQS, QNA_BOT_LONGEST_HIGHLIGHT, HIGHLIGHT_TOP_FAQ } = config || {};
 
     // Get possible FAQ matches
     let topFAQ: KnowledgeBaseFAQ = undefined;
@@ -101,9 +105,14 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
     const variables: ResultVariables = {};
 
     if (topFAQ) {
+
+        const text = cleanAnswer(topFAQ.document);
+
+        const markdownText: string = HIGHLIGHT_TOP_FAQ ? cleanAnswer(addMarkdownHighlights(topFAQ.document, topFAQ.highlights)) : text;
+
         variables.TOP_FAQ = {
-            text: cleanAnswer(topFAQ.document),
-            markdownText: cleanAnswer(addMarkdownHighlights(topFAQ.document, topFAQ.highlights)),
+            text,
+            markdownText,
             source: topFAQ.uri,
             handlerId: topFAQ.handlerId
         }
@@ -117,14 +126,12 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
         const highlights = mergeIntervals(suggested.highlights);
 
         if (suggested.topAnswer) {
-            // Add suggested with markdown on the displayText with the highlights
-            const focused = focusAnswer({ answer: suggested.document, highlights }, config);
-            // Add markdown
-            const markedDownText = addMarkdownHighlights(focused.answer, focused.highlights);
-
+            // No need to focus the top answer or add highlights since it is a highlight.
+            const text = cleanAnswer(suggested.topAnswer);
+            const markdownText = cleanAnswer(suggested.topAnswer);
             variables.TOP_ANSWER = {
-                text: cleanAnswer(suggested.topAnswer),
-                markdownText: cleanAnswer(markedDownText),
+                text,
+                markdownText,
                 source: suggested.uri
             };
 

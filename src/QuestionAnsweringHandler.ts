@@ -15,7 +15,6 @@ import { log } from "stentor-logger";
 import { DEFAULT_RESPONSES } from "./constants";
 import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
 
-
 const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS"];
 
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }

@@ -10,7 +10,7 @@ This is a real payload that then caused all the `** **` for bolding to clump at 
 
 **intent-kb-results-1.json**
 
-Real payload where we were mixing up the source URLs between the FAQ and the Suggested answers.
+Real payload where we were mixing up the source URLs between the FAQ and the Suggested answers.  The FAQ answer is returned but the Suggested URL is used.
 
 **intent-kb-results-2.json**
 
