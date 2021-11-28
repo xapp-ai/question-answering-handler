@@ -648,10 +648,10 @@
     "@types/mime" "^1"
     "@types/node" "*"
 
-"@types/sinon-chai@3.2.5":
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/@types/sinon-chai/-/sinon-chai-3.2.5.tgz#df21ae57b10757da0b26f512145c065f2ad45c48"
-  integrity sha512-bKQqIpew7mmIGNRlxW6Zli/QVyc3zikpGzCa797B/tRnD9OtHvZ/ts8sYXV+Ilj9u3QRaUEM8xrjgd1gwm1BpQ==
+"@types/sinon-chai@3.2.6":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@types/sinon-chai/-/sinon-chai-3.2.6.tgz#3504a744e2108646394766fb1339f52ea5d6bd0f"
+  integrity sha512-Z57LprQ+yOQNu9d6mWdHNvnmncPXzDWGSeLj+8L075/QahToapC4Q13zAFRVKV4clyBmdJ5gz4xBfVkOso5lXw==
   dependencies:
     "@types/chai" "*"
     "@types/sinon" "*"
@@ -3143,10 +3143,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-linkifyjs@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/linkifyjs/-/linkifyjs-3.0.3.tgz#51ea2160b4c60c2c87c27757a1e9eacd422c6076"
-  integrity sha512-ba5opS5wRHSbDC8VaiDdN14nPGm6LqyRsIPQZGG4qXV4scFdrPneT/uoZOaq9QAPBf6W9I9D/6tNSzWH//815Q==
+linkifyjs@3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/linkifyjs/-/linkifyjs-3.0.4.tgz#469a1b44903d179e3b23317fd3c4e995453765b9"
+  integrity sha512-JWw1HHMx54g8mEsG7JwI8I/xh7qeJbF6L9u1dQOYW91RdRqDYpnTn1UaNXYkmLD967Vk0xGuyHzuRnkSApby3w==
 
 load-json-file@^4.0.0:
   version "4.0.0"
@@ -4240,10 +4240,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
-  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
+prettier@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.0.tgz#a6370e2d4594e093270419d9cc47f7670488f893"
+  integrity sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==
 
 proc-log@^1.0.0:
   version "1.0.0"
