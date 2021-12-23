@@ -50,7 +50,7 @@
     "test": "mocha --recursive -r ts-node/register \"./src/**/*.test.ts\""
   },
   "dependencies": {
-    "fuse.js": "6.4.6",
+    "fuse.js": "6.5.3",
     "linkifyjs": "3.0.4"
   },
   "peerDependencies": {
