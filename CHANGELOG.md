@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.6...v2.0.7) (2022-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fuse.js to v6.5.3 ([#317](https://github.com/xapp-ai/question-answering-handler/issues/317)) ([cdac6c2](https://github.com/xapp-ai/question-answering-handler/commit/cdac6c2ddb1755365dc5b3137a125c5283b1b66a))
+
 ## [2.0.6](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.5...v2.0.6) (2021-11-28)
 
 
