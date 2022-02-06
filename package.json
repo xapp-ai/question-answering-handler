@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "fuse.js": "6.5.3",
-    "linkifyjs": "3.0.4"
+    "linkifyjs": "3.0.5"
   },
   "peerDependencies": {
     "stentor": "1.X"
