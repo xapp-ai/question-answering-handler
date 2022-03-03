@@ -67,7 +67,7 @@ export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionA
         return super.canHandleRequest(request, context);
     }
 
-    public redirectingPathForRequest(request: Request, context: Context): ExecutablePath {
+    public async redirectingPathForRequest(request: Request, context: Context): Promise<ExecutablePath> {
         // There should already be one set on the session storage by the dialog manager
         const result: KnowledgeBaseResult = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
         // Generate the variables that will be injected!
