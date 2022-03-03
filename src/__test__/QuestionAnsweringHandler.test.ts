@@ -368,7 +368,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
             qa = new QuestionAnsweringHandler(handler);
         });
         describe("for a normal request", () => {
-            it("returns undefined", () => {
+            it("returns undefined", async () => {
                 request = new IntentRequestBuilder()
                     .withRawQuery('yes')
                     .withIntentId("YesIntent")
@@ -386,13 +386,13 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     })
                     .build()
 
-                const redirect = qa.redirectingPathForRequest(request, context);
+                const redirect = await qa.redirectingPathForRequest(request, context);
 
                 expect(redirect).to.be.undefined;
             });
         });
         describe("for an FAQ with handlerId", () => {
-            it("returns the handlerId", () => {
+            it("returns the handlerId", async () => {
                 request = new IntentRequestBuilder()
                     .withRawQuery('what is a hot dog')
                     .withIntentId("OCSearch")
@@ -419,7 +419,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     })
                     .build()
 
-                const redirect = qa.redirectingPathForRequest(request, context);
+                const redirect = await qa.redirectingPathForRequest(request, context);
 
                 expect(redirect).to.deep.equal({
                     type: "START",
