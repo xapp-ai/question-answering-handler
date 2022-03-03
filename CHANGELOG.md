@@ -1,3 +1,24 @@
+## [2.0.10](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.9...v2.0.10) (2022-02-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency stentor to v1.52.24 ([#332](https://github.com/xapp-ai/question-answering-handler/issues/332)) ([e2edf9a](https://github.com/xapp-ai/question-answering-handler/commit/e2edf9ae6be440a2af384a798a7879ec96695415))
+
+## [2.0.9](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.8...v2.0.9) (2022-02-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency aws-sdk to v2.1079.0 ([#296](https://github.com/xapp-ai/question-answering-handler/issues/296)) ([fe31142](https://github.com/xapp-ai/question-answering-handler/commit/fe3114255b85fa0cfa908f20837c3fb351637e08))
+
+## [2.0.8](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.7...v2.0.8) (2022-02-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency stentor to v1.52.17 ([#328](https://github.com/xapp-ai/question-answering-handler/issues/328)) ([8665a2e](https://github.com/xapp-ai/question-answering-handler/commit/8665a2eed4405b41ff50c28511ab7b4c24ef6dae))
+
 ## [2.0.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.6...v2.0.7) (2022-02-04)
 
 
