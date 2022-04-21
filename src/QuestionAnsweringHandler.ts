@@ -22,7 +22,7 @@ export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
 /**
  * Custom handler for Question Answering
  */
-export class QuestionAnsweringHandler extends AbstractHandler<Content, QuestionAnsweringData> {
+export class QuestionAnsweringHandler<C extends Content = Content, D extends QuestionAnsweringData = QuestionAnsweringData> extends AbstractHandler<C, D> {
 
     public name = "QuestionAnsweringHandler";
 
