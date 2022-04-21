@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.12...v2.1.0) (2022-04-21)
+
+
+### Features
+
+* Extensible with Generics ([#350](https://github.com/xapp-ai/question-answering-handler/issues/350)) ([d6f2043](https://github.com/xapp-ai/question-answering-handler/commit/d6f20430d01e44efa36f070bd389f7011c42352e))
+
 ## [2.0.12](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.11...v2.0.12) (2022-03-23)
 
 
