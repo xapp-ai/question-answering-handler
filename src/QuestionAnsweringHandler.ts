@@ -52,7 +52,11 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
                 let response = getResponse(this, request, context);
 
                 if (!response) {
-                    response = getResponse(DEFAULT_RESPONSES, request, context)
+                    // copy the defaults because otherwise
+                    // you get weird behavior where a compiled
+                    // response is used again!
+                    const responses = DEFAULT_RESPONSES.map(a => ({ ...a }))
+                    response = getResponse(responses, request, context)
                 }
 
                 context.response.respond(response);
