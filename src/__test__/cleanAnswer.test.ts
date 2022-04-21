@@ -56,7 +56,12 @@ describe(`#${cleanAnswer.name}()`, () => {
         it("cleans the output", () => {
             const cleaned = cleanAnswer("\n\n\n\tHello!");
             expect(cleaned).to.exist;
-            expect(cleaned).to.equal("\tHello!");
+            expect(cleaned).to.equal("Hello!");
+
+            // jUst one
+            const cleaned0 = cleanAnswer("\nHello!\n\n");
+            expect(cleaned0).to.exist;
+            expect(cleaned0).to.equal("Hello!");
         });
     });
 });

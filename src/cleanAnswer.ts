@@ -18,6 +18,8 @@ export function cleanAnswer(answer: string): string {
     }
 
     answer = cleanTags(answer);
+    // Removes all leading/trailing whitespace
+    answer = answer.replace(/^\s+|\s+$/g, '');
     // Remove spaces when more then 2
     answer = answer.replace(/( ){3,}/g, '');
     // Remove tabs when more than one
