@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.0...v2.1.1) (2022-04-21)
+
+
+### Bug Fixes
+
+* Removes all trailing and leading whitespace, including tabs and new lines ([#352](https://github.com/xapp-ai/question-answering-handler/issues/352)) ([f23decd](https://github.com/xapp-ai/question-answering-handler/commit/f23decdbfbba6f0d46e9a2d53801eeabc4c59008))
+
 # [2.1.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.0.12...v2.1.0) (2022-04-21)
 
 
