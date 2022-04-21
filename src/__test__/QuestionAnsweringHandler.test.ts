@@ -88,6 +88,25 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
         it('returns an instance of itself', () => {
             expect(new QuestionAnsweringHandler(handler)).to.be.instanceOf(QuestionAnsweringHandler);
         });
+        describe("with extending generics", () => {
+            it('returns an instance of itself', () => {
+                interface ExtendedData extends QuestionAnsweringData {
+                    foo: string;
+                };
+
+                const handlerWithData: Handler<Content, ExtendedData> = {
+                    ...handler,
+                    data: {
+                        foo: "bar"
+                    }
+                };
+
+                const h: QuestionAnsweringHandler<Content, ExtendedData> = new QuestionAnsweringHandler(handlerWithData);
+
+                expect(h).to.be.instanceOf(QuestionAnsweringHandler);
+                expect(h.data.foo).to.equal("bar");
+            });
+        });
     });
     describe(`${QuestionAnsweringHandler.prototype.handleRequest.name}()`, () => {
         // This tests the scenario where there is no content defined
