@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.2...v2.1.3) (2022-05-04)
+
+
+### Bug Fixes
+
+* Adding back text fragment generator ([#360](https://github.com/xapp-ai/question-answering-handler/issues/360)) ([496d486](https://github.com/xapp-ai/question-answering-handler/commit/496d486b3002bdd10f8761d8fc0f01362b721afa))
+
 ## [2.1.2](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.1...v2.1.2) (2022-05-04)
 
 
