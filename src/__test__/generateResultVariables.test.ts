@@ -10,6 +10,7 @@ import {
 
 import * as intent0 from "./assets/intent-kb-results-0.json";
 import * as intent1 from "./assets/intent-kb-results-1.json";
+import * as intent3 from "./assets/intent-kb-results-3.json";
 
 describe(`#${generateResultVariables.name}()`, () => {
     describe(`for undefined`, () => {
@@ -67,9 +68,9 @@ describe(`#${generateResultVariables.name}()`, () => {
         it("returns the correct URL", () => {
             const variables = generateResultVariables(intent1.rawQuery, intent1.knowledgeBaseResult, { FUZZY_MATCH_FAQS: true });
             expect(variables.TOP_FAQ.text).to.equal("There are people who understand how to save and those who don't. If you don't understand how to save, it is better to pay off your home mortgage.");
-            expect(variables.TOP_FAQ.source).to.equal("https://www.forbes.com/sites/davidmarotta/2021/04/28/should-i-pay-off-my-mortgage/?sh=1c6aa4b74532");
+            expect(variables.TOP_FAQ.source).to.equal("https://www.forbes.com/sites/davidmarotta/2021/04/28/should-i-pay-off-my-mortgage/?sh=1c6aa4b74532#:~:text=There%20are%20people%20who,off%20your%20home%20mortgage.");
             expect(variables.TOP_ANSWER).to.be.undefined;
-            expect(variables.SUGGESTED_ANSWER.source).to.equal("https://www.consumerfinance.gov/consumer-tools/mortgages/key-terms");
+            expect(variables.SUGGESTED_ANSWER.source).to.equal("https://www.consumerfinance.gov/consumer-tools/mortgages/key-terms#:~:text=A%20demand%20feature%20permits,for%20a%20home%20purchase.");
         });
     });
     describe("when faq is not better fuzzy than suggested", () => {
@@ -90,7 +91,7 @@ describe(`#${generateResultVariables.name}()`, () => {
 
             expect(variables.TOP_ANSWER).to.be.undefined;
             expect(variables.SUGGESTED_ANSWER.text).to.equal("Dwelling coverage helps protect the total cost of the home.");
-            expect(variables.SUGGESTED_ANSWER.source).to.equal("https://right.com");
+            expect(variables.SUGGESTED_ANSWER.source).to.equal("https://right.com/#:~:text=Dwelling%20coverage%20helps%20protect,cost%20of%20the%20home.");
             expect(variables.TOP_FAQ).to.be.undefined;
         });
         describe("with highlights on the suggested", () => {
@@ -157,7 +158,7 @@ describe(`#${generateResultVariables.name}()`, () => {
                 expect(variables1.SEARCH_RESULTS).to.exist;
                 expect(variables1.SEARCH_RESULTS).to.have.length(9);
                 expect(variables1.SEARCH_RESULTS[0].title).to.equal("Bonds | Investor.gov");
-                expect(variables1.SEARCH_RESULTS[0].source).to.equal("https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds")
+                expect(variables1.SEARCH_RESULTS[0].source).to.equal("https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds#:~:text=rate%20of%20interest%20than,fixed%20rate%20of%20interest")
             });
             describe('with CONFIG', () => {
                 it("returns the suggested focused", () => {
@@ -182,4 +183,20 @@ describe(`#${generateResultVariables.name}()`, () => {
             });
         });
     });
+    describe("when a document doesn't have a URL", () => {
+        it("generates the correct variables", () => {
+            const result0 = intent3.knowledgeBaseResult;
+            const query0 = intent3.rawQuery;
+            const variables0 = generateResultVariables(query0, result0, {});
+            // 4
+            expect(variables0).to.exist;
+            const docs0 = variables0.SEARCH_RESULTS;
+            expect(docs0).to.have.length(3);
+
+            const first = docs0[0];
+            expect(first.title).to.equal("Wind Damage - Barringer Brothers Roofing");
+            const second = docs0[1];
+            expect(second.document).to.include("...Business Bureau.");
+        });
+    })
 });

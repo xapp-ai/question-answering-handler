@@ -164,7 +164,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     expect(output.outputSpeech.suggestions[0]).to.deep.equal({
                         title: 'Read More',
                         url:
-                            'https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary'
+                            'https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary#:~:text=Overdraft%20An%20overdraft%20occurs,receive%20your%20paycheck%20on.'
                     });
                 });
             });
@@ -212,7 +212,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     expect(item.title).to.equal("Moving from an Apartment to a House Checklist | Travelers Insurance");
                     expect(item.description).to.exist;
                     expect(item.url).to.exist;
-                    expect(item.url).to.equal("https://www.travelers.com/resources/home/moving/moving-from-an-apartment-to-a-house-checklist");
+                    expect(item.url).to.equal("https://www.travelers.com/resources/home/moving/moving-from-an-apartment-to-a-house-checklist#:~:text=7%20Tips%20for%20Moving,cats.%20Learn%20more%20Related");
                 });
                 describe("for voice devices", () => {
                     beforeEach(() => {
@@ -335,7 +335,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     expect(output.outputSpeech.displayText).to.contain("Here is the top answer: Inflation is a general upward");
                     expect(output.outputSpeech.suggestions[0]).to.deep.equal({
                         title: 'Source',
-                        url: 'https://investor.gov/introduction-investing/basics/investment-products/bonds'
+                        url: 'https://investor.gov/introduction-investing/basics/investment-products/bonds#:~:text=Inflation%20is%20a%20general%20upward%20movement%20in%20prices'
                     });
                 });
             });
