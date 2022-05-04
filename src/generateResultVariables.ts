@@ -8,6 +8,7 @@ import { existsAndNotEmpty } from "stentor-utils";
 
 import { cleanAnswer } from "./cleanAnswer";
 import { focusAnswer, FocusConfig } from "./focusAnswer";
+import { generateTextFragmentURL } from "./generateTextFragmentURL";
 import { mergeIntervals, longestInterval, addMarkdownHighlights } from "./utils";
 
 export interface ResultVariablesConfig extends FocusConfig {
@@ -113,7 +114,7 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
         variables.TOP_FAQ = {
             text,
             markdownText,
-            source: topFAQ.uri,
+            source: generateTextFragmentURL(topFAQ.uri, topFAQ.document),
             handlerId: topFAQ.handlerId
         }
     }
@@ -132,7 +133,7 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
             variables.TOP_ANSWER = {
                 text,
                 markdownText,
-                source: suggested.uri
+                source: generateTextFragmentURL(suggested.uri, suggested.topAnswer)
             };
 
         } else if (QNA_BOT_LONGEST_HIGHLIGHT) {
@@ -147,7 +148,7 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
                 text: cleanAnswer(topAnswer),
                 // this one might be different
                 markdownText: cleanAnswer(topAnswer),
-                source: suggested.uri
+                source: generateTextFragmentURL(suggested.uri, topAnswer)
             };
         }
 
@@ -161,7 +162,7 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
             text: cleanAnswer(focused.answer),
             // This gets tricky, they highlights are no longer correct after adding markdown
             markdownText: cleanAnswer(markedDownText),
-            source: suggested.uri
+            source: generateTextFragmentURL(suggested.uri, focused.answer)
         };
     }
 
@@ -171,14 +172,16 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
         // 1st, dedupe by URL
         const foundUrls: { [url: string]: KnowledgeBaseDocument } = {};
         result.documents.forEach((doc) => {
-            if (!foundUrls[doc.uri]) {
+            if (doc.uri && !foundUrls[doc.uri]) {
                 foundUrls[doc.uri] = doc
             }
         });
         const searchResults: ResultVariableListItem[] = [];
         Object.keys(foundUrls).forEach((url: string) => {
             const doc = foundUrls[url];
-            const { title, document, uri: source, highlights } = doc;
+            // split it up
+            const { title, document, uri, highlights } = doc;
+            const source = generateTextFragmentURL(uri, document);
             const focused = focusAnswer({ answer: document, highlights }, config);
             const cleaned = cleanAnswer(focused.answer);
             searchResults.push({ title, document: cleaned, source });

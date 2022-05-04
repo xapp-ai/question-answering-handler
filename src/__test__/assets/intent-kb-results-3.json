@@ -1,0 +1,280 @@
+{
+    "platform": "stentor-platform",
+    "type": "INTENT_REQUEST",
+    "rawQuery": "Can you help with storm damage",
+    "sessionId": "sessionId",
+    "userId": "userId",
+    "isNewSession": false,
+    "intentId": "KnowledgeAnswer",
+    "channel": "widget",
+    "attributes": {   },
+    "slots": {},
+    "knowledgeBaseResult": {
+      "faqs": [],
+      "documents": [
+        {
+          "title": "Storm Damage Archives - Barringer Brothers Roofing",
+          "uri": "",
+          "document": "...Wind Damage\n\n                        We often get phone calls for possible storm damage. Wind damage is a common problem [...]\n\n\n                        \n                            Read More...",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "topAnswer": false,
+              "endOffset": 14
+            },
+            {
+              "beginOffset": 78,
+              "topAnswer": false,
+              "endOffset": 83
+            },
+            {
+              "beginOffset": 84,
+              "topAnswer": false,
+              "endOffset": 90
+            },
+            {
+              "beginOffset": 97,
+              "topAnswer": false,
+              "endOffset": 103
+            }
+          ]
+        },
+        {
+          "title": "Wind Damage - Barringer Brothers Roofing",
+          "uri": "https://www.barringerbrothers.com/blog/storm-damage/wind-damage/",
+          "document": "...LATEST NEWS\nDamaged Decking\nWind Damage\nLeaking Pipe Boots\n\n\n\t\t    \n\n\t    \n\n\n\t    \n\n                        \n\t    \n\t\t    \n\t\t\t    CATEGORIES\nRoofing Leaks\nStorm Damage...",
+          "highlights": [
+            {
+              "beginOffset": 15,
+              "topAnswer": false,
+              "endOffset": 22
+            },
+            {
+              "beginOffset": 36,
+              "topAnswer": false,
+              "endOffset": 42
+            },
+            {
+              "beginOffset": 157,
+              "topAnswer": false,
+              "endOffset": 162
+            },
+            {
+              "beginOffset": 163,
+              "topAnswer": false,
+              "endOffset": 169
+            }
+          ]
+        },
+        {
+          "title": "About Us | Barringer Brothers Roofing | Belleville, IL",
+          "uri": "https://www.barringerbrothers.com/about-us/",
+          "document": "...Business Bureau. We work with clients in and around the Belleville area to deliver roofing services such as\n\n\n\n\n\tResidential roofing. From storm damage roof repairs to maintenance and new installations, we specialize in residential roofing services.\n\tRoof inspections. You can trust our team to...",
+          "highlights": [
+            {
+              "beginOffset": 142,
+              "topAnswer": false,
+              "endOffset": 147
+            },
+            {
+              "beginOffset": 148,
+              "topAnswer": false,
+              "endOffset": 154
+            }
+          ]
+        },
+        {
+          "title": "roof damage Archives - Barringer Brothers Roofing",
+          "uri": "",
+          "document": "...roof damage\n\n        \n                    \n                \n                    \n                        \t    \n\t\t    LATEST NEWS\nDamaged Decking\nWind Damage\nLeaking Pipe Boots\n\n\n\t\t    \n\n\t    \n\n\n\t    \n\n                        \n\t    \n\t\t    \n\t\t\t    CATEGORIES\nRoofing Leaks\nStorm Damage...",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "topAnswer": false,
+              "endOffset": 14
+            },
+            {
+              "beginOffset": 132,
+              "topAnswer": false,
+              "endOffset": 139
+            },
+            {
+              "beginOffset": 153,
+              "topAnswer": false,
+              "endOffset": 159
+            },
+            {
+              "beginOffset": 274,
+              "topAnswer": false,
+              "endOffset": 279
+            },
+            {
+              "beginOffset": 280,
+              "topAnswer": false,
+              "endOffset": 286
+            }
+          ]
+        },
+        {
+          "title": "Damaged Shingles Archives - Barringer Brothers Roofing",
+          "uri": "",
+          "document": "...Wind Damage\n\n                        We often get phone calls for possible storm damage. Wind damage is a common problem [...]\n\n\n                        \n                            Read More...",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "topAnswer": false,
+              "endOffset": 14
+            },
+            {
+              "beginOffset": 78,
+              "topAnswer": false,
+              "endOffset": 83
+            },
+            {
+              "beginOffset": 84,
+              "topAnswer": false,
+              "endOffset": 90
+            },
+            {
+              "beginOffset": 97,
+              "topAnswer": false,
+              "endOffset": 103
+            }
+          ]
+        },
+        {
+          "title": "Damaged Decking - Barringer Brothers Roofing",
+          "uri": "https://www.barringerbrothers.com/blog/roofing-leaks/damaged-decking/",
+          "document": "...LATEST NEWS\nDamaged Decking\nWind Damage\nLeaking Pipe Boots\n\n\n\t\t    \n\n\t    \n\n\n\t    \n\n                        \n\t    \n\t\t    \n\t\t\t    CATEGORIES\nRoofing Leaks\nStorm Damage...",
+          "highlights": [
+            {
+              "beginOffset": 15,
+              "topAnswer": false,
+              "endOffset": 22
+            },
+            {
+              "beginOffset": 36,
+              "topAnswer": false,
+              "endOffset": 42
+            },
+            {
+              "beginOffset": 157,
+              "topAnswer": false,
+              "endOffset": 162
+            },
+            {
+              "beginOffset": 163,
+              "topAnswer": false,
+              "endOffset": 169
+            }
+          ]
+        },
+        {
+          "title": "missing shingles Archives - Barringer Brothers Roofing",
+          "uri": "",
+          "document": "...Wind Damage\n\n                        We often get phone calls for possible storm damage. Wind damage is a common problem [...]\n\n\n                        \n                            Read More...",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "topAnswer": false,
+              "endOffset": 14
+            },
+            {
+              "beginOffset": 78,
+              "topAnswer": false,
+              "endOffset": 83
+            },
+            {
+              "beginOffset": 84,
+              "topAnswer": false,
+              "endOffset": 90
+            },
+            {
+              "beginOffset": 97,
+              "topAnswer": false,
+              "endOffset": 103
+            }
+          ]
+        },
+        {
+          "title": "Brenden Parker, Author at Barringer Brothers Roofing",
+          "uri": "",
+          "document": "...Wind Damage\n\n                        We often get phone calls for possible storm damage. Wind damage is a common problem [...]\n\n\n                        \n                            Read More...",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "topAnswer": false,
+              "endOffset": 14
+            },
+            {
+              "beginOffset": 78,
+              "topAnswer": false,
+              "endOffset": 83
+            },
+            {
+              "beginOffset": 84,
+              "topAnswer": false,
+              "endOffset": 90
+            },
+            {
+              "beginOffset": 97,
+              "topAnswer": false,
+              "endOffset": 103
+            }
+          ]
+        },
+        {
+          "title": "insurance claims Archives - Barringer Brothers Roofing",
+          "uri": "",
+          "document": "...Wind Damage\n\n                        We often get phone calls for possible storm damage. Wind damage is a common problem [...]\n\n\n                        \n                            Read More...",
+          "highlights": [
+            {
+              "beginOffset": 8,
+              "topAnswer": false,
+              "endOffset": 14
+            },
+            {
+              "beginOffset": 78,
+              "topAnswer": false,
+              "endOffset": 83
+            },
+            {
+              "beginOffset": 84,
+              "topAnswer": false,
+              "endOffset": 90
+            },
+            {
+              "beginOffset": 97,
+              "topAnswer": false,
+              "endOffset": 103
+            }
+          ]
+        }
+      ],
+      "suggested": [
+        {
+          "title": "About Us | Barringer Brothers Roofing | Belleville, IL",
+          "uri": "https://www.barringerbrothers.com/about-us/",
+          "document": "From storm damage roof repairs to maintenance and new installations, we specialize in residential roofing services.\n\tRoof inspections. You can trust our team to carefully inspect your roof for signs of damage and recommend a plan of action for moving forward.\n\tRoof replacement. We can remove your old roof and install a new roof in your choice of color and style using materials from the best roofing manufacturers.\n\n\n\n\n\n\n\tOur ServicesContact Us\n\n\n\n\n\nContact Our Roofing Company Today\n\n\n\n\nGet a complimentary inspection and estimate with Barringer Brothers Roofing for all your roofing needs. Contact our roofing company today at (618) 703-3036 or use our online contact form to request your free estimate.",
+          "topAnswer": null,
+          "highlights": [
+            {
+              "beginOffset": 5,
+              "topAnswer": false,
+              "endOffset": 10
+            },
+            {
+              "beginOffset": 11,
+              "topAnswer": false,
+              "endOffset": 17
+            },
+            {
+              "beginOffset": 202,
+              "topAnswer": false,
+              "endOffset": 208
+            }
+          ]
+        }
+      ]
+    }
+  }
