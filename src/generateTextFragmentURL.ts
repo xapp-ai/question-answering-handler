@@ -20,7 +20,12 @@ export function generateTextFragmentURL(url: string, document: string): string {
         return url;
     }
 
-    const u = new URL(url);
+    let u: URL;
+    try {
+        u = new URL(url);
+    } catch {
+        return url;
+    }
 
     // clean doc first
     let cleaned = cleanAnswer(document).trim();
