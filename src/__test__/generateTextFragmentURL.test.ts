@@ -16,6 +16,11 @@ describe(`#${generateTextFragmentURL.name}()`, () => {
             expect(generateTextFragmentURL("https://xapp.ai", undefined)).to.equal("https://xapp.ai");
         });
     });
+    describe("with a bad URL", () => {
+        it("returns the URL back out", () => {
+            expect(generateTextFragmentURL("undefined", "foo bar")).to.equal("undefined");
+        });
+    });
     describe('with url and document', () => {
         it("returns the correct result", () => {
             expect(generateTextFragmentURL(STARTS_WITH_ELLIPSES.uri, STARTS_WITH_ELLIPSES.document)).to.equal("https://www.consumerfinance.gov/ask-cfpb/what-exactly-happens-when-a-mortgage-lender-checks-my-credit-en-2005#:~:text=to%20be%20smart%20about,a%20mortgage%20or%20during");
