@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.3...v2.1.4) (2022-05-05)
+
+
+### Bug Fixes
+
+* Account for bad URLs in text fragment ([#361](https://github.com/xapp-ai/question-answering-handler/issues/361)) ([289ece5](https://github.com/xapp-ai/question-answering-handler/commit/289ece5c2eceb011fd6c991c007f1d3aee94df6c))
+
 ## [2.1.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.2...v2.1.3) (2022-05-04)
 
 
