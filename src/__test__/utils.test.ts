@@ -22,6 +22,6 @@ describe(`#${addMarkdownHighlight.name}()`, () => {
 describe(`#${addMarkdownHighlights.name}()`, () => {
     it("returns the correct value", () => {
         const highlights = [{ beginOffset: 2, endOffset: 3 }, { beginOffset: 6, endOffset: 7 }]
-        expect(addMarkdownHighlights("a b c d e", highlights)).to.equal("a **b** c **d** e")
+        expect(addMarkdownHighlights("a b c d e", highlights)).to.equal("a **b** c **d** e");
     });
 });
