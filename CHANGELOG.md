@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.4...v2.1.5) (2022-05-12)
+
+
+### Bug Fixes
+
+* Attempt at addressing multi-line markdown bolding ([#366](https://github.com/xapp-ai/question-answering-handler/issues/366)) ([1811738](https://github.com/xapp-ai/question-answering-handler/commit/1811738d2fe7c18223272a81cd1e780dc3a6abcb))
+
 ## [2.1.4](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.3...v2.1.4) (2022-05-05)
 
 
