@@ -64,4 +64,12 @@ describe(`#${cleanAnswer.name}()`, () => {
             expect(cleaned0).to.equal("Hello!");
         });
     });
+    describe("with markdown that has newlines", () => {
+        it("cleans the output", () => {
+            const cleaned = cleanAnswer("Here is what I found...\n\"**Put Certified Professionals in Your Corner\n\nFully licensed and insured**, we use only the highest quality materials in the industry and works with the most experienced employees and contractors.\"\nAny other questions?");
+            expect(cleaned).to.exist;
+            expect(cleaned).to.contain("**Put Certified Professionals in Your Corner**");
+            expect(cleaned).to.contain("**Fully licensed and insured**");
+        });
+    });
 });

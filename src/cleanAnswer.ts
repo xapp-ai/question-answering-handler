@@ -33,5 +33,12 @@ export function cleanAnswer(answer: string): string {
     // This is one more check where the above step could have helped clean up but we end up with a combination of \n & spaces.
     answer = answer.replace(/(\n| ){3,}/g, '\n\n');
 
+    // Markdown Clean up
+    // This is trying out something here.
+    // Markdown bolding does not go over two new lines (\n) so this looks for that case
+    // and attempts to close them.  It is targeting a very specific case
+    // See https://regex101.com/r/7lOVOG/1
+    answer = answer.replace(/\*\*([\S ]+)([\r\n]+)([\S ]+)\*\*/gm, `**$1**$2**$3**`);
+
     return answer;
 }
