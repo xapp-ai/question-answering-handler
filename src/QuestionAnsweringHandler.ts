@@ -46,7 +46,7 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
                 this.media = false;
                 // We want to communicate the result.
                 // There should already be one set on the session storage by the dialog manager
-                const result: KnowledgeBaseResult = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
+                const result: KnowledgeBaseResultWithMedia = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
                 // Generate the variables that will be injected!
                 const variables = generateResultVariables(request.rawQuery, result, this.data);
                 // For each variable, we drop them on the session variable
