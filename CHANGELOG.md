@@ -1,3 +1,10 @@
+## [2.1.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.6...v2.1.7) (2022-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency stentor to v1.56.97 ([#375](https://github.com/xapp-ai/question-answering-handler/issues/375)) ([6e869ab](https://github.com/xapp-ai/question-answering-handler/commit/6e869ab61c428013b24f37b90f5823e6c858bbfe))
+
 ## [2.1.6](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.5...v2.1.6) (2022-05-12)
 
 
