@@ -1,3 +1,10 @@
+## [2.1.8](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.7...v2.1.8) (2022-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency linkifyjs to v4 ([#384](https://github.com/xapp-ai/question-answering-handler/issues/384)) ([cf2ac0f](https://github.com/xapp-ai/question-answering-handler/commit/cf2ac0f7fe49bac74e76c46128137653ece6075d))
+
 ## [2.1.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.6...v2.1.7) (2022-10-06)
 
 
