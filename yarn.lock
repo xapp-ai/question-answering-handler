@@ -789,10 +789,10 @@
   dependencies:
     tslint-config-prettier "1.6.0"
 
-"@xapp/patterns@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@xapp/patterns/-/patterns-2.0.0.tgz#dba89ef256b03b86336d7dcc84eaaaf62a3e6a55"
-  integrity sha512-9n5KQD8rogrd0qEMUVYGH6cB0tOImJ2ZfAky8ofxCiTsgs04ExBwzHtnQHy0K8WF+opzXRDuDm9N6UqrDF385w==
+"@xapp/patterns@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@xapp/patterns/-/patterns-2.0.1.tgz#e453467abf994306da315c355d7b7519b06dc796"
+  integrity sha512-mG+RK8ihW/1f6K3Nx2I7ADXQrouLLPUftwpcqgl6jjUWNI9P99KU1O/iXDnCohJQQ3fcRY8ueTTsksXm2lplEw==
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -4985,246 +4985,246 @@ statuses@2.0.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
   integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
 
-stentor-conditional@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-conditional/-/stentor-conditional-1.57.52.tgz#927d649a713ade7e6602f63f46b7a2f4c2f9eedf"
-  integrity sha512-NaR0opR12HS11Ta72htCeRfYr2582Jqq0X5AO0QJbmkCjV9iaPZKGXJflvbyL5Em7HJs9/y1HkeprIlEellYVA==
+stentor-conditional@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-conditional/-/stentor-conditional-1.57.54.tgz#39c6e08c21eb849fc35833645584ccae49cc7bc9"
+  integrity sha512-VrRMz7DiY88yXBXldnZ9uwXtMLxJMKbQ/vKXtJmbMDXevtQzndGqTAsEwlUWkPDHnVKTraVyvNDpAeXKMG3BuQ==
   dependencies:
-    stentor-logger "1.57.52"
+    stentor-logger "1.57.54"
   optionalDependencies:
     vm2 "3.9.13"
 
-stentor-constants@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-constants/-/stentor-constants-1.57.52.tgz#a319083834445738fb5f91da55003a8a45d9c5c4"
-  integrity sha512-G9rBgkl58peRiv3+EoogqjNEziM/5GkwGHQkNqgYoLqbZnKoWkMfjP3VJbPGDKPYOj4vvhNyy+e0iW2r88E+bA==
+stentor-constants@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-constants/-/stentor-constants-1.57.54.tgz#57265379c0961818747f3403df33c72702c5d0bb"
+  integrity sha512-W4QjAs1VIsIJ88I3w2jF29kfv/usN46Tvd1EzbLxCr1mzDpo4yyBLGALDvppABNVg3RCqcT2Fjdckmbz36xQwA==
 
-stentor-context@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-context/-/stentor-context-1.57.52.tgz#fe3d13b2752e8cf12f268c20582433349d44b9f6"
-  integrity sha512-I/aqOFIfCBjpae3Ub9vh7DUc4HDQ6Hg/WxlU5qvhKf6mPhYD4R+r3IaUtFfjudh54DZameN3bUvWyRdB/HBzMA==
+stentor-context@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-context/-/stentor-context-1.57.54.tgz#7c3a9f6ba93fd8dad0ed9fb556f9c981ee5ad2c9"
+  integrity sha512-/WdLWtv95V1oKkMLq0hdMiq3Goe7nCvq24e3w1N7rjC+5JzEcjvsBhcpGpzt/T+hhwL9NIjWCRNuhefyOACtrA==
   dependencies:
-    "@xapp/patterns" "2.0.0"
-    stentor-constants "1.57.52"
-    stentor-guards "1.57.52"
-    stentor-response "1.57.52"
-    stentor-storage "1.57.52"
+    "@xapp/patterns" "2.0.1"
+    stentor-constants "1.57.54"
+    stentor-guards "1.57.54"
+    stentor-response "1.57.54"
+    stentor-storage "1.57.54"
 
-stentor-determiner@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-determiner/-/stentor-determiner-1.57.52.tgz#fb92b3b401ed800cdc3b5bbf5742117ae1079619"
-  integrity sha512-kgabD5p+ydNuUMtUkg8W5EQ/kmUVrnTHmuTSpRYl7pEICvXzWeFBq/dJxme7d7wnnQgI480+MXEW0+4mfRqKRQ==
+stentor-determiner@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-determiner/-/stentor-determiner-1.57.54.tgz#1404461faca7359aec9e64d16317c627442cd0dd"
+  integrity sha512-D5ymo+BWtKUljgZjDTGKHRllzIsoccksdg2d6vq2dWtgsuQjVsYf2nbciVrH1sgFtz2Hcx9Yyi8hyY+l7tkPrw==
   dependencies:
     jsonpath-plus "7.2.0"
-    stentor-conditional "1.57.52"
-    stentor-constants "1.57.52"
-    stentor-guards "1.57.52"
-    stentor-interaction-model "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-request "1.57.52"
-    stentor-storage "1.57.52"
-    stentor-time "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-conditional "1.57.54"
+    stentor-constants "1.57.54"
+    stentor-guards "1.57.54"
+    stentor-interaction-model "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-request "1.57.54"
+    stentor-storage "1.57.54"
+    stentor-time "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-guards@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-guards/-/stentor-guards-1.57.52.tgz#70a94a5a32c85eb3333a2c3eb988071cd3391134"
-  integrity sha512-ZME/HCcpURFHGvbxcPn6YbMxCAJ0PkQssLLuSjAYulp+OHOH3sK7qDyzpHFlUpXVLPbVtgiCnGgnr8qjVzpGfg==
+stentor-guards@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-guards/-/stentor-guards-1.57.54.tgz#3d002090e2922465f72923e3b4246d5f1decd65b"
+  integrity sha512-LpbV/beQYMlv3IABtZ2S5slyAz1LGAYIWYmVH8bNA3uPjKE6zB1GRWYTH3D8MQLmXCJTUXiu3BfNR+gu0xLs3Q==
   dependencies:
-    stentor-constants "1.57.52"
+    stentor-constants "1.57.54"
 
-stentor-handler-delegating@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-handler-delegating/-/stentor-handler-delegating-1.57.52.tgz#d1d7433d224710b25883486e7d4930d119ab47ab"
-  integrity sha512-9R6SJ8z8gKygwKHUIKOkrOnaPQDG53LVhgN24GLMIeYCYEWJD14GBdBymqYvhDCcB+SeLfWX8tF2xRfxJWHSkA==
+stentor-handler-delegating@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-handler-delegating/-/stentor-handler-delegating-1.57.54.tgz#a9b1ad4d8ddf1321d654fe76a854a31612317837"
+  integrity sha512-bNSu6uuyXTwhH+JljfUWlpkLczSbDcP+jTX0bIJrOEJogGtnTiTnSVGSJEvwR+mWlC2rYoBYWYDn+Q5SDBEuRw==
   dependencies:
-    stentor-handler "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-handler "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-handler-factory@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-handler-factory/-/stentor-handler-factory-1.57.52.tgz#6b6c8154a141fa3786d4fd0e4889971cec49e727"
-  integrity sha512-KNl/Yi37QlIog4SqPjnIc/zckw9tW/BwpIfyoOY2UiBMJlrjte0l+k7eAI9V70FPf6ikAFR7YeQUod+o9t+4wg==
+stentor-handler-factory@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-handler-factory/-/stentor-handler-factory-1.57.54.tgz#b2e56c6405d7a091ee2f9a5b2f3782470723a416"
+  integrity sha512-2ez8iVv0G45GcpIWjvdeCkQr0eD3MQlpEgc+SO3eR3uIeMPKnY+3P/pekex9jlgWxxBHo/2raMcnosSQGfd4bA==
   dependencies:
-    stentor-constants "1.57.52"
-    stentor-context "1.57.52"
-    stentor-handler "1.57.52"
-    stentor-handler-delegating "1.57.52"
-    stentor-interaction-model "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-response "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-context "1.57.54"
+    stentor-handler "1.57.54"
+    stentor-handler-delegating "1.57.54"
+    stentor-interaction-model "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-response "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-handler-manager@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-handler-manager/-/stentor-handler-manager-1.57.52.tgz#566075d87091d3dda930d149007363558d369b37"
-  integrity sha512-Gguw+6tBfq189zfSJtZ/k6Sk1cu8fxkP6qWMxajumtniXgL5J77LCv+Q44am521SfFS1jTSataIyLvwoD4AwBw==
+stentor-handler-manager@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-handler-manager/-/stentor-handler-manager-1.57.54.tgz#d9eff8e2f4b0d6cc871afec2e8c6cc00e00ccb0b"
+  integrity sha512-bRODy1A6Sk6dD3R3uuj9Pba1qLrWw46mfHjJ0v0jeQgsPxbxKXDnknYs+OdKKPEfdyNJpxLa3iJ5GSyvyVg34g==
   dependencies:
-    stentor-guards "1.57.52"
-    stentor-handler "1.57.52"
-    stentor-handler-factory "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-response "1.57.52"
-    stentor-storage "1.57.52"
+    stentor-guards "1.57.54"
+    stentor-handler "1.57.54"
+    stentor-handler-factory "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-response "1.57.54"
+    stentor-storage "1.57.54"
 
-stentor-handler@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-handler/-/stentor-handler-1.57.52.tgz#af0fd08a2074735f571c6405cbf9af691c269eac"
-  integrity sha512-hBrFUr513TNB8avYFmzVewB0BjCsl8ufLSj0uJ8Rtu1LcPhfv9eVjC/6RIIqszCztarQ8v79BEZXey3WD2sqBQ==
+stentor-handler@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-handler/-/stentor-handler-1.57.54.tgz#833e10734d2c9b7299e6ef911bc7100bcad765a1"
+  integrity sha512-E6oFROTu5eSL8H0wf/fCaKb0LFt+TV2EmPeLFHsIZ85Sju6Y6rwzSDM5U7znV7dgxnLuPkKCwmX3GxtP8XbaOQ==
   dependencies:
-    "@xapp/patterns" "2.0.0"
-    stentor-conditional "1.57.52"
-    stentor-constants "1.57.52"
-    stentor-context "1.57.52"
-    stentor-guards "1.57.52"
-    stentor-history "1.57.52"
-    stentor-interaction-model "1.57.52"
-    stentor-locales "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-response "1.57.52"
-    stentor-storage "1.57.52"
-    stentor-utils "1.57.52"
+    "@xapp/patterns" "2.0.1"
+    stentor-conditional "1.57.54"
+    stentor-constants "1.57.54"
+    stentor-context "1.57.54"
+    stentor-guards "1.57.54"
+    stentor-history "1.57.54"
+    stentor-interaction-model "1.57.54"
+    stentor-locales "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-response "1.57.54"
+    stentor-storage "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-history@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-history/-/stentor-history-1.57.52.tgz#626b4b8ecae06c3b62c18f8aa9bd6cb28ad92691"
-  integrity sha512-7DOXh7OswZZj0tNxi+jTYxf+QHtVkgcu4QEaps6XsKChd9eGh6bQmCK6iaG1eyB5FjvK/7Bb9uKLaR9BnlXVVw==
+stentor-history@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-history/-/stentor-history-1.57.54.tgz#95ac43bb34220b96984d1493c21c4e94a51dd99b"
+  integrity sha512-8RmGxpjWM0s4oHc7fuyXOif4woYN5iZ15/hhjXKNkdfcI/FQOh7bLQU79yLLaGAZyTs/73OehT/cG7Ma0kEQVQ==
 
-stentor-interaction-model@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-interaction-model/-/stentor-interaction-model-1.57.52.tgz#a06c91e5560ca35068551dcbb7d3c54ad3a2263b"
-  integrity sha512-Ryf4fZK8ZfyiM5WsB75yZMTTjtgG688ypyPHyQrCmljr7Hp8ZVM1k4PVk4/5YO6WB6LCTdtw9JjMC7TUwAg6hg==
+stentor-interaction-model@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-interaction-model/-/stentor-interaction-model-1.57.54.tgz#63ebf21f5afa085b6ef91f954d3c116b1c8665f3"
+  integrity sha512-he8pQR1Xe98NXNiIf9vY6SHXvu5dok9gkRzR+oGf1g2gNcI9Ynx41Tpo+AEihg61THSLI3QJM5I56Ubx3cmuWg==
   dependencies:
-    stentor-constants "1.57.52"
-    stentor-locales "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-locales "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-locales@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-locales/-/stentor-locales-1.57.52.tgz#d6ceae29712f2076ef63900924f2c2b5cd60563c"
-  integrity sha512-kn6FaBRX895n46uLkMZ0CbIA96dH65wHQmRnBPHVBXSUuC1miLZ9RdAd2lEVWYBJx2gf4pabCzORMb1oRlqZpQ==
+stentor-locales@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-locales/-/stentor-locales-1.57.54.tgz#43f2eb2b9919c187b68288dba022fa56ca460d10"
+  integrity sha512-Yy99IPuSxG5suU3sd5M/RPbHbfUgO5+9nKOosvQ8bUGKXmnY2MBvLHgdeFnGg2dQhZJBLwS48P6KEClBf2g5BA==
   dependencies:
-    stentor-utils "1.57.52"
+    stentor-utils "1.57.54"
 
-stentor-logger@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-logger/-/stentor-logger-1.57.52.tgz#0ae0bbf59cde4182d95278f1ae66f86a2df9fb93"
-  integrity sha512-JxYE4O9hKvln3EDbsMCQByeK+xHn+oAG8AQKfYPIFrRqtcntWc1T9S1Q8sUo1kJCG9tDJ3NUDZDqFm+jCVV+8w==
+stentor-logger@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-logger/-/stentor-logger-1.57.54.tgz#2613f2bbfa7bb94716a2bb56b47dc7f5156ab3c2"
+  integrity sha512-nsF+eHcZOPdfWo993Gk7fFPVon6bYd2yNUwDK+WF8PS+74MvldZ44d0YmDFpy2sWp42G/1GjGj3MHl4JTb4ElA==
   dependencies:
     chalk "4.1.2"
-    stentor-utils "1.57.52"
+    stentor-utils "1.57.54"
     winston "3.8.2"
 
-stentor-media@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-media/-/stentor-media-1.57.52.tgz#d0fc41dc0879aa3ab99ba3f74bd7c8b0633f74a8"
-  integrity sha512-bw8EWvg12qWBXRhxJPac2VHMuGs9hReGSVHxFKwB5IrHd5J6Q1IOgsor0N1ywxc5zIzqfRNBaSp02H+8mpl7Yg==
+stentor-media@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-media/-/stentor-media-1.57.54.tgz#6389392cd61299af85073cb34142410bd0dff261"
+  integrity sha512-BKH54inB9sfM5JoQwpvRIZCusolYTI466njWtJiftamusEzi7p7chiCJVhaSvfgaHVJIrSMIuhvbJIJ8OUXsVg==
   dependencies:
-    stentor-guards "1.57.52"
-    stentor-time "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-guards "1.57.54"
+    stentor-time "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-models@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-models/-/stentor-models-1.57.52.tgz#67d144d87e9877c07db28ba8755d0de58a613d11"
-  integrity sha512-8KWAhekWXlVT5/5IAduL9juRhll1vXPM+4MgKwUWQjh6GjKrplfxL8/RzLSX4lAwowR3/jgUyljGtAvzmaY/8g==
+stentor-models@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-models/-/stentor-models-1.57.54.tgz#a09c61c1af2e6e29ec79c637e467c13d4414bfab"
+  integrity sha512-beeTloWcTRI0B+Va+VlVuJNX7dU1ly0ouc3bzjf4HLLMHWfG2K6JNoAEQW2957A4wkja0qOXMfFWYB6ZXMS+dw==
   dependencies:
-    "@xapp/patterns" "2.0.0"
+    "@xapp/patterns" "2.0.1"
 
-stentor-request@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-request/-/stentor-request-1.57.52.tgz#1c474571935a6b5f5121f31b4ad4fb6ecdcfd6ee"
-  integrity sha512-biB/i1aCVbnYqHCuYvlkJFW42vk2kN1HQOF96pa2vwqE/wH2UC1KPTLMFIaEoY2xKqlMepXHCfWnn5omG1oxdg==
+stentor-request@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-request/-/stentor-request-1.57.54.tgz#f4ac615a46c905e3ec5defc7f86c5f59192652b1"
+  integrity sha512-YSehCrONbuUqvOJox65IsKmBC7Oo2RWfNuFHPSSG5tPqxKbz94XNbdJJDxDJkjUpiDg07w4ciwAg+SUC/6/lwA==
   dependencies:
-    "@xapp/patterns" "2.0.0"
-    stentor-constants "1.57.52"
-    stentor-interaction-model "1.57.52"
-    stentor-utils "1.57.52"
+    "@xapp/patterns" "2.0.1"
+    stentor-constants "1.57.54"
+    stentor-interaction-model "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-response@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-response/-/stentor-response-1.57.52.tgz#707d52e18d35a4bf1de26e851a94e11c5217ba82"
-  integrity sha512-YYklEAmSw2qJ9PvhYq5sblklBWOBB2onxwC3TBsHQj+OfLY4j4pKmU0LxvinvOXK5R5mMDgJ//p/hSYTeSz6/A==
+stentor-response@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-response/-/stentor-response-1.57.54.tgz#5b750db8ed97c3c95e74a665c12bfb421ab7f7e9"
+  integrity sha512-oEFlVX7/Rf5zh/lTqy+syf1ioCNUjZxbcKp7SsWd/3Fyh8EjNycWv5st9pVlfj/hGMWK43AtAPgzHPxUii5BjQ==
   dependencies:
-    "@xapp/patterns" "2.0.0"
+    "@xapp/patterns" "2.0.1"
     lodash.template "4.5.0"
-    stentor-determiner "1.57.52"
-    stentor-locales "1.57.52"
-    stentor-media "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-determiner "1.57.54"
+    stentor-locales "1.57.54"
+    stentor-media "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-runtime@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-runtime/-/stentor-runtime-1.57.52.tgz#c315c343be20d7aa3b7a7bda76ff173656ae911c"
-  integrity sha512-fEHY2jsERLM3Rx3nRx9Ur727pIpiQ81y6/C6kRY30AIkod/KkngkzMqVhTc1apJW1CYoOaiXnEfETccHnfp81A==
+stentor-runtime@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-runtime/-/stentor-runtime-1.57.54.tgz#829648f4217d5dcb190a40e946f0d14c07f18a02"
+  integrity sha512-nm2RLjGeOlHKkpBVDYvKaNqILl1YJW9r0U1wF0mz9Kewv/ay2/Kmi/u6NolhsVLoLE/AH5Ga1bp4qjYVZyreWA==
   dependencies:
-    stentor-constants "1.57.52"
-    stentor-context "1.57.52"
-    stentor-handler "1.57.52"
-    stentor-handler-factory "1.57.52"
-    stentor-handler-manager "1.57.52"
-    stentor-history "1.57.52"
-    stentor-interaction-model "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-response "1.57.52"
-    stentor-service-event "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-context "1.57.54"
+    stentor-handler "1.57.54"
+    stentor-handler-factory "1.57.54"
+    stentor-handler-manager "1.57.54"
+    stentor-history "1.57.54"
+    stentor-interaction-model "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-response "1.57.54"
+    stentor-service-event "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-service-event@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-service-event/-/stentor-service-event-1.57.52.tgz#4a2b552df0eef50dcb23d96a58f6065029a77581"
-  integrity sha512-XkNYfn4D/f6TeS47r0AgAdj/ielrOqp5d+OHmqz8olOj+xe0zSOB0bDPNYgyhX/gDDW6KN+LIiZxJ5AvViQ3IA==
+stentor-service-event@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-service-event/-/stentor-service-event-1.57.54.tgz#e7f8047982f4beda66a34c50de129f3a8dd6e28b"
+  integrity sha512-pAC6RIWPiJTcUa3z9FcxRBqtl6sqAh+QOIfynELErmo8uT6YLyw5FCkodD7J4zMBmA8AqN4ckEhBSty1TSL9kQ==
   dependencies:
     stacktrace-parser "0.1.10"
-    stentor-guards "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-guards "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-service-ovai@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-service-ovai/-/stentor-service-ovai-1.57.52.tgz#2a7fca66165a7c4c0cdcd1ff42189f909f70ffd4"
-  integrity sha512-w1tIvAz+0pAPwLCkmQzFTG3Yy3dmWL+z3cVAd4aStbeUTDxTA7DtDJzQaWhH2v/KKP770a+rkkkJ6O/e1BzosQ==
+stentor-service-ovai@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-service-ovai/-/stentor-service-ovai-1.57.54.tgz#3c99fa38f4c744633f5f4cba5e40d58b0272ce7b"
+  integrity sha512-fvQpmQ2Kh7dqL3aSUPX6c3j4ZUdvNtsszrruVDFnunrrsF3dfSJvYAGStrMojqZiphlY6RgAqhtejfPfebtysQ==
   dependencies:
     isomorphic-fetch "3.0.0"
-    stentor-constants "1.57.52"
-    stentor-service-event "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-service-event "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-service-studio@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-service-studio/-/stentor-service-studio-1.57.52.tgz#48616288562c1f5d22a748a67fac0577da4f10ec"
-  integrity sha512-jyOfA/rH2hs4wnbof942Dz3FXkPWWdDx0arxjVuTAZACGZtvlHQbMPwzUJ5jeTxghWNhHnPshD+IBXo9P20dbg==
+stentor-service-studio@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-service-studio/-/stentor-service-studio-1.57.54.tgz#c987d504a08c16f9aa4e2b37d28138befe327acb"
+  integrity sha512-ezkFYyxxxiJYO4U+Vt2Yi8OKUYorAIgrUWDAADRvf9wOMZnvkE4SvkapG2k+YjMcT/tL0Yhp27/zA/vIPuDUTw==
   dependencies:
     isomorphic-fetch "3.0.0"
-    stentor-constants "1.57.52"
-    stentor-service-event "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-service-event "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-storage@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-storage/-/stentor-storage-1.57.52.tgz#3eeafcc1fd0292c90257f8297d44ad1aa0fac41c"
-  integrity sha512-ev15csaPIPs6rGnY3AcehlEwJ/464fWhLQQnk3Zo3mwLE4QmJDU56Mpw2tDIsXWZr3zDjDi9/30MmQTdO+LdsA==
+stentor-storage@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-storage/-/stentor-storage-1.57.54.tgz#fa6a358957f34946132f60eb5835c9d33455b717"
+  integrity sha512-C7Y1vs+hYRf5CUj0dJPmUJSgYspc53n7ZWpip700iX32GK7OYk+oNr4BvJTv+OJyqOWFVVf7go6ZFxmSu4c7yg==
   dependencies:
     jsonpath-plus "7.2.0"
-    stentor-utils "1.57.52"
+    stentor-utils "1.57.54"
 
-stentor-time@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-time/-/stentor-time-1.57.52.tgz#df49b048bb95aff2b934af344352df25d720fc63"
-  integrity sha512-l8qwUACce4iYRuVoSqbLRkzLXZcsxLvEBX6HQIU/iqr1ZWcYZNN+xEGoMnQMBNat39r0uKQX/l7FlSUdhPdwTw==
+stentor-time@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-time/-/stentor-time-1.57.54.tgz#91827658befe90b7a8f8a0ebf4653555b8e94616"
+  integrity sha512-hx8MJpxL66GkP1GTfGmUoRd69m5h3ypVyRRIHFf6XCghStuKwHCasfpKzIT83Ow+bneNHW1cd5U1WTX+p4J04Q==
   dependencies:
     moment "2.29.4"
     moment-range "4.0.2"
     moment-timezone "0.5.40"
-    stentor-guards "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-guards "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-utils "1.57.54"
 
-stentor-utils@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor-utils/-/stentor-utils-1.57.52.tgz#32559e753b983bd72673ccc81dc59799c2ee6e04"
-  integrity sha512-KYBxu1FS/i0i+fuQFFYuRf3lU79AwJqbtwmYkltaoqY59NuzySgHeLS2N+ibTOecvbzaMRWYA8UozMo5PNhiTQ==
+stentor-utils@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor-utils/-/stentor-utils-1.57.54.tgz#1f23a7eb9c0566dac15b4ed99a48cef26d43f208"
+  integrity sha512-jS7NoUnQMxOpci5+x+W8H400UO2M9r4cIEaIfVFP3+x4YCtDJxpBhgZz2oFRxgSj9u9AG4tvikbG/4qMuTeS2Q==
   dependencies:
     "@types/xmldoc" "1.1.6"
     blueimp-md5 "2.19.0"
@@ -5245,38 +5245,38 @@ stentor-utils@1.57.52:
     numeral "2.0.6"
     sanitize-html "2.8.1"
     slugify "1.6.5"
-    stentor-constants "1.57.52"
-    stentor-guards "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-guards "1.57.54"
     winston "3.8.2"
     words-to-numbers "1.5.1"
     xmldoc "1.2.0"
 
-stentor@1.57.52:
-  version "1.57.52"
-  resolved "https://registry.yarnpkg.com/stentor/-/stentor-1.57.52.tgz#016c79220394e6e7e5aa765d3b5f48559b9da614"
-  integrity sha512-UPl2w5u+AEpteekpj+E3YZqpe7qk/EMxLfgGxHSP6hbgrQKkzBukkUkfssyW8/f36uaBInsVz9y1hkyQb8yCvg==
+stentor@1.57.54:
+  version "1.57.54"
+  resolved "https://registry.yarnpkg.com/stentor/-/stentor-1.57.54.tgz#e9177c3efcbe7db29ee85392056ed7f8d16e6f33"
+  integrity sha512-55jHGiObV1nVmmAKvRYBO3fgSsVg+l4gWdNnUhz2JtyCoHpTfQptN2THYWWsTUT24LE2ccDIjDlWE4QmzzrewQ==
   dependencies:
     "@types/aws-lambda" "8.10.109"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.15"
-    "@xapp/patterns" "2.0.0"
+    "@xapp/patterns" "2.0.1"
     body-parser "1.20.1"
     dotenv "16.0.3"
     express "4.18.2"
-    stentor-constants "1.57.52"
-    stentor-context "1.57.52"
-    stentor-determiner "1.57.52"
-    stentor-handler "1.57.52"
-    stentor-handler-factory "1.57.52"
-    stentor-logger "1.57.52"
-    stentor-models "1.57.52"
-    stentor-request "1.57.52"
-    stentor-response "1.57.52"
-    stentor-runtime "1.57.52"
-    stentor-service-event "1.57.52"
-    stentor-service-ovai "1.57.52"
-    stentor-service-studio "1.57.52"
-    stentor-utils "1.57.52"
+    stentor-constants "1.57.54"
+    stentor-context "1.57.54"
+    stentor-determiner "1.57.54"
+    stentor-handler "1.57.54"
+    stentor-handler-factory "1.57.54"
+    stentor-logger "1.57.54"
+    stentor-models "1.57.54"
+    stentor-request "1.57.54"
+    stentor-response "1.57.54"
+    stentor-runtime "1.57.54"
+    stentor-service-event "1.57.54"
+    stentor-service-ovai "1.57.54"
+    stentor-service-studio "1.57.54"
+    stentor-utils "1.57.54"
 
 stream-combiner2@~1.1.1:
   version "1.1.1"
