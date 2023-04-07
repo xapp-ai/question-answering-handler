@@ -79,6 +79,11 @@ const handlerWithContent: Handler<Content, QuestionAnsweringData> = {
     }
 }
 
+const handlerWithContentSubClassed: Handler<Content, QuestionAnsweringData> = {
+    ...handlerWithContent,
+    intentId: "LeadCapture"
+}
+
 describe(`${QuestionAnsweringHandler.name}`, () => {
     let qa: QuestionAnsweringHandler;
     let response: ResponseBuilder;
@@ -378,6 +383,51 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                         outputSpeech: { ssml: 'Yes', displayText: 'Yes' },
                         reprompt: { ssml: 'Yes?', displayText: 'Yes?' }
                     })
+                });
+            });
+        });
+        describe("when KB requests come in and it isn't the intentId", () => {
+            beforeEach(() => {
+                qa = new QuestionAnsweringHandler(handlerWithContentSubClassed);
+            });
+            it('returns the correct response', async () => {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
+                response = sinon.createStubInstance(ResponseBuilder);
+
+                request = new IntentRequestBuilder()
+                    .withRawQuery('hot dogs')
+                    .withIntentId("OCSearch")
+                    .updateDevice({
+                        canSpeak: false
+                    })
+                    .withKnowledgeBaseResult(REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult)
+                    .build();
+
+                context = new ContextBuilder()
+                    .withResponse(response)
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult
+                        }
+                    })
+                    .build()
+
+                await qa.handleRequest(request, context);
+
+                expect(response.respond).to.have.been.calledOnce;
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                // @ts-ignore Need the call, types aren't great here with sinon
+                const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
+
+                expect(output).to.exist;
+
+                expect(output.outputSpeech.ssml).to.contain("Inflation is a general upward");
+                expect(output.outputSpeech.displayText).to.contain("Here is the top answer: Inflation is a general upward");
+                expect(output.outputSpeech.suggestions[0]).to.deep.equal({
+                    title: 'Source',
+                    url: 'https://investor.gov/introduction-investing/basics/investment-products/bonds#:~:text=Inflation%20is%20a%20general%20upward%20movement%20in%20prices'
                 });
             });
         });

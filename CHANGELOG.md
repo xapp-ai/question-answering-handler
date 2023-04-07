@@ -1,3 +1,24 @@
+## [2.1.9](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.8...v2.1.9) (2023-02-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency linkifyjs to v4.1.0 ([#397](https://github.com/xapp-ai/question-answering-handler/issues/397)) ([5b6ca91](https://github.com/xapp-ai/question-answering-handler/commit/5b6ca91b03f8ed882fbc0a83472f168294c0d4ab))
+
+## [2.1.8](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.7...v2.1.8) (2022-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency linkifyjs to v4 ([#384](https://github.com/xapp-ai/question-answering-handler/issues/384)) ([cf2ac0f](https://github.com/xapp-ai/question-answering-handler/commit/cf2ac0f7fe49bac74e76c46128137653ece6075d))
+
+## [2.1.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.6...v2.1.7) (2022-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency stentor to v1.56.97 ([#375](https://github.com/xapp-ai/question-answering-handler/issues/375)) ([6e869ab](https://github.com/xapp-ai/question-answering-handler/commit/6e869ab61c428013b24f37b90f5823e6c858bbfe))
+
 ## [2.1.6](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.5...v2.1.6) (2022-05-12)
 
 

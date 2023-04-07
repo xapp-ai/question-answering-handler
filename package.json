@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.1.6",
+  "version": "2.1.9",
   "description": "A question answering handler for 📣 stentor",
   "types": "lib/index",
   "typings": "lib/index",
@@ -14,32 +14,32 @@
     "lib"
   ],
   "engines": {
-    "node": "^12 || ^14 || ^16"
+    "node": "^12 || ^14 || ^16 || ^18.0.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/changelog": "6.0.2",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/npm": "9.0.1",
+    "@semantic-release/npm": "9.0.2",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/chai": "4.3.1",
-    "@types/mocha": "9.1.1",
-    "@types/node": "16.11.41",
-    "@types/sinon-chai": "3.2.8",
-    "@types/sinon": "10.0.11",
+    "@types/chai": "4.3.4",
+    "@types/mocha": "10.0.1",
+    "@types/node": "18.15.11",
+    "@types/sinon-chai": "3.2.9",
+    "@types/sinon": "10.0.13",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "@xapp/config": "0.2.3",
-    "aws-sdk": "2.1133.0",
-    "chai": "4.3.6",
+    "aws-sdk": "2.1287.0",
+    "chai": "4.3.7",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "eslint-plugin-notice": "0.9.10",
     "eslint": "7.32.0",
-    "mocha": "10.0.0",
-    "prettier": "2.7.1",
-    "semantic-release": "19.0.3",
+    "mocha": "10.2.0",
+    "prettier": "2.8.4",
+    "semantic-release": "19.0.5",
     "sinon-chai": "3.7.0",
-    "sinon": "14.0.0",
-    "stentor": "1.56.14",
+    "sinon": "15.0.1",
+    "stentor": "1.57.102",
     "ts-node": "9.0.0",
     "typescript": "4.6.4"
   },
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "fuse.js": "6.6.2",
-    "linkifyjs": "3.0.5"
+    "linkifyjs": "4.1.0"
   },
   "peerDependencies": {
     "stentor": "1.X"
