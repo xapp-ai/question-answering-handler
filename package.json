@@ -17,7 +17,7 @@
     "node": "^12 || ^14 || ^16 || ^18.0.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.2",
+    "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "9.0.2",
     "@semantic-release/release-notes-generator": "10.0.3",
