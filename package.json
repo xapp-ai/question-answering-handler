@@ -21,7 +21,7 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "9.0.2",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/chai": "4.3.4",
+    "@types/chai": "4.3.5",
     "@types/mocha": "10.0.1",
     "@types/node": "18.15.11",
     "@types/sinon-chai": "3.2.9",
