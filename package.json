@@ -39,7 +39,7 @@
     "semantic-release": "19.0.5",
     "sinon-chai": "3.7.0",
     "sinon": "15.0.4",
-    "stentor": "1.57.128",
+    "stentor": "1.57.129",
     "ts-node": "9.0.0",
     "typescript": "5.0.4"
   },
