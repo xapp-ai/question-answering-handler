@@ -1,3 +1,11 @@
+## [2.1.12](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.11...v2.1.12) (2023-05-12)
+
+
+### Bug Fixes
+
+* update dependency @types/sinon to v10.0.14 ([#419](https://github.com/xapp-ai/question-answering-handler/issues/419)) ([40e9f76](https://github.com/xapp-ai/question-answering-handler/commit/40e9f762b78f008c39ba1ec2185ddc063a691f08))
+* update node.js to v18.16.0 ([#417](https://github.com/xapp-ai/question-answering-handler/issues/417)) ([987069b](https://github.com/xapp-ai/question-answering-handler/commit/987069b4a2226810daf448774345d2e305a032f6))
+
 ## [2.1.11](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.10...v2.1.11) (2023-04-12)
 
 
