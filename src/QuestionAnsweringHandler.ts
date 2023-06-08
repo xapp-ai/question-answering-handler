@@ -69,6 +69,8 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
                 break;
             default:
                 // Let it fall through to the super
+                // We may need to figure out how to pass through the macros for use in the super otherwise
+                // we can't subclass this and get QA responses back, if we are using the macros
                 return super.handleRequest(request, context);
         }
     }
