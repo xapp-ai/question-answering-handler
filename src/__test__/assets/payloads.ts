@@ -185,6 +185,17 @@ export const REQUEST_KB_NO_SUGGEST_OR_FAQ_2: IntentRequest & { requestAttributes
     "locale": "en-US"
 }
 
+export const RESULT_WITH_RAG_RESULT: KnowledgeBaseResult = {
+    generated: [
+        {
+            type: "retrieval-augmented-generation",
+            hasAnswer: true,
+            generated: "Generated Response",
+            document: "Generated Response"
+        }
+    ]
+}
+
 export const RESULT_WITH_NEWLINES: KnowledgeBaseResult = {
     suggested:
         [{

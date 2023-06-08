@@ -25,7 +25,8 @@ import {
     RESULT_WITH_NEWLINES,
     REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ,
     REQUEST_KB_NO_SUGGEST_OR_FAQ_2,
-    REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER
+    REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER,
+    RESULT_WITH_RAG_RESULT
 } from "./assets/payloads";
 
 import { QuestionAnsweringHandler, QuestionAnsweringData } from "../QuestionAnsweringHandler";
@@ -62,6 +63,13 @@ const handlerWithContent: Handler<Content, QuestionAnsweringData> = {
                     displayText: "${SUGGESTED_ANSWER.text}"
                 },
                 conditions: "!!session('SUGGESTED_ANSWER') && !session('TOP_ANSWER')"
+            },
+            {
+                outputSpeech: {
+                    ssml: "${RAG_RESULT.text}",
+                    displayText: "${RAG_RESULT.text}"
+                },
+                conditions: "RAG()"
             }
         ],
         ["YesIntent"]: [
@@ -429,6 +437,43 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     title: 'Source',
                     url: 'https://investor.gov/introduction-investing/basics/investment-products/bonds#:~:text=Inflation%20is%20a%20general%20upward%20movement%20in%20prices'
                 });
+            });
+        });
+        describe("when response uses a QAHandler macro", () => {
+            beforeEach(() => {
+                request = new IntentRequestBuilder()
+                    .withIntentId(handler.intentId)
+                    .updateDevice({ canSpeak: false })
+                    .withRawQuery("what is an overdraft")
+                    .withKnowledgeBaseResult(RESULT_WITH_RAG_RESULT)
+                    .build();
+
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
+                response = sinon.createStubInstance(ResponseBuilder);
+
+                context = new ContextBuilder().withResponse(response).withDevice(request.device).withSessionData({
+                    id: "foo",
+                    data: {
+                        [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: RESULT_WITH_RAG_RESULT
+                    }
+                }).build();
+                qa = new QuestionAnsweringHandler(handlerWithContent);
+            });
+            it('returns the correct response', async () => {
+
+                await qa.handleRequest(
+                    request,
+                    context,
+                );
+                expect(response.respond).to.have.been.calledOnce;
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                // @ts-ignore Need the call, types aren't great here with sinon
+                const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
+
+                expect(output).to.exist;
+                expect(output.outputSpeech).to.exist;
+                expect(output.outputSpeech?.ssml).to.contain("Generated Response");
             });
         });
     });
