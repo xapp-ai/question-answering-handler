@@ -1,6 +1,8 @@
 /*! Copyright (c) 2021, XAPP AI */
 import { expect } from "chai";
 
+import { KnowledgeBaseResult } from "stentor";
+
 import { generateResultVariables } from "../generateResultVariables";
 import {
     REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER,
@@ -11,6 +13,7 @@ import {
 import * as intent0 from "./assets/intent-kb-results-0.json";
 import * as intent1 from "./assets/intent-kb-results-1.json";
 import * as intent3 from "./assets/intent-kb-results-3.json";
+
 
 describe(`#${generateResultVariables.name}()`, () => {
     describe(`for undefined`, () => {
@@ -122,7 +125,6 @@ describe(`#${generateResultVariables.name}()`, () => {
             expect(variables.TOP_ANSWER.text).to.equal("This coverage can help pay to repair or rebuild the physical structure of your home in the event of a fire or other covered cause of loss");
 
             expect(variables.TOP_FAQ).to.be.undefined;
-
         });
     });
     describe("without a top answer in the suggestions", () => {
@@ -198,5 +200,76 @@ describe(`#${generateResultVariables.name}()`, () => {
             const second = docs0[1];
             expect(second.document).to.include("...Business Bureau.");
         });
-    })
+    });
+    describe("when generated answers exist", () => {
+        it("generates the correct variables", () => {
+
+            const result0: KnowledgeBaseResult = {
+                generated: [
+                    {
+                        hasAnswer: true,
+                        type: "retrieval-augmented-generation",
+                        generated: "This is generated with the answer",
+                        document: "This is generated with the answer"
+                    }
+                ],
+                documents: []
+            };
+
+            const variables0 = generateResultVariables("give me an answer", result0, {});
+            expect(variables0).to.exist;
+            expect(variables0.RAG_RESULT).to.exist;
+            expect(variables0.RAG_RESULT?.text).to.equal("This is generated with the answer");
+
+            const result1: KnowledgeBaseResult = {
+                generated: [
+                    {
+                        hasAnswer: false,
+                        type: "retrieval-augmented-generation",
+                        generated: "This is generated with the answer",
+                        document: "This is generated with the answer"
+                    },
+                    {
+                        hasAnswer: false,
+                        type: "general-knowledge",
+                        generated: "This is generated without an answer",
+                        document: "This is generated without an answer"
+                    },
+                ],
+                documents: []
+            };
+
+            const variables1 = generateResultVariables("give me an answer", result1, {});
+            expect(variables1).to.exist;
+            expect(variables1.RAG_RESULT).to.not.exist;
+            expect(variables1.GENERATED_NO_ANSWER).to.exist;
+            expect(variables1.GENERATED_NO_ANSWER?.text).to.equal("This is generated without an answer");
+
+            const result2: KnowledgeBaseResult = {
+                generated: [
+                    {
+                        hasAnswer: false,
+                        type: "retrieval-augmented-generation",
+                        generated: "This is generated without an answer",
+                        document: "This is generated without an answer"
+                    },
+                    {
+                        hasAnswer: true,
+                        type: "general-knowledge",
+                        generated: "This is generated with an answer",
+                        document: "This is generated with an answer"
+                    },
+                ],
+                documents: []
+            };
+
+            const variables2 = generateResultVariables("give me an answer", result2, {});
+            expect(variables2).to.exist;
+            expect(variables2.RAG_RESULT).to.not.exist;
+            expect(variables2.GENERATED_NO_ANSWER).to.not.exist;
+
+            expect(variables2.GENERAL_KNOWLEDGE).to.exist;
+            expect(variables2.GENERAL_KNOWLEDGE?.text).to.equal("This is generated with an answer");
+        });
+    });
 });

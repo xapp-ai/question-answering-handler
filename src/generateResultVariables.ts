@@ -66,6 +66,18 @@ export interface ResultVariables {
      * are not found.
      */
     SEARCH_RESULTS?: ResultVariableListItem[];
+    /**
+     * A generated result using retrieval augmented generation
+     */
+    RAG_RESULT?: ResultVariableInformation;
+    /**
+     * A generated result from the general knowledge of a large language model
+     */
+    GENERAL_KNOWLEDGE?: ResultVariableInformation;
+    /**
+     * A generated result that does not have an answer but has a response.
+     */
+    GENERATED_NO_ANSWER?: ResultVariableInformation;
 }
 
 /**
@@ -119,10 +131,35 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
         }
     }
 
+    if (existsAndNotEmpty(result.generated)) {
+        // Parse out our generated!
+        result.generated.forEach((generated) => {
+            if (generated.type === "general-knowledge") {
+                if (generated.hasAnswer) {
+                    variables.GENERAL_KNOWLEDGE = {
+                        text: generated.generated,
+                        markdownText: generated.generated
+                    }
+                } else {
+                    variables.GENERATED_NO_ANSWER = {
+                        text: generated.generated,
+                        markdownText: generated.generated
+                    }
+                }
+            }
+
+            if (generated.type === "retrieval-augmented-generation" && generated.hasAnswer) {
+                variables.RAG_RESULT = {
+                    text: generated.generated,
+                    markdownText: generated.generated
+                }
+            }
+        });
+    }
+
     if (existsAndNotEmpty(result.suggested)) {
         // Note: We only take the top one
         const suggested = result.suggested[0];
-
         // Merge intervals to help with the highlighting
         const highlights = mergeIntervals(suggested.highlights);
 
@@ -141,15 +178,16 @@ export function generateResultVariables(query: string, result: KnowledgeBaseResu
             // and we find the longest interval after merging them
             // I don't love this, it doesn't always return good results.
             const longest = longestInterval(highlights);
+            if (longest) {
+                const topAnswer = suggested.document.substring(longest.beginOffset, longest.endOffset);
 
-            const topAnswer = suggested.document.substring(longest.beginOffset, longest.endOffset);
-
-            variables.TOP_ANSWER = {
-                text: cleanAnswer(topAnswer),
-                // this one might be different
-                markdownText: cleanAnswer(topAnswer),
-                source: generateTextFragmentURL(suggested.uri, topAnswer)
-            };
+                variables.TOP_ANSWER = {
+                    text: cleanAnswer(topAnswer),
+                    // this one might be different
+                    markdownText: cleanAnswer(topAnswer),
+                    source: generateTextFragmentURL(suggested.uri, topAnswer)
+                };
+            }
         }
 
         // Add suggested with markdown on the displayText with the highlights

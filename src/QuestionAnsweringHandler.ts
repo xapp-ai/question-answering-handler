@@ -6,16 +6,18 @@ import {
     Data,
     getResponse,
     keyFromRequest,
+    log,
     Request
 } from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
 import { ExecutablePath, KnowledgeBaseResult } from "stentor-models";
-import { log } from "stentor-logger";
+import { MacroMap } from "stentor-utils";
 
 import { DEFAULT_RESPONSES } from "./constants";
 import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
+import { GeneralKnowledge, RAG } from "./macros";
 
-const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS"];
+const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER"];
 
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
 
@@ -31,7 +33,6 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
         log().debug(`${this.name} handleRequest()`);
         log().debug(JSON.stringify(request, undefined, 2));
 
-
         // We want to communicate the result.
         // There should already be one set on the session storage by the dialog manager
         const result: KnowledgeBaseResult = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
@@ -46,22 +47,30 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
         log().debug('Variables');
         log().debug(JSON.stringify(variables, undefined, 2));
 
+        // Generate some macros that make it easier to use
+        // testing these out for fun.
+        const macros: MacroMap = {
+            GeneralKnowledge: GeneralKnowledge.bind(this, context.session),
+            RAG: RAG.bind(this, context.session)
+        }
 
         const key = keyFromRequest(request);
 
         switch (key) {
             case this.intentId:
 
-                let response = getResponse(this, request, context);
+                let response = getResponse(this, request, context, {}, macros);
 
                 if (!response) {
-                    response = getResponse(DEFAULT_RESPONSES, request, context)
+                    response = getResponse(DEFAULT_RESPONSES, request, context, {}, macros)
                 }
 
                 context.response.respond(response);
                 break;
             default:
                 // Let it fall through to the super
+                // We may need to figure out how to pass through the macros for use in the super otherwise
+                // we can't subclass this and get QA responses back, if we are using the macros
                 return super.handleRequest(request, context);
         }
     }
