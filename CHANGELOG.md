@@ -1,3 +1,10 @@
+## [2.1.13](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.12...v2.1.13) (2023-06-08)
+
+
+### Bug Fixes
+
+* Generative AI Support ([#441](https://github.com/xapp-ai/question-answering-handler/issues/441)) ([7d8e323](https://github.com/xapp-ai/question-answering-handler/commit/7d8e323ae839b01ce4ce87d4d581a87d2477145c))
+
 ## [2.1.12](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.11...v2.1.12) (2023-05-12)
 
 
