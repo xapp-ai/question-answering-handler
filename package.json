@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "@xapp/config": "0.2.3",
-    "aws-sdk": "2.1391.0",
+    "aws-sdk": "2.1394.0",
     "chai": "4.3.7",
     "conventional-changelog-conventionalcommits": "6.0.0",
     "eslint": "7.32.0",
