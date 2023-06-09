@@ -1,3 +1,10 @@
+## [2.1.14](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.13...v2.1.14) (2023-06-09)
+
+
+### Bug Fixes
+
+* Logging Adjustment ([#442](https://github.com/xapp-ai/question-answering-handler/issues/442)) ([e0dc443](https://github.com/xapp-ai/question-answering-handler/commit/e0dc443becbc12155b9e3dee19a59aebcc32ef73))
+
 ## [2.1.13](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.12...v2.1.13) (2023-06-08)
 
 
