@@ -5,6 +5,8 @@ import {
     Context,
     Data,
     getResponse,
+    isInputUnknownRequest,
+    isIntentRequest,
     keyFromRequest,
     log,
     Request
@@ -30,7 +32,7 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
 
     public async handleRequest(request: Request, context: Context): Promise<void> {
 
-        log().debug(`${this.name} handleRequest()`);
+        log().info(`${this.name} handleRequest({type:${request.type} intentId:${isInputUnknownRequest(request) || isIntentRequest(request) ? request.intentId : ""})`);
         log().debug(JSON.stringify(request, undefined, 2));
 
         // We want to communicate the result.
@@ -44,7 +46,7 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
             context.session.set(key, value);
         });
 
-        log().debug('Variables');
+        log().info(`Variables: ${Object.keys(variables)}`);
         log().debug(JSON.stringify(variables, undefined, 2));
 
         // Generate some macros that make it easier to use
