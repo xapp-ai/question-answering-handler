@@ -169,6 +169,9 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                                     url: "https://source.two"
                                 },
                                 {
+                                    title: "Ignore, no URL"
+                                },
+                                {
                                     title: "Third Source",
                                     url: "https://source.third"
                                 }

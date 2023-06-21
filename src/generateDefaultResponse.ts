@@ -101,10 +101,12 @@ export function generateDefaultResponse(request: Request, context: Context, data
             }
             if (isResultVariableGeneratedInformation(AI_ANSWER)) {
                 AI_ANSWER.sources.forEach((source, index) => {
-                    suggestions.push({
-                        title: `Source ${index + 1}`,
-                        url: source.url
-                    });
+                    if (source.url) {
+                        suggestions.push({
+                            title: `Source ${index + 1}`,
+                            url: source.url
+                        });
+                    }
                 });
             }
         } else if (GENERAL_KNOWLEDGE) {
@@ -201,10 +203,12 @@ export function generateDefaultResponse(request: Request, context: Context, data
             }
             if (isResultVariableGeneratedInformation(AI_ANSWER)) {
                 AI_ANSWER.sources.forEach((source, index) => {
-                    suggestions.push({
-                        title: `Source ${index + 1}`,
-                        url: source.url
-                    });
+                    if (source.url) {
+                        suggestions.push({
+                            title: `Source ${index + 1}`,
+                            url: source.url
+                        });
+                    }
                 });
             }
 
