@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.2.1...v2.3.0) (2023-06-21)
+
+
+### Features
+
+* Sources on RAG Default Response ([#453](https://github.com/xapp-ai/question-answering-handler/issues/453)) ([59bf991](https://github.com/xapp-ai/question-answering-handler/commit/59bf99146de17a59390ff272d7224ff2855ec26c))
+
 ## [2.2.1](https://github.com/xapp-ai/question-answering-handler/compare/v2.2.0...v2.2.1) (2023-06-21)
 
 
