@@ -137,7 +137,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
 
         if (displayAnswer) {
             response.outputSpeech = {
-                displayText: `${label}\n${displayAnswer}`,
+                displayText: `__${label}__\n${displayAnswer}`,
                 ssml: `<speak>${ssmlAnswer}</speak>`,
                 suggestions
             }
