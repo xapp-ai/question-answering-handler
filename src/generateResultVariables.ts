@@ -84,7 +84,7 @@ export interface ResultVariables {
  * From the provided query and results, it turns the results into a set of variables
  * that can then be injected into responses.
  */
-export function generateResultVariables(query: string, result: KnowledgeBaseResult, config: ResultVariablesConfig): ResultVariables {
+export function generateResultVariables(query: string | undefined, result: KnowledgeBaseResult | undefined, config: ResultVariablesConfig): ResultVariables {
 
     if (!query || !result) {
         log().warn(`Unable to generate result variables: ${query || 'Query was undefined.'} ${result || 'Result was undefined'}`);

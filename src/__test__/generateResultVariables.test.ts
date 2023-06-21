@@ -14,7 +14,6 @@ import * as intent0 from "./assets/intent-kb-results-0.json";
 import * as intent1 from "./assets/intent-kb-results-1.json";
 import * as intent3 from "./assets/intent-kb-results-3.json";
 
-
 describe(`#${generateResultVariables.name}()`, () => {
     describe(`for undefined`, () => {
         it(`returns undefined`, () => {

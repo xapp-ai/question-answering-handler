@@ -12,16 +12,48 @@ import {
     Request
 } from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
-import { ExecutablePath, KnowledgeBaseResult } from "stentor-models";
+import { ExecutablePath, KnowledgeBaseResult, SuggestionObjectTypes } from "stentor-models";
 import { MacroMap } from "stentor-utils";
 
-import { DEFAULT_RESPONSES } from "./constants";
 import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
+import { generateDefaultResponse } from "./generateDefaultResponse";
 import { GeneralKnowledge, RAG } from "./macros";
 
 const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER"];
 
-export interface QuestionAnsweringData extends Data, ResultVariablesConfig { }
+export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
+    /**
+     * Optional Chat Configuration
+     */
+    chat?: {
+        /**
+         * Optional chips to use when generating the default responses.  These will not be added to any overridden responses
+         */
+        suggestionChips?: SuggestionObjectTypes[];
+        /**
+         * The follow up question after the knowledgebase result content.  It can be an empty string to omit it.
+         */
+        followUp?: string;
+    };
+    /**
+     * Optional Search Configuration
+     */
+    search?: {
+        /**
+         * Provides the ability to override the default labels on the search channel
+         */
+        topLabels?: {
+            FAQ: string;
+            SUGGESTED: string;
+            GENERAL_KNOWLEDGE: string;
+            AI_ANSWER: string;
+        };
+        /**
+         * Optional configuration setting for the number of search results on intelligent search channel.
+         */
+        numberOfResults?: number;
+    };
+}
 
 /**
  * Custom handler for Question Answering
@@ -59,12 +91,15 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
         const key = keyFromRequest(request);
 
         switch (key) {
+            case "OCSearch":
+            case "KnowledgeAnswer":
             case this.intentId:
 
+                // See if they overrode the response
                 let response = getResponse(this, request, context, {}, macros);
 
                 if (!response) {
-                    response = getResponse(DEFAULT_RESPONSES, request, context, {}, macros)
+                    response = generateDefaultResponse(request, context, this.data);
                 }
 
                 context.response.respond(response);

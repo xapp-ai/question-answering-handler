@@ -22,10 +22,11 @@ import { IntentRequestBuilder } from "stentor-request";
 import { ContextBuilder } from "stentor-context";
 
 import {
-    RESULT_WITH_NEWLINES,
-    REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ,
     REQUEST_KB_NO_SUGGEST_OR_FAQ_2,
+    REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ,
     REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER,
+    // KB Results
+    RESULT_WITH_NEWLINES,
     RESULT_WITH_RAG_RESULT
 } from "./assets/payloads";
 
@@ -95,7 +96,7 @@ const handlerWithContentSubClassed: Handler<Content, QuestionAnsweringData> = {
 describe(`${QuestionAnsweringHandler.name}`, () => {
     let qa: QuestionAnsweringHandler;
     let response: ResponseBuilder;
-    let request: IntentRequest
+    let request: IntentRequest;
     let context: Context;
     describe(`#constructor()`, () => {
         it('returns an instance of itself', () => {
@@ -140,7 +141,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     const response = context.response.response;
                     expect(response).to.exist;
                     expect(response.outputSpeech).to.exist;
-                    expect(response.outputSpeech.ssml).to.contain("I'm sorry, I don");
+                    expect(response?.outputSpeech?.ssml).to.contain("I'm sorry, I don");
                 });
             });
             describe('when passed request with knowledgebase results', () => {
@@ -173,8 +174,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
 
                     expect(output).to.exist;
                     expect(output.outputSpeech).to.exist;
-                    expect(output.outputSpeech.ssml).to.contain("An overdraft occurs");
-                    expect(output.outputSpeech.suggestions[0]).to.deep.equal({
+                    expect(output?.outputSpeech?.ssml).to.contain("An overdraft occurs");
+                    expect(output?.outputSpeech?.suggestions[0]).to.deep.equal({
                         title: 'Read More',
                         url:
                             'https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/glossary#:~:text=Overdraft%20An%20overdraft%20occurs,receive%20your%20paycheck%20on.'
@@ -215,7 +216,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
 
                     expect(output).to.exist;
 
-                    expect(output.outputSpeech.displayText).to.contain("Here is what I found...");
+                    expect(output?.outputSpeech?.displayText).to.contain("See if below will help answer your");
                     expect(output.displays).to.have.length(1);
                     const list = output.displays[0] as List;
                     expect(list.type).to.equal("LIST");
@@ -264,7 +265,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                         const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                         expect(output).to.exist;
-                        expect(output.outputSpeech.ssml).to.contain("I'm sorry, I don");
+                        expect(output?.outputSpeech?.ssml).to.contain("I'm sorry, I don");
                     });
                 });
                 describe("when passed crashing payload", () => {
@@ -301,7 +302,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
 
                         expect(output).to.exist;
 
-                        expect(output.outputSpeech.displayText).to.contain("Here is what I found...");
+                        expect(output?.outputSpeech?.displayText).to.contain("See if below will help answer your");
                     });
                 });
             });
@@ -344,9 +345,9 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
 
                     expect(output).to.exist;
 
-                    expect(output.outputSpeech.ssml).to.contain("Inflation is a general upward");
-                    expect(output.outputSpeech.displayText).to.contain("Here is the top answer: Inflation is a general upward");
-                    expect(output.outputSpeech.suggestions[0]).to.deep.equal({
+                    expect(output?.outputSpeech?.ssml).to.contain("Inflation is a general upward");
+                    expect(output?.outputSpeech?.displayText).to.contain("Here is the top answer: Inflation is a general upward");
+                    expect(output?.outputSpeech?.suggestions[0]).to.deep.equal({
                         title: 'Source',
                         url: 'https://investor.gov/introduction-investing/basics/investment-products/bonds#:~:text=Inflation%20is%20a%20general%20upward%20movement%20in%20prices'
                     });
@@ -431,9 +432,9 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
 
                 expect(output).to.exist;
 
-                expect(output.outputSpeech.ssml).to.contain("Inflation is a general upward");
-                expect(output.outputSpeech.displayText).to.contain("Here is the top answer: Inflation is a general upward");
-                expect(output.outputSpeech.suggestions[0]).to.deep.equal({
+                expect(output?.outputSpeech?.ssml).to.contain("Inflation is a general upward");
+                expect(output?.outputSpeech?.displayText).to.contain("Here is the top answer: Inflation is a general upward");
+                expect(output?.outputSpeech?.suggestions[0]).to.deep.equal({
                     title: 'Source',
                     url: 'https://investor.gov/introduction-investing/basics/investment-products/bonds#:~:text=Inflation%20is%20a%20general%20upward%20movement%20in%20prices'
                 });
