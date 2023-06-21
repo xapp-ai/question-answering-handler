@@ -7,22 +7,9 @@ import { ContextBuilder } from "stentor-context";
 import { isList } from "stentor-response";
 import { generateDefaultResponse } from "../generateDefaultResponse";
 
-
-// We want to test the following channels:
-// - Intelligent Search
-// - Chat Widget
-// - Google Business Messages
-// With the following scenarios:
-// - RAG, Top Answer, Top FAQ, Suggested, Results Only
-// - Unknown answer
-
 import {
-    //   REQUEST_KB_NO_SUGGEST_OR_FAQ_2,
     REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ,
     REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER,
-    // KB Results
-    // RESULT_WITH_NEWLINES,
-    // RESULT_WITH_RAG_RESULT
 } from "./assets/payloads";
 import { generateResultVariables } from "../generateResultVariables";
 
@@ -160,6 +147,75 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                 if (typeof response.outputSpeech === "object") {
                     expect(response.outputSpeech.displayText).to.include("No Results");
+                }
+            });
+        });
+        describe("with RAG response", () => {
+            it("returns as expected", () => {
+
+                const kb: KnowledgeBaseResult = {
+                    generated: [
+                        {
+                            hasAnswer: true,
+                            generated: "This is the answer",
+                            document: "This is the answer",
+                            sources: [
+                                {
+                                    title: "First Source",
+                                    url: "https://source.one"
+                                },
+                                {
+                                    title: "Second Source",
+                                    url: "https://source.two"
+                                },
+                                {
+                                    title: "Third Source",
+                                    url: "https://source.third"
+                                }
+                            ],
+                            type: "retrieval-augmented-generation"
+                        }
+                    ]
+                }
+
+                request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").withKnowledgeBaseResult(kb).build();
+
+                const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
+                            ...sessionVariables
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {
+                    chat: {
+                        followUp: "",
+                        suggestionChips: [{
+                            title: "Suggestion One"
+                        }]
+                    }
+                });
+
+                expect(response).to.exist;
+                expect(response.tag).to.equal("KB_RAG");
+                expect(response.displays).to.have.length(0);
+
+                expect(typeof response.outputSpeech).to.equal("object");
+                if (typeof response.outputSpeech === "object") {
+                    expect(response.outputSpeech.displayText).to.equal("This is the answer");
+
+                    expect(response.outputSpeech.suggestions).to.have.length(4);
+                    expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Source 1", url: "https://source.one" });
+                }
+
+                expect(typeof response.reprompt).to.equal("object");
+                if (typeof response.reprompt === "object") {
+                    expect(response.reprompt.displayText).to.equal("");
                 }
             });
         });
