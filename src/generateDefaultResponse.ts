@@ -222,6 +222,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
         } else if (GENERATED_NO_ANSWER) {
             displayAnswer = `${GENERATED_NO_ANSWER.markdownText}\n\n${followUp}`
             ssmlAnswer = `${GENERATED_NO_ANSWER.text} ${followUp}`;
+            tag = `KB_GENERATED_NO_ANSWER`;
 
             // two possibilities here, if we have search or not
             if (existsAndNotEmpty(SEARCH) && !voiceDevice) {

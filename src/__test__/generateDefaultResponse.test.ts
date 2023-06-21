@@ -1,7 +1,7 @@
 /*! Copyright (c) 2023, XAPP AI */
 import { expect } from "chai";
 
-import { Request, Context, List } from "stentor";
+import { Request, Context, List, IntentRequestBuilder, KnowledgeBaseResult } from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
 import { ContextBuilder } from "stentor-context";
 import { isList } from "stentor-response";
@@ -199,40 +199,111 @@ describe(`#${generateDefaultResponse.name}()`, () => {
         });
         describe("with general knowledge answer", () => {
             it("returns as expected", () => {
-                request = REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER;
 
-                const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult, {});
+                const kb: KnowledgeBaseResult = {
+                    generated: [
+                        {
+                            hasAnswer: true,
+                            generated: "This is the answer",
+                            document: "This is the answer",
+                            uri: "https://xapp.ai",
+                            type: "general-knowledge"
+                        }
+                    ]
+                }
+
+                request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").withKnowledgeBaseResult(kb).build();
+
+                const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
 
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
-                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
                             ...sessionVariables
                         }
                     })
                     .build();
 
-                const response = generateDefaultResponse(request, context, {});
+                const response = generateDefaultResponse(request, context, {
+                    chat: {
+                        followUp: "",
+                        suggestionChips: [{
+                            title: "Suggestion One"
+                        }]
+                    }
+                });
 
                 expect(response).to.exist;
-                expect(response.tag).to.equal("KB_SUGGESTED_ANSWER");
+                expect(response.tag).to.equal("KB_GENERAL_KNOWLEDGE");
                 expect(response.displays).to.have.length(0);
-
 
                 expect(typeof response.outputSpeech).to.equal("object");
                 if (typeof response.outputSpeech === "object") {
-                    expect(response.outputSpeech.displayText).to.include("Any other questions?");
+                    expect(response.outputSpeech.displayText).to.equal("This is the answer");
+
+                    expect(response.outputSpeech.suggestions).to.have.length(1);
+                    expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Suggestion One" });
                 }
 
                 expect(typeof response.reprompt).to.equal("object");
                 if (typeof response.reprompt === "object") {
-                    expect(response.reprompt.displayText).to.include("Any other questions?");
+                    expect(response.reprompt.displayText).to.equal("");
                 }
             });
         });
         describe("with general knowledge no answer", () => {
+            it("returns as expected", () => {
 
+                const kb: KnowledgeBaseResult = {
+                    generated: [
+                        {
+                            hasAnswer: false,
+                            generated: "This is not the answer",
+                            document: "This is not the answer",
+                            uri: "https://xapp.ai",
+                            type: "general-knowledge"
+                        }
+                    ]
+                }
+
+                request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").withKnowledgeBaseResult(kb).build();
+
+                const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
+                            ...sessionVariables
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {
+                    chat: {
+                        followUp: "Ask something else?",
+                        suggestionChips: []
+                    }
+                });
+
+                expect(response).to.exist;
+                expect(response.tag).to.equal("KB_GENERATED_NO_ANSWER");
+                expect(response.displays).to.have.length(0);
+
+                expect(typeof response.outputSpeech).to.equal("object");
+                if (typeof response.outputSpeech === "object") {
+                    expect(response.outputSpeech.displayText).to.equal("This is not the answer\n\nAsk something else?");
+                    expect(response.outputSpeech.suggestions).to.have.length(0);
+                }
+
+                expect(typeof response.reprompt).to.equal("object");
+                if (typeof response.reprompt === "object") {
+                    expect(response.reprompt.displayText).to.equal("Ask something else?");
+                }
+            });
         });
         describe("for just list of results", () => {
             it("returns as expected", () => {
