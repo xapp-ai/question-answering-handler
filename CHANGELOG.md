@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.14...v2.2.0) (2023-06-21)
+
+
+### Features
+
+* Upgrade the default responses ([#450](https://github.com/xapp-ai/question-answering-handler/issues/450)) ([df0dbc2](https://github.com/xapp-ai/question-answering-handler/commit/df0dbc2d13c73b2a3409f6afb4c51a442033a972))
+
 ## [2.1.14](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.13...v2.1.14) (2023-06-09)
 
 
