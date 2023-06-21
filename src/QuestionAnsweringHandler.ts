@@ -27,13 +27,17 @@ export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
      */
     chat?: {
         /**
-         * Optional chips to use when generating the default responses.  These will not be added to any overridden responses
+         * Chips to use when generating the default responses.  These will not be added to any overridden responses
          */
         suggestionChips?: SuggestionObjectTypes[];
         /**
          * The follow up question after the knowledgebase result content.  It can be an empty string to omit it.
          */
         followUp?: string;
+        /**
+         * Experimental feature to include search results when we have a GENERATED_NO_ANSWER.  
+         */
+        includeResultsInNoAnswer?: number;
     };
     /**
      * Optional Search Configuration

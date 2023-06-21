@@ -3,13 +3,13 @@ import { Context, Request, Response, existsAndNotEmpty, List, ListItem } from "s
 import { SuggestionObjectTypes } from "stentor-models";
 
 import { QuestionAnsweringData } from "./QuestionAnsweringHandler";
-import { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem } from "./generateResultVariables";
-
+import { isResultVariableGeneratedInformation } from "./guards";
+import { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem, ResultVariableGeneratedInformation } from "./models";
 
 /**
  * Converts a search results to a List display
  */
-function generateList(search: ResultVariableListItem[], total: number): List {
+function generateList(search: ResultVariableListItem[], total: number, title?: string): List {
 
     const items: ListItem[] = search.slice(0, total).map((result, index) => {
         const item: ListItem = {
@@ -26,7 +26,7 @@ function generateList(search: ResultVariableListItem[], total: number): List {
 
     return {
         type: "LIST",
-        title: "Results",
+        title: title || "Results",
         items
     };
 }
@@ -73,7 +73,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
     const GENERAL_KNOWLEDGE: ResultVariableInformation = context.session.get("GENERAL_KNOWLEDGE");
 
     // Top Answer / RAG
-    const AI_ANSWER: ResultVariableInformation = context.session.get("RAG_RESULT") || context.session.get("TOP_ANSWER");
+    const AI_ANSWER: ResultVariableGeneratedInformation | ResultVariableInformation = context.session.get("RAG_RESULT") || context.session.get("TOP_ANSWER");
 
     let label: string;
     let displayAnswer: string;
@@ -97,6 +97,16 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 suggestions.push({
                     title: "Read More",
                     url: AI_ANSWER.source
+                });
+            }
+            if (isResultVariableGeneratedInformation(AI_ANSWER)) {
+                AI_ANSWER.sources.forEach((source, index) => {
+                    if (source.url) {
+                        suggestions.push({
+                            title: `Source ${index + 1}`,
+                            url: source.url
+                        });
+                    }
                 });
             }
         } else if (GENERAL_KNOWLEDGE) {
@@ -177,6 +187,8 @@ export function generateDefaultResponse(request: Request, context: Context, data
 
         const suggestionChips = data?.chat?.suggestionChips || [];
 
+        const includeResultsInNoAnswer: number = data?.chat?.includeResultsInNoAnswer;
+
         const followUp = typeof data?.chat?.followUp === "string" ? data.chat.followUp : "Any other questions?";
 
         if (AI_ANSWER) {
@@ -189,6 +201,17 @@ export function generateDefaultResponse(request: Request, context: Context, data
                     url: AI_ANSWER.source
                 });
             }
+            if (isResultVariableGeneratedInformation(AI_ANSWER)) {
+                AI_ANSWER.sources.forEach((source, index) => {
+                    if (source.url) {
+                        suggestions.push({
+                            title: `Source ${index + 1}`,
+                            url: source.url
+                        });
+                    }
+                });
+            }
+
         } else if (FAQ) {
             displayAnswer = `${FAQ.markdownText}\n\n${followUp}`
             ssmlAnswer = `${FAQ.text} ${followUp}`;
@@ -225,8 +248,8 @@ export function generateDefaultResponse(request: Request, context: Context, data
             tag = `KB_GENERATED_NO_ANSWER`;
 
             // two possibilities here, if we have search or not
-            if (existsAndNotEmpty(SEARCH) && !voiceDevice) {
-                response.displays.push(generateList(SEARCH, 3));
+            if (existsAndNotEmpty(SEARCH) && !voiceDevice && typeof includeResultsInNoAnswer === "number") {
+                response.displays.push(generateList(SEARCH, includeResultsInNoAnswer, "Top Results"));
             }
         } else if (existsAndNotEmpty(SEARCH) && !voiceDevice) {
             displayAnswer = `See if below will help answer your question. ${followUp}`

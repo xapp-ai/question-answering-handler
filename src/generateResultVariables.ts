@@ -9,6 +9,7 @@ import { existsAndNotEmpty } from "stentor-utils";
 import { cleanAnswer } from "./cleanAnswer";
 import { focusAnswer, FocusConfig } from "./focusAnswer";
 import { generateTextFragmentURL } from "./generateTextFragmentURL";
+import { ResultVariableInformation, ResultVariableGeneratedInformation, ResultVariableFAQInformation, ResultVariableListItem } from "./models";
 import { mergeIntervals, longestInterval, addMarkdownHighlights } from "./utils";
 
 export interface ResultVariablesConfig extends FocusConfig {
@@ -28,24 +29,7 @@ export interface ResultVariablesConfig extends FocusConfig {
     ["HIGHLIGHT_TOP_FAQ"]?: boolean;
 }
 
-export interface ResultVariableInformation {
-    text?: string;
-    markdownText?: string;
-    source?: string;
-}
 
-export interface ResultVariableFAQInformation extends ResultVariableInformation {
-    /**
-     * If provided, redirect the user to this new handlerId which will handle the response.
-     */
-    handlerId?: string;
-}
-
-export interface ResultVariableListItem {
-    title: string;
-    document: string;
-    source?: string;
-}
 
 export interface ResultVariables {
     /**
@@ -69,7 +53,7 @@ export interface ResultVariables {
     /**
      * A generated result using retrieval augmented generation
      */
-    RAG_RESULT?: ResultVariableInformation;
+    RAG_RESULT?: ResultVariableGeneratedInformation;
     /**
      * A generated result from the general knowledge of a large language model
      */
@@ -151,7 +135,8 @@ export function generateResultVariables(query: string | undefined, result: Knowl
             if (generated.type === "retrieval-augmented-generation" && generated.hasAnswer) {
                 variables.RAG_RESULT = {
                     text: generated.generated,
-                    markdownText: generated.generated
+                    markdownText: generated.generated,
+                    sources: generated.sources
                 }
             }
         });
