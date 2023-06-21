@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/xapp-ai/question-answering-handler/compare/v2.2.0...v2.2.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* Bolding on Default Response  ([#451](https://github.com/xapp-ai/question-answering-handler/issues/451)) ([d127eab](https://github.com/xapp-ai/question-answering-handler/commit/d127eab152015399d99e24f415f2d0d8c384e6e3))
+
 # [2.2.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.1.14...v2.2.0) (2023-06-21)
 
 
