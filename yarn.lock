@@ -1068,7 +1068,7 @@ __metadata:
     "@xapp/config": 0.2.3
     aws-sdk: 2.1394.0
     chai: 4.3.7
-    conventional-changelog-conventionalcommits: 6.0.0
+    conventional-changelog-conventionalcommits: 6.1.0
     eslint: 7.32.0
     eslint-plugin-notice: 0.9.10
     fuse.js: 6.6.2
@@ -2061,12 +2061,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:6.0.0":
-  version: 6.0.0
-  resolution: "conventional-changelog-conventionalcommits@npm:6.0.0"
+"conventional-changelog-conventionalcommits@npm:6.1.0":
+  version: 6.1.0
+  resolution: "conventional-changelog-conventionalcommits@npm:6.1.0"
   dependencies:
     compare-func: ^2.0.0
-  checksum: 40b9c731bc3d2e1c9d0c66c793768afa6d99826de24c458e527f1e189641d916b0dc5a195f10f4a5e974bf64b2919a5966b9818003ba0a32f723dfa292ad13cd
+  checksum: 4383a35cdf72f5964e194a1146e7f78276e301f73bd993b71627bb93586b6470d411b9613507ceb37e0fed0b023199c95e941541fa47172b4e6a7916fc3a53ff
   languageName: node
   linkType: hard
 
