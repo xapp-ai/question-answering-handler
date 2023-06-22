@@ -99,3 +99,5 @@ export const DEFAULT_RESPONSES: Response[] = [
     DEFAULT_SEARCH_RESULTS_RESPONSE,
     DEFAULT_UNKNOWN_RESPONSE
 ];
+
+export const QUESTION_ANSWERING_HANDLER_TYPE = "QuestionAnsweringHandlerType";

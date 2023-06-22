@@ -15,13 +15,15 @@ import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
 import { ExecutablePath, KnowledgeBaseResult, SuggestionObjectTypes } from "stentor-models";
 import { MacroMap } from "stentor-utils";
 
-import { generateResultVariables, ResultVariables, ResultVariablesConfig } from "./generateResultVariables";
+import { QUESTION_ANSWERING_HANDLER_TYPE } from "./constants";
+import { generateResultVariables, ResultVariables, ResultVariablesConfig, } from "./generateResultVariables";
 import { generateDefaultResponse } from "./generateDefaultResponse";
 import { GeneralKnowledge, RAG } from "./macros";
 
 const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER"];
 
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
+
     /**
      * Optional Chat Configuration
      */
@@ -63,6 +65,8 @@ export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
  * Custom handler for Question Answering
  */
 export class QuestionAnsweringHandler<C extends Content = Content, D extends QuestionAnsweringData = QuestionAnsweringData> extends AbstractHandler<C, D> {
+
+    public static readonly TYPE: string = QUESTION_ANSWERING_HANDLER_TYPE;
 
     public name = "QuestionAnsweringHandler";
 
