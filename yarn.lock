@@ -884,10 +884,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.17":
-  version: 18.16.17
-  resolution: "@types/node@npm:18.16.17"
-  checksum: 2f7e3a552d525ef4b7a2620ef5ef59b3fdfb1d8ab20627b537e090732b35c2bd103944933d347a319cc7d478b3866b0d1bc3d629ee5899ca663a4547ca078cee
+"@types/node@npm:18.17.4":
+  version: 18.17.4
+  resolution: "@types/node@npm:18.17.4"
+  checksum: d4c458202d82c999f38d85ca9ae8a2d3e521645c7f1b908cd6a0303d0e13c7d5eb3f888c41f584ba029ecf802d0a0005b7816c149400371a3c035abc4bd9a4c5
   languageName: node
   linkType: hard
 
@@ -1078,7 +1078,7 @@ __metadata:
     "@semantic-release/release-notes-generator": 11.0.3
     "@types/chai": 4.3.5
     "@types/mocha": 10.0.1
-    "@types/node": 18.16.17
+    "@types/node": 18.17.4
     "@types/sinon": 10.0.16
     "@types/sinon-chai": 3.2.9
     "@typescript-eslint/eslint-plugin": 2.34.0
