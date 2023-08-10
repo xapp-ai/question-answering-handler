@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.3.0...v2.4.0) (2023-08-10)
+
+
+### Features
+
+* update dependency @types/sinon to v10.0.16 ([#459](https://github.com/xapp-ai/question-answering-handler/issues/459)) ([530a42e](https://github.com/xapp-ai/question-answering-handler/commit/530a42ec1f32d5c25401ddf6f70bbb96bb97b116))
+
 # [2.3.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.2.1...v2.3.0) (2023-06-21)
 
 
