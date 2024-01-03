@@ -1,3 +1,13 @@
+## [2.4.1](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.0...v2.4.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* **deps:** update actions/checkout action to v4 ([#466](https://github.com/xapp-ai/question-answering-handler/issues/466)) ([b979ffc](https://github.com/xapp-ai/question-answering-handler/commit/b979ffca35262c91ac8c66da23f7f760df3089ff))
+* **deps:** update dependency linkifyjs to v4.1.3 ([#475](https://github.com/xapp-ai/question-answering-handler/issues/475)) ([b58c826](https://github.com/xapp-ai/question-answering-handler/commit/b58c826c12c4a3c0510f8a9b3a0152b39d4824ad))
+* Update .releaserc.json ([#477](https://github.com/xapp-ai/question-answering-handler/issues/477)) ([70150c3](https://github.com/xapp-ai/question-answering-handler/commit/70150c353de301b4430713b95cd0981abd0f9de5))
+* update dependency stentor to v1.58.74 ([#476](https://github.com/xapp-ai/question-answering-handler/issues/476)) ([b3bac3c](https://github.com/xapp-ai/question-answering-handler/commit/b3bac3c6beba9ad935c112f52b23745a4199368f))
+
 # [2.4.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.3.0...v2.4.0) (2023-08-10)
 
 
