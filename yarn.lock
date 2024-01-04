@@ -988,12 +988,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sinon@npm:10.0.16":
-  version: 10.0.16
-  resolution: "@types/sinon@npm:10.0.16"
+"@types/sinon@npm:10.0.20":
+  version: 10.0.20
+  resolution: "@types/sinon@npm:10.0.20"
   dependencies:
     "@types/sinonjs__fake-timers": "*"
-  checksum: 1216aac584500d6bf845ca76f57e82f8459cf9de4ed80a55e50aa4438360fc418789a42181e211c5d279e97f86a3a994e3c81e43971d540737caca0193242bbf
+  checksum: 7322771345c202b90057f8112e0d34b7339e5ae1827fb1bfe385fc9e38ed6a2f18b4c66e88d27d98c775f7f74fb1167c0c14f61ca64155786534541e6c6eb05f
   languageName: node
   linkType: hard
 
@@ -1116,7 +1116,7 @@ __metadata:
     "@types/chai": 4.3.11
     "@types/mocha": 10.0.1
     "@types/node": 18.19.4
-    "@types/sinon": 10.0.16
+    "@types/sinon": 10.0.20
     "@types/sinon-chai": 3.2.9
     "@typescript-eslint/eslint-plugin": 2.34.0
     "@typescript-eslint/parser": 2.34.0
