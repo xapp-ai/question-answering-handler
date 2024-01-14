@@ -1141,7 +1141,7 @@ __metadata:
     "@typescript-eslint/parser": 2.34.0
     "@xapp/config": 0.2.3
     aws-sdk: 2.1532.0
-    chai: 4.4.0
+    chai: 4.4.1
     conventional-changelog-conventionalcommits: 7.0.2
     eslint: 7.32.0
     eslint-plugin-notice: 0.9.10
@@ -1790,9 +1790,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chai@npm:4.4.0":
-  version: 4.4.0
-  resolution: "chai@npm:4.4.0"
+"chai@npm:4.4.1":
+  version: 4.4.1
+  resolution: "chai@npm:4.4.1"
   dependencies:
     assertion-error: ^1.1.0
     check-error: ^1.0.3
@@ -1801,7 +1801,7 @@ __metadata:
     loupe: ^2.3.6
     pathval: ^1.1.1
     type-detect: ^4.0.8
-  checksum: 2509a0acc2707f0664157cdc9d72b1466c71cedba19a22fec80ae550593fdcfc108fd86d4a7fec3be631b6c0589bf4f05652ee73fa55dbc748387ff6cc85c6b3
+  checksum: 9ab84f36eb8e0b280c56c6c21ca4da5933132cd8a0c89c384f1497f77953640db0bc151edd47f81748240a9fab57b78f7d925edfeedc8e8fc98016d71f40c36e
   languageName: node
   linkType: hard
 
