@@ -1140,7 +1140,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 2.34.0
     "@typescript-eslint/parser": 2.34.0
     "@xapp/config": 0.2.3
-    aws-sdk: 2.1532.0
+    aws-sdk: 2.1537.0
     chai: 4.4.1
     conventional-changelog-conventionalcommits: 7.0.2
     eslint: 7.32.0
@@ -1507,9 +1507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:2.1532.0":
-  version: 2.1532.0
-  resolution: "aws-sdk@npm:2.1532.0"
+"aws-sdk@npm:2.1537.0":
+  version: 2.1537.0
+  resolution: "aws-sdk@npm:2.1537.0"
   dependencies:
     buffer: 4.9.2
     events: 1.1.1
@@ -1521,7 +1521,7 @@ __metadata:
     util: ^0.12.4
     uuid: 8.0.0
     xml2js: 0.5.0
-  checksum: 013743e33f0dfe9b9256252a70f9d48693cac3bd435ed3100f970976e796e5ba692c03d581fa04aff3b110d43a4211b1a58c62652ff06ddd59e60fd8c9f37dbd
+  checksum: a1f8fb1d64fc124c79f921797da6c13820d95cab9a55f18a451f010fa067023aa8de622ef53ce53d14d91c215a13129533090ea2c69e0f8887fb4b37a915ea58
   languageName: node
   linkType: hard
 
