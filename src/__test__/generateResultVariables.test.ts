@@ -19,6 +19,15 @@ describe(`#${generateResultVariables.name}()`, () => {
         it(`returns undefined`, () => {
             expect(generateResultVariables(undefined, undefined, {})).to.deep.equal({});
         });
+        describe("with undefined faqs", () => {
+            it("doesn't crash", () => {
+                // fixes a real crash
+                const query = "who is michael myers";
+                const result = { "generated": [{ "generated": "Michael Myers is the Co-Founder and leads Product and Engineering at XAPPAI. He has a background in developing innovative technology for the Department of Defense and social media platforms.", "document": "Michael Myers is the Co-Founder and leads Product and Engineering at XAPPAI. He has a background in developing innovative technology for the Department of Defense and social media platforms.", "hasAnswer": true, "sources": [{ "documentId": "assistant-xapp.ai-about.html", "title": "About | XAPPAI", "url": "https://xapp.ai/about" }], "type": "retrieval-augmented-generation" }, { "document": "I don't know or could put you in touch with someone who can provide better assistance.", "hasAnswer": false, "generated": "I don't know or could put you in touch with someone who can provide better assistance.", "llm": "gpt-3.5-turbo-instruct", "type": "general-knowledge" }] };
+                const config = { "QNA_BOT_LONGEST_HIGHLIGHT": false, "REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS": true, "REMOVE_TRAILING_LINES_WITHOUT_HIGHLIGHTS": true, "FUZZY_MATCH_FAQS": true, "chat": { "includeResultsInNoAnswer": 1, "followUp": "Can I help you with anything else?", "suggestionChips": [{ "title": "Contact Us" }, { "title": "Schedule a Call", "url": "https://calendly.com/adam-xappcalendar" }] } };
+                expect(generateResultVariables(query, result, config)).to.not.throw;
+            });
+        });
     });
     describe(`when faq is better fuzzy match than suggested`, () => {
         it(`returns the FAQ`, () => {
