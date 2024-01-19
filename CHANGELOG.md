@@ -1,3 +1,11 @@
+## [2.4.2](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.1...v2.4.2) (2024-01-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fuse.js to v7 ([#496](https://github.com/xapp-ai/question-answering-handler/issues/496)) ([81ff88c](https://github.com/xapp-ai/question-answering-handler/commit/81ff88c0cb405d63ed6d81861c9ac620ef369360))
+* Empy FAQs Crash ([#509](https://github.com/xapp-ai/question-answering-handler/issues/509)) ([3a849ab](https://github.com/xapp-ai/question-answering-handler/commit/3a849abb4a3c9c2487f19a040953827bc4b1af6c))
+
 ## [2.4.1](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.0...v2.4.1) (2024-01-03)
 
 
