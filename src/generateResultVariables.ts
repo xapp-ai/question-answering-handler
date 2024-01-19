@@ -83,11 +83,12 @@ export function generateResultVariables(query: string | undefined, result: Knowl
     // Get possible FAQ matches
     let topFAQ: KnowledgeBaseFAQ = undefined;
 
-    if (typeof FUZZY_MATCH_FAQS === "number" || FUZZY_MATCH_FAQS === true) {
+    if (typeof FUZZY_MATCH_FAQS === "number" || FUZZY_MATCH_FAQS === true && existsAndNotEmpty(result.faqs)) {
         const faqs: KnowledgeBaseFAQ[] = result.faqs;
         const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.2;
         // fuzzy string matching on the question, comparing to the query
         const fuse = new Fuse(faqs, { threshold, includeScore: true, keys: ["question"] });
+
         const results: { item: KnowledgeBaseFAQ }[] = fuse.search(query);
 
         const possibleFaqs: KnowledgeBaseFAQ[] = results.map((result => result.item));

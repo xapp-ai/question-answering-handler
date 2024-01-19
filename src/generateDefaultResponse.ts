@@ -57,7 +57,6 @@ export function generateDefaultResponse(request: Request, context: Context, data
     // We want to know the channel
     const channel: string = request.channel;
 
-
     const GENERATED_NO_ANSWER: ResultVariableInformation = context.session.get('GENERATED_NO_ANSWER');
 
     //  Search Results
