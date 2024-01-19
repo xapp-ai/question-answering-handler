@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.2...v2.4.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* update dependency aws-sdk to v2.1539.0 ([#508](https://github.com/xapp-ai/question-answering-handler/issues/508)) ([0fb7b29](https://github.com/xapp-ai/question-answering-handler/commit/0fb7b295e987c38d0caacd6ad24ac5846937afcb))
+
 ## [2.4.2](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.1...v2.4.2) (2024-01-19)
 
 
