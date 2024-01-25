@@ -1140,7 +1140,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 2.34.0
     "@typescript-eslint/parser": 2.34.0
     "@xapp/config": 0.2.3
-    aws-sdk: 2.1539.0
+    aws-sdk: 2.1544.0
     chai: 4.4.1
     conventional-changelog-conventionalcommits: 7.0.2
     eslint: 7.32.0
@@ -1507,9 +1507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:2.1539.0":
-  version: 2.1539.0
-  resolution: "aws-sdk@npm:2.1539.0"
+"aws-sdk@npm:2.1544.0":
+  version: 2.1544.0
+  resolution: "aws-sdk@npm:2.1544.0"
   dependencies:
     buffer: 4.9.2
     events: 1.1.1
@@ -1520,8 +1520,8 @@ __metadata:
     url: 0.10.3
     util: ^0.12.4
     uuid: 8.0.0
-    xml2js: 0.5.0
-  checksum: 7ddf27c58fe9050a2d17550de294a422c55dad404e95c598c04e667a4355c144240a35a84634e8493e8738301d9a9e544c53d4494dc8c6943bcbc0c1e3c891d7
+    xml2js: 0.6.2
+  checksum: 6bd4074a16392904c2658d352fa9a33d07a62d0b4b3c78c996fc96ee011dfab0e68478b089abe97ec9cee272c6b495d19a6b20d55663894d2c5946e4efde6517
   languageName: node
   linkType: hard
 
@@ -8140,13 +8140,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:0.5.0":
-  version: 0.5.0
-  resolution: "xml2js@npm:0.5.0"
+"xml2js@npm:0.6.2":
+  version: 0.6.2
+  resolution: "xml2js@npm:0.6.2"
   dependencies:
     sax: ">=0.6.0"
     xmlbuilder: ~11.0.0
-  checksum: 1aa71d62e5bc2d89138e3929b9ea46459157727759cbc62ef99484b778641c0cd21fb637696c052d901a22f82d092a3e740a16b4ce218e81ac59b933535124ea
+  checksum: 458a83806193008edff44562c0bdb982801d61ee7867ae58fd35fab781e69e17f40dfeb8fc05391a4648c9c54012066d3955fe5d993ffbe4dc63399023f32ac2
   languageName: node
   linkType: hard
 
