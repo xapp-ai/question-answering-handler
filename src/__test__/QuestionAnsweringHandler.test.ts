@@ -1,7 +1,7 @@
 /*! Copyright (c) 2020, XAPP AI */
-import * as chai from "chai";
-import * as sinon from "sinon";
-import * as sinonChai from "sinon-chai";
+import chai from "chai";
+import sinon from "sinon";
+import sinonChai from "sinon-chai";
 
 chai.use(sinonChai);
 const expect = chai.expect;
@@ -38,6 +38,13 @@ const handler: Handler = {
     intentId: "OCSearch",
     type: "QuestionAnsweringHandler",
     content: {}
+}
+
+const handlerWithFuzzyMatching: Handler<Content, QuestionAnsweringData> = {
+    ...handler,
+    data: {
+        FUZZY_MATCH_FAQS: true
+    }
 }
 
 const handlerWithContent: Handler<Content, QuestionAnsweringData> = {
@@ -533,6 +540,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                         }
                     })
                     .build()
+
+                const qa = new QuestionAnsweringHandler(handlerWithFuzzyMatching);
 
                 const redirect = await qa.redirectingPathForRequest(request, context);
 

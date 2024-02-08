@@ -1,7 +1,7 @@
 /*! Copyright (c) 2021, XAPP AI */
 import { KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseSuggested } from "stentor-models";
 
-import { ResultVariableInformation, ResultVariableGeneratedInformation } from "./models";
+import { ResultVariableInformation, ResultVariableGeneratedInformation, ResultVariableFAQInformation } from "./models";
 
 /**
  * Check if the answer is a Suggested Answer
@@ -19,4 +19,8 @@ export function isFaq(answer: KnowledgeBaseFAQ | KnowledgeBaseSuggested | Knowle
 
 export function isResultVariableGeneratedInformation(result: ResultVariableInformation | ResultVariableGeneratedInformation): result is ResultVariableGeneratedInformation {
     return !!result && Array.isArray((result as ResultVariableGeneratedInformation).sources);
+}
+
+export function isResultVariableFAQInformation(result: ResultVariableInformation | ResultVariableFAQInformation): result is ResultVariableInformation {
+    return !!result && typeof (result as ResultVariableFAQInformation).question === "string";
 }

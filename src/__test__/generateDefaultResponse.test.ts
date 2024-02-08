@@ -408,5 +408,95 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                 }
             });
         });
+        describe("for just a mix of Docs FAQs", () => {
+            it("returns as expected", () => {
+
+                request = REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ;
+
+                const kbResult = { ...REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult };
+                kbResult.faqs = [
+                    {
+                        question: "What is the meaning of life?",
+                        document: "42"
+                    }
+                ]
+
+                const sessionVariables = generateResultVariables(request.rawQuery, kbResult, {});
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult,
+                            ...sessionVariables
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {});
+
+                expect(response).to.exist;
+                expect(response.tag).to.equal("KB_LIST_OF_RESULTS");
+
+                const list = response?.displays[0];
+                expect(list).to.exist;
+                expect(isList(list)).to.be.true;
+                if (isList(list)) {
+                    expect((list as List).type).to.equal("LIST");
+                    const items = list.items;
+                    expect(items).to.have.length(3);
+                    const item = list.items[0];
+                    expect(item.title).to.equal("What is the meaning of life?");
+                    expect(item.description).to.equal("42");
+
+                    const item2 = list.items[1];
+                    expect(item2.title).to.equal("Moving from an Apartment to a House Checklist | Travelers Insurance");
+                }
+            });
+        });
+        describe("for just FAQs", () => {
+            it("returns as expected", () => {
+
+                request = REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ;
+
+                const kbResult = { ...REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult };
+                kbResult.documents = [];
+                kbResult.faqs = [
+                    {
+                        question: "What is the meaning of life?",
+                        document: "42"
+                    }
+                ]
+
+                const sessionVariables = generateResultVariables(request.rawQuery, kbResult, {});
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult,
+                            ...sessionVariables
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {});
+
+                expect(response).to.exist;
+                expect(response.tag).to.equal("KB_LIST_OF_RESULTS");
+
+                const list = response?.displays[0];
+                expect(list).to.exist;
+                expect(isList(list)).to.be.true;
+                if (isList(list)) {
+                    expect((list as List).type).to.equal("LIST");
+                    const items = list.items;
+                    expect(items).to.have.length(1);
+                    const item = list.items[0];
+                    expect(item.title).to.equal("What is the meaning of life?");
+                    expect(item.description).to.equal("42");
+                }
+            });
+        });
     });
 });

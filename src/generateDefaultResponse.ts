@@ -3,19 +3,24 @@ import { Context, Request, Response, existsAndNotEmpty, List, ListItem } from "s
 import { SuggestionObjectTypes } from "stentor-models";
 
 import { QuestionAnsweringData } from "./QuestionAnsweringHandler";
-import { isResultVariableGeneratedInformation } from "./guards";
+import { isResultVariableFAQInformation, isResultVariableGeneratedInformation } from "./guards";
 import { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem, ResultVariableGeneratedInformation } from "./models";
 
 /**
  * Converts a search results to a List display
  */
-function generateList(search: ResultVariableListItem[], total: number, title?: string): List {
+function generateList(search: (ResultVariableListItem | ResultVariableFAQInformation)[], total: number, title?: string): List {
 
     const items: ListItem[] = search.slice(0, total).map((result, index) => {
+
+        const title: string = isResultVariableFAQInformation(result) ? (result.question || "FAQ") : result.title;
+
+        const description: string = isResultVariableFAQInformation(result) ? result.text : result.document;
+
         const item: ListItem = {
             token: `result-${index}`,
-            title: `${result.title}`,
-            description: `${result.document}`
+            title,
+            description
         };
         if (result.source) {
             item.url = result.source
@@ -62,8 +67,10 @@ export function generateDefaultResponse(request: Request, context: Context, data
     //  Search Results
     const SEARCH: ResultVariableListItem[] = context.session.get("SEARCH_RESULTS")
 
-    // FAQ
-    const FAQ: ResultVariableFAQInformation = context.session.get("TOP_FAQ");
+    // TOP_FAQ
+    const TOP_FAQ: ResultVariableFAQInformation = context.session.get("TOP_FAQ");
+
+    const FAQS: ResultVariableFAQInformation[] = context.session.get("FAQS");
 
     // Suggested
     const SUGGESTED: ResultVariableInformation = context.session.get("SUGGESTED_ANSWER");
@@ -131,15 +138,15 @@ export function generateDefaultResponse(request: Request, context: Context, data
                     url: SUGGESTED.source
                 });
             }
-        } else if (FAQ) {
+        } else if (TOP_FAQ) {
             label = topLabels?.FAQ || "FAQ";
-            displayAnswer = `${FAQ.markdownText}`
-            ssmlAnswer = `${FAQ.text}`;
+            displayAnswer = `${TOP_FAQ.markdownText}`
+            ssmlAnswer = `${TOP_FAQ.text}`;
             tag = `KB_TOP_FAQ`;
-            if (FAQ.source) {
+            if (TOP_FAQ.source) {
                 suggestions.push({
                     title: "Read More",
-                    url: FAQ.source
+                    url: TOP_FAQ.source
                 });
             }
         }
@@ -153,11 +160,14 @@ export function generateDefaultResponse(request: Request, context: Context, data
             response.tag = tag;
         }
 
-        if (existsAndNotEmpty(SEARCH)) {
+        if (existsAndNotEmpty(SEARCH) || existsAndNotEmpty(FAQS)) {
 
-            const trimTo: number = typeof numberOfResults === "number" && numberOfResults > 0 ? numberOfResults : 6
+            const trimTo: number = typeof numberOfResults === "number" && numberOfResults > 0 ? numberOfResults : 6;
 
-            response.displays.push(generateList(SEARCH, trimTo));
+            // combine the lists
+            const combined = (FAQS || []).slice(0, 3).concat(SEARCH || []);
+            // add them, with a title and trimmed to 6
+            response.displays.push(generateList(combined, trimTo, "Top Results"));
 
             if (!tag) {
                 response.tag = "KB_LIST_OF_RESULTS";
@@ -165,7 +175,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
         }
         // No answer scenario, no displayAnswer and no list of results
 
-        if (!displayAnswer && !existsAndNotEmpty(SEARCH)) {
+        if (!displayAnswer && !existsAndNotEmpty(SEARCH) && !existsAndNotEmpty(FAQS)) {
             // Nothing at all
             response.outputSpeech = {
                 displayText: `No Results`,
@@ -211,14 +221,14 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 });
             }
 
-        } else if (FAQ) {
-            displayAnswer = `${FAQ.markdownText}\n\n${followUp}`
-            ssmlAnswer = `${FAQ.text} ${followUp}`;
+        } else if (TOP_FAQ) {
+            displayAnswer = `${TOP_FAQ.markdownText}\n\n${followUp}`
+            ssmlAnswer = `${TOP_FAQ.text} ${followUp}`;
             tag = `KB_TOP_FAQ`;
-            if (FAQ.source) {
+            if (TOP_FAQ.source) {
                 suggestions.push({
                     title: "Read More",
-                    url: FAQ.source
+                    url: TOP_FAQ.source
                 });
             }
         } else if (GENERAL_KNOWLEDGE) {
@@ -250,11 +260,12 @@ export function generateDefaultResponse(request: Request, context: Context, data
             if (existsAndNotEmpty(SEARCH) && !voiceDevice && typeof includeResultsInNoAnswer === "number") {
                 response.displays.push(generateList(SEARCH, includeResultsInNoAnswer, "Top Results"));
             }
-        } else if (existsAndNotEmpty(SEARCH) && !voiceDevice) {
+        } else if ((existsAndNotEmpty(SEARCH) || existsAndNotEmpty(FAQS)) && !voiceDevice) {
             displayAnswer = `See if below will help answer your question. ${followUp}`
             ssmlAnswer = `See if below will help answer your question. ${followUp}`;
             tag = `KB_LIST_OF_RESULTS`;
-            response.displays.push(generateList(SEARCH, 3));
+            const combined = (FAQS || []).slice(0, 1).concat(SEARCH || []);
+            response.displays.push(generateList(combined, 3));
         } else {
             displayAnswer = `I'm sorry, I don't know that one. ${followUp}`
             ssmlAnswer = `I'm sorry, I don't know that one. ${followUp}`;
