@@ -11,6 +11,7 @@ import { focusAnswer, FocusConfig } from "./focusAnswer";
 import { generateTextFragmentURL } from "./generateTextFragmentURL";
 import { ResultVariableInformation, ResultVariableGeneratedInformation, ResultVariableFAQInformation, ResultVariableListItem } from "./models";
 import { mergeIntervals, longestInterval, addMarkdownHighlights } from "./utils";
+import { isQuestion } from "./question";
 
 export interface ResultVariablesConfig extends FocusConfig {
     /**
@@ -46,6 +47,10 @@ export interface ResultVariables {
      */
     TOP_FAQ?: ResultVariableFAQInformation;
     /**
+     * Possible FAQs that match the query.
+     */
+    FAQS?: ResultVariableFAQInformation[];
+    /**
      * List of search results.  These are typically the fallback when a suggestions, top answer or top FAQ
      * are not found.
      */
@@ -62,6 +67,10 @@ export interface ResultVariables {
      * A generated result that does not have an answer but has a response.
      */
     GENERATED_NO_ANSWER?: ResultVariableInformation;
+    /**
+     * If the original query from the user is a question.
+     */
+    IS_QUESTION?: boolean;
 }
 
 /**
@@ -96,11 +105,11 @@ export function generateResultVariables(query: string | undefined, result: Knowl
         if (possibleFaqs.length > 0) {
             topFAQ = possibleFaqs[0];
         }
-    } else {
-        topFAQ = existsAndNotEmpty(result.faqs) ? result.faqs[0] : undefined;
     }
 
-    const variables: ResultVariables = {};
+    const variables: ResultVariables = {
+        IS_QUESTION: isQuestion(query)
+    };
 
     if (topFAQ) {
 
@@ -114,6 +123,33 @@ export function generateResultVariables(query: string | undefined, result: Knowl
             source: generateTextFragmentURL(topFAQ.uri, topFAQ.document),
             handlerId: topFAQ.handlerId
         }
+    }
+
+    // Add FAQs
+    if (existsAndNotEmpty(result.faqs)) {
+        const faqs: KnowledgeBaseFAQ[] = result.faqs;
+        const faqResults: ResultVariableFAQInformation[] = faqs.map((faq) => {
+            const text = cleanAnswer(faq.document);
+            const markdownText: string = cleanAnswer(addMarkdownHighlights(faq.document, faq.highlights));
+
+            const faqInfo: ResultVariableFAQInformation = {
+                question: faq.question,
+                text,
+                markdownText
+            }
+
+            if (faq.uri) {
+                faqInfo.source = faq.uri;
+            }
+
+            if (faq.handlerId) {
+                faqInfo.handlerId = faq.handlerId;
+            }
+
+            return faqInfo;
+        });
+
+        variables.FAQS = faqResults;
     }
 
     if (existsAndNotEmpty(result.generated)) {

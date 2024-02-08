@@ -1,6 +1,8 @@
 /*! Copyright (c) 2023, XAPP AI */
 
-
+/**
+ * Typically generated from Knowledgebase result documents, specifically for setting as session variables so they can be easily accessed in the response.
+ */
 export interface ResultVariableInformation {
     text?: string;
     markdownText?: string;
@@ -15,6 +17,10 @@ export interface ResultVariableGeneratedInformation extends ResultVariableInform
 }
 
 export interface ResultVariableFAQInformation extends ResultVariableInformation {
+    /**
+     * Optional question associated with the FAQ
+     */
+    question?: string;
     /**
      * If provided, redirect the user to this new handlerId which will handle the response.
      */
