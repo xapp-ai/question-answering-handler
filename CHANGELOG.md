@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.3...v2.5.0) (2024-02-08)
+
+
+### Features
+
+* Adding FAQs to the results variables ([#518](https://github.com/xapp-ai/question-answering-handler/issues/518)) ([9905a5f](https://github.com/xapp-ai/question-answering-handler/commit/9905a5f111bda70076ace45b33334ba6c3e9e5cb))
+
 ## [2.4.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.4.2...v2.4.3) (2024-01-19)
 
 
