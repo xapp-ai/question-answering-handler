@@ -12,7 +12,7 @@ import {
     Request
 } from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
-import { ExecutablePath, KnowledgeBaseResult, SuggestionObjectTypes } from "stentor-models";
+import { ExecutablePath, KnowledgeBaseResult, SuggestionTypes } from "stentor-models";
 import { MacroMap } from "stentor-utils";
 
 import { QUESTION_ANSWERING_HANDLER_TYPE } from "./constants";
@@ -31,7 +31,7 @@ export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
         /**
          * Chips to use when generating the default responses.  These will not be added to any overridden responses
          */
-        suggestionChips?: SuggestionObjectTypes[];
+        suggestionChips?: SuggestionTypes[];
         /**
          * The follow up question after the knowledgebase result content.  It can be an empty string to omit it.
          */

@@ -147,15 +147,13 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     await qa.handleRequest(request, context);
                     const response = context.response.response;
                     expect(response).to.exist;
-                    expect(response.outputSpeech).to.exist;
+                    expect(response?.outputSpeech).to.exist;
                     expect(response?.outputSpeech?.ssml).to.contain("I'm sorry, I don");
                 });
             });
             describe('when passed request with knowledgebase results', () => {
                 it('returns the correct response', async () => {
 
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
                     response = sinon.createStubInstance(ResponseBuilder);
 
                     await qa.handleRequest(
@@ -175,8 +173,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                             .build()
                     );
                     expect(response.respond).to.have.been.calledOnce;
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore Need the call, types aren't great here with sinon
+
+                    // @ts-expect-error The stubbed instance types can't see the private properties, which cause TS errors
                     const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                     expect(output).to.exist;
@@ -191,8 +189,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
             });
             describe('when passed knowledgebase results without faq or suggested', () => {
                 it("returns the correct response", async () => {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
+
                     response = sinon.createStubInstance(ResponseBuilder);
 
                     request = new IntentRequestBuilder()
@@ -217,8 +214,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     await qa.handleRequest(request, context);
 
                     expect(response.respond).to.have.been.calledOnce;
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore Need the call, types aren't great here with sinon
+
+                    // @ts-expect-error Need the call, types aren't great here with sinon
                     const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                     expect(output).to.exist;
@@ -241,8 +238,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     });
                     it("returns the correct response", async () => {
 
-                        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                        // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
                         response = sinon.createStubInstance(ResponseBuilder);
 
                         request = new IntentRequestBuilder()
@@ -267,8 +262,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                         await qa.handleRequest(request, context);
 
                         expect(response.respond).to.have.been.calledOnce;
-                        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                        // @ts-ignore Need the call, types aren't great here with sinon
+
+                        // @ts-expect-error Need the call, types aren't great here with sinon
                         const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                         expect(output).to.exist;
@@ -277,8 +272,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                 });
                 describe("when passed crashing payload", () => {
                     it("returns the correct response", async () => {
-                        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                        // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
                         response = sinon.createStubInstance(ResponseBuilder);
 
                         request = new IntentRequestBuilder()
@@ -303,8 +296,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                         await qa.handleRequest(request, context);
 
                         expect(response.respond).to.have.been.calledOnce;
-                        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                        // @ts-ignore Need the call, types aren't great here with sinon
+
+                        // @ts-expect-error The stubbed instance types can't see the private properties, which cause TS errors
                         const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                         expect(output).to.exist;
@@ -320,8 +313,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     qa = new QuestionAnsweringHandler(handlerWithContent);
                 });
                 it('returns the correct response', async () => {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
                     response = sinon.createStubInstance(ResponseBuilder);
 
                     request = new IntentRequestBuilder()
@@ -346,8 +337,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     await qa.handleRequest(request, context);
 
                     expect(response.respond).to.have.been.calledOnce;
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore Need the call, types aren't great here with sinon
+
+                    // @ts-expect-error The stubbed instance types can't see the private properties, which cause TS errors
                     const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                     expect(output).to.exist;
@@ -365,8 +356,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     qa = new QuestionAnsweringHandler(handlerWithContent);
                 });
                 it('returns the correct response', async () => {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
                     response = sinon.createStubInstance(ResponseBuilder);
 
                     request = new IntentRequestBuilder()
@@ -390,8 +379,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     await qa.handleRequest(request, context);
 
                     expect(response.respond).to.have.been.calledOnce;
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore Need the call, types aren't great here with sinon
+
+                    // @ts-expect-error The stubbed instance types can't see the private properties, which cause TS errors
                     const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                     expect(output).to.exist;
@@ -407,8 +396,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                 qa = new QuestionAnsweringHandler(handlerWithContentSubClassed);
             });
             it('returns the correct response', async () => {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
+
                 response = sinon.createStubInstance(ResponseBuilder);
 
                 request = new IntentRequestBuilder()
@@ -433,8 +421,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                 await qa.handleRequest(request, context);
 
                 expect(response.respond).to.have.been.calledOnce;
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                // @ts-ignore Need the call, types aren't great here with sinon
+
+                // @ts-expect-error The stubbed instance types can't see the private properties, which cause TS errors
                 const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                 expect(output).to.exist;
@@ -456,8 +444,6 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     .withKnowledgeBaseResult(RESULT_WITH_RAG_RESULT)
                     .build();
 
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                // @ts-ignore The stubbed instance types can't see the private properties, which cause TS errors
                 response = sinon.createStubInstance(ResponseBuilder);
 
                 context = new ContextBuilder().withResponse(response).withDevice(request.device).withSessionData({
@@ -475,8 +461,8 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     context,
                 );
                 expect(response.respond).to.have.been.calledOnce;
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                // @ts-ignore Need the call, types aren't great here with sinon
+
+                // @ts-expect-error The stubbed instance types can't see the private properties, which cause TS errors
                 const output: Response<ResponseOutput> = response.respond.getCall(0).args[0];
 
                 expect(output).to.exist;

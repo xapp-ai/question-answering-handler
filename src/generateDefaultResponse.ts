@@ -1,6 +1,6 @@
 /*! Copyright (c) 2023, XAPP AI */
 import { Context, Request, Response, existsAndNotEmpty, List, ListItem } from "stentor";
-import { SuggestionObjectTypes } from "stentor-models";
+import { SuggestionTypes } from "stentor-models";
 
 import { QuestionAnsweringData } from "./QuestionAnsweringHandler";
 import { isResultVariableFAQInformation, isResultVariableGeneratedInformation } from "./guards";
@@ -85,7 +85,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
     let displayAnswer: string;
     let ssmlAnswer: string;
     let tag: string;
-    const suggestions: SuggestionObjectTypes[] = [];
+    const suggestions: SuggestionTypes[] = [];
 
     if (channel === "intelligent-search") {
 
