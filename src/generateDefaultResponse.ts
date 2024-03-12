@@ -78,8 +78,11 @@ export function generateDefaultResponse(request: Request, context: Context, data
     // General Knowledge
     const GENERAL_KNOWLEDGE: ResultVariableInformation = context.session.get("GENERAL_KNOWLEDGE");
 
-    // Top Answer / RAG
-    const AI_ANSWER: ResultVariableGeneratedInformation | ResultVariableInformation = context.session.get("RAG_RESULT") || context.session.get("TOP_ANSWER");
+    // Chat Responses
+    const CHAT_RESPONSE: ResultVariableGeneratedInformation = context.session.get("CHAT_RESPONSE") || context.session.get("CHAT_ANSWER");
+
+    // Top Answer / RAG / Chat Answer
+    const AI_ANSWER: ResultVariableGeneratedInformation | ResultVariableInformation = context.session.get("RAG_RESULT") || CHAT_RESPONSE || context.session.get("TOP_ANSWER");
 
     let label: string;
     let displayAnswer: string;
@@ -109,7 +112,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 AI_ANSWER.sources.forEach((source, index) => {
                     if (source.url) {
                         suggestions.push({
-                            title: `Source ${index + 1}`,
+                            title: source.title || `Source ${index + 1}`,
                             url: source.url
                         });
                     }
@@ -203,7 +206,20 @@ export function generateDefaultResponse(request: Request, context: Context, data
         if (AI_ANSWER) {
             displayAnswer = `${AI_ANSWER.markdownText}\n\n${followUp}`;
             ssmlAnswer = `${AI_ANSWER.text} ${followUp}`;
+
             tag = !!context.session.get("RAG_RESULT") ? `KB_RAG` : `KB_TOP_ANSWER`;
+
+            const hasRAG = !!context.session.get("RAG_RESULT");
+            const hasChat = !!context.session.get("CHAT_RESPONSE");
+
+            if (hasRAG) {
+                tag = `KB_RAG`;
+            } else if (hasChat) {
+                tag = `KB_CHAT_RESPONSE`;
+            } else {
+                tag = `KB_TOP_ANSWER`;
+            }
+
             if (AI_ANSWER.source) {
                 suggestions.push({
                     title: "Read More",
@@ -214,7 +230,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 AI_ANSWER.sources.forEach((source, index) => {
                     if (source.url) {
                         suggestions.push({
-                            title: `Source ${index + 1}`,
+                            title: source.title || `Source ${index + 1}`,
                             url: source.url
                         });
                     }

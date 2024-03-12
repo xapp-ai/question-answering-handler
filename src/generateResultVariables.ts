@@ -68,6 +68,14 @@ export interface ResultVariables {
      */
     GENERATED_NO_ANSWER?: ResultVariableInformation;
     /**
+     * From the Chat Strategy of X-NLU.  This is just the answer to the user's query.
+     */
+    CHAT_ANSWER?: ResultVariableGeneratedInformation;
+    /**
+     * From the Chat Strategy of X-NLU.  This is the response to the user's query.  This is much more common than CHAT_ANSWER.
+     */
+    CHAT_RESPONSE?: ResultVariableGeneratedInformation;
+    /**
      * If the original query from the user is a question.
      */
     IS_QUESTION?: boolean;
@@ -171,6 +179,26 @@ export function generateResultVariables(query: string | undefined, result: Knowl
 
             if (generated.type === "retrieval-augmented-generation" && generated.hasAnswer) {
                 variables.RAG_RESULT = {
+                    text: generated.generated,
+                    markdownText: generated.generated,
+                    sources: generated.sources
+                }
+            }
+
+            // New ChatStrategy responses
+
+            if (generated.type === "chat-completion-answer" && generated.hasAnswer) {
+                // not always available
+                variables.CHAT_ANSWER = {
+                    text: generated.generated,
+                    markdownText: generated.generated,
+                    sources: generated.sources
+                }
+            }
+
+            if (generated.type === "chat-completion-response") {
+                // more common
+                variables.CHAT_RESPONSE = {
                     text: generated.generated,
                     markdownText: generated.generated,
                     sources: generated.sources

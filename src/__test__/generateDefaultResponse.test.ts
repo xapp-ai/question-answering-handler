@@ -213,7 +213,7 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                     expect(response.outputSpeech.displayText).to.equal("This is the answer");
 
                     expect(response.outputSpeech.suggestions).to.have.length(4);
-                    expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Source 1", url: "https://source.one" });
+                    expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "First Source", url: "https://source.one" });
                 }
 
                 expect(typeof response.reprompt).to.equal("object");
