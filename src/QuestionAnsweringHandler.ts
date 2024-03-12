@@ -20,7 +20,7 @@ import { generateResultVariables, ResultVariables, ResultVariablesConfig, } from
 import { generateDefaultResponse } from "./generateDefaultResponse";
 import { GeneralKnowledge, RAG } from "./macros";
 
-const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER"];
+const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER", "CHAT_ANSWER", "CHAT_RESPONSE"];
 
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
 
