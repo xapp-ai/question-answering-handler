@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.1...v2.5.2) (2024-03-12)
+
+
+### Bug Fixes
+
+* Support for New Variables ([#546](https://github.com/xapp-ai/question-answering-handler/issues/546)) ([a0581e7](https://github.com/xapp-ai/question-answering-handler/commit/a0581e75e0f05f5ab4db719505e465f1ad2888af))
+
 ## [2.5.1](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.0...v2.5.1) (2024-02-26)
 
 
