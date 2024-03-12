@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.3...v2.5.4) (2024-03-12)
+
+
+### Bug Fixes
+
+* Adds missing keys to results variables ([1ebb50d](https://github.com/xapp-ai/question-answering-handler/commit/1ebb50dff6970c8ab4b1cdc29fa02e3421d9a480))
+
 ## [2.5.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.2...v2.5.3) (2024-03-12)
 
 
