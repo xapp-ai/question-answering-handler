@@ -1,3 +1,10 @@
+## [2.5.3](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.2...v2.5.3) (2024-03-12)
+
+
+### Bug Fixes
+
+* Adds Test ([#547](https://github.com/xapp-ai/question-answering-handler/issues/547)) ([9ce1f24](https://github.com/xapp-ai/question-answering-handler/commit/9ce1f24b87351c2e6bc654661058971afb2fc0ea))
+
 ## [2.5.2](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.1...v2.5.2) (2024-03-12)
 
 
