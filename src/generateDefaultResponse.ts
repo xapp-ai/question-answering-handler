@@ -257,7 +257,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
                     url: GENERAL_KNOWLEDGE.source
                 });
             }
-        } else if (SUGGESTED && !voiceDevice) {
+        } else if (SUGGESTED && !voiceDevice && !AI_ANSWER) {
             displayAnswer = `Here is what I found...\n"${SUGGESTED.markdownText}"\n\n${followUp}`
             ssmlAnswer = `${SUGGESTED.text} ${followUp}`;
             tag = `KB_SUGGESTED_ANSWER`;
