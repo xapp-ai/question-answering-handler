@@ -688,30 +688,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:11.0.3":
-  version: 11.0.3
-  resolution: "@semantic-release/npm@npm:11.0.3"
-  dependencies:
-    "@semantic-release/error": ^4.0.0
-    aggregate-error: ^5.0.0
-    execa: ^8.0.0
-    fs-extra: ^11.0.0
-    lodash-es: ^4.17.21
-    nerf-dart: ^1.0.0
-    normalize-url: ^8.0.0
-    npm: ^10.5.0
-    rc: ^1.2.8
-    read-pkg: ^9.0.0
-    registry-auth-token: ^5.0.0
-    semver: ^7.1.2
-    tempy: ^3.0.0
-  peerDependencies:
-    semantic-release: ">=20.1.0"
-  checksum: 6b5d9464738c96ed8d94c85631376051bd94b98047a64b76e0ba949c780c6c1f03c7a5eb755f840d59277610a55f967429e3cf253502407511a275ad4c658964
-  languageName: node
-  linkType: hard
-
-"@semantic-release/npm@npm:^12.0.0":
+"@semantic-release/npm@npm:12.0.0, @semantic-release/npm@npm:^12.0.0":
   version: 12.0.0
   resolution: "@semantic-release/npm@npm:12.0.0"
   dependencies:
@@ -734,7 +711,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/release-notes-generator@npm:12.1.0, @semantic-release/release-notes-generator@npm:^12.0.0":
+"@semantic-release/release-notes-generator@npm:13.0.0":
+  version: 13.0.0
+  resolution: "@semantic-release/release-notes-generator@npm:13.0.0"
+  dependencies:
+    conventional-changelog-angular: ^7.0.0
+    conventional-changelog-writer: ^7.0.0
+    conventional-commits-filter: ^4.0.0
+    conventional-commits-parser: ^5.0.0
+    debug: ^4.0.0
+    get-stream: ^7.0.0
+    import-from-esm: ^1.0.3
+    into-stream: ^7.0.0
+    lodash-es: ^4.17.21
+    read-pkg-up: ^11.0.0
+  peerDependencies:
+    semantic-release: ">=20.1.0"
+  checksum: 9b764aa35829a645716bd4358d56a03f4f82a7c5fdd7ea694c7d9aef36a2a7be6650eb8f76950848e97bb335ae8f895e627510a45084842dfaf60a9fdd8cbf5f
+  languageName: node
+  linkType: hard
+
+"@semantic-release/release-notes-generator@npm:^12.0.0":
   version: 12.1.0
   resolution: "@semantic-release/release-notes-generator@npm:12.1.0"
   dependencies:
@@ -1310,8 +1307,8 @@ __metadata:
   dependencies:
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/git": 10.0.1
-    "@semantic-release/npm": 11.0.3
-    "@semantic-release/release-notes-generator": 12.1.0
+    "@semantic-release/npm": 12.0.0
+    "@semantic-release/release-notes-generator": 13.0.0
     "@types/chai": 4.3.12
     "@types/mocha": 10.0.6
     "@types/node": 20.11.30
