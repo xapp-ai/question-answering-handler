@@ -1319,7 +1319,7 @@ __metadata:
     "@xapp/config": 0.2.3
     aws-sdk: 2.1576.0
     chai: 4.4.1
-    compromise: 14.12.0
+    compromise: 14.13.0
     conventional-changelog-conventionalcommits: 7.0.2
     eslint: 8.57.0
     eslint-plugin-notice: 0.9.10
@@ -2204,14 +2204,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compromise@npm:14.12.0":
-  version: 14.12.0
-  resolution: "compromise@npm:14.12.0"
+"compromise@npm:14.13.0":
+  version: 14.13.0
+  resolution: "compromise@npm:14.13.0"
   dependencies:
     efrt: 2.7.0
     grad-school: 0.0.5
     suffix-thumb: 5.0.2
-  checksum: 51545adc1223f87ad1b62e48a5dc1fbe408e12624ad71d56858bf127c386ef5463fce64d4505cc8cdee94e3f3b9f2ddb9b974f63f62fca83a30efad9ae2550b9
+  checksum: 410ee0fe7173d7305a9f40b48186167bd6999c6bde513c134a6348e6a896391cf9dfaf1b85a4dab9e5308b329c033044bd6dbf076bd16e7a963b49e77ed86953
   languageName: node
   linkType: hard
 
