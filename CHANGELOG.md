@@ -1,3 +1,10 @@
+## [2.5.6](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.5...v2.5.6) (2024-04-17)
+
+
+### Bug Fixes
+
+* Always surface TOP_FAQ first ([#575](https://github.com/xapp-ai/question-answering-handler/issues/575)) ([5d50c0e](https://github.com/xapp-ai/question-answering-handler/commit/5d50c0e7308408778a9529e689d53c581d03ceb9))
+
 ## [2.5.5](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.4...v2.5.5) (2024-04-02)
 
 
