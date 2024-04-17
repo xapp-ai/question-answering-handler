@@ -123,9 +123,6 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
     }
 
     public canHandleRequest(request: Request, context: Context): boolean {
-        // handle Thanks
-        // const handled = ["Thanks"];
-
         return super.canHandleRequest(request, context);
     }
 
