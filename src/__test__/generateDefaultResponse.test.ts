@@ -1,7 +1,14 @@
 /*! Copyright (c) 2023, XAPP AI */
 import { expect } from "chai";
 
-import { Request, Context, List, IntentRequestBuilder, KnowledgeBaseResult } from "stentor";
+import {
+    Context,
+    IntentRequestBuilder,
+    KnowledgeBaseFAQ,
+    KnowledgeBaseResult,
+    List,
+    Request,
+} from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
 import { ContextBuilder } from "stentor-context";
 import { isList } from "stentor-response";
@@ -223,6 +230,88 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                 }
             });
         });
+        describe("for a top FAQ", () => {
+            it("returns as expected", () => {
+                const topFAQ: KnowledgeBaseFAQ = {
+                    question: "What is the answer?",
+                    questions: ["What is the answer?", "Do you have the answer?"],
+                    document: "This is the FAQ answer",
+                    uri: "https://xapp.ai"
+                }
+
+                const kb: KnowledgeBaseResult = {
+                    faqs: [topFAQ],
+                    generated: [
+                        {
+                            hasAnswer: true,
+                            generated: "This is the answer",
+                            document: "This is the answer",
+                            sources: [
+                                {
+                                    title: "First Source",
+                                    url: "https://source.one"
+                                },
+                                {
+                                    title: "Second Source",
+                                    url: "https://source.two"
+                                },
+                                {
+                                    title: "Ignore, no URL"
+                                },
+                                {
+                                    title: "Third Source",
+                                    url: "https://source.third"
+                                }
+                            ],
+                            type: "retrieval-augmented-generation"
+                        }
+                    ],
+                    documents: [
+
+                    ]
+                }
+
+                request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").withKnowledgeBaseResult(kb).build();
+
+                const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
+                            ...sessionVariables
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {
+                    chat: {
+                        followUp: "",
+                        suggestionChips: [{
+                            title: "Suggestion One"
+                        }]
+                    }
+                });
+
+                expect(response).to.exist;
+                expect(response.tag).to.equal("KB_TOP_FAQ");
+                expect(response.displays).to.have.length(0);
+
+                expect(typeof response.outputSpeech).to.equal("object");
+                if (typeof response.outputSpeech === "object") {
+                    expect(response.outputSpeech.displayText).to.equal("This is the FAQ answer");
+                    expect(response.outputSpeech.suggestions).to.have.length(2);
+                    expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Read More", url: "https://xapp.ai/#:~:text=This%20is%20the%20FAQ%20answer" });
+                }
+
+                expect(typeof response.reprompt).to.equal("object");
+                if (typeof response.reprompt === "object") {
+                    expect(response.reprompt.displayText).to.equal("");
+                }
+
+            });
+        })
     });
     describe("for the chat channel", () => {
         it("returns as expected", () => {

@@ -20,7 +20,7 @@ import { generateResultVariables, ResultVariables, ResultVariablesConfig, } from
 import { generateDefaultResponse } from "./generateDefaultResponse";
 import { GeneralKnowledge, RAG } from "./macros";
 
-const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER", "CHAT_ANSWER", "CHAT_RESPONSE"];
+const RESULT_VARIABLE_KEYS: (keyof ResultVariables)[] = ["TOP_FAQ", "TOP_ANSWER", "SUGGESTED_ANSWER", "SEARCH_RESULTS", "RAG_RESULT", "GENERAL_KNOWLEDGE", "GENERATED_NO_ANSWER", "CHAT_RESPONSE"];
 
 export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
 
@@ -85,6 +85,8 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
             const value = variables[key];
             context.session.set(key, value);
         });
+
+        // Do I clean out old ones?  I think so.
 
         log().info(`Variables: ${Object.keys(variables)}`);
         log().debug(JSON.stringify(variables, undefined, 2));
