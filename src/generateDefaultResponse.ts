@@ -91,13 +91,24 @@ export function generateDefaultResponse(request: Request, context: Context, data
     const suggestions: SuggestionTypes[] = [];
 
     if (channel === "intelligent-search") {
-
         const { topLabels, numberOfResults } = data?.search || {};
 
         // no reprompt on intelligent-search
         delete response.reprompt;
 
-        if (AI_ANSWER) {
+        if (TOP_FAQ) {
+            label = topLabels?.FAQ || "FAQ";
+            displayAnswer = `${TOP_FAQ.markdownText}`
+            ssmlAnswer = `${TOP_FAQ.text}`;
+            tag = `KB_TOP_FAQ`;
+            if (TOP_FAQ.source) {
+                suggestions.push({
+                    title: "Read More",
+                    url: TOP_FAQ.source
+                });
+            }
+
+        } else if (AI_ANSWER) {
             label = topLabels?.AI_ANSWER || "AI Answer";
             displayAnswer = `${AI_ANSWER.markdownText}`
             ssmlAnswer = `${AI_ANSWER.text}`;
@@ -139,17 +150,6 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 suggestions.push({
                     title: "Read More",
                     url: SUGGESTED.source
-                });
-            }
-        } else if (TOP_FAQ) {
-            label = topLabels?.FAQ || "FAQ";
-            displayAnswer = `${TOP_FAQ.markdownText}`
-            ssmlAnswer = `${TOP_FAQ.text}`;
-            tag = `KB_TOP_FAQ`;
-            if (TOP_FAQ.source) {
-                suggestions.push({
-                    title: "Read More",
-                    url: TOP_FAQ.source
                 });
             }
         }
@@ -203,7 +203,17 @@ export function generateDefaultResponse(request: Request, context: Context, data
 
         const followUp = typeof data?.chat?.followUp === "string" ? data.chat.followUp : "Any other questions?";
 
-        if (AI_ANSWER) {
+        if (TOP_FAQ) {
+            displayAnswer = `${TOP_FAQ.markdownText}\n\n${followUp}`
+            ssmlAnswer = `${TOP_FAQ.text} ${followUp}`;
+            tag = `KB_TOP_FAQ`;
+            if (TOP_FAQ.source) {
+                suggestions.push({
+                    title: "Read More",
+                    url: TOP_FAQ.source
+                });
+            }
+        } else if (AI_ANSWER) {
             displayAnswer = `${AI_ANSWER.markdownText}\n\n${followUp}`;
             ssmlAnswer = `${AI_ANSWER.text} ${followUp}`;
 
@@ -234,17 +244,6 @@ export function generateDefaultResponse(request: Request, context: Context, data
                             url: source.url
                         });
                     }
-                });
-            }
-
-        } else if (TOP_FAQ) {
-            displayAnswer = `${TOP_FAQ.markdownText}\n\n${followUp}`
-            ssmlAnswer = `${TOP_FAQ.text} ${followUp}`;
-            tag = `KB_TOP_FAQ`;
-            if (TOP_FAQ.source) {
-                suggestions.push({
-                    title: "Read More",
-                    url: TOP_FAQ.source
                 });
             }
         } else if (GENERAL_KNOWLEDGE) {

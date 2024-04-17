@@ -23,13 +23,13 @@
     "@semantic-release/release-notes-generator": "13.0.0",
     "@types/chai": "4.3.14",
     "@types/mocha": "10.0.6",
-    "@types/node": "20.12.3",
+    "@types/node": "20.12.7",
     "@types/sinon": "17.0.3",
     "@types/sinon-chai": "3.2.12",
     "@typescript-eslint/eslint-plugin": "7.5.0",
     "@typescript-eslint/parser": "7.5.0",
     "@xapp/config": "0.2.3",
-    "aws-sdk": "2.1590.0",
+    "aws-sdk": "2.1596.0",
     "chai": "4.4.1",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "eslint": "8.57.0",
@@ -39,9 +39,9 @@
     "semantic-release": "23.0.6",
     "sinon": "17.0.1",
     "sinon-chai": "3.7.0",
-    "stentor": "1.59.32",
+    "stentor": "1.59.37",
     "ts-node": "9.1.1",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "scripts": {
     "build": "tsc -d true -p .",

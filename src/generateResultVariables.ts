@@ -30,8 +30,6 @@ export interface ResultVariablesConfig extends FocusConfig {
     ["HIGHLIGHT_TOP_FAQ"]?: boolean;
 }
 
-
-
 export interface ResultVariables {
     /**
      * A high confidence, typically concise, answer
@@ -68,10 +66,6 @@ export interface ResultVariables {
      */
     GENERATED_NO_ANSWER?: ResultVariableInformation;
     /**
-     * From the Chat Strategy of X-NLU.  This is just the answer to the user's query.
-     */
-    CHAT_ANSWER?: ResultVariableGeneratedInformation;
-    /**
      * From the Chat Strategy of X-NLU.  This is the response to the user's query.  This is much more common than CHAT_ANSWER.
      */
     CHAT_RESPONSE?: ResultVariableGeneratedInformation;
@@ -100,9 +94,13 @@ export function generateResultVariables(query: string | undefined, result: Knowl
     // Get possible FAQ matches
     let topFAQ: KnowledgeBaseFAQ = undefined;
 
-    if (typeof FUZZY_MATCH_FAQS === "number" || FUZZY_MATCH_FAQS === true && existsAndNotEmpty(result.faqs)) {
+    // Fuzzy matching is now on by default and you can override the threshold
+    const fuzzyMatch = typeof FUZZY_MATCH_FAQS === "boolean" ? FUZZY_MATCH_FAQS : true;
+
+    if (fuzzyMatch && existsAndNotEmpty(result.faqs)) {
+
         const faqs: KnowledgeBaseFAQ[] = result.faqs;
-        const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.2;
+        const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.3;
         // fuzzy string matching on the question, comparing to the query
         const fuse = new Fuse(faqs, { threshold, includeScore: true, keys: ["question"] });
 
@@ -186,16 +184,6 @@ export function generateResultVariables(query: string | undefined, result: Knowl
             }
 
             // New ChatStrategy responses
-
-            if (generated.type === "chat-completion-answer" && generated.hasAnswer) {
-                // not always available
-                variables.CHAT_ANSWER = {
-                    text: generated.generated,
-                    markdownText: generated.generated,
-                    sources: generated.sources
-                }
-            }
-
             if (generated.type === "chat-completion-response") {
                 // more common
                 variables.CHAT_RESPONSE = {
