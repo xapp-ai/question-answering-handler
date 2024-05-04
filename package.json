@@ -31,7 +31,7 @@
     "@xapp/config": "0.2.3",
     "aws-sdk": "2.1611.0",
     "chai": "4.4.1",
-    "conventional-changelog-conventionalcommits": "7.0.2",
+    "conventional-changelog-conventionalcommits": "8.0.0",
     "eslint": "8.57.0",
     "eslint-plugin-notice": "0.9.10",
     "mocha": "10.4.0",
