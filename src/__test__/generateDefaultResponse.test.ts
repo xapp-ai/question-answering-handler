@@ -647,6 +647,8 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                     if (typeof response.outputSpeech === "object") {
                         expect(response.outputSpeech.displayText).to.include("**Michael Myers** has a Bachelor of Science");
                         expect(response.outputSpeech.displayText).to.include("Anything else you want to know about him?");
+
+                        expect(response.outputSpeech.displayText).to.include("**Michael Myers** has a Bachelor of Science degree from the University of Virginia.\n\nAnything else you want to know about him?");
                         expect(response.outputSpeech.ssml).to.include("Michael Myers has a Bachelor of Science");
                         expect(response.outputSpeech.ssml).to.include("Anything else you want to know about him?");
                         expect(response.outputSpeech.suggestions).to.have.length(1);
