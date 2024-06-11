@@ -18,6 +18,7 @@ import {
     REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ,
     REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER,
     VARIABLES_WITH_CHAT,
+    VARIABLES_WITH_CHAT_AND_FOLLOW_UP,
 } from "./assets/payloads";
 import { generateResultVariables } from "../generateResultVariables";
 
@@ -618,6 +619,38 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                     expect(response.outputSpeech.suggestions).to.have.length(1);
                     expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Read more", url: "https://xapp.ai/about" });
                 }
+            });
+            describe("with a follow up question already on the text", () => {
+                it("returns as expected", () => {
+
+                    request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").build();
+
+                    const sessionVariables = { ...VARIABLES_WITH_CHAT_AND_FOLLOW_UP };
+
+                    context = new ContextBuilder()
+                        .withSessionData({
+                            id: "foo",
+                            data: {
+                                [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
+                                ...sessionVariables
+                            }
+                        })
+                        .build();
+
+                    const response = generateDefaultResponse(request, context, {});
+
+                    expect(response).to.exist;
+                    expect(response.tag).to.equal("KB_CHAT_RESPONSE");
+                    expect(response.displays).to.have.length(0);
+
+                    expect(typeof response.outputSpeech).to.equal("object");
+                    if (typeof response.outputSpeech === "object") {
+                        expect(response.outputSpeech.displayText).to.include("Michael Myers has a Bachelor of Science");
+                        expect(response.outputSpeech.displayText).to.include("Anything else you want to know about him?");
+                        expect(response.outputSpeech.suggestions).to.have.length(1);
+                        expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Read more", url: "https://xapp.ai/about" });
+                    }
+                });
             });
         })
     });
