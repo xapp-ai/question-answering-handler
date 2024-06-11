@@ -13,6 +13,8 @@ import {
 import * as intent0 from "./assets/intent-kb-results-0.json";
 import * as intent1 from "./assets/intent-kb-results-1.json";
 import * as intent3 from "./assets/intent-kb-results-3.json";
+// This has generated & chat response in it
+// import * as intent4 from "./assets/intent-kb-results-4.json";
 
 describe(`#${generateResultVariables.name}()`, () => {
     describe(`for undefined`, () => {
@@ -27,6 +29,43 @@ describe(`#${generateResultVariables.name}()`, () => {
                 const config = { "QNA_BOT_LONGEST_HIGHLIGHT": false, "REMOVE_LEADING_LINES_WITHOUT_HIGHLIGHTS": true, "REMOVE_TRAILING_LINES_WITHOUT_HIGHLIGHTS": true, "FUZZY_MATCH_FAQS": true, "chat": { "includeResultsInNoAnswer": 1, "followUp": "Can I help you with anything else?", "suggestionChips": [{ "title": "Contact Us" }, { "title": "Schedule a Call", "url": "https://calendly.com/adam-xappcalendar" }] } };
                 expect(generateResultVariables(query, result, config)).to.not.throw;
             });
+        });
+    });
+    describe("when faqs have matchConfidence", () => {
+        it(`returns the FAQ`, () => {
+            const variables = generateResultVariables("what is your location", {
+                suggested: [{
+                    title: "Dwelling Coverage",
+                    document: "Dwelling coverage helps protect the total cost of the home.",
+                }],
+                faqs: [{
+                    question: "what is your pricing",
+                    document: "FAQ: Our pricing is awesome.",
+                    // typically they come back in order but I purposely put this below the 2nd one to make sure sorting works
+                    matchConfidence: 12.0,
+                    highlights: [{
+                        beginOffset: 5,
+                        endOffset: 64
+                    }]
+                },
+                {
+                    question: "where are you located",
+                    document: "FAQ: We are located in Washington, DC.",
+                    matchConfidence: 14.0,
+                    highlights: [{
+                        beginOffset: 5,
+                        endOffset: 64
+                    }]
+                }
+
+                ]
+            }, { FUZZY_MATCH_FAQS: true });
+
+            expect(variables.TOP_FAQ?.text).to.equal("FAQ: We are located in Washington, DC.");
+            expect(variables.TOP_FAQ?.markdownText).to.equal("FAQ: We are located in Washington, DC.");
+            expect(variables.TOP_ANSWER).to.be.undefined;
+            expect(variables.SUGGESTED_ANSWER?.text).to.equal("Dwelling coverage helps protect the total cost of the home.");
+            expect(variables.IS_QUESTION).to.be.true;
         });
     });
     describe(`when faq is better fuzzy match than suggested`, () => {

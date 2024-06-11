@@ -94,22 +94,34 @@ export function generateResultVariables(query: string | undefined, result: Knowl
     // Get possible FAQ matches
     let topFAQ: KnowledgeBaseFAQ = undefined;
 
-    // Fuzzy matching is now on by default and you can override the threshold
-    const fuzzyMatch = typeof FUZZY_MATCH_FAQS === "boolean" ? FUZZY_MATCH_FAQS : true;
+    // Try to find the top FAQ match
 
-    if (fuzzyMatch && existsAndNotEmpty(result.faqs)) {
+    if (existsAndNotEmpty(result.faqs)) {
 
-        const faqs: KnowledgeBaseFAQ[] = result.faqs;
-        const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.3;
-        // fuzzy string matching on the question, comparing to the query
-        const fuse = new Fuse(faqs, { threshold, includeScore: true, keys: ["question"] });
+        // First method, determine if there is a matchConfidence on the FAQ and sort by those
 
-        const results: { item: KnowledgeBaseFAQ }[] = fuse.search(query);
+        const firstFaq = result.faqs[0];
 
-        const possibleFaqs: KnowledgeBaseFAQ[] = results.map((result => result.item));
+        if (typeof firstFaq.matchConfidence === "number" && firstFaq.matchConfidence > 0) {
 
-        if (possibleFaqs.length > 0) {
-            topFAQ = possibleFaqs[0];
+            // Sort by matchConfidence and select the top one as the topFAQ
+            result.faqs.sort((a, b) => b.matchConfidence - a.matchConfidence);
+
+            topFAQ = result.faqs[0];
+        } else {
+            // attempt to fuzzy match
+            const faqs: KnowledgeBaseFAQ[] = result.faqs;
+            const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.3;
+            // fuzzy string matching on the question, comparing to the query
+            const fuse = new Fuse(faqs, { threshold, includeScore: true, keys: ["question"] });
+
+            const results: { item: KnowledgeBaseFAQ }[] = fuse.search(query);
+
+            const possibleFaqs: KnowledgeBaseFAQ[] = results.map((result => result.item));
+
+            if (possibleFaqs.length > 0) {
+                topFAQ = possibleFaqs[0];
+            }
         }
     }
 
