@@ -1,3 +1,10 @@
+## [2.5.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.6...v2.5.7) (2024-06-11)
+
+
+### Bug Fixes
+
+* Support for follow Up questions already on the AI Answer ([#602](https://github.com/xapp-ai/question-answering-handler/issues/602)) ([4113fe2](https://github.com/xapp-ai/question-answering-handler/commit/4113fe2ba95e991655a6bdf5b06f6dfc95ad31c8))
+
 ## [2.5.6](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.5...v2.5.6) (2024-04-17)
 
 
