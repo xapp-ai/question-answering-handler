@@ -2505,7 +2505,7 @@ export const VARIABLES_WITH_CHAT_AND_FOLLOW_UP: ResultVariables = {
     IS_QUESTION: true,
     "CHAT_RESPONSE": {
         "text": "Michael Myers has a Bachelor of Science degree from the University of Virginia.  Anything else you want to know about him?",
-        "markdownText": "Michael Myers has a Bachelor of Science degree from the University of Virginia.  Anything else you want to know about him?",
+        "markdownText": "**Michael Myers** has a Bachelor of Science degree from the University of Virginia.  Anything else you want to know about him?",
         "sources": [
             {
                 "title": "Read more",

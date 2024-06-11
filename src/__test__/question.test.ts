@@ -31,6 +31,18 @@ describe(`#${popLastQuestion.name}()`, () => {
         expect(resultText).to.equal(expectedText);
         expect(resultQuestion).to.equal(expectedQuestion);
     });
+
+    // this doesn't work
+    xdescribe("when first sentence has markdown", () => {
+        it("should return an array with the text without the last question and the last question", () => {
+            const text = "**This is the answer you are looking for.**  What is your name?";
+            const expectedText = "**This is the answer you are looking for.**";
+            const expectedQuestion = "What is your name?";
+            const [resultText, resultQuestion] = popLastQuestion(text);
+            expect(resultText).to.equal(expectedText);
+            expect(resultQuestion).to.equal(expectedQuestion);
+        });
+    });
 });
 
 describe(`#${lastSentenceIsQuestion.name}()`, () => {

@@ -645,8 +645,10 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                     expect(typeof response.outputSpeech).to.equal("object");
                     if (typeof response.outputSpeech === "object") {
-                        expect(response.outputSpeech.displayText).to.include("Michael Myers has a Bachelor of Science");
+                        expect(response.outputSpeech.displayText).to.include("**Michael Myers** has a Bachelor of Science");
                         expect(response.outputSpeech.displayText).to.include("Anything else you want to know about him?");
+                        expect(response.outputSpeech.ssml).to.include("Michael Myers has a Bachelor of Science");
+                        expect(response.outputSpeech.ssml).to.include("Anything else you want to know about him?");
                         expect(response.outputSpeech.suggestions).to.have.length(1);
                         expect(response.outputSpeech.suggestions[0]).to.deep.equal({ title: "Read more", url: "https://xapp.ai/about" });
                     }

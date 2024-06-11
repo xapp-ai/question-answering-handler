@@ -219,10 +219,12 @@ export function generateDefaultResponse(request: Request, context: Context, data
             if (lastSentenceIsQuestion(AI_ANSWER.text)) {
 
                 // split the text into sentences
-                const [displayOne, displayTwo] = popLastQuestion(AI_ANSWER.text);
+                const [, lastQuestion] = popLastQuestion(AI_ANSWER.text);
                 // if we can accurately pull the question out, it looks better if we split it up for the user to see
-                if (displayTwo) {
-                    displayAnswer = `${displayOne}\n\n${displayTwo}`;
+                if (lastQuestion) {
+                    // remove the last question from the markdown text
+                    // then append the last question to the end of the display answer after two new lines
+                    displayAnswer = `${AI_ANSWER.markdownText.replace(lastQuestion, "").trim()}\n\n${lastQuestion}`;
                 } else {
                     displayAnswer = `${AI_ANSWER.markdownText}`;
                 }
