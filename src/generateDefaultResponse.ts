@@ -5,6 +5,7 @@ import { SuggestionTypes } from "stentor-models";
 import { QuestionAnsweringData } from "./QuestionAnsweringHandler";
 import { isResultVariableFAQInformation, isResultVariableGeneratedInformation } from "./guards";
 import { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem, ResultVariableGeneratedInformation } from "./models";
+import { lastSentenceIsQuestion } from "./question";
 
 /**
  * Converts a search results to a List display
@@ -214,8 +215,15 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 });
             }
         } else if (AI_ANSWER) {
-            displayAnswer = `${AI_ANSWER.markdownText}\n\n${followUp}`;
-            ssmlAnswer = `${AI_ANSWER.text} ${followUp}`;
+            // can we check to see if there is a follow up question already in the AI_ANSWER and then selectively add the follow up?
+            if (lastSentenceIsQuestion(AI_ANSWER.text)) {
+                displayAnswer = `${AI_ANSWER.markdownText}`;
+                ssmlAnswer = `${AI_ANSWER.text}`;
+            } else {
+                // doesn't have a question, so we don't need to add the follow up
+                displayAnswer = `${AI_ANSWER.markdownText}\n\n${followUp}`;
+                ssmlAnswer = `${AI_ANSWER.text} ${followUp}`;
+            }
 
             tag = !!context.session.get("RAG_RESULT") ? `KB_RAG` : `KB_TOP_ANSWER`;
 

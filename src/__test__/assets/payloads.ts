@@ -2500,3 +2500,64 @@ export const VARIABLES_WITH_CHAT: ResultVariables = {
         }
     ]
 }
+
+export const VARIABLES_WITH_CHAT_AND_FOLLOW_UP: ResultVariables = {
+    IS_QUESTION: true,
+    "CHAT_RESPONSE": {
+        "text": "Michael Myers has a Bachelor of Science degree from the University of Virginia.  Anything else you want to know about him?",
+        "markdownText": "Michael Myers has a Bachelor of Science degree from the University of Virginia.  Anything else you want to know about him?",
+        "sources": [
+            {
+                "title": "Read more",
+                "url": "https://xapp.ai/about"
+            }
+        ]
+    },
+    "SUGGESTED_ANSWER": {
+        "text": "Michael Myers\n\n×\n\nRole:  Leads Product and Engineering & Co-Founder\nMichael Myers has built a career on bringing new and exciting technologies to market. After working on autonomous vehicles in college, he moved on to the RFID business, developing innovative technology for the Department of Defense, as well as for social media platforms. Prior to joining XAPP, he partnered with John Kelvie of Bespoken Tools, at Atomizer Software where he concentrated on mobile and web development.\nMichael has a Bachelor of Science degree from the University of Virginia and is also an avid ultra-marathone",
+        "markdownText": "**Michael** **Myers**\n\n×\n\nRole:  Leads Product and Engineering & Co-Founder\n**Michael** **Myers** has built a career on bringing new and exciting technologies to market. After working on autonomous vehicles in college, he moved on to the RFID business, developing innovative technology for the Department of Defense, as well as for social media platforms. Prior to joining XAPP, he partnered with John Kelvie of Bespoken Tools, at Atomizer Software where he concentrated on mobile and web development.**\n****Michael** has a Bachelor of Science degree from th**e University of Virgin**ia and is also an avid ultra-marathone",
+        "source": "https://xapp.ai/about#:~:text=Michael%20Myers%20%C3%97%20Role%3A%C2%A0,also%20an%20avid%20ultra-marathone"
+    },
+    "SEARCH_RESULTS": [
+        {
+            "title": "About | XAPPAI",
+            "document": "Michael Myers\n\n×\n\nRole:  Leads Product and Engineering & Co-Founder\nMichael Myers has built a career on bringing new and exciting technologies to market. After working on autonomous vehicles in college, he moved on to the RFID business, developing innovative technology for the Department of Defense, as well as for social media platforms. Prior to joining XAPP, he partnered with John Kelvie of Bespoken Tools, at...",
+            "source": "https://xapp.ai/about#:~:text=Curt%20Kolcun%20Executive%20Chairman,of%20Bespoken%20Tools%2C%20at"
+        },
+        {
+            "title": "XAPP is Bringing Podcasts to Google Home and Assistant | XAPPAI",
+            "document": "Michael Myers",
+            "source": "https://xapp.ai/xapp-bringing-podcasts-google-home-assistant#:~:text=Documentation%20Platform%20About%20Contact,using%20the%20new%20capabilitie"
+        },
+        {
+            "title": "Three Ways XAPP is Improving User Experience for Podcasts on Alexa | XAPPAI",
+            "document": "Michael Myers",
+            "source": "https://xapp.ai/three-ways-xapp-improving-user-experience-podcasts-alexa#:~:text=e%20on%20linkedin%20Share,about%20five%20minutes%20and"
+        },
+        {
+            "title": "Prominent Government Industry Execs Join XAPPmedia Advisory Board | XAPPAI",
+            "document": "...way to access content, information and digital services – users simply ask and get.  Alexa and Google Assistant, now available on 1.1 billion consumer devices, create an enormous opportunity for public sector organizations to better serve their constituencies.  Curt and Doug built highly successful careers around bringing new technology to Federal, state, local and education markets. They will help us formulate our government market strategy and build the strategic partnerships that will enable us to execute that strategy,” said Pat Higbie, Co-founder and CEO of XAPPmedi...",
+            "source": "https://xapp.ai/prominent-government-industry-execs-join-xappmedia-advisory-board#:~:text=way%20to%20access%20content%2C,and%20CEO%20of%20XAPPmedi"
+        },
+        {
+            "title": "Metrics & Reporting | XAPP AI",
+            "document": "...Watch this short video that covers the broad range of analytics.\n\nAnalytics Basics\n\nEdit this page\n\nPrevious\nDeployment\nNext\nFAQs\nResources\n\tInstall\n\tInstall on Wordpress\n\tAdvanced Docs\n\nXAPP AI\n\t//xapp.ai\n\tPricing\n\tTerms of Service\n\tPrivacy Policy\n\nExternal Links\n\tAPI Status\n\tGithub\n\nCopyright © 2024 XAPP AI, Inc.\n\nXAPP AI AssistantHere to help!\n\nPowered by XAPP AI\n\nRestart Conversation\nWould you like to refresh and return to the starting point of the conversation?\n\nCancelRestart\n\nNeed help? Click Here...",
+            "source": "https://documentation.xapp.ai/help/training-series/metrics#:~:text=Watch%20this%20short%20video,Need%20help%3F%20Click%20Here"
+        },
+        {
+            "title": "Metrics & Reporting | XAPP AI",
+            "document": "...being asked to your business.  Watch this short video that covers the broad range of analytics.\n\nAnalytics Basics\n\nPrevious\nDeployment\nResources\n\tInstall\n\tInstall on Wordpress\n\tAdvanced Docs\n\nXAPP AI\n\t//xapp.ai\n\tPricing\n\tTerms of Service\n\tPrivacy Policy\n\nExternal Links\n\tAPI Status\n\tGithub\n\nCopyright © 2024 XAPP AI, Inc.\n\nXAPP AI AssistantHere to help!\n\nPowered by XAPP AI\n\nRestart Conversation\nWould you like to refresh and return to the starting point of the conversation?\n\nCancelRestart\n\nNeed help? Click Here...",
+            "source": "https://documentation.xapp.ai/docs/training-series/metrics#:~:text=being%20asked%20to%20your,Need%20help%3F%20Click%20Here"
+        },
+        {
+            "title": "Frequently Asked Questions | XAPP AI",
+            "document": "...Install\n\tInstall on Wordpress\n\tAdvanced Docs\n\nXAPP AI\n\t//xapp.ai\n\tPricing\n\tTerms of Service\n\tPrivacy Policy\n\nExternal Links\n\tAPI Status\n\tGithub\n\nCopyright © 2024 XAPP AI, Inc.\n\nXAPP AI AssistantHere to help!\n\nPowered by XAPP AI\n\nRestart Conversation\nWould you like to refresh and return to the starting point of the conversation?\n\nCancelRestart\n\nNeed help? Click Here...",
+            "source": "https://documentation.xapp.ai/help/faqs#:~:text=Install%20Install%20on%20Wordpress,Need%20help%3F%20Click%20Here"
+        },
+        {
+            "title": "Integrations with a Knowledgebase | XAPP AI",
+            "document": "...import { StudioService } from \"stentor-service-studio\";\n\n//... the rest of your imports\n\n// Create your StudioService\nconst studioService: StudioService = new StudioService({ appId: process.env.STUDIO_APP_ID, token: process.env.STUDIO_TOKEN });\n\nconst assistant = new Assistant()\n\n// Add this following to your builder\n.withKnowledgeBaseService(studioService, {\n// Intent ID for your fallback to determine if we call  KnowledgeBase\nmatchIntentId: \"InputUnknown\",\n// For KnowledgeBase results we will generate a request with the following ID\nsetIntentId: \"OCSearch\"\n})\n// ... remaining functions\n.lambda();...",
+            "source": "https://documentation.xapp.ai/docs/development/knowledgebase#:~:text=import%20%7B%20StudioService%20%7D,...%20remaining%20functions%20.lambda()%3B"
+        }
+    ]
+}
