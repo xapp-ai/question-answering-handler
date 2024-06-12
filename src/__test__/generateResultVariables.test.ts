@@ -31,7 +31,7 @@ describe(`#${generateResultVariables.name}()`, () => {
             });
         });
     });
-    describe("when faqs have matchConfidence", () => {
+    describe("when faqs have matchConfidence above the min confidence", () => {
         it(`returns the FAQ`, () => {
             const variables = generateResultVariables("what is your location", {
                 suggested: [{
@@ -59,7 +59,7 @@ describe(`#${generateResultVariables.name}()`, () => {
                 }
 
                 ]
-            }, { FUZZY_MATCH_FAQS: true });
+            }, { FUZZY_MATCH_FAQS: true, MIN_FAQ_MATCH_CONFIDENCE: 13.0 });
 
             expect(variables.TOP_FAQ?.text).to.equal("FAQ: We are located in Washington, DC.");
             expect(variables.TOP_FAQ?.markdownText).to.equal("FAQ: We are located in Washington, DC.");
