@@ -1,0 +1,314 @@
+{
+    "platform": "stentor-platform",
+    "type": "INTENT_REQUEST",
+    "rawQuery": "what is your location",
+    "sessionId": "stentor-widget-session-eada869d-d26e-65a2-ad50-5ddc86702649",
+    "userId": "21e09a2e-6dfd-65da-8051-86ed11d5afbb",
+    "isNewSession": false,
+    "intentId": "OCSearch",
+    "channel": "widget",
+    "attributes": {
+      "CHAT_COMPLETION_RESULT": {
+        "needsAssistance": "NO",
+        "potentialLead": false,
+        "messageType": "QUESTION",
+        "answer": "**Our main office is in Northern Virginia but we are a distributed team.**",
+        "followUpQuestion": "Is there anything else you would like to know?",
+        "response": "**Our main office is in Northern Virginia but we are a distributed team.** Is there anything else you would like to know?",
+        "answeredQuestion": true,
+        "suggestions": [
+          "Contact Information",
+          "Services Offered"
+        ],
+        "urgency": "LOW",
+        "providedContactInformation": false,
+        "askedForContactInfo": false,
+        "documentIds": [],
+        "model": "gpt-4o",
+        "queryTime": 7324,
+        "queries": [
+          "what is your location"
+        ]
+      }
+    },
+    "knowledgeBaseResult": {
+      "generated": [
+        {
+          "generated": "**Our main office is in Northern Virginia but we are a distributed team.** Is there anything else you would like to know?",
+          "document": "**Our main office is in Northern Virginia but we are a distributed team.** Is there anything else you would like to know?",
+          "llm": "gpt-4o",
+          "type": "chat-completion-response",
+          "hasAnswer": true,
+          "sources": []
+        }
+      ],
+      "suggested": [],
+      "faqs": [
+        {
+          "question": "Where are you located?",
+          "questions": [
+            "Where are you located?"
+          ],
+          "document": "Our main office is in Northern Virginia but we are a distributed team.",
+          "matchConfidence": 13.415987
+        },
+        {
+          "question": "What is your phone number?",
+          "questions": [
+            "What's your number?",
+            "What is your number?",
+            "What is your phone number?"
+          ],
+          "document": "855-491-2959\n703-822-5314",
+          "matchConfidence": 12.517771
+        },
+        {
+          "question": "What is your mailing address?",
+          "questions": [
+            "What is your mailing address?",
+            "What is your address?"
+          ],
+          "document": "4250 North Fairfax Drive\nSuite 600\nArlington, VA 22203",
+          "matchConfidence": 12.437149
+        },
+        {
+          "uri": "https://xapp.ai/pricing/",
+          "question": "What is your pricing?",
+          "questions": [
+            "How much does it cost?",
+            "What does it cost?",
+            "What does your service cost?",
+            "How much is your service?",
+            "Can I have your pricing?",
+            "Can I have your pricing information?",
+            "What is your pricing?",
+            "How much does your service cost?",
+            "What is the cost of your service?",
+            "What are your service fees?",
+            "What is the price of your service?",
+            "What are the charges for your service?"
+          ],
+          "document": "You can see our detailed pricing over at our [pricing](https://xapp.ai/pricing/) page.  If your ready to get started with our free offering, [click here](https://studio.xapp.ai/onboarding?product=starter)",
+          "matchConfidence": 11.638468
+        },
+        {
+          "uri": "https://xapp.ai/about/#:~:text=XAPP%20AI%20Core,everything%20we%20do.",
+          "question": "What are your core values?",
+          "questions": [
+            "What are your core values?",
+            "What are XAPP AI's core values?"
+          ],
+          "document": "Quality, Service, Innovation, People and Commitment.",
+          "matchConfidence": 9.4937315
+        },
+        {
+          "uri": "https://documentation.xapp.ai/",
+          "question": "What is the URL for your technical documentation?",
+          "questions": [
+            "Where can I find your technical documentation?",
+            "How can I access your technical documentation?",
+            "What is the URL for your technical documentation?",
+            "Where can I find information about your product?",
+            "Is there a website for your technical documentation?",
+            "Where can I find your product documentation?"
+          ],
+          "document": "You can find our documentation at https://documentation.xapp.ai",
+          "matchConfidence": 8.957025
+        },
+        {
+          "question": "Is your pricing in USD?",
+          "questions": [
+            "What currencies do you accept?",
+            "Is pricing in US Dollars?",
+            "Is your pricing in USD?"
+          ],
+          "document": "All pricing and transactions are in US Dollars.",
+          "matchConfidence": 7.867237
+        },
+        {
+          "uri": "https://xapp.ai/smb-hvac/",
+          "question": "What sort of business can use your platform?",
+          "questions": [
+            "What sort of business can use your platform?",
+            "What kind of businesses can use a conversational AI platform?"
+          ],
+          "document": "Any business that interacts with customers can use a conversational AI platform, including e-commerce companies, financial services, healthcare providers, and more.  Our industry specific, vertically trained models work in tandem with your existing content to level-up the experience for users and populating auto-suggestions based on the user's input.  \n",
+          "matchConfidence": 7.7061777
+        },
+        {
+          "question": "How secure is your platform?",
+          "questions": [
+            "How secure is your platform?"
+          ],
+          "document": "We follow industry-standard security practices and use encryption to protect sensitive data.\n",
+          "matchConfidence": 7.700064
+        },
+        {
+          "uri": "https://xapp.ai/",
+          "question": "What are you using Entity Extraction for?",
+          "questions": [
+            "Is GPT-3 in your stack?",
+            "Are you using Generative AI?",
+            "Do you use ChatGPT?",
+            "What AI technologies are you using?",
+            "Is GPT-3 part of your AI stack?",
+            "What are you using Entity Extraction for?"
+          ],
+          "document": "We're using Generative AI for multiple tasks.  For example, we're using Entity Extraction to parse long text input, determine the user's language, and retrieval augmented generation to summarize results from your corpus.  ",
+          "matchConfidence": 7.44073
+        }
+      ],
+      "documents": [
+        {
+          "title": "Google Business Messages & AI: The Google Business Profile Combination You Can’t Afford to Ignore | XAPPAI",
+          "uri": "https://xapp.ai/google-business-messages-ai",
+          "document": "...They can also respond to reviews, post updates, and message directly with customers.\nWho Should Set Up a Profile\nCompanies with physical locations should set up their Google Business Profile. A Google Business Profile is tied directly into Google Search and Map functionality, which makes it easy for local people to find your business. This tool is designed specifically for businesses that make in-person contact with their customers. That means that it’s specifically designed to help small local businesses...",
+          "highlights": [
+            {
+              "beginOffset": 140,
+              "topAnswer": false,
+              "endOffset": 149
+            }
+          ]
+        },
+        {
+          "title": "CMS API | XAPP AI",
+          "uri": "https://documentation.xapp.ai/docs/development/api/cms",
+          "document": "...Entity Content​\n\nGET /cms/entity​\n\nGet a list of entities.\n\nGET /cms/entity/{entityId}​\n\nGet a specific entity.\n\nSearch​\n\nGET /cms/search​\n\nSearch for provided text through query string ?question=\"{text}\", for example /cms/search/question=\"my query\".\n\nOptional Filter Location ID​\n\nAdd an optional query parameter locationId to filter by a specific location.  In order to use this, you must have documents with this field set.\n\n?question=\"{text}\"&locationId=\"{locationId}\"\n\n\n\n\n\nGET /cms/rag​\n\nGET /cms/faq/query​\n\nSearch within FAQs.\n\nEvents​\n\nPUT /cms/app/events​\n\nPut runtime events to your assistant application...",
+          "highlights": [
+            {
+              "beginOffset": 271,
+              "topAnswer": false,
+              "endOffset": 279
+            },
+            {
+              "beginOffset": 352,
+              "topAnswer": false,
+              "endOffset": 360
+            }
+          ]
+        },
+        {
+          "title": "Types of Data | XAPP AI",
+          "uri": "https://documentation.xapp.ai/docs/data/types-of-data",
+          "document": "...Storage - XAPP AI's Infrastructure​\n\nXAPP stores this information on behalf of the customer in three primary locations:\n\n\tAWS DynamoDB - For access by the customer application's runtime environment.\n\tAWS ElasticSearch - For easier search by OC Studio\n\tAWS S3 - For backup purposes.\n\n\nIt does not contain any PII.\n\nPrevious\nSlack (through AWS Lex)\nNext\nAnalytics Basics\n\tUser Data\tUser Data Collected\n\tOptional User Data Collected\n\tStorage Location - Customer Infrastructure\n\n\n\tSystem Logs\tStorage Location - Customer Infrastructure\n\n\n\tOC Studio Events\tStorage Location - XAPP AI's Infrastructure\n\n\n\tContent - Assistant Responses\tStorage Location - XAPP AI's Infrastructure\n\n\n\tModel...",
+          "highlights": [
+            {
+              "beginOffset": 112,
+              "topAnswer": false,
+              "endOffset": 121
+            },
+            {
+              "beginOffset": 442,
+              "topAnswer": false,
+              "endOffset": 450
+            },
+            {
+              "beginOffset": 500,
+              "topAnswer": false,
+              "endOffset": 508
+            },
+            {
+              "beginOffset": 563,
+              "topAnswer": false,
+              "endOffset": 571
+            },
+            {
+              "beginOffset": 640,
+              "topAnswer": false,
+              "endOffset": 648
+            }
+          ]
+        },
+        {
+          "title": "Five Things to Consider Before Building an Intelligent Virtual Assistant | XAPPAI",
+          "uri": "https://xapp.ai/five-things-to-consider-before-building-an-intelligent-virtual-assistant",
+          "document": "...Where will they be using it?\nThis question has two sides: think about where they are physically while trying to accomplish their intended task. Is it noisy? Are they distracted? Their physical location will likely also have an impact on the device that they’re using. Someone on the go is more likely to use a mobile phone than a laptop...",
+          "highlights": [
+            {
+              "beginOffset": 196,
+              "topAnswer": false,
+              "endOffset": 204
+            }
+          ]
+        },
+        {
+          "title": "Running Locally | XAPP AI",
+          "uri": "https://documentation.xapp.ai/docs/development/running-locally",
+          "document": "...{\n    \"type\": \"LAUNCH_REQUEST\",\n    \"sessionId\": \"stentor-widget-session-86c2f7b3-9318-651f-b6ee-5b9bcf26bd8f\",\n    \"userId\": \"stentor-widget-user-cbf4f5ad-c3fc-6562-835d-afff7eeaab77\",\n    \"isNewSession\": true,\n    \"intentId\": \"LaunchRequest\",\n    \"platform\": \"stentor-platform\",\n    \"channel\": \"widget\"\n}...",
+          "highlights": []
+        },
+        {
+          "title": "Changelog | XAPP AI",
+          "uri": "https://documentation.xapp.ai/docs/release-notes/studio-client",
+          "document": "...15)​\n\nFeatures​\n\n\tGoogle business messages channel set up (#4357) (15f212d)\n\tlocation search component (#4398) (394dee2)\n\tTable for location search component (#4400) (2e6fae7)\n\n\nBug Fixes​\n\n\tadd status type to app header (#4363) (22c0218)\n\tAdded loading spinner (#4362) (fb9d929)\n\tAdded scroll  to channel selector (#4355) (3238367)\n\tdeps: update @xapp/stentor (#4337) (f6cdf59)\n\tdeps: update @xapp/stentor (#4377) (e187bfa)\n\tdeps: update @xapp/stento...",
+          "highlights": [
+            {
+              "beginOffset": 80,
+              "topAnswer": false,
+              "endOffset": 88
+            },
+            {
+              "beginOffset": 135,
+              "topAnswer": false,
+              "endOffset": 143
+            }
+          ]
+        },
+        {
+          "title": "Blog | Page 5 of 9 | XAPPAI",
+          "uri": "https://xapp.ai/blog/page/5",
+          "document": "...2022\t\t\n\t\t\t\t\n\n\t\t\t\t\t\n\n\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\n\n\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\tHitting the Mark with Digital-First Users (Part 1)\t\t\t\n\t\t\n\n\t\t\t\t\n\t\t\tDigital-first users are comfortable with technology, and use it to help them shop, do research, and ‘get things done’.  They have a different mindset compared to traditional users who prefer to interact directly with a person, in a physical location...",
+          "highlights": [
+            {
+              "beginOffset": 373,
+              "topAnswer": false,
+              "endOffset": 381
+            }
+          ]
+        },
+        {
+          "title": "Change Log | XAPP AI",
+          "uri": "https://documentation.xapp.ai/docs/release-notes/chat-widget",
+          "document": "...location of the expand button #74 (#78) (7cf686e)\n\n\n1.7.0 (2021-03-17)\n\nFeatures​\n\n\tfeat: Ability to modify size of expanded widget & location of the expand button #74 (dd6eda4)\n\n\n1.6.0 (2021-03-16)\n\nFeatures​\n\n\tAbility to modify the chat bubble text color #75 (#76) (dd6eda4)\n\n\n1.5.0 (2021-03-16)\n\nBug Fixes​\n\n\tExports on chat-widget (#68) (eb8d189)\n\n\nFeatures​\n\n\tAbility to customize header title #70 (#72) (b68fdc5)\n\tCustomize Menu Items #69 (#73) (695731a...",
+          "highlights": [
+            {
+              "beginOffset": 3,
+              "topAnswer": false,
+              "endOffset": 11
+            },
+            {
+              "beginOffset": 137,
+              "topAnswer": false,
+              "endOffset": 145
+            }
+          ]
+        },
+        {
+          "title": "Data Retention | XAPP AI",
+          "uri": "https://documentation.xapp.ai/docs/data/data-retention",
+          "document": "...These data are backed up continuously for you.\n\nEvent Data Retention​\n\nAll event driven data that is used for analytics and application optimizations is stored in two locations, fast access and cold storage.  The fast access data is available through the web application for three months.  The cold storage data is stored indefinitely.\n\nThese data are backed up at an hourly rate while in fast access storage.\n\nCustomer Responsibility​\n\nOnly if you require further retention for your event data, you do not have any responsibility for backing up...",
+          "highlights": [
+            {
+              "beginOffset": 170,
+              "topAnswer": false,
+              "endOffset": 179
+            }
+          ]
+        },
+        {
+          "title": "Intelligent Media Search | XAPPAI",
+          "uri": "https://xapp.ai/xapp-labs/intelligent-media-search",
+          "document": "...In this short demonstration, we index public media files from Nasa listed under a creative commons license.  When we have a high confidence of a match to a question, we’ll return to the location in the video (or audio) where that answer resides.  Using a simple query like ‘When was Nasa founded?‘, or ‘Who is Wernher von Braun?‘ returns meaningful results in the form of a video or audio file. \nUsers can play the file at the exact timestamp where the content is referenced directly in the chat window...",
+          "highlights": [
+            {
+              "beginOffset": 189,
+              "topAnswer": false,
+              "endOffset": 197
+            }
+          ]
+        }
+      ]
+    },
+    "slots": {}
+}

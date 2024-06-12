@@ -54,6 +54,6 @@ Tags: `KB_RAG` & `KB_TOP_ANSWER`
 
 __Best Curated Answer__
 
-`TOP_FAQ` - A top match within FAQs that have a human written, curated answer
+`TOP_FAQ` - A top match within FAQs that have a human written, curated answer.  Determined by match confidence score or fuzzy matching.
 
 Tags: `KB_TOP_FAQ`
