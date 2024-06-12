@@ -1,3 +1,10 @@
+## [2.5.8](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.7...v2.5.8) (2024-06-12)
+
+
+### Bug Fixes
+
+* Use Match Confidence on FAQs when available ([#603](https://github.com/xapp-ai/question-answering-handler/issues/603)) ([dab455f](https://github.com/xapp-ai/question-answering-handler/commit/dab455f465ae9a570750f8b8dbef52fb24e253cc))
+
 ## [2.5.7](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.6...v2.5.7) (2024-06-11)
 
 
