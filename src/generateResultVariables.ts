@@ -19,6 +19,10 @@ export interface ResultVariablesConfig extends FocusConfig {
      */
     ["FUZZY_MATCH_FAQS"]?: boolean | number;
     /**
+     * The minimum confidence for a FAQ to be considered to be a top FAQ.
+     */
+    ["MIN_FAQ_MATCH_CONFIDENCE"]?: number;
+    /**
      * If true, it will use the longest highlight as the TOP ANSWER if no top answer is provided.
      * 
      * This is a strategy QnABot uses: https://github.com/aws-solutions/aws-qnabot/blob/aaef24ac610bb5f0324326c92914bda21bccef57/lambda/es-proxy-layer/lib/kendra.js#L383
@@ -89,7 +93,7 @@ export function generateResultVariables(query: string | undefined, result: Knowl
     // make a copy for good riddance
     result = { ...result };
 
-    const { FUZZY_MATCH_FAQS, QNA_BOT_LONGEST_HIGHLIGHT, HIGHLIGHT_TOP_FAQ } = config || {};
+    const { FUZZY_MATCH_FAQS, QNA_BOT_LONGEST_HIGHLIGHT, HIGHLIGHT_TOP_FAQ, MIN_FAQ_MATCH_CONFIDENCE } = config || {};
 
     // Get possible FAQ matches
     let topFAQ: KnowledgeBaseFAQ = undefined;
@@ -102,16 +106,36 @@ export function generateResultVariables(query: string | undefined, result: Knowl
 
         const firstFaq = result.faqs[0];
 
+        // Fuzzy match threshold
+        const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.3;
+
         if (typeof firstFaq.matchConfidence === "number" && firstFaq.matchConfidence > 0) {
 
             // Sort by matchConfidence and select the top one as the topFAQ
             result.faqs.sort((a, b) => b.matchConfidence - a.matchConfidence);
 
-            topFAQ = result.faqs[0];
+            const topSorted = result.faqs[0];
+
+            // if we have a minimum confidence, we need to check it
+            if (typeof MIN_FAQ_MATCH_CONFIDENCE === "number") {
+                if (topSorted.matchConfidence > MIN_FAQ_MATCH_CONFIDENCE) {
+                    topFAQ = topSorted;
+                }
+            } else {
+                // MIN_FAQ_MATCH_CONFIDENCE is not set, so we make sure we match with Fuse above the threshold
+                const fuse = new Fuse([topSorted], { threshold, includeScore: true, keys: ["question"] });
+
+                const results: { item: KnowledgeBaseFAQ }[] = fuse.search(query);
+                // if it passed the threshold, we use it
+                if (results.length > 0) {
+                    topFAQ = results[0].item;
+                }
+            }
+
         } else {
             // attempt to fuzzy match
             const faqs: KnowledgeBaseFAQ[] = result.faqs;
-            const threshold: number = typeof FUZZY_MATCH_FAQS === "number" ? FUZZY_MATCH_FAQS : 0.3;
+
             // fuzzy string matching on the question, comparing to the query
             const fuse = new Fuse(faqs, { threshold, includeScore: true, keys: ["question"] });
 
