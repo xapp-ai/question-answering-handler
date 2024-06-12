@@ -1,3 +1,10 @@
+## [2.5.9](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.8...v2.5.9) (2024-06-12)
+
+
+### Bug Fixes
+
+* Ability to set minimum match confidence on top faq ([#604](https://github.com/xapp-ai/question-answering-handler/issues/604)) ([2e020dd](https://github.com/xapp-ai/question-answering-handler/commit/2e020dd08675ba397684b0d465a3b9ceea9017ae))
+
 ## [2.5.8](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.7...v2.5.8) (2024-06-12)
 
 
