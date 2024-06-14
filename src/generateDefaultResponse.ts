@@ -63,27 +63,32 @@ export function generateDefaultResponse(request: Request, context: Context, data
     // We want to know the channel
     const channel: string = request.channel;
 
-    const GENERATED_NO_ANSWER: ResultVariableInformation = context.session.get('GENERATED_NO_ANSWER');
+    if (!request.attributes) {
+        // just so the following doesn't crash
+        request.attributes = {};
+    }
+
+    const GENERATED_NO_ANSWER: ResultVariableInformation = request.attributes['GENERATED_NO_ANSWER'];
 
     //  Search Results
-    const SEARCH: ResultVariableListItem[] = context.session.get("SEARCH_RESULTS")
+    const SEARCH: ResultVariableListItem[] = Array.isArray(request.attributes["SEARCH_RESULTS"]) ? request.attributes["SEARCH_RESULTS"] : [];
 
     // TOP_FAQ
-    const TOP_FAQ: ResultVariableFAQInformation = context.session.get("TOP_FAQ");
+    const TOP_FAQ: ResultVariableFAQInformation = request.attributes["TOP_FAQ"];
 
-    const FAQS: ResultVariableFAQInformation[] = context.session.get("FAQS");
+    const FAQS: ResultVariableFAQInformation[] = Array.isArray(request.attributes["FAQS"]) ? request.attributes["FAQS"] : [];
 
     // Suggested
-    const SUGGESTED: ResultVariableInformation = context.session.get("SUGGESTED_ANSWER");
+    const SUGGESTED: ResultVariableInformation = request.attributes["SUGGESTED_ANSWER"];
 
     // General Knowledge
-    const GENERAL_KNOWLEDGE: ResultVariableInformation = context.session.get("GENERAL_KNOWLEDGE");
+    const GENERAL_KNOWLEDGE: ResultVariableInformation = request.attributes["GENERAL_KNOWLEDGE"];
 
     // Chat Responses
-    const CHAT_RESPONSE: ResultVariableGeneratedInformation = context.session.get("CHAT_RESPONSE") || context.session.get("CHAT_ANSWER");
+    const CHAT_RESPONSE: ResultVariableGeneratedInformation = request.attributes["CHAT_RESPONSE"] || request.attributes["CHAT_ANSWER"];
 
     // Top Answer / RAG / Chat Answer
-    const AI_ANSWER: ResultVariableGeneratedInformation | ResultVariableInformation = context.session.get("RAG_RESULT") || CHAT_RESPONSE || context.session.get("TOP_ANSWER");
+    const AI_ANSWER: ResultVariableGeneratedInformation | ResultVariableInformation = request.attributes["RAG_RESULT"] || CHAT_RESPONSE || request.attributes["TOP_ANSWER"];
 
     let label: string;
     let displayAnswer: string;
@@ -113,7 +118,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
             label = topLabels?.AI_ANSWER || "AI Answer";
             displayAnswer = `${AI_ANSWER.markdownText}`
             ssmlAnswer = `${AI_ANSWER.text}`;
-            tag = !!context.session.get("RAG_RESULT") ? `KB_RAG` : `KB_TOP_ANSWER`;
+            tag = !!request.attributes["RAG_RESULT"] ? `KB_RAG` : `KB_TOP_ANSWER`;
             if (AI_ANSWER.source) {
                 suggestions.push({
                     title: "Read More",
@@ -236,10 +241,10 @@ export function generateDefaultResponse(request: Request, context: Context, data
                 ssmlAnswer = `${AI_ANSWER.text} ${followUp}`;
             }
 
-            tag = !!context.session.get("RAG_RESULT") ? `KB_RAG` : `KB_TOP_ANSWER`;
+            tag = !!request.attributes["RAG_RESULT"] ? `KB_RAG` : `KB_TOP_ANSWER`;
 
-            const hasRAG = !!context.session.get("RAG_RESULT");
-            const hasChat = !!context.session.get("CHAT_RESPONSE");
+            const hasRAG = !!request.attributes["RAG_RESULT"];
+            const hasChat = !!request.attributes["CHAT_RESPONSE"];
 
             if (hasRAG) {
                 tag = `KB_RAG`;

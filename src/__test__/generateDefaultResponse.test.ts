@@ -47,17 +47,19 @@ describe(`#${generateDefaultResponse.name}()`, () => {
     });
     describe(`for intelligent search channel`, () => {
         it("returns as expected", () => {
-            request = { ...REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER };
-            request.channel = "intelligent-search";
 
             const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult, {});
+
+            request = { ...REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER };
+            request.channel = "intelligent-search";
+            request.attributes = { ...sessionVariables };
 
             context = new ContextBuilder()
                 .withSessionData({
                     id: "foo",
                     data: {
                         [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
-                        ...sessionVariables
+                        // ...sessionVariables
                     }
                 })
                 .build();
@@ -89,17 +91,18 @@ describe(`#${generateDefaultResponse.name}()`, () => {
         describe("for results only", () => {
             it("returns as expected", () => {
 
+                const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult, {});
+
                 request = { ...REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ };
                 request.channel = "intelligent-search";
-
-                const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult, {});
+                request.attributes = { ...sessionVariables };
 
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult,
-                            ...sessionVariables
+                            //...sessionVariables
                         }
                     })
                     .build();
@@ -194,12 +197,14 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                 const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
 
+                request.attributes = { ...sessionVariables };
+
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
-                            ...sessionVariables
+                            // ...sessionVariables
                         }
                     })
                     .build();
@@ -276,12 +281,14 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                 const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
 
+                request.attributes = { ...sessionVariables };
+
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
-                            ...sessionVariables
+                            //...sessionVariables
                         }
                     })
                     .build();
@@ -320,12 +327,14 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
             const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult, {});
 
+            request.attributes = { ...sessionVariables };
+
             context = new ContextBuilder()
                 .withSessionData({
                     id: "foo",
                     data: {
                         [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
-                        ...sessionVariables
+                        // ...sessionVariables
                     }
                 })
                 .build();
@@ -366,12 +375,14 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                 const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
 
+                request.attributes = { ...sessionVariables };
+
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: kb,
-                            ...sessionVariables
+                            // ...sessionVariables
                         }
                     })
                     .build();
@@ -422,6 +433,8 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                 const sessionVariables = generateResultVariables(request.rawQuery, kb, {});
 
+                request.attributes = { ...sessionVariables };
+
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
@@ -457,9 +470,11 @@ describe(`#${generateDefaultResponse.name}()`, () => {
         });
         describe("for just list of results", () => {
             it("returns as expected", () => {
-                request = REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ;
 
                 const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult, {});
+
+                request = REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ;
+                request.attributes = { ...sessionVariables };
 
                 context = new ContextBuilder()
                     .withSessionData({
@@ -514,12 +529,14 @@ describe(`#${generateDefaultResponse.name}()`, () => {
 
                 const sessionVariables = generateResultVariables(request.rawQuery, kbResult, {});
 
+                request.attributes = { ...sessionVariables };
+
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult,
-                            ...sessionVariables
+                            //...sessionVariables
                         }
                     })
                     .build();
@@ -548,6 +565,7 @@ describe(`#${generateDefaultResponse.name}()`, () => {
         describe("for just FAQs", () => {
             it("returns as expected", () => {
 
+
                 request = REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ;
 
                 const kbResult = { ...REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult };
@@ -557,16 +575,18 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                         question: "What is the meaning of life?",
                         document: "42"
                     }
-                ]
+                ];
 
                 const sessionVariables = generateResultVariables(request.rawQuery, kbResult, {});
+
+                request.attributes = { ...sessionVariables };
 
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ.knowledgeBaseResult,
-                            ...sessionVariables
+                            // ...sessionVariables
                         }
                     })
                     .build();
@@ -592,16 +612,16 @@ describe(`#${generateDefaultResponse.name}()`, () => {
         describe("with CHAT_RESPONSE variables", () => {
             it("returns as expected", () => {
 
-                request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").build();
-
                 const sessionVariables = { ...VARIABLES_WITH_CHAT };
+
+                request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").withAttributes({ ...sessionVariables }).build();
 
                 context = new ContextBuilder()
                     .withSessionData({
                         id: "foo",
                         data: {
                             [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
-                            ...sessionVariables
+                            //...sessionVariables
                         }
                     })
                     .build();
@@ -623,16 +643,17 @@ describe(`#${generateDefaultResponse.name}()`, () => {
             describe("with a follow up question already on the text", () => {
                 it("returns as expected", () => {
 
-                    request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").build();
-
                     const sessionVariables = { ...VARIABLES_WITH_CHAT_AND_FOLLOW_UP };
+
+                    request = new IntentRequestBuilder().withRawQuery("what is the answer").withIntentId("OCSearch").withAttributes({ ...sessionVariables }).build();
 
                     context = new ContextBuilder()
                         .withSessionData({
                             id: "foo",
                             data: {
                                 [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
-                                ...sessionVariables
+                                // old method
+                                // ...sessionVariables
                             }
                         })
                         .build();
