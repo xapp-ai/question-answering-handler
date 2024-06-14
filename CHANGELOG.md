@@ -1,3 +1,10 @@
+## [2.5.10](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.9...v2.5.10) (2024-06-14)
+
+
+### Bug Fixes
+
+* Move from Session to Request Attributes ([#606](https://github.com/xapp-ai/question-answering-handler/issues/606)) ([b6a1225](https://github.com/xapp-ai/question-answering-handler/commit/b6a1225ac0f9a87fe25b471f8ce5364dea874bb2))
+
 ## [2.5.9](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.8...v2.5.9) (2024-06-12)
 
 
