@@ -549,16 +549,24 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                 const list = response?.displays[0];
                 expect(list).to.exist;
                 expect(isList(list)).to.be.true;
+
                 if (isList(list)) {
                     expect((list as List).type).to.equal("LIST");
                     const items = list.items;
+
+                    //  console.log(items);
+
                     expect(items).to.have.length(3);
                     const item = list.items[0];
                     expect(item.title).to.equal("What is the meaning of life?");
                     expect(item.description).to.equal("42");
+                    expect(item.url).to.not.exist;
 
                     const item2 = list.items[1];
+
                     expect(item2.title).to.equal("Moving from an Apartment to a House Checklist | Travelers Insurance");
+                    expect(item2.description).to.not.exist;
+                    expect(item2.url).to.exist;
                 }
             });
         });

@@ -228,7 +228,7 @@ describe(`${QuestionAnsweringHandler.name}`, () => {
                     const item = list.items[0];
                     expect(item.title).to.exist;
                     expect(item.title).to.equal("Moving from an Apartment to a House Checklist | Travelers Insurance");
-                    expect(item.description).to.exist;
+                    expect(item.description).to.not.exist;
                     expect(item.url).to.exist;
                     expect(item.url).to.equal("https://www.travelers.com/resources/home/moving/moving-from-an-apartment-to-a-house-checklist#:~:text=7%20Tips%20for%20Moving,cats.%20Learn%20more%20Related");
                 });
