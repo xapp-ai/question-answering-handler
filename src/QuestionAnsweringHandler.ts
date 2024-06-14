@@ -80,13 +80,22 @@ export class QuestionAnsweringHandler<C extends Content = Content, D extends Que
         const result: KnowledgeBaseResult = context.session.get(SESSION_STORAGE_KNOWLEDGE_BASE_RESULT);
         // Generate the variables that will be injected!
         const variables = generateResultVariables(request.rawQuery, result, this.data);
-        // For each variable, we drop them on the session variable
+
+        // make sure we have attributes on the request
+        if (!request.attributes) {
+            request.attributes = {};
+        }
+
+        // For each variable, we drop them on the request variable
         RESULT_VARIABLE_KEYS.forEach((key) => {
             const value = variables[key];
+            // session has a problem because it lasts the entire session
+            // we might need to keep these forever because of the 
+            // existing macros and responses out there being used
             context.session.set(key, value);
+            // this will be the new way because it clears out after each request
+            request.attributes[key] = value;
         });
-
-        // Do I clean out old ones?  I think so.
 
         log().info(`Variables: ${Object.keys(variables)}`);
         log().debug(JSON.stringify(variables, undefined, 2));
