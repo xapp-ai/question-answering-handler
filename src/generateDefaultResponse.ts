@@ -7,10 +7,24 @@ import { isResultVariableFAQInformation, isResultVariableGeneratedInformation } 
 import { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem, ResultVariableGeneratedInformation } from "./models";
 import { lastSentenceIsQuestion, popLastQuestion } from "./question";
 
+export interface GenerateListOptions {
+    /**
+     * Title of the list, defaults to "Results"
+     */
+    title?: string;
+    /**
+     * If true, the description will be included for list items with links.  By default it is omitted.
+     */
+    includeDescriptionForLinks?: boolean;
+}
+
 /**
  * Converts a search results to a List display
  */
-function generateList(search: (ResultVariableListItem | ResultVariableFAQInformation)[], total: number, title?: string): List {
+function generateList(search: (ResultVariableListItem | ResultVariableFAQInformation)[], total: number, options: GenerateListOptions): List {
+
+    const title = options?.title || "Results";
+    const includeDescriptionForLinks = typeof options?.includeDescriptionForLinks === "boolean" ? options.includeDescriptionForLinks : false;
 
     const items: ListItem[] = search.slice(0, total).map((result, index) => {
 
@@ -20,11 +34,17 @@ function generateList(search: (ResultVariableListItem | ResultVariableFAQInforma
 
         const item: ListItem = {
             token: `result-${index}`,
-            title,
-            description
+            title
         };
+
         if (result.source) {
             item.url = result.source
+
+            if (includeDescriptionForLinks) {
+                item.description = description;
+            }
+        } else if (description) {
+            item.description = description;
         }
 
         return item;
@@ -176,7 +196,7 @@ export function generateDefaultResponse(request: Request, context: Context, data
             // combine the lists
             const combined = (FAQS || []).slice(0, 3).concat(SEARCH || []);
             // add them, with a title and trimmed to 6
-            response.displays.push(generateList(combined, trimTo, "Top Results"));
+            response.displays.push(generateList(combined, trimTo, { title: "Top Results", includeDescriptionForLinks: true }));
 
             if (!tag) {
                 response.tag = "KB_LIST_OF_RESULTS";
@@ -297,14 +317,15 @@ export function generateDefaultResponse(request: Request, context: Context, data
 
             // two possibilities here, if we have search or not
             if (existsAndNotEmpty(SEARCH) && !voiceDevice && typeof includeResultsInNoAnswer === "number") {
-                response.displays.push(generateList(SEARCH, includeResultsInNoAnswer, "Top Results"));
+                response.displays.push(generateList(SEARCH, includeResultsInNoAnswer, { title: "Top Results", includeDescriptionForLinks: false }));
             }
         } else if ((existsAndNotEmpty(SEARCH) || existsAndNotEmpty(FAQS)) && !voiceDevice) {
             displayAnswer = `See if below will help answer your question. ${followUp}`
             ssmlAnswer = `See if below will help answer your question. ${followUp}`;
             tag = `KB_LIST_OF_RESULTS`;
+            // include at least one FAQ
             const combined = (FAQS || []).slice(0, 1).concat(SEARCH || []);
-            response.displays.push(generateList(combined, 3));
+            response.displays.push(generateList(combined, 3, { includeDescriptionForLinks: false }));
         } else {
             displayAnswer = `I'm sorry, I don't know that one. ${followUp}`
             ssmlAnswer = `I'm sorry, I don't know that one. ${followUp}`;
