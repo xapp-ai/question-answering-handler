@@ -1,3 +1,10 @@
+## [2.5.11](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.10...v2.5.11) (2024-06-14)
+
+
+### Bug Fixes
+
+* Simplify List of Results ([#607](https://github.com/xapp-ai/question-answering-handler/issues/607)) ([850a29c](https://github.com/xapp-ai/question-answering-handler/commit/850a29c84da966f0bdbc879a8d982ef9dff2e82b))
+
 ## [2.5.10](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.9...v2.5.10) (2024-06-14)
 
 
