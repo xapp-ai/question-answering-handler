@@ -35,7 +35,7 @@
     "eslint": "8.57.0",
     "eslint-plugin-notice": "1.0.0",
     "mocha": "10.6.0",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "semantic-release": "24.0.0",
     "sinon": "18.0.0",
     "sinon-chai": "3.7.0",
