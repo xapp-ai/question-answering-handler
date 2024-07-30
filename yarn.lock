@@ -990,12 +990,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.10":
-  version: 20.14.10
-  resolution: "@types/node@npm:20.14.10"
+"@types/node@npm:20.14.13":
+  version: 20.14.13
+  resolution: "@types/node@npm:20.14.13"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 2f397d393de8cddb126e0b7999402ea450215ac69d49666ddef4f730a73325054499ce7345f86095e7b935c55b2e02139f3b8b9afc72fb978ed29edf6bb956b0
+  checksum: 928e877aadfea75f3a14c38223674b3a9fb206340ab7b2af3ffe7040c384a55678f235860f6652d18026fd59e44c237d060e3f5ce7b62b1b9e6fb593c9ef39b9
   languageName: node
   linkType: hard
 
@@ -1243,7 +1243,7 @@ __metadata:
     "@semantic-release/release-notes-generator": 14.0.1
     "@types/chai": 4.3.16
     "@types/mocha": 10.0.7
-    "@types/node": 20.14.10
+    "@types/node": 20.14.13
     "@types/sinon": 17.0.3
     "@types/sinon-chai": 3.2.12
     "@typescript-eslint/eslint-plugin": 7.18.0
