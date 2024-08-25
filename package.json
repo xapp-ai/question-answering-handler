@@ -57,5 +57,5 @@
   "peerDependencies": {
     "stentor": "1.X"
   },
-  "packageManager": "yarn@3.8.4"
+  "packageManager": "yarn@3.8.5"
 }
