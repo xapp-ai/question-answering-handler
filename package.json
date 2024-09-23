@@ -32,7 +32,7 @@
     "aws-sdk": "2.1659.0",
     "chai": "4.5.0",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "eslint": "8.57.0",
+    "eslint": "9.11.1",
     "eslint-plugin-notice": "1.0.0",
     "mocha": "10.7.3",
     "prettier": "3.3.3",
