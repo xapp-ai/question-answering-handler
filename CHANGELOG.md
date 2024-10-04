@@ -1,3 +1,10 @@
+## [2.5.13](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.12...v2.5.13) (2024-10-04)
+
+
+### Bug Fixes
+
+* Removing stentor dependency in favor of individual packages so we can run this on Browser ([#651](https://github.com/xapp-ai/question-answering-handler/issues/651)) ([515935c](https://github.com/xapp-ai/question-answering-handler/commit/515935cd54c723bcb94f36516ff2c7385b58856e))
+
 ## [2.5.12](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.11...v2.5.12) (2024-08-17)
 
 
