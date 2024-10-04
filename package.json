@@ -29,7 +29,6 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@xapp/config": "0.2.3",
-    "aws-sdk": "2.1691.0",
     "chai": "4.5.0",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "eslint": "8.57.1",
@@ -39,7 +38,14 @@
     "semantic-release": "24.1.2",
     "sinon": "19.0.2",
     "sinon-chai": "3.7.0",
-    "stentor": "1.59.116",
+    "stentor-constants": "1.59.114",
+    "stentor-context": "1.59.116",
+    "stentor-handler": "1.59.116",
+    "stentor-logger": "1.59.116",
+    "stentor-models": "1.59.114",
+    "stentor-request": "1.59.116",
+    "stentor-response": "1.59.116",
+    "stentor-utils": "1.59.116",
     "ts-node": "9.1.1",
     "typescript": "5.6.2"
   },
@@ -55,7 +61,14 @@
     "linkifyjs": "4.1.3"
   },
   "peerDependencies": {
-    "stentor": "1.X"
+    "stentor-constants": "1.X",
+    "stentor-context": "1.X",
+    "stentor-handler": "1.X",
+    "stentor-logger": "1.X",
+    "stentor-models": "1.X",
+    "stentor-request": "1.X",
+    "stentor-response": "1.X",
+    "stentor-utils": "1.X"
   },
   "packageManager": "yarn@3.8.5"
 }

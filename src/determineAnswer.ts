@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Fuse = require('fuse.js');
 
-import { KnowledgeBaseFAQ, KnowledgeBaseResult, KnowledgeBaseSuggested, KnowledgeBaseDocument } from "stentor-models";
+import type { KnowledgeBaseFAQ, KnowledgeBaseResult, KnowledgeBaseSuggested, KnowledgeBaseDocument } from "stentor-models";
 
 /**
  * Determines the best answer for the query.

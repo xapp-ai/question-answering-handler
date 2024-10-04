@@ -1,17 +1,12 @@
 /*! Copyright (c) 2023, XAPP AI */
 import { expect } from "chai";
 
-import {
-    Context,
-    IntentRequestBuilder,
-    KnowledgeBaseFAQ,
-    KnowledgeBaseResult,
-    List,
-    Request,
-} from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
 import { ContextBuilder } from "stentor-context";
+import type { Context, KnowledgeBaseFAQ, KnowledgeBaseResult, List, Request } from "stentor-models";
+import { IntentRequestBuilder } from "stentor-request";
 import { isList } from "stentor-response";
+
 import { generateDefaultResponse } from "../generateDefaultResponse";
 
 import {

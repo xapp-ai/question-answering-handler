@@ -1,5 +1,5 @@
 /*! Copyright (c) 2021, XAPP AI */
-import { Response } from "stentor";
+import type { Response } from "stentor-models";
 
 export const DEFAULT_TOP_FAQ_RESPONSE: Response = {
     outputSpeech: {
