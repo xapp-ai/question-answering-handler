@@ -1,6 +1,7 @@
 /*! Copyright (c) 2021, XAPP AI */
 import * as linkify from "linkifyjs";
-import { KnowledgeBaseHighlight } from "stentor-models";
+
+import type { KnowledgeBaseHighlight } from "stentor-models";
 import { existsAndNotEmpty } from "stentor-utils";
 
 /**

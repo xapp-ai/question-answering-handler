@@ -3,13 +3,13 @@
 const Fuse = require('fuse.js');
 
 import { log } from "stentor-logger";
-import { KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseResult } from "stentor-models";
+import type { KnowledgeBaseDocument, KnowledgeBaseFAQ, KnowledgeBaseResult } from "stentor-models";
 import { existsAndNotEmpty } from "stentor-utils";
 
 import { cleanAnswer } from "./cleanAnswer";
 import { focusAnswer, FocusConfig } from "./focusAnswer";
 import { generateTextFragmentURL } from "./generateTextFragmentURL";
-import { ResultVariableInformation, ResultVariableGeneratedInformation, ResultVariableFAQInformation, ResultVariableListItem } from "./models";
+import type { ResultVariableInformation, ResultVariableGeneratedInformation, ResultVariableFAQInformation, ResultVariableListItem } from "./models";
 import { mergeIntervals, longestInterval, addMarkdownHighlights } from "./utils";
 import { isQuestion } from "./question";
 

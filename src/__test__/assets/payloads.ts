@@ -1,6 +1,6 @@
 /*! Copyright (c) 2021, XAPP AI */
-import { KnowledgeBaseResult, Request, IntentRequest } from "stentor-models";
-import { ResultVariables } from "../../generateResultVariables";
+import type { KnowledgeBaseResult, Request, IntentRequest } from "stentor-models";
+import type { ResultVariables } from "../../generateResultVariables";
 
 export const REQUEST_KNOWLEDGEBASE_NO_SUGGEST_OR_FAQ: IntentRequest & { requestAttributes: object; sessionAttributes: object } = {
     "type": "INTENT_REQUEST",

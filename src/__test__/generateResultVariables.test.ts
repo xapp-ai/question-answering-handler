@@ -1,7 +1,7 @@
 /*! Copyright (c) 2021, XAPP AI */
 import { expect } from "chai";
 
-import { KnowledgeBaseResult } from "stentor";
+import type { KnowledgeBaseResult } from "stentor-models";
 
 import { generateResultVariables } from "../generateResultVariables";
 import {

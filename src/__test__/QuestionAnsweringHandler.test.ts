@@ -6,19 +6,10 @@ import sinonChai from "sinon-chai";
 chai.use(sinonChai);
 const expect = chai.expect;
 
-import {
-    Content,
-    Context,
-    Handler,
-    IntentRequest,
-    KnowledgeBaseResult,
-    List,
-    Response,
-    ResponseBuilder,
-    ResponseOutput
-} from "stentor";
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
+import type { Content, Context, Handler, IntentRequest, KnowledgeBaseResult, List, Response, ResponseOutput } from "stentor-models";
 import { IntentRequestBuilder } from "stentor-request";
+import { ResponseBuilder } from "stentor-response";
 import { ContextBuilder } from "stentor-context";
 
 import {

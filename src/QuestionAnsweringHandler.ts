@@ -1,19 +1,12 @@
 /*! Copyright (c) 2020, XAPP AI */
-import {
-    AbstractHandler,
-    Content,
-    Context,
-    Data,
-    getResponse,
-    isInputUnknownRequest,
-    isIntentRequest,
-    keyFromRequest,
-    log,
-    Request
-} from "stentor";
+
 import { SESSION_STORAGE_KNOWLEDGE_BASE_RESULT } from "stentor-constants";
-import { ExecutablePath, KnowledgeBaseResult, SuggestionTypes } from "stentor-models";
-import { MacroMap } from "stentor-utils";
+import { isInputUnknownRequest, isIntentRequest } from "stentor-guards";
+import { AbstractHandler } from "stentor-handler";
+import { log } from "stentor-logger";
+import type { Content, Context, Data, ExecutablePath, KnowledgeBaseResult, Request, SuggestionTypes } from "stentor-models";
+import { getResponse } from "stentor-response";
+import { keyFromRequest, MacroMap } from "stentor-utils";
 
 import { QUESTION_ANSWERING_HANDLER_TYPE } from "./constants";
 import { generateResultVariables, ResultVariables, ResultVariablesConfig, } from "./generateResultVariables";

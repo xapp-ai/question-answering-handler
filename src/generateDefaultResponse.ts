@@ -1,10 +1,10 @@
 /*! Copyright (c) 2023, XAPP AI */
-import { Context, Request, Response, existsAndNotEmpty, List, ListItem } from "stentor";
-import { SuggestionTypes } from "stentor-models";
+import { existsAndNotEmpty } from "stentor-utils";
+import type { Context, Request, Response, List, ListItem, SuggestionTypes } from "stentor-models";
 
-import { QuestionAnsweringData } from "./QuestionAnsweringHandler";
+import type { QuestionAnsweringData } from "./QuestionAnsweringHandler";
 import { isResultVariableFAQInformation, isResultVariableGeneratedInformation } from "./guards";
-import { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem, ResultVariableGeneratedInformation } from "./models";
+import type { ResultVariableInformation, ResultVariableFAQInformation, ResultVariableListItem, ResultVariableGeneratedInformation } from "./models";
 import { lastSentenceIsQuestion, popLastQuestion } from "./question";
 
 export interface GenerateListOptions {
