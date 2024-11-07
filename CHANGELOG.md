@@ -1,3 +1,10 @@
+## [2.5.15](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.14...v2.5.15) (2024-11-07)
+
+
+### Bug Fixes
+
+* update dependency semantic-release to v24.2.0 ([#660](https://github.com/xapp-ai/question-answering-handler/issues/660)) ([39a024a](https://github.com/xapp-ai/question-answering-handler/commit/39a024acfcf8d809707cc0991a4f58f4b315f87d))
+
 ## [2.5.14](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.13...v2.5.14) (2024-10-11)
 
 
