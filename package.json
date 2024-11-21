@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.5.15",
+  "version": "2.5.16",
   "description": "A question answering handler for 📣 stentor",
   "types": "lib/index",
   "typings": "lib/index",
