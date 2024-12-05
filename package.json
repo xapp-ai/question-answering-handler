@@ -58,7 +58,7 @@
   "dependencies": {
     "compromise": "14.14.2",
     "fuse.js": "7.0.0",
-    "linkifyjs": "4.1.4"
+    "linkifyjs": "4.2.0"
   },
   "peerDependencies": {
     "stentor-constants": "1.X",
