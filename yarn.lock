@@ -1101,7 +1101,7 @@ __metadata:
     eslint: 8.57.1
     eslint-plugin-notice: 1.0.0
     fuse.js: 7.0.0
-    linkifyjs: 4.1.4
+    linkifyjs: 4.2.0
     mocha: 10.8.2
     prettier: 3.3.3
     semantic-release: 24.2.0
@@ -3783,10 +3783,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"linkifyjs@npm:4.1.4":
-  version: 4.1.4
-  resolution: "linkifyjs@npm:4.1.4"
-  checksum: e4d902e6b1acc47bcf7121806c238a9b7c30af726cd7d6f231e01ba658af92671935729b3a2670d4ca87d8148a84c4b80ae5375e1dd343076a688c5e38fcd220
+"linkifyjs@npm:4.2.0":
+  version: 4.2.0
+  resolution: "linkifyjs@npm:4.2.0"
+  checksum: 874b59ec3c6c3dbd7a67221fc817ab315c89e3d87f3776a09152bfcc02bd60570dca9c8e9829f4156f0e3c91de9486de72a18fc642efa245e727437e8b6fc58f
   languageName: node
   linkType: hard
 
