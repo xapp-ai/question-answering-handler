@@ -1,3 +1,10 @@
+## [2.5.17](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.16...v2.5.17) (2024-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency compromise to v14.14.3 ([#673](https://github.com/xapp-ai/question-answering-handler/issues/673)) ([de264ce](https://github.com/xapp-ai/question-answering-handler/commit/de264ce5b875d99277c7d20e842e77bfa0eb70c6))
+
 ## [2.5.16](https://github.com/xapp-ai/question-answering-handler/compare/v2.5.15...v2.5.16) (2024-11-21)
 
 
