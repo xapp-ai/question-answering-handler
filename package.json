@@ -56,7 +56,7 @@
     "test": "mocha --recursive -r ts-node/register \"./src/**/*.test.ts\""
   },
   "dependencies": {
-    "compromise": "14.14.3",
+    "compromise": "14.14.4",
     "fuse.js": "7.0.0",
     "linkifyjs": "4.2.0"
   },
