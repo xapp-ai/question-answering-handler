@@ -47,7 +47,7 @@
     "stentor-response": "1.60.19",
     "stentor-utils": "1.60.19",
     "ts-node": "9.1.1",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "scripts": {
     "build": "tsc -d true -p .",
