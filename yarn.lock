@@ -1244,7 +1244,7 @@ __metadata:
     "@xapp/config": 0.2.3
     chai: 4.5.0
     compromise: 14.14.4
-    conventional-changelog-conventionalcommits: 9.0.0
+    conventional-changelog-conventionalcommits: 9.1.0
     eslint: 8.57.1
     eslint-plugin-notice: 1.0.0
     fuse.js: 7.1.0
@@ -1965,12 +1965,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:9.0.0":
-  version: 9.0.0
-  resolution: "conventional-changelog-conventionalcommits@npm:9.0.0"
+"conventional-changelog-conventionalcommits@npm:9.1.0":
+  version: 9.1.0
+  resolution: "conventional-changelog-conventionalcommits@npm:9.1.0"
   dependencies:
     compare-func: ^2.0.0
-  checksum: ed500d31bb1da8d1c8c8cb627b0872dbdd5f5220b042adbcc5ab7140596ca44629dc0f8416b863a07d803f54a9ede5fb5ee1bfdf27054160e6e65fd32e6e8488
+  checksum: 9f40dc7c8b96cb44d07b835f19ea76506b151be1f17558d57c7f266c5f76d7c64d1d4c3b39f16ba5a8a1934b76835235f00e2f1d25baa1f3ddf01b52a162bd44
   languageName: node
   linkType: hard
 
