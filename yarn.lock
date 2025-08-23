@@ -995,10 +995,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chai@npm:4.3.20":
-  version: 4.3.20
-  resolution: "@types/chai@npm:4.3.20"
-  checksum: 7c5b0c9148f1a844a8d16cb1e16c64f2e7749cab2b8284155b9e494a6b34054846e22fb2b38df6b290f9bf57e6beebb2e121940c5896bc086ad7bab7ed429f06
+"@types/chai@npm:5.2.2":
+  version: 5.2.2
+  resolution: "@types/chai@npm:5.2.2"
+  dependencies:
+    "@types/deep-eql": "*"
+  checksum: 386887bd55ba684572cececd833ed91aba6cce2edd8cc1d8cefa78800b3a74db6dbf5c5c41af041d1d1f3ce672ea30b45c9520f948cdc75431eb7df3fbba8405
+  languageName: node
+  linkType: hard
+
+"@types/deep-eql@npm:*":
+  version: 4.0.2
+  resolution: "@types/deep-eql@npm:4.0.2"
+  checksum: 249a27b0bb22f6aa28461db56afa21ec044fa0e303221a62dff81831b20c8530502175f1a49060f7099e7be06181078548ac47c668de79ff9880241968d43d0c
   languageName: node
   linkType: hard
 
@@ -1234,7 +1243,7 @@ __metadata:
     "@semantic-release/git": 10.0.1
     "@semantic-release/npm": 12.0.2
     "@semantic-release/release-notes-generator": 14.0.3
-    "@types/chai": 4.3.20
+    "@types/chai": 5.2.2
     "@types/mocha": 10.0.10
     "@types/node": 22.17.0
     "@types/sinon": 17.0.4
