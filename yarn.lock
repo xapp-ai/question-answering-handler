@@ -1249,7 +1249,7 @@ __metadata:
     eslint-plugin-notice: 1.0.0
     fuse.js: 7.1.0
     linkifyjs: 4.3.2
-    mocha: 11.7.1
+    mocha: 11.7.2
     prettier: 3.6.2
     semantic-release: 24.2.7
     sinon: 21.0.0
@@ -4282,9 +4282,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mocha@npm:11.7.1":
-  version: 11.7.1
-  resolution: "mocha@npm:11.7.1"
+"mocha@npm:11.7.2":
+  version: 11.7.2
+  resolution: "mocha@npm:11.7.2"
   dependencies:
     browser-stdout: ^1.3.1
     chokidar: ^4.0.1
@@ -4309,7 +4309,7 @@ __metadata:
   bin:
     _mocha: bin/_mocha
     mocha: bin/mocha.js
-  checksum: 8779acc0a00083078de4c53dd4be25a8655053ae05107983470f67f560ca17711f9039c13fced6cd0bd0211939ab8dd1d29ec4b6ec3e2dd18f986c8b9955d440
+  checksum: f3078cfbf016c73c4de9411a7bf573c8f0b84f6e9cb89b56c58543bda84d72a8e3496968888ab0b45fc5e77d914f29c3ffa1efbf2e7a03798dfb0f09ac097c91
   languageName: node
   linkType: hard
 
