@@ -737,9 +737,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/release-notes-generator@npm:14.0.3":
-  version: 14.0.3
-  resolution: "@semantic-release/release-notes-generator@npm:14.0.3"
+"@semantic-release/release-notes-generator@npm:14.1.0":
+  version: 14.1.0
+  resolution: "@semantic-release/release-notes-generator@npm:14.1.0"
   dependencies:
     conventional-changelog-angular: ^8.0.0
     conventional-changelog-writer: ^8.0.0
@@ -753,7 +753,7 @@ __metadata:
     read-package-up: ^11.0.0
   peerDependencies:
     semantic-release: ">=20.1.0"
-  checksum: bb9b0913e17a449e2a495aeed12ee4d5d116c0876a2420f8c3308d4f89b279c64f78f79f3b7e9812f84f27dd4abba1009bb0d3418ab559ddb1665a0b211d63d7
+  checksum: 3abc52cd45e5822af28ff7b4ef68730ff82e5d6177de52de3197df899395489a49bddc3fe2823cd9ec95060a2c943940e8d19e81269a6b94c9b9253d7bce9fa3
   languageName: node
   linkType: hard
 
@@ -1215,7 +1215,7 @@ __metadata:
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/git": 10.0.1
     "@semantic-release/npm": 12.0.2
-    "@semantic-release/release-notes-generator": 14.0.3
+    "@semantic-release/release-notes-generator": 14.1.0
     "@types/chai": 4.3.20
     "@types/mocha": 10.0.10
     "@types/node": 22.18.1
@@ -1233,7 +1233,7 @@ __metadata:
     linkifyjs: 4.3.2
     mocha: 11.7.1
     prettier: 3.6.2
-    semantic-release: 24.2.7
+    semantic-release: 24.2.8
     sinon: 21.0.0
     sinon-chai: 3.7.0
     stentor-constants: 1.61.11
@@ -2962,10 +2962,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hook-std@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "hook-std@npm:3.0.0"
-  checksum: f1f0ca88bbbca2306b9c2c342f45fbecb318ad5496bcbde1fcfc2a64dab0feabd50278a613f683edf07225c4b8b75b3c64ad3f1fca090dd0cae426fdec374a56
+"hook-std@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "hook-std@npm:4.0.0"
+  checksum: 82a3becad2e7ec3a9da25eb26dbfa584015f5bfabaddc6c999f079e6c65166e6902f37783819b996be4621cec30945cc6468c539134184e7b265196964488467
   languageName: node
   linkType: hard
 
@@ -5433,9 +5433,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:24.2.7":
-  version: 24.2.7
-  resolution: "semantic-release@npm:24.2.7"
+"semantic-release@npm:24.2.8":
+  version: 24.2.8
+  resolution: "semantic-release@npm:24.2.8"
   dependencies:
     "@semantic-release/commit-analyzer": ^13.0.0-beta.1
     "@semantic-release/error": ^4.0.0
@@ -5451,7 +5451,7 @@ __metadata:
     find-versions: ^6.0.0
     get-stream: ^6.0.0
     git-log-parser: ^1.2.0
-    hook-std: ^3.0.0
+    hook-std: ^4.0.0
     hosted-git-info: ^8.0.0
     import-from-esm: ^2.0.0
     lodash-es: ^4.17.21
@@ -5468,7 +5468,7 @@ __metadata:
     yargs: ^17.5.1
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: e42b287a6609bc276e2a435c1fd86c2bd5c1f3bcc0646c4c44733723540023b9dda8892f3bfd36fe59a50eed4f2fee65f5c23acf4d38d06502620d883008f39a
+  checksum: 7450db14a6345739af124d4188a034a9a1915fbca4f1b6314b6072f5ed5551f8e2953330bd6a521c8d1613b388289263043d4e9af17c095c1410bccfd3f8b753
   languageName: node
   linkType: hard
 
