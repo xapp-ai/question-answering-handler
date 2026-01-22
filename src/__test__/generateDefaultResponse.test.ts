@@ -612,6 +612,66 @@ describe(`#${generateDefaultResponse.name}()`, () => {
                 }
             });
         });
+        describe("with scheduleButton configured", () => {
+            it("adds ScheduleButton display with default title", () => {
+                const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult, {});
+
+                request = REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER;
+                request.attributes = { ...sessionVariables };
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {
+                    chat: {
+                        scheduleButton: {}
+                    }
+                });
+
+                expect(response).to.exist;
+                expect(response.displays).to.have.length(1);
+                expect(response.displays[0]).to.deep.equal({
+                    type: "ScheduleButton",
+                    title: "Schedule Service"
+                });
+            });
+            it("adds ScheduleButton display with custom title", () => {
+                const sessionVariables = generateResultVariables(request.rawQuery, REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult, {});
+
+                request = REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER;
+                request.attributes = { ...sessionVariables };
+
+                context = new ContextBuilder()
+                    .withSessionData({
+                        id: "foo",
+                        data: {
+                            [SESSION_STORAGE_KNOWLEDGE_BASE_RESULT]: REQUEST_WITH_GOOD_HIGHLIGHTED_ANSWER.knowledgeBaseResult,
+                        }
+                    })
+                    .build();
+
+                const response = generateDefaultResponse(request, context, {
+                    chat: {
+                        scheduleButton: {
+                            title: "Book Appointment"
+                        }
+                    }
+                });
+
+                expect(response).to.exist;
+                expect(response.displays).to.have.length(1);
+                expect(response.displays[0]).to.deep.equal({
+                    type: "ScheduleButton",
+                    title: "Book Appointment"
+                });
+            });
+        });
         describe("with CHAT_RESPONSE variables", () => {
             it("returns as expected", () => {
 

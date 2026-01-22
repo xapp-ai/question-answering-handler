@@ -30,9 +30,18 @@ export interface QuestionAnsweringData extends Data, ResultVariablesConfig {
          */
         followUp?: string;
         /**
-         * Experimental feature to include search results when we have a GENERATED_NO_ANSWER.  
+         * Experimental feature to include search results when we have a GENERATED_NO_ANSWER.
          */
         includeResultsInNoAnswer?: number;
+        /**
+         * Optional schedule button display to add to responses.
+         */
+        scheduleButton?: {
+            /**
+             * The title of the schedule button.  Defaults to "Schedule Service".
+             */
+            title?: string;
+        };
     };
     /**
      * Optional Search Configuration
