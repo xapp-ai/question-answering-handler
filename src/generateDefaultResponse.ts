@@ -225,6 +225,8 @@ export function generateDefaultResponse(request: Request, context: Context, data
 
         const suggestionChips = data?.chat?.suggestionChips || [];
 
+        const scheduleButton = data?.chat?.scheduleButton;
+
         const includeResultsInNoAnswer: number = data?.chat?.includeResultsInNoAnswer;
 
         const followUp = typeof data?.chat?.followUp === "string" ? data.chat.followUp : "Any other questions?";
@@ -347,6 +349,14 @@ export function generateDefaultResponse(request: Request, context: Context, data
             }
 
             response.tag = tag;
+
+            // Add schedule button display if configured
+            if (scheduleButton) {
+                response.displays.push({
+                    type: "ScheduleButton",
+                    title: scheduleButton.title || "Schedule Service"
+                });
+            }
         }
     }
 
