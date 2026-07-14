@@ -1212,7 +1212,7 @@ __metadata:
     "@typescript-eslint/parser": 7.18.0
     "@xapp/config": 0.2.3
     chai: 4.5.0
-    compromise: 14.14.5
+    compromise: 14.16.0
     conventional-changelog-conventionalcommits: 9.1.0
     eslint: 8.57.1
     eslint-plugin-notice: 1.0.0
@@ -1857,14 +1857,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compromise@npm:14.14.5":
-  version: 14.14.5
-  resolution: "compromise@npm:14.14.5"
+"compromise@npm:14.16.0":
+  version: 14.16.0
+  resolution: "compromise@npm:14.16.0"
   dependencies:
     efrt: 2.7.0
     grad-school: 0.0.5
     suffix-thumb: 5.0.2
-  checksum: ec091600c93b7b107030d546ab4dabde719dbd9a19870f64ea96f33a68bee81a5f2eb2b3afad8c827f461cb2b84f8acf94d54695f841e945f0f1db6421be8111
+  checksum: 121cbee532027febfb1d69fec95e254e8cd0a13fb3f8b8a0029885e58ab03fe5ddaaa1ca61bc1142f0abb72acd56b4d51d777c55d29f2a2593d3dd4f5d52d561
   languageName: node
   linkType: hard
 
