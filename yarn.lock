@@ -15,13 +15,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/core@npm:^2.0.0":
-  version: 2.0.2
-  resolution: "@actions/core@npm:2.0.2"
+"@actions/core@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "@actions/core@npm:3.0.1"
   dependencies:
-    "@actions/exec": ^2.0.0
-    "@actions/http-client": ^3.0.1
-  checksum: 349858216a12fdad13ded50738c683c6744f8a45b950ca8cc2cac5cbe410d4e6577b3c9aa00923dbf10c23fde7a98ffc47c11177eacaa90b27d019a1ec5fed37
+    "@actions/exec": ^3.0.0
+    "@actions/http-client": ^4.0.0
+  checksum: 4f29321d8629c220b29486ea0d6bc320e968b9bd5b4346a86450d090123a1f83910c2aa3b05efb0c0fbcf7169a51e9573d7f4e318281c97d5e7859d1699a23f0
   languageName: node
   linkType: hard
 
@@ -34,12 +34,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/exec@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@actions/exec@npm:2.0.0"
+"@actions/exec@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@actions/exec@npm:3.0.0"
   dependencies:
-    "@actions/io": ^2.0.0
-  checksum: 001e4139129fce56459c7fa3970d50e85dc9bffef5fe451312ff1277f1f18d553d221012a199d58b3a5c2198bd0c71b2060dd28e52ebfeaf5a91331347c93208
+    "@actions/io": ^3.0.2
+  checksum: 8a8c2d28088b0daf019c24abd2127e6694f7427f6f8b866cf7e9d1709dcdc3e15156f2f061977a814113c6f2f2368886f2a9cdf21631d2b9bf7ff22fc80e55e2
   languageName: node
   linkType: hard
 
@@ -53,13 +53,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/http-client@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@actions/http-client@npm:3.0.1"
+"@actions/http-client@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "@actions/http-client@npm:4.0.1"
   dependencies:
     tunnel: ^0.0.6
-    undici: ^5.28.5
-  checksum: 421ecc5a7ed288854eb4f30b7b156a4ab43150ce4d5362be743ed142873af5f01581ac4840df68615155a6e49c5977e725bc239db32099b33814f3105b96f388
+    undici: ^6.23.0
+  checksum: 45da4bacfd50dbd18cb77171e789242d77739d744e394f1cd65c0e8cbfee0d3176a264239e475fcad889a60ea180d74cdd985cb3dd1d3f9627ff69846929facd
   languageName: node
   linkType: hard
 
@@ -70,10 +70,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/io@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@actions/io@npm:2.0.0"
-  checksum: afd29e777bedd8bb59143f12aa7c28e1112ce7aed2fed953fddc51833cbb88f0b4e379a6f3aece024c974227c01875fc0cd754a27e5953259d3a90fa3fbf0f68
+"@actions/io@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@actions/io@npm:3.0.2"
+  checksum: 69c1d58f2b37f4a2248e6d727be900af21e69051c614e161132c6aa459a09654ef84b13b7007f7cc87c7bbaf74e2c37a1add97c76791db64eb810d6a3f4ad96e
   languageName: node
   linkType: hard
 
@@ -759,11 +759,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:13.1.3":
-  version: 13.1.3
-  resolution: "@semantic-release/npm@npm:13.1.3"
+"@semantic-release/npm@npm:13.1.5":
+  version: 13.1.5
+  resolution: "@semantic-release/npm@npm:13.1.5"
   dependencies:
-    "@actions/core": ^2.0.0
+    "@actions/core": ^3.0.0
     "@semantic-release/error": ^4.0.0
     aggregate-error: ^5.0.0
     env-ci: ^11.2.0
@@ -771,7 +771,7 @@ __metadata:
     fs-extra: ^11.0.0
     lodash-es: ^4.17.21
     nerf-dart: ^1.0.0
-    normalize-url: ^8.0.0
+    normalize-url: ^9.0.0
     npm: ^11.6.2
     rc: ^1.2.8
     read-pkg: ^10.0.0
@@ -780,7 +780,7 @@ __metadata:
     tempy: ^3.0.0
   peerDependencies:
     semantic-release: ">=20.1.0"
-  checksum: 7e9e4d01a0e2564e5c44bf596cebc80c21ff684dc10358c3fc778e9423b654a015ad7a23e262ee50f98dcd62f71ddba160584df8bd684c1c20de203e5096036b
+  checksum: 2357863d7cbf104029bd8bd7783617eb893e646fe0c2bacabfa9692ed5fbfee076525b01e8a4fb183af6df52623f5585c9c519ed15d36e42a679ebb6a6d2c9d1
   languageName: node
   linkType: hard
 
@@ -809,7 +809,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/release-notes-generator@npm:14.1.0, @semantic-release/release-notes-generator@npm:^14.1.0":
+"@semantic-release/release-notes-generator@npm:14.1.1":
+  version: 14.1.1
+  resolution: "@semantic-release/release-notes-generator@npm:14.1.1"
+  dependencies:
+    conventional-changelog-angular: ^8.0.0
+    conventional-changelog-writer: ^8.0.0
+    conventional-commits-filter: ^5.0.0
+    conventional-commits-parser: ^6.0.0
+    debug: ^4.0.0
+    import-from-esm: ^2.0.0
+    lodash-es: ^4.17.21
+    read-package-up: ^11.0.0
+  peerDependencies:
+    semantic-release: ">=20.1.0"
+  checksum: 802cbc6024cd2db2024cee3cbb427306da70bb394b3323bb298c15a05761861a59b2f16d721b39345f4c02a46f42b85d230c6e9ee70d34bdcda8a8366fa159c4
+  languageName: node
+  linkType: hard
+
+"@semantic-release/release-notes-generator@npm:^14.1.0":
   version: 14.1.0
   resolution: "@semantic-release/release-notes-generator@npm:14.1.0"
   dependencies:
@@ -1201,8 +1219,8 @@ __metadata:
   dependencies:
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/git": 10.0.1
-    "@semantic-release/npm": 13.1.3
-    "@semantic-release/release-notes-generator": 14.1.0
+    "@semantic-release/npm": 13.1.5
+    "@semantic-release/release-notes-generator": 14.1.1
     "@types/chai": 5.2.3
     "@types/mocha": 10.0.10
     "@types/node": 24.10.9
@@ -1220,7 +1238,7 @@ __metadata:
     linkifyjs: 4.3.2
     mocha: 11.7.5
     prettier: 3.6.2
-    semantic-release: 25.0.2
+    semantic-release: 25.0.9
     sinon: 21.0.0
     sinon-chai: 3.7.0
     stentor-constants: 1.68.6
@@ -4343,6 +4361,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"normalize-url@npm:^9.0.0":
+  version: 9.0.1
+  resolution: "normalize-url@npm:9.0.1"
+  checksum: 96906c9fe4d60922893bdd48745add1a08d775640951ee4d119232b8398e2a2d9d42982be8b0e6b55db32cd9f6f34e77484a9998f1327accfb3bd1ae5c059c7d
+  languageName: node
+  linkType: hard
+
 "npm-audit-report@npm:^6.0.0":
   version: 6.0.0
   resolution: "npm-audit-report@npm:6.0.0"
@@ -5354,9 +5379,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:25.0.2":
-  version: 25.0.2
-  resolution: "semantic-release@npm:25.0.2"
+"semantic-release@npm:25.0.9":
+  version: 25.0.9
+  resolution: "semantic-release@npm:25.0.9"
   dependencies:
     "@semantic-release/commit-analyzer": ^13.0.1
     "@semantic-release/error": ^4.0.0
@@ -5384,21 +5409,11 @@ __metadata:
     read-package-up: ^12.0.0
     resolve-from: ^5.0.0
     semver: ^7.3.2
-    semver-diff: ^5.0.0
     signale: ^1.2.1
     yargs: ^18.0.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: af92eed5fbef9fbbe749c3c0a47a855872db4ae5fb1824dcc0ecabb289cf6e011b8b07987d865299075cc60541bea5662b29aba381d91c90e148095f42f4fdd9
-  languageName: node
-  linkType: hard
-
-"semver-diff@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "semver-diff@npm:5.0.0"
-  dependencies:
-    semver: ^7.3.5
-  checksum: 92ca28446796615b57ffd6701350e86a6264efce9b7a3abfb92d16311c0640adaca0a15940327f99464ab117a4d451024ad247264c78cdd456e8bf36a9964587
+  checksum: 50c0e7f91f6b906ff9228bb87de0c2f070634f7d1b38b43d44089af2e19195454d63a18ce909dfe8faed103f972adc72587d434362f56a571e5ed45c6e77a618
   languageName: node
   linkType: hard
 
@@ -6409,12 +6424,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.25.4, undici@npm:^5.28.5":
+"undici@npm:^5.25.4":
   version: 5.29.0
   resolution: "undici@npm:5.29.0"
   dependencies:
     "@fastify/busboy": ^2.0.0
   checksum: a25b5462c1b6ffb974f5ffc492ffd64146a9983aad0cbda6fde65e2b22f6f1acd43f09beacc66cc47624a113bd0c684ffc60366102b6a21b038fbfafb7d75195
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.23.0":
+  version: 6.28.0
+  resolution: "undici@npm:6.28.0"
+  checksum: 71b82d533189750682078341b9f09f4db4d398d470f7b5032c546c60b1dfb331ff19a50ac02d4bce487c5e6c1d9b101c0afa29da302aab3b3edf94a35d4ed11f
   languageName: node
   linkType: hard
 
