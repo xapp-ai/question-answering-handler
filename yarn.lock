@@ -1219,7 +1219,7 @@ __metadata:
     fuse.js: 7.1.0
     linkifyjs: 4.3.2
     mocha: 11.7.5
-    prettier: 3.6.2
+    prettier: 3.9.9
     semantic-release: 25.0.2
     sinon: 21.0.0
     sinon-chai: 3.7.0
@@ -5003,12 +5003,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.6.2":
-  version: 3.6.2
-  resolution: "prettier@npm:3.6.2"
+"prettier@npm:3.9.9":
+  version: 3.9.9
+  resolution: "prettier@npm:3.9.9"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 0206f5f437892e8858f298af8850bf9d0ef1c22e21107a213ba56bfb9c2387a2020bfda244a20161d8e3dad40c6b04101609a55d370dece53d0a31893b64f861
+  checksum: fbd41978e758c07ce493728c73c9011400446281aca707024e58f7b6ea5ad1dd2f12f8cc51ff76ceb7c7749947db876f6074030a5ec333d8e4084c29455ea948
   languageName: node
   linkType: hard
 
