@@ -1212,7 +1212,7 @@ __metadata:
     "@typescript-eslint/parser": 7.18.0
     "@xapp/config": 0.2.3
     chai: 4.5.0
-    compromise: 14.14.5
+    compromise: 14.18.0
     conventional-changelog-conventionalcommits: 9.1.0
     eslint: 8.57.1
     eslint-plugin-notice: 1.0.0
@@ -1857,14 +1857,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compromise@npm:14.14.5":
-  version: 14.14.5
-  resolution: "compromise@npm:14.14.5"
+"compromise@npm:14.18.0":
+  version: 14.18.0
+  resolution: "compromise@npm:14.18.0"
   dependencies:
-    efrt: 2.7.0
-    grad-school: 0.0.5
-    suffix-thumb: 5.0.2
-  checksum: ec091600c93b7b107030d546ab4dabde719dbd9a19870f64ea96f33a68bee81a5f2eb2b3afad8c827f461cb2b84f8acf94d54695f841e945f0f1db6421be8111
+    efrt: 2.9.0
+    grad-school: 0.0.9
+    suffix-thumb: 6.0.0
+  checksum: 4d9e7b13d8fcc9f46e0997b92d866a2e4dde12e91f81651446415221218d640891add662bf9a60fc6b57ffdd7660ac5744ecf82502974439944777c0739406dd
   languageName: node
   linkType: hard
 
@@ -2191,10 +2191,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"efrt@npm:2.7.0":
-  version: 2.7.0
-  resolution: "efrt@npm:2.7.0"
-  checksum: 649da95aa60adc411563e04d8f953e67a67ebafca6f3479d5768cab2d011068de4379ad978ba8a87d574d7ea2494a82ecbe3a8f9f8f9bca3ddcc3d5cb4ea11ae
+"efrt@npm:2.9.0":
+  version: 2.9.0
+  resolution: "efrt@npm:2.9.0"
+  checksum: d557de1bfc4848e6f9c907960df4193befa3ce6723ce945029721583f6b0962a11b9ba2e3deb7ffe93171c7f71d73ed5cdab5796dde0eb8ebf842968ebb853d4
   languageName: node
   linkType: hard
 
@@ -2950,10 +2950,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grad-school@npm:0.0.5":
-  version: 0.0.5
-  resolution: "grad-school@npm:0.0.5"
-  checksum: 1330b02b71ef37f9a507261c1219056d19caa46f99e65fe30fe9b5c98235b5dec23d74928ed166516054b30c4cf470903de482311d2d25d985e904989b53c69a
+"grad-school@npm:0.0.9":
+  version: 0.0.9
+  resolution: "grad-school@npm:0.0.9"
+  checksum: da11f4592011c38ce760d06abe3655dffaa07a0ab051150e016951ad581f83f3fd1928a04e3e58955001a20f1331d72730a2afe6cff8577ff1a60edf64f84d26
   languageName: node
   linkType: hard
 
@@ -6041,10 +6041,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"suffix-thumb@npm:5.0.2":
-  version: 5.0.2
-  resolution: "suffix-thumb@npm:5.0.2"
-  checksum: 4c4f37168b9455c460451c9531fd2708dcd20aadbb3bc505901a0bb616fa9239a582661cd002625de3cf499ce747fbac45d074e75f0f1bccd7b88fb9c6f4fac9
+"suffix-thumb@npm:6.0.0":
+  version: 6.0.0
+  resolution: "suffix-thumb@npm:6.0.0"
+  checksum: 069bdb921d3a2384b1ad4bce17f81626a29670492f9a6339105ab9745729b499993dfadad813c483bdeeff93e943155661020852c2d66cc3c4d9889d495d2ec1
   languageName: node
   linkType: hard
 
