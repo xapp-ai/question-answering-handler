@@ -28,7 +28,7 @@
     "@types/sinon-chai": "3.2.12",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
-    "@xapp/config": "0.2.3",
+    "@xapp/config": "0.3.0",
     "chai": "4.5.0",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "eslint": "8.57.1",
